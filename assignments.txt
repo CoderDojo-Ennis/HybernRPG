@@ -1,0 +1,6 @@
+movement
+controls
+design characters
+design enemies
+design level
+story

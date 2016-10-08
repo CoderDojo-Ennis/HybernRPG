@@ -1,0 +1,18 @@
+main characters
+	movement
+	controls	
+	combat
+	sprites
+		animations
+enemies
+	combat
+	sprites
+		animations
+	movement
+levels
+	design
+		sprites
+			collision
+story
+	story line
+	objectives
