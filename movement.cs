@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
-	public float speed = 10;
-	public float force = 3;
+	public float speed = 1;
+	public float force = 7;
 	public bool canjump = false;
 	// Use this for initialization
 	void Start () {
