@@ -1,4 +1,5 @@
-/source/[Ll]ibrary/
+source/Library
+/source/[Ll]ibrary/*
 /source/[Tt]emp/
 /source/[Oo]bj/
 /source/[Bb]uild/
