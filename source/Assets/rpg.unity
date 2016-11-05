@@ -359,7 +359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  force: 7
+  force: 6
+  jumps: 2
   canjump: 0
 --- !u!95 &1412830583
 Animator:

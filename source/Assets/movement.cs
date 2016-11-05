@@ -4,6 +4,7 @@ using System.Collections;
 public class movement : MonoBehaviour {
 	public float speed = 10;
 	public float force = 3;
+	public int jumps = 2;
 	public bool canjump = false;
 	// Use this for initialization
 	void Start () {
@@ -17,16 +18,22 @@ public class movement : MonoBehaviour {
 		v.x = h * speed;
 		GetComponent<Rigidbody2D> ().velocity = v; //this probably seems a little too complicated, but i dont know how to set the velocity of one axis without effecting the other axis any other way 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (canjump == true) {
-				GetComponent<Rigidbody2D> ().velocity += new Vector2 (0, force);
-				canjump = false;
-
+			if (jumps > 0) {
+				if (canjump == true) {
+					GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+					GetComponent<Rigidbody2D> ().velocity += new Vector2 (0, force);
+					jumps--;
+				}
 			}
-		} 
+			canjump = false;
+		} else {
+			canjump = true;
+		}
 	}
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.name == "floor") {
 			canjump = true;
+			jumps = 2;
 		}
 	}
 }
