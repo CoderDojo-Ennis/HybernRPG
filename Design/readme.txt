@@ -1,0 +1,1 @@
+Put sketches, graphics, sounds, story ideas in this folder
