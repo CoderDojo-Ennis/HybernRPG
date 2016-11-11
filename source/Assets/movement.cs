@@ -7,6 +7,7 @@ public class movement : MonoBehaviour {
 	public int jumps = 2;
 	public bool canjump = false;
 	// Use this for initialization
+	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	void Start () {
 	
 	}
@@ -16,6 +17,11 @@ public class movement : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		Vector3 v = GetComponent<Rigidbody2D> ().velocity;
 		v.x = h * speed;
+		if(Input.GetKeyDown (KeyCode.UpArrow) || Input.GetkeyDown(KeyCode.W) {
+			speed *= 1.5;			
+		} else {
+			speed /= 1.5;
+		}
 		GetComponent<Rigidbody2D> ().velocity = v; //this probably seems a little too complicated, but i dont know how to set the velocity of one axis without effecting the other axis any other way 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (jumps > 0) {
