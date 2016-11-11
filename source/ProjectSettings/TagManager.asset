@@ -54,3 +54,12 @@ TagManager:
   - name: Units
     uniqueID: 3393972251
     locked: 0
+  - name: right
+    uniqueID: 4256866893
+    locked: 0
+  - name: body
+    uniqueID: 1287881407
+    locked: 0
+  - name: left
+    uniqueID: 3842529867
+    locked: 0
