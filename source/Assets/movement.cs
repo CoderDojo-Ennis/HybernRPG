@@ -17,10 +17,10 @@ public class movement : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		Vector3 v = GetComponent<Rigidbody2D> ().velocity;
 		v.x = h * speed;
-		if(Input.GetKeyDown (KeyCode.UpArrow) || Input.GetkeyDown(KeyCode.W) {
-			speed *= 1.5;			
+		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) {
+			speed *= 1.5f;			
 		} else {
-			speed /= 1.5;
+			speed /= 1.5f;
 		}
 		GetComponent<Rigidbody2D> ().velocity = v; //this probably seems a little too complicated, but i dont know how to set the velocity of one axis without effecting the other axis any other way 
 		if (Input.GetKeyDown (KeyCode.Space)) {
