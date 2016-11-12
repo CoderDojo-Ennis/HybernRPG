@@ -6,6 +6,10 @@ public class movement : MonoBehaviour {
 	public float force = 3;
 	public int jumps = 2;
 	public bool canjump = false;
+	public string leftKey = "A";
+	public string rightKey = "D";
+	public string runKey = "W";
+	public string jumpKey = "Space";
 	// Use this for initialization
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	void Start () {
