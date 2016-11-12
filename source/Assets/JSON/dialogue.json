@@ -1,7 +1,42 @@
 [
     {
 	//speaker
-	"id":0
+	"id":0,
 	"text":"This is a string of dialogue!"
+    },
+	{
+	//speaker
+	"id":1,
+	"text":"This"
+    },
+	{
+	//speaker
+	"id":2,
+	"text":"is"
+    },
+	{
+	//speaker
+	"id":3,
+	"text":"a"
+    },
+	{
+	//speaker
+	"id":4,
+	"text":"string"
+    },
+	{
+	//speaker
+	"id":5,
+	"text":"of"
+    },
+	{
+	//speaker
+	"id":6,
+	"text":"dialogue"
+    },
+	{
+	//speaker
+	"id":7,
+	"text":"!"
     }
 ]
