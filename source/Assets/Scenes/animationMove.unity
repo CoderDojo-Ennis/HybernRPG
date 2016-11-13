@@ -622,14 +622,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ac7ccb34c40924ba67247a936ce00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  v: {x: 0, y: 0, z: 0}
   speed: 1
   force: 6
   jumps: 2
   canjump: 0
-  leftKey: 97
-  rightKey: 100
-  runKey: 119
-  jumpKey: 32
+  leftKey: 276
+  rightKey: 275
+  runKey: 32
+  jumpKey: 273
 --- !u!95 &1412830583
 Animator:
   serializedVersion: 3
