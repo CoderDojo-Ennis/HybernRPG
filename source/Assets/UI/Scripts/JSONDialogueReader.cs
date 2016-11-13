@@ -19,21 +19,22 @@ public class JSONDialogueReader : MonoBehaviour {
     {
         //Dialogue speech = new Dialogue();
         dialogueData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/JSON/dialogue.json"));
-        SearchByID(6);
+        //SearchByID(6);
 	}
-
+	/*
     string SearchByID (int id)
     {
         for (int i = 0; i < dialogueData.Count; i++)
         {
             if (id == i)
             {
+				i;
                 return;
                 //Debug.Log(i.ToString());
             }
         }
     }
-	
+	*/
 	void Update () 
     {
 	    
