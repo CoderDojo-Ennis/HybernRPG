@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
-	public Vector3 v;
+	//public Vector3 v;
 	//Rigidbody2D rb;
 	public float speed = 10;
 	public float force = 3;
@@ -15,7 +15,7 @@ public class movement : MonoBehaviour {
 
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	void Start () {
-		v = new Vector3 (0, 0, 0);
+		//v = new Vector3 (0, 0, 0);
 	}
 
 	void Update () {
@@ -24,7 +24,7 @@ public class movement : MonoBehaviour {
 		} else {
 			speed = 1;
 		}
-		v.x = 0;
+		/*v.x = 0;
 		if (Input.GetKey (leftKey)) {
 			float h = Vector2.left.x;
 			//v = GetComponent<Rigidbody2D> ().velocity;
@@ -40,6 +40,7 @@ public class movement : MonoBehaviour {
 		}
 		//Debug.Log (v);
 		//Debug.Log (GetComponent<Rigidbody2D> ().velocity);
+		*/
 	}
 
 	void FixedUpdate () {
@@ -50,8 +51,8 @@ public class movement : MonoBehaviour {
 		v.x = h * speed;
 		GetComponent<Rigidbody2D> ().velocity = v; 
 		*/
-		rb.velocity = v;
-		/*
+		//rb.velocity = v;
+
 		if (Input.GetKey (leftKey)) {
 			float h = Vector2.left.x;
 			Vector3 v = GetComponent<Rigidbody2D> ().velocity;
@@ -65,7 +66,7 @@ public class movement : MonoBehaviour {
 			v.x = h * speed;
 			GetComponent<Rigidbody2D> ().velocity = v; 
 		}
-*/
+
 		if (Input.GetKeyDown (jumpKey)) {
 			Debug.Log("jump!");
 			if (jumps > 0) {
