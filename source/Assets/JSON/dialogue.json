@@ -1,42 +1,13 @@
-[
-    {
-	//speaker
-	"id":0,
-	"text":"This is a string of dialogue!"
-    },
-	{
-	//speaker
-	"id":1,
-	"text":"This"
-    },
-	{
-	//speaker
-	"id":2,
-	"text":"is"
-    },
-	{
-	//speaker
-	"id":3,
-	"text":"a"
-    },
-	{
-	//speaker
-	"id":4,
-	"text":"string"
-    },
-	{
-	//speaker
-	"id":5,
-	"text":"of"
-    },
-	{
-	//speaker
-	"id":6,
-	"text":"dialogue"
-    },
-	{
-	//speaker
-	"id":7,
-	"text":"!"
-    }
-]
+{
+    "Player": 
+    [
+        {
+            "id": 0,
+            "text": "This is a string of dialogue!"
+        },
+        {
+            "id": 1,
+            "text":  "This is definitely dialogue! I should make this button on the right be some form of 'next' or 'continue'. It should definitely have a graphic, perhaps a <color=green>green</color> arrow?"
+        }
+    ]
+}
