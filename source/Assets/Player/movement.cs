@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
-	//public Vector3 v;
-	//Rigidbody2D rb;
 	public float speed = 10;
 	public float force = 3;
 	public int jumps = 2;
@@ -12,62 +10,52 @@ public class movement : MonoBehaviour {
 	public KeyCode rightKey;
 	public KeyCode runKey;
 	public KeyCode jumpKey;
-
+	public Animator anim;
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	void Start () {
-		//v = new Vector3 (0, 0, 0);
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update () {
+		/*
 		if (Input.GetKey (KeyCode.W)) {
 			speed = 2;			
 		} else {
 			speed = 1;
 		}
-		/*v.x = 0;
-		if (Input.GetKey (leftKey)) {
-			float h = Vector2.left.x;
-			//v = GetComponent<Rigidbody2D> ().velocity;
-			v.x = h * speed;
-			//GetComponent<Rigidbody2D> ().velocity = v; 
-		}
-
-		if (Input.GetKey (rightKey)) {
-			float h = Vector2.right.x;
-			//v = GetComponent<Rigidbody2D> ().velocity;
-			v.x = h * speed;
-			//GetComponent<Rigidbody2D> ().velocity = v; 
-		}
-		//Debug.Log (v);
-		//Debug.Log (GetComponent<Rigidbody2D> ().velocity);
 		*/
+
 	}
 
 	void FixedUpdate () {
 		Rigidbody2D rb = GetComponent<Rigidbody2D> (); 
-		/*
-		float h = Input.GetAxis ("Horizontal");
-		Vector3 v = GetComponent<Rigidbody2D> ().velocity;
-		v.x = h * speed;
-		GetComponent<Rigidbody2D> ().velocity = v; 
-		*/
-		//rb.velocity = v;
-
 		if (Input.GetKey (leftKey)) {
+			transform.localScale = new Vector3(1f,1f,1f);
+			if (Input.GetKey (runKey)) { 
+				speed = 2;			
+			} else { 
+				speed = 1;
+			}
 			float h = Vector2.left.x;
-			Vector3 v = GetComponent<Rigidbody2D> ().velocity;
+			Vector3 v = rb.velocity;
 			v.x = h * speed;
-			GetComponent<Rigidbody2D> ().velocity = v; 
-		}
-
-		if (Input.GetKey (rightKey)) {
+			rb.velocity = v; 
+		} else if (Input.GetKey (rightKey)) { //move right
+			transform.localScale = new Vector3(-1f,1f,1f);
+			if (Input.GetKey (runKey)) {
+				speed = 2;			
+			} else { 
+				speed = 1;
+			}
 			float h = Vector2.right.x;
-			Vector3 v = GetComponent<Rigidbody2D> ().velocity;
+			Vector3 v = rb.velocity;
 			v.x = h * speed;
-			GetComponent<Rigidbody2D> ().velocity = v; 
+			rb.velocity = v; 
+		} else {
+			speed = 0;
 		}
-
-		if (Input.GetKeyDown (jumpKey)) {
+		anim.SetFloat ("speed", speed);
+		if (Input.GetKeyDown (jumpKey)) { //jump
 			Debug.Log("jump!");
 			if (jumps > 0) {
 				rb.velocity = new Vector2 (0, 0);
