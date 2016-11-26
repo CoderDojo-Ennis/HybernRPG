@@ -19,7 +19,7 @@ public class JSONDialogueReader : MonoBehaviour {
 
 	void Start () 
     {
-        DialogueTextUI.SetActive(false);
+        DialogueTextUI.transform.parent.gameObject.SetActive(false);
         textData = File.ReadAllText(Application.dataPath + "/JSON/dialogue.json");
         dialogueData = JsonMapper.ToObject(textData);
         
@@ -42,6 +42,7 @@ public class JSONDialogueReader : MonoBehaviour {
         if (!DialogueTextUI.transform.parent.gameObject.activeSelf)
         {
             DialogueTextUI.transform.parent.gameObject.SetActive(true);
+            DialogueTextUI.SetActive(true);
         }
         DialogueTextUI.GetComponent<Text>().text = GetText(speaker, id);
     }
