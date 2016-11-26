@@ -39,9 +39,9 @@ public class JSONDialogueReader : MonoBehaviour {
     }
     void DisplayDialogue (string speaker, string id)
     {
-        if (!DialogueTextUI.activeSelf)
+        if (!DialogueTextUI.transform.parent.gameObject.activeSelf)
         {
-            DialogueTextUI.SetActive(true);
+            DialogueTextUI.transform.parent.gameObject.SetActive(true);
         }
         DialogueTextUI.GetComponent<Text>().text = GetText(speaker, id);
     }
