@@ -11,10 +11,16 @@ public class aiming : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void LateUpdate () {
+		Vector3 mousePos = Input.mousePosition;
+		Vector3 dir = Camera.main.ScreenToWorldPoint (mousePos);
+		dir = dir - transform.position;
+		float a = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
+		Debug.Log (a);
 		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("aiming")) {
-            Debug.Log("player is aiming");
+			transform.rotation = Quaternion.AngleAxis (a + 90, Vector3.forward);
+			//Debug.Log (a);
+
 		}
 	}
 }

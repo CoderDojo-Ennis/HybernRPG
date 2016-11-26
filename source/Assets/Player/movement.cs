@@ -29,7 +29,7 @@ public class movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		Rigidbody2D rb = GetComponent<Rigidbody2D> (); 
-		if (Input.GetKey (leftKey)) {
+		if (Input.GetKey (leftKey)) { //move left
 			transform.localScale = new Vector3(1f,1f,1f);
 			if (Input.GetKey (runKey)) { 
 				speed = 2;			
@@ -62,10 +62,8 @@ public class movement : MonoBehaviour {
 			Debug.Log("jump!");
 			if (jumps > 0) {
 				anim.SetTrigger ("jump");
-
 				rb.velocity = new Vector2 (0, 0);
 				rb.velocity += new Vector2 (0, force + speed);
-
 				jumps--;
 			}
 		}
