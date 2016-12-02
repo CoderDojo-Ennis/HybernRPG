@@ -16,19 +16,20 @@ public class JSONDialogueReader : MonoBehaviour {
     private JsonData dialogueData;
 
     public GameObject DialogueTextUI;
-
+    public GameObject SpeakerTextUI;
+    
 	void Start () 
     {
         DialogueTextUI.transform.parent.gameObject.SetActive(false);
         textData = File.ReadAllText(Application.dataPath + "/JSON/dialogue.json");
         dialogueData = JsonMapper.ToObject(textData);
-        
+        //Debug
         Debug.Log(GetText("Player", "0"));
-        DisplayDialogue("Player", "1");
+        DisplayDialogue("Player", "1"); // Latest DisplayDialogue called appears.
 
 	}
 
-	string GetText (string speaker, string id)
+	string GetText (string speaker, string id) //Searches dialogue.json for text. Can be debugged like shown in Start().
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -37,7 +38,7 @@ public class JSONDialogueReader : MonoBehaviour {
         }
             return null;
     }
-    void DisplayDialogue (string speaker, string id)
+    void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it. Can be called like shown in Start(). 
     {
         if (!DialogueTextUI.transform.parent.gameObject.activeSelf)
         {
@@ -45,5 +46,6 @@ public class JSONDialogueReader : MonoBehaviour {
             DialogueTextUI.SetActive(true);
         }
         DialogueTextUI.GetComponent<Text>().text = GetText(speaker, id);
+        SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
 }

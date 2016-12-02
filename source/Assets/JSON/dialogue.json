@@ -7,7 +7,7 @@
         },
         {
             "id": 1,
-            "text":  "This is definitely dialogue! I should make this button on the right be some form of 'next' or 'continue'. It should definitely have a graphic, perhaps a <color=green>green</color> arrow?"
+            "text":  "This is definitely dialogue! The button on the right should definitely have a graphic, perhaps a <color=green>green</color> arrow?"
         }
     ]
 }
