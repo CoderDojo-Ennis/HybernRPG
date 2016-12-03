@@ -72,6 +72,9 @@ public class movement : MonoBehaviour {
 		} else {
 			anim.SetBool ("aiming", false);
 		}
+		if (Input.GetMouseButton (0)) {
+			anim.SetTrigger ("atk");
+		}
 	}
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.name == "floor") {
