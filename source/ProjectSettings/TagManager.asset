@@ -8,6 +8,8 @@ TagManager:
   - Exit
   - Enemy
   - Soda
+  - Good
+  - Bad
   layers:
   - Default
   - TransparentFX

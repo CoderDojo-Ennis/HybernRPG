@@ -16,7 +16,7 @@ public class aiming : MonoBehaviour {
 		Vector3 dir = Camera.main.ScreenToWorldPoint (mousePos);
 		dir = dir - transform.position;
 		float a = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
-		Debug.Log (a);
+		//Debug.Log (a);
 		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("aiming")) {
 			transform.rotation = Quaternion.AngleAxis (a+90, Vector3.forward);
 			if (a > -90 && a < 90) {
