@@ -8,6 +8,9 @@ TagManager:
   - Exit
   - Enemy
   - Soda
+  - Good
+  - Bad
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -60,6 +63,6 @@ TagManager:
   - name: body
     uniqueID: 1287881407
     locked: 0
-  - name: left
+  - name: back
     uniqueID: 3842529867
     locked: 0
