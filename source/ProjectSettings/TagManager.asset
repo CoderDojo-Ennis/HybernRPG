@@ -10,6 +10,7 @@ TagManager:
   - Soda
   - Good
   - Bad
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -59,7 +59,7 @@ public class movement : MonoBehaviour {
 		}
 		anim.SetFloat ("speed", speed);
 		if (Input.GetKeyDown (jumpKey)) { //jump
-			Debug.Log("jump!");
+			//Debug.Log("jump!");
 			if (jumps > 0) {
 				anim.SetTrigger ("jump");
 				rb.velocity = new Vector2 (0, 0);
@@ -67,7 +67,7 @@ public class movement : MonoBehaviour {
 				jumps--;
 			}
 		}
-		if (Input.GetMouseButton(1)) {
+		if (Input.GetMouseButton(1)) { //aiming
 			anim.SetBool ("aiming", true);
 		} else {
 			anim.SetBool ("aiming", false);
@@ -76,7 +76,7 @@ public class movement : MonoBehaviour {
 			anim.SetTrigger ("atk");
 		}
 	}
-	void OnCollisionEnter2D(Collision2D col) {
+	void OnCollisionEnter2D(Collision2D col) { //if colliding with floor, reset jumps
 		if(col.gameObject.name == "floor") {
 			jumps = 2;
 		}

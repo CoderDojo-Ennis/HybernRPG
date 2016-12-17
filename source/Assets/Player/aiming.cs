@@ -17,8 +17,8 @@ public class aiming : MonoBehaviour {
 		dir = dir - transform.position;
 		float a = Mathf.Atan2 (dir.y, dir.x) * Mathf.Rad2Deg;
 		//Debug.Log (a);
-		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("aiming")) {
-			transform.rotation = Quaternion.AngleAxis (a+90, Vector3.forward);
+		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("aiming")) { //if the animator is "aiming"
+			transform.rotation = Quaternion.AngleAxis (a+90, Vector3.forward); //point towards mouse
 			if (a > -90 && a < 90) {
 				transform.root.localScale = new Vector3 (-1f, 1f, 1f);
 			} else {
