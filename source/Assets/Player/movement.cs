@@ -11,6 +11,7 @@ public class movement : MonoBehaviour {
 	public KeyCode runKey;
 	public KeyCode jumpKey;
 	public Animator anim;
+	public float xScale = 1f;
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -28,9 +29,11 @@ public class movement : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
+		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f);
+		Debug.DrawRay(transform.position, Vector2.down * 0.05f);
 		Rigidbody2D rb = GetComponent<Rigidbody2D> (); 
 		if (Input.GetKey (leftKey)) { //move left
-			transform.localScale = new Vector3(1f,1f,1f);
+			xScale = 1f;
 			if (Input.GetKey (runKey)) { 
 				speed = 2;			
 			} else { 
@@ -43,7 +46,7 @@ public class movement : MonoBehaviour {
 			rb.velocity = v; 
 
 		} else if (Input.GetKey (rightKey)) { //move right
-			transform.localScale = new Vector3(-1f,1f,1f);
+			xScale = -1f;
 			if (Input.GetKey (runKey)) {
 				speed = 2;			
 			} else { 
@@ -57,6 +60,7 @@ public class movement : MonoBehaviour {
 		} else {
 			speed = 0;
 		}
+		transform.localScale = new Vector3(xScale, 1f, 1f);
 		anim.SetFloat ("speed", speed);
 		if (Input.GetKeyDown (jumpKey)) { //jump
 			//Debug.Log("jump!");
@@ -75,10 +79,13 @@ public class movement : MonoBehaviour {
 		if (Input.GetMouseButton (0)) {
 			anim.SetTrigger ("atk");
 		}
+		if(groundHit) {
+			jumps = 2;
+		}
 	}
 	void OnCollisionEnter2D(Collision2D col) { //if colliding with floor, reset jumps
 		if(col.gameObject.name == "floor") {
-			jumps = 2;
+			//jumps = 2;
 		}
 	}
 }

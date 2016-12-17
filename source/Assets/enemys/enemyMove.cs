@@ -7,6 +7,7 @@ public class enemyMove : MonoBehaviour {
 	public float force = 2;
 	public float range = 2;
 	public float atkRange = 0.5f;
+	public float xScale = 1;
 	public int jumps = 2;
 	public bool canjump = false;
 	public Animator anim;
@@ -29,10 +30,10 @@ public class enemyMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.left, 0.5f);
-		RaycastHit2D jumpHit = Physics2D.Raycast(transform.position + new Vector3(0, jumpHeight,0), Vector2.left, 0.5f);
-		//Debug.DrawRay(transform.position + new Vector3(0, jumpHeight,0), Vector2.left * 0.5f);
-		//Debug.DrawRay(transform.position, Vector2.left * 0.5f);
+		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.left * xScale, 0.5f);
+		RaycastHit2D jumpHit = Physics2D.Raycast(transform.position + new Vector3(0, jumpHeight,0), Vector2.left * xScale, 0.5f);
+		//Debug.DrawRay(transform.position + new Vector3(0, jumpHeight,0), Vector2.left * 0.5f * xScale);
+		//Debug.DrawRay(transform.position, Vector2.left * 0.5f * xScale);
 		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
 		targets = GameObject.FindGameObjectsWithTag("Good"); //stores all viable targets
 		float highestWeight = 0;
@@ -58,12 +59,13 @@ public class enemyMove : MonoBehaviour {
 				Vector3 posBM = bestMatch.transform.position;
 				Vector3 pos = transform.position;
 				if(pos.x > posBM.x) { //move to target
-					transform.localScale = new Vector3(1f,1f,1f);
+					xScale = 1f;
 					h = Vector2.left.x;
 				} else {
-					transform.localScale = new Vector3(-1f,1f,1f);
+					xScale = -1f;
 					h = Vector2.right.x;
 				}
+				transform.localScale = new Vector3(xScale,1f,1f);
 				Vector3 v = rb.velocity;
 				v.x = h * speed;
 				rb.velocity = v; 
@@ -84,9 +86,6 @@ public class enemyMove : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.gameObject.name == "floor") {
 			jumps = 2;
-		}
-		if(col.gameObject.tag == "Obstacle") {
-
 		}
 	}
 }
