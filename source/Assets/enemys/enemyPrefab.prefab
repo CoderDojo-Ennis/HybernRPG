@@ -799,14 +799,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
+  lastTargetSeen: {fileID: 0}
+  bestMatch: {fileID: 0}
   speed: 1
-  force: 2
-  range: 2.5
+  jumpForce: 5
+  range: 2
   atkRange: 0.5
+  xScale: 1
   jumps: 2
   canjump: 0
   anim: {fileID: 0}
   jumpHeight: 0.5
+  timer: 0
 --- !u!212 &212000010354385008
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,7 +16,11 @@ public class movement : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 	}
-
+	public void ForceMove(float force, Vector2 dir , Rigidbody2D rBody) {
+		rBody.velocity = new Vector2 (0, 0);
+		rBody.velocity += dir * force;
+		Debug.Log(dir);
+	}
 	void Update () {
 		/*
 		if (Input.GetKey (KeyCode.W)) {
@@ -30,7 +34,7 @@ public class movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f);
-		Debug.DrawRay(transform.position, Vector2.down * 0.05f);
+		//Debug.DrawRay(transform.position, Vector2.down * 0.05f);
 		Rigidbody2D rb = GetComponent<Rigidbody2D> (); 
 		if (Input.GetKey (leftKey)) { //move left
 			xScale = 1f;
@@ -66,8 +70,9 @@ public class movement : MonoBehaviour {
 			//Debug.Log("jump!");
 			if (jumps > 0) {
 				anim.SetTrigger ("jump");
-				rb.velocity = new Vector2 (0, 0);
-				rb.velocity += new Vector2 (0, force + speed);
+				//rb.velocity = new Vector2 (0, 0);
+				//rb.velocity += new Vector2 (0, force + speed);
+				ForceMove(force + speed, Vector2.up, rb);
 				jumps--;
 			}
 		}
@@ -81,11 +86,6 @@ public class movement : MonoBehaviour {
 		}
 		if(groundHit) {
 			jumps = 2;
-		}
-	}
-	void OnCollisionEnter2D(Collision2D col) { //if colliding with floor, reset jumps
-		if(col.gameObject.name == "floor") {
-			//jumps = 2;
 		}
 	}
 }
