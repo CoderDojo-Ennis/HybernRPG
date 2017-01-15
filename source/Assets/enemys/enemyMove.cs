@@ -11,11 +11,12 @@ public class enemyMove : MonoBehaviour {
 	public float atkRange = 0.5f;
 	public float xScale = 1;
 	public int jumps = 2;
-	public bool canjump = false;
 	public Animator anim;
 	public float jumpHeight = 0.5f;
-	public float timer = 0f;
-	
+	public float chaseTimer = 0;
+	public float idleTimer = 0;
+	public float idleWalking = 0;
+	public float idleTime = 2;
 	void Start () {
 		anim = GetComponent<Animator> ();
 		transform.hasChanged = false;
@@ -30,12 +31,15 @@ public class enemyMove : MonoBehaviour {
 		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.left * xScale, 0.5f);
 		RaycastHit2D jumpHit = Physics2D.Raycast(transform.position + new Vector3(0, jumpHeight,0), Vector2.left * xScale, 0.5f);
 		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
-		targets = GameObject.FindGameObjectsWithTag("Good"); //stores all viable targets
 		float highestWeight = 0;
 		bestMatch = null;
+		targets = GameObject.FindGameObjectsWithTag("Good"); //stores all viable targets
 		for (int i = 0; i < targets.Length; i++) { //goes through targets
 			GameObject target = targets [i];
+			if(target != null) {
+				Debug.Log(target);
 				if(Physics2D.Raycast(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position, range).collider.name == target.name) {
+					Debug.DrawRay(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position);
 					float weight = Vector3.Distance (target.transform.position, transform.position);
 					if (weight > highestWeight) { //chooses closest/most important target
 						highestWeight = weight;
@@ -43,19 +47,19 @@ public class enemyMove : MonoBehaviour {
 						lastTargetSeen = target;
 					}
 				}
-			//}
+			}
 		}
-		GameObject t;
+		GameObject t = null;
 		if(bestMatch == null) {
-			timer += Time.deltaTime;
-			if(timer > 0.75f) {
+			chaseTimer += Time.deltaTime;
+			if(chaseTimer > 1f) {
 				lastTargetSeen = null;
-				timer = 0;
+				chaseTimer = 0;
 			}
 			t = lastTargetSeen;
 		} else {
 			t = bestMatch;
-			timer = 0;
+			chaseTimer = 0;
 		}
 		if(t != null) {
 			 //if there is a best match
@@ -91,7 +95,33 @@ public class enemyMove : MonoBehaviour {
 					transform.hasChanged = false;
 				}
 			}
+		} else { //if there is no best match
+			idleTimer += Time.deltaTime;
+			if(idleTimer > idleTime) {
+				idleTimer = 0;
+			//am i standing or walking? If im walking, what direction?
+				idleWalking = Mathf.Round(Random.Range(-1f, 1f));
+			//how long should i walk or stand?
+				idleTime = Random.Range(0.5f, 4f);
+			}
+			if(idleWalking != 0) {
+				xScale = -idleWalking;
+				transform.localScale = new Vector3(xScale, 1f, 1f);
+				Vector3 v = rb.velocity;
+				v.x = idleWalking * speed;
+				rb.velocity = v; 
+				if(transform.hasChanged == false) {
+					if(groundHit == true) {
+						if(jumpHit == false) {
+							//rb.velocity = new Vector2 (0, 0);
+							//rb.velocity += new Vector2 (0, jumpForce + speed);
+							ForceMove(jumpForce + speed, Vector2.up, rb);
+						}
+					}
+				} else {
+						transform.hasChanged = false;
+				}
+			}
 		}
-		
 	}
 }
