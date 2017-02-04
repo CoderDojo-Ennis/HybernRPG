@@ -31,7 +31,7 @@ public class JSONDialogueReader : MonoBehaviour {
         ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
         //Debug
         //Debug.Log(GetText("Player", "0"));
-        DisplayDialogue("Player", "0"); // Latest DisplayDialogue called appears.
+        //DisplayDialogue("Player", "0"); // Latest DisplayDialogue called appears.
 	}
 
 	string GetText (string speaker, string id) //Searches dialogue.json for text. Can be debugged like shown in Start().
