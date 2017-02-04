@@ -17,7 +17,8 @@ public class CameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate ()
+	{
 		//this.transform.position = Player.position
 	//	float distCovered = (Time.time - startTime) * speed;
 	//	float fracJourney = distCovered / journeyLength;
