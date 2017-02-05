@@ -66,6 +66,7 @@ public class enemyMove : MonoBehaviour {
 		if(t != null) { //if there is a best match
 			if(Vector3.Distance (t.transform.position, transform.position) < atkRange) { //if target within atk range
 				anim.SetTrigger("atk");
+				speed = 0;
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
 			} else { //if there is target but not in atk range
 				speed = 1;
@@ -102,6 +103,7 @@ public class enemyMove : MonoBehaviour {
 				idleTime = Random.Range(0.5f, 4f);
 			}
 			if(idleWalking != 0) {
+				speed = 1;
 				xScale = -idleWalking;
 				transform.localScale = new Vector3(xScale, 1f, 1f);
 				Vector3 v = rb.velocity;
@@ -116,6 +118,8 @@ public class enemyMove : MonoBehaviour {
 				} else {
 						transform.hasChanged = false;
 				}
+			} else {
+				speed = 0;
 			}
 		}
 	}
