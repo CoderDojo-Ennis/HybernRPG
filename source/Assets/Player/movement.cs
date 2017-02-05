@@ -2,21 +2,22 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
-	public float speed = 1;
-	public int frames = 20;
-	public int counter = 0;
+	public float walkSpeed = 2;
+	public float runSpeed = 3;
+	public int frames;
 	
 	public KeyCode leftKey;
 	public KeyCode rightKey;
-	public KeyCode upKey;
-	public KeyCode downKey;
+	public KeyCode jumpKey;
+	public KeyCode runKey;
 	
 	
 	private Animator  anim;
 	private Rigidbody2D rb;
 	private float   xScale;
+	private int counter = 0;
 	private bool   isJumpPressed;
-	public bool canJump;
+	private bool canJump;
 	
 	private Vector3 position;
 	
@@ -33,36 +34,64 @@ public class movement : MonoBehaviour {
 	}
 	void Update()
 	{
-		
-		
 		//flips character depending on xScale
 		transform.localScale = new Vector3(-xScale * 1.33974f, 1.33974f, 1.33974f);
 	}
 	//Test for ground below player (to replenish jumps).
 	void FixedUpdate()
 	{		
-		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f);
-		Debug.DrawRay(transform.position, Vector2.down * 0.05f);
-		canJump = groundHit;
-		
 		if(Input.GetKey(leftKey))
 		{
 			xScale = -1;
-			
-			if(rb.velocity.x > -2)
+			if(Input.GetKey(runKey))
 			{
-				rb.AddForce(Vector2.right * ((-2 - rb.velocity.x)/10), ForceMode2D.Impulse);
+				if(rb.velocity.x > -runSpeed)
+				{
+					rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+				}
+			}
+			else
+			{
+				if(rb.velocity.x > -walkSpeed)
+				{
+					rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+				}
 			}
 		}
 		if(Input.GetKey(rightKey))
 		{
 			xScale = 1;
-			if(rb.velocity.x < 2)
+			if(Input.GetKey(runKey))
 			{
-				rb.AddForce(Vector2.right * ((2 - rb.velocity.x)/10), ForceMode2D.Impulse);
+				if(rb.velocity.x < runSpeed)
+				{
+					rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+				}
+			}
+			else
+			{
+				if(rb.velocity.x < walkSpeed)
+				{
+					rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+				}
 			}
 		}
-		/*if(Input.GetKey(upKey))
+		
+		Vector3 offset;
+		
+		offset = new Vector3(0.1f, 0, 0);
+		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
+		
+		offset = new Vector3(-0.1f, 0, 0);
+		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
+		
+		canJump = groundHitRight || groundHitLeft;
+		
+		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
+		
+		if(Input.GetKey(jumpKey))
 		{
 			if(counter > 0)
 			{
@@ -79,33 +108,31 @@ public class movement : MonoBehaviour {
 		else
 		{
 			counter = 0;
-		}*/
-		/*
+		}
+		
 		//Jumping controls
-		if(Input.GetKey(upKey))
-		{
-			
-				
-			if(counter <= frames && counter != 0)
+		if(Input.GetKey(jumpKey))
+		{		
+			if(counter <= frames && counter > 0)
 			{
-					rb.AddForce(Vector2.up * 0f, ForceMode2D.Force);
+				rb.AddForce(Vector2.up * 4f, ForceMode2D.Force);
 				//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
 			}
 			if(!isJumpPressed)
 			{
-				
-				if(canJump && counter == 1){
-					rb.AddForce(Vector2.up * 1.8f, ForceMode2D.Impulse);
+				if(canJump && counter == 1)
+				{
+					rb.AddForce(Vector2.up * 4f, ForceMode2D.Impulse);
 					//rb.AddForce(Vector2.up * 1.8f, ForceMode2D.Impulse);
 					canJump = false;
 				}
 			}
 		}
 		
-		isJumpPressed = Input.GetKey(upKey);
+		isJumpPressed = Input.GetKey(jumpKey);
 		
 		Debug.DrawLine(new Vector3(rb.position.x,rb.position.y, 0), position, Color.green, 4, false);
-		position = rb.position;*/
+		position = rb.position;
 	}
 	
 }

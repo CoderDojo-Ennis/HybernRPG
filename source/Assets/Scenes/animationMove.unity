@@ -417,7 +417,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
@@ -609,7 +609,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
@@ -751,7 +751,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 1412830578}
   - component: {fileID: 1412830582}
   - component: {fileID: 1412830583}
-  - component: {fileID: 1412830581}
+  - component: {fileID: 1412830579}
   m_Layer: 0
   m_Name: player
   m_TagString: Good
@@ -952,6 +952,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &1412830579
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412830577}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6d4f4eed42a74b54aac90db5080ad844, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.010605192, y: 0.38581887}
+  m_Size: {x: 0.23486967, y: 0.80656475}
+  m_Direction: 0
 --- !u!4 &1412830580
 Transform:
   m_ObjectHideFlags: 0
@@ -972,20 +986,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1412830581
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412830577}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6d4f4eed42a74b54aac90db5080ad844, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.0056358576, y: 0.37438238}
-  serializedVersion: 2
-  m_Size: {x: 0.22304177, y: 0.7832906}
 --- !u!114 &1412830582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,14 +998,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ac7ccb34c40924ba67247a936ce00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  walkSpeed: 2
+  runSpeed: 3
   frames: 15
-  counter: 0
   leftKey: 276
   rightKey: 275
-  upKey: 273
-  downKey: 274
-  canJump: 0
+  jumpKey: 273
+  runKey: 274
 --- !u!95 &1412830583
 Animator:
   serializedVersion: 3
@@ -1064,7 +1063,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486499753}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1078,7 +1077,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486499753}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1128,7 +1127,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
@@ -1270,7 +1269,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
@@ -1530,7 +1529,7 @@ Prefab:
     - target: {fileID: 114000011999733062, guid: 4c22b59eeade28d4bb7743410ffaf703,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212000013511670834, guid: 4c22b59eeade28d4bb7743410ffaf703,
         type: 2}
@@ -1545,7 +1544,7 @@ Prefab:
     - target: {fileID: 61000012124907004, guid: 4c22b59eeade28d4bb7743410ffaf703,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000011256641318, guid: 4c22b59eeade28d4bb7743410ffaf703, type: 2}
       propertyPath: m_LocalScale.x
@@ -1651,7 +1650,7 @@ Prefab:
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61000012584819210, guid: 7cacf3702b07bb0419c985585321df90,
         type: 2}
