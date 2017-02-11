@@ -43,6 +43,7 @@ public class HealthManager : MonoBehaviour {
 		}
 	}
 	//Woefully inefficient, but it does work.
+	//I hope health is doesn't go beyond 4.
 	void HealthShown ()
 	{
 		if (CurrentHealth <=0)
