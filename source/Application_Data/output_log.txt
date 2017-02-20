@@ -1,0 +1,27 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: ATI Mobility Radeon HD 4200 Series (ID=0x9712)
+    Vendor:   ATI
+    VRAM:     1082 MB
+    Driver:   8.712.0.0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.478 seconds
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Cian\Documents\GitHub\HybernRPG\source\Application_Data\Managed\System.dll (this message is harmless)
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
