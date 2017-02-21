@@ -35,7 +35,7 @@ public class movement : MonoBehaviour {
 	void Update()
 	{
 		//flips character depending on xScale
-		transform.localScale = new Vector3(-xScale * 1.33974f, 1.33974f, 1.33974f);
+		transform.localScale = new Vector3(xScale * 1.33974f, 1.33974f, 1.33974f);
 	}
 	//Test for ground below player (to replenish jumps).
 	void FixedUpdate()
