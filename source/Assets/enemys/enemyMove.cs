@@ -37,10 +37,10 @@ public class enemyMove : MonoBehaviour {
 		for (int i = 0; i < targets.Length; i++) { //goes through targets
 			GameObject target = targets [i];
 			if(target != null) {
-				RaycastHit2D checkVision = (Physics2D.Raycast(transform.position + new Vector3(0, 0.8f, 0), target.transform.position - transform.position, range));
+				RaycastHit2D checkVision = (Physics2D.Raycast(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position, range));
 				if(Vector3.Distance (target.transform.position, transform.position) < range) {
 					if(checkVision.collider.name == target.name) {
-						Debug.DrawRay(transform.position + new Vector3(0, 0.8f, 0), target.transform.position - transform.position);
+						Debug.DrawRay(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position);
 						float weight = Vector3.Distance (target.transform.position, transform.position);
 						if (weight > highestWeight) { //chooses closest/most important target
 							highestWeight = weight;
