@@ -4,12 +4,12 @@ using System.Collections;
 public class movement : MonoBehaviour {
 	public float walkSpeed = 2;
 	public float runSpeed = 3;
+	public AnimationControl animationControl;
 	
 	public KeyCode leftKey;
 	public KeyCode rightKey;
 	public KeyCode jumpKey;
 	public KeyCode runKey;
-	
 	
 	private int frames;
 	private Animator  anim;
@@ -88,6 +88,7 @@ public class movement : MonoBehaviour {
 		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
 		
 		canJump = groundHitRight || groundHitLeft;
+		animationControl.inAir = !canJump;
 		
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		

@@ -6,7 +6,7 @@ public class AnimationControl : MonoBehaviour {
 	
 	public bool walking;
 	public float speed;
-	
+	public bool inAir;
 	void Update ()
 	{
 		
@@ -20,11 +20,14 @@ public class AnimationControl : MonoBehaviour {
 		
 		this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("head").GetComponent<Animator>().SetFloat("Speed", speed);
-
+		this.transform.Find("head").GetComponent<Animator>().SetBool("InAir", inAir);
+		
 		this.transform.Find("Arms").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("Arms").GetComponent<Animator>().SetFloat("Speed", speed);
-
+		this.transform.Find("Arms").GetComponent<Animator>().SetBool("InAir", inAir);
+		
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
+		this.transform.Find("Legs").GetComponent<Animator>().SetBool("InAir", inAir);
 	}
 }

@@ -454,6 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walking: 0
   speed: 0
+  inAir: 0
 --- !u!1 &815056858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   runSpeed: 3
+  animationControl: {fileID: 797265503}
   leftKey: 276
   rightKey: 275
   jumpKey: 273
