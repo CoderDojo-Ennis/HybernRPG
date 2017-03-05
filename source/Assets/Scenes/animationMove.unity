@@ -203,7 +203,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c45aaf37a38e74f89575710ad084f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  ammo: {fileID: 0}
+--- !u!1 &253144708 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1940511988180876, guid: ba69048880a42794686af399b44c6d53,
+    type: 2}
+  m_PrefabInternal: {fileID: 1864039625}
+--- !u!114 &253144711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 253144708}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c45aaf37a38e74f89575710ad084f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: {fileID: 1507861883216930, guid: 2011e86381abbc047b0d7f922f7c8a3a, type: 2}
 --- !u!1 &325491939
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +472,7 @@ MonoBehaviour:
   walking: 0
   speed: 0
   inAir: 0
+  ArmLimbs: 7
 --- !u!1 &815056858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,10 +1062,10 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 3
   animationControl: {fileID: 797265503}
-  leftKey: 276
-  rightKey: 275
-  jumpKey: 273
-  runKey: 274
+  leftKey: 97
+  rightKey: 100
+  jumpKey: 119
+  runKey: 115
 --- !u!50 &1410290189
 Rigidbody2D:
   serializedVersion: 4
@@ -1819,6 +1837,31 @@ Prefab:
       propertyPath: footFall2
       value: 
       objectReference: {fileID: 8300000, guid: edcd62e9c157ca445bbd56d5ede21504, type: 3}
+    - target: {fileID: 95318148254968082, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95807877439680866, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212017284652384332, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95049575201663574, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95807877439680866, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114993960064196242, guid: ba69048880a42794686af399b44c6d53, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ba69048880a42794686af399b44c6d53, type: 2}
