@@ -1102,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &1486499754
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1814,6 +1814,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.13665348
       objectReference: {fileID: 0}
+    - target: {fileID: 114979944619643810, guid: ba69048880a42794686af399b44c6d53,
+        type: 2}
+      propertyPath: footFall2
+      value: 
+      objectReference: {fileID: 8300000, guid: edcd62e9c157ca445bbd56d5ede21504, type: 3}
     m_RemovedComponents:
     - {fileID: 114993960064196242, guid: ba69048880a42794686af399b44c6d53, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ba69048880a42794686af399b44c6d53, type: 2}
