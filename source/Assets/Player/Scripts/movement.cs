@@ -79,18 +79,19 @@ public class movement : MonoBehaviour {
 		
 		Vector3 offset;
 		
-		offset = new Vector3(0.15f, 0.02f, 0);
-		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.5f);
+		offset = new Vector3(0.15f, -0.01f, 0);
+		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
 		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
 		
-		offset = new Vector3(-0.15f, 0.02f, 0);
-		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.5f);
+		offset = new Vector3(-0.15f, -0.01f, 0);
+		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
 		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
 		
 		canJump = groundHitRight || groundHitLeft;
 		
-		//animationControl.inAir = !canJump;
-		if(rb.velocity.y == 0)
+		animationControl.inAir = !canJump;
+		
+		/*if(rb.velocity.y == 0)
 		{
 			animationControl.inAir = false;
 		}
@@ -101,7 +102,7 @@ public class movement : MonoBehaviour {
 		if(rb.velocity.y >= 0.2)
 		{
 			animationControl.inAir = true;
-		}
+		}*/
 		
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		
