@@ -539,7 +539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &170098309
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -919,6 +919,17 @@ MonoBehaviour:
   playerPhysics: {fileID: 1410290186}
   anchor: {fileID: 1092287846}
   lineRenderer: {fileID: 0}
+--- !u!114 &253144713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 253144708}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba24cc75ed36ee943937597f22be7b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &254017420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &274070003
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1243,6 +1254,25 @@ Transform:
   m_Father: {fileID: 1486499761}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.4840002}
+--- !u!1 &328275465 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1531666341101982, guid: ba69048880a42794686af399b44c6d53,
+    type: 2}
+  m_PrefabInternal: {fileID: 1864039625}
+--- !u!61 &328275468
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328275465}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.027468955, y: -0.12332493}
+  serializedVersion: 2
+  m_Size: {x: 0.13397399, y: 0.33461896}
 --- !u!1 &331471040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2152,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &564419942 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1038030046947540, guid: ba69048880a42794686af399b44c6d53,
+    type: 2}
+  m_PrefabInternal: {fileID: 1864039625}
+--- !u!61 &564419944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564419942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.017132647, y: -0.2154824}
+  serializedVersion: 2
+  m_Size: {x: 0.15464644, y: 0.5189433}
 --- !u!1 &573580574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &635827723
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2832,7 +2881,7 @@ MonoBehaviour:
   walking: 0
   speed: 0
   inAir: 0
-  ArmLimbs: 3
+  ArmLimbs: 1
 --- !u!1 &806024498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,7 +4774,7 @@ SpringJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410290186}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1092287847}
@@ -4887,7 +4936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &1486499754
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6435,6 +6484,11 @@ Prefab:
         type: 2}
       propertyPath: orthographic size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 92000011271949406, guid: 768feb696d1245247a6511245f3b5098,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 768feb696d1245247a6511245f3b5098, type: 2}

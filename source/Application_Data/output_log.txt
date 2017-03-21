@@ -19,25 +19,61 @@ Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Applicat
 Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.605 seconds
+- Completed reload, in  0.201 seconds
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\System.dll (this message is harmless)
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+desktop: 1366x768 59Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.876825 ms
+UnloadTime: 89.772835 ms
 NullReferenceException: Object reference not set to an instance of an object
   at NewGame.Awake () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 28.667406 ms
+UnloadTime: 21.256914 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 436.
-Total: 0.649260 ms (FindLiveObjects: 0.066934 ms CreateObjectMapping: 0.065595 ms MarkObjects: 0.466307 ms  DeleteObjects: 0.049084 ms)
+Total: 21.426479 ms (FindLiveObjects: 0.093707 ms CreateObjectMapping: 0.088799 ms MarkObjects: 15.418926 ms  DeleteObjects: 5.822815 ms)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(0.0, 1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 (0.0, 1.0)
  
@@ -260,4 +296,4 @@ Total: 0.649260 ms (FindLiveObjects: 0.066934 ms CreateObjectMapping: 0.065595 m
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: df4 -> priority: 1 
+  Thread -> id: 2444 -> priority: 1 
