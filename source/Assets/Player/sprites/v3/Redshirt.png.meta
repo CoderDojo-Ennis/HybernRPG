@@ -1,21 +1,19 @@
 fileFormatVersion: 2
-guid: d4eca234e7809a7478da9af91f4654f1
-timeCreated: 1490438444
+guid: 53a038b8780575243ba26ffa26147418
+timeCreated: 1490472942
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: head-RedShirt
-    21300002: shoulder2-Redshirt
-    21300004: Torso-Redshirt
+    21300000: head-Redshirt
+    21300002: Shoulder2Redshirt
+    21300004: torso-Redshirt
     21300006: shoulder1-Redshirt
-    21300008: forarm2-Redshirt
-    21300010: thigh1-Redshirt
-    21300012: rpg main red shirt_6
-    21300014: thigh1-Redshirt
-    21300016: rpg main red shirt_8
+    21300008: forearm2-Redshirt
+    21300010: thigh2-Redshirt
+    21300012: thigh1-Redshirt
+    21300014: forearm1-Redshirt
+    21300016: calf2-Redshirt
     21300018: calf1-Redshirt
-    21300020: torso-Redshirt
-    21300022: forearm1-Redshirt
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -82,7 +80,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: head-RedShirt
+      name: head-Redshirt
       rect:
         serializedVersion: 2
         x: 33
@@ -90,18 +88,18 @@ TextureImporter:
         width: 31
         height: 33
       alignment: 9
-      pivot: {x: 0.5698687, y: 0.05677056}
+      pivot: {x: 0.5698687, y: 0.050519306}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shoulder2-Redshirt
+      name: Shoulder2Redshirt
       rect:
         serializedVersion: 2
-        x: 21
-        y: 45
-        width: 12
-        height: 19
+        x: 20
+        y: 44
+        width: 14
+        height: 20
       alignment: 9
       pivot: {x: 0.7050314, y: 0.7701591}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,10 +109,10 @@ TextureImporter:
       name: torso-Redshirt
       rect:
         serializedVersion: 2
-        x: 36
-        y: 32
-        width: 28
-        height: 32
+        x: 35
+        y: 31
+        width: 30
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,51 +122,38 @@ TextureImporter:
       name: shoulder1-Redshirt
       rect:
         serializedVersion: 2
-        x: 67
-        y: 44
+        x: 66
+        y: 45
         width: 14
         height: 20
       alignment: 9
-      pivot: {x: 0.35435757, y: 0.7707861}
+      pivot: {x: 0.3543576, y: 0.8160448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: forarm2-Redshirt
+      name: forearm2-Redshirt
       rect:
         serializedVersion: 2
-        x: 21
-        y: 24
-        width: 12
-        height: 18
+        x: 20
+        y: 26
+        width: 14
+        height: 17
       alignment: 9
       pivot: {x: 0.7050314, y: 0.8277065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: forearm1-Redshirt
+      name: thigh2-Redshirt
       rect:
         serializedVersion: 2
-        x: 67
-        y: 25
-        width: 14
-        height: 18
+        x: 35
+        y: 20
+        width: 15
+        height: 9
       alignment: 9
-      pivot: {x: 0.718947, y: 0.8160447}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: rpg main red shirt_6
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 21
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.485062, y: 0.8236501}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -176,25 +161,38 @@ TextureImporter:
       name: thigh1-Redshirt
       rect:
         serializedVersion: 2
-        x: 52
-        y: 21
-        width: 13
-        height: 7
+        x: 51
+        y: 20
+        width: 15
+        height: 9
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.4701246, y: 0.8485463}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: rpg main red shirt_8
+      name: forearm1-Redshirt
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 27
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.2556798, y: 0.8160448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: calf2-Redshirt
       rect:
         serializedVersion: 2
         x: 35
         y: 1
-        width: 14
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.910787}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -202,12 +200,12 @@ TextureImporter:
       name: calf1-Redshirt
       rect:
         serializedVersion: 2
-        x: 52
+        x: 51
         y: 1
-        width: 13
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5149376, y: 0.9356833}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

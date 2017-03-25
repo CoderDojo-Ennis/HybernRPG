@@ -65,7 +65,8 @@ public class enemyMove : MonoBehaviour {
 		}
 		if(t != null) { //if there is a best match
 			if(Vector3.Distance (t.transform.position, transform.position) < atkRange) { //if target within atk range
-				anim.SetTrigger("atk");
+				/**Temporarily disabled. Error generated when trigger set - James**/
+				//anim.SetTrigger("atk");
 				speed = 0;
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
 			} else { //if there is target but not in atk range
