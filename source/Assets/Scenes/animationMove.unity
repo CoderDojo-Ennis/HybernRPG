@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 0}
   lerpValue: 0
+  recoilOffset: 0
+  recoilLerpValue: 0
 --- !u!1 &24175669
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 0}
   lerpValue: 0
+  recoilOffset: 0
+  recoilLerpValue: 0
 --- !u!1 &203362707
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 1507861883216930, guid: 2011e86381abbc047b0d7f922f7c8a3a, type: 2}
   lerpValue: 0.1
+  recoilOffset: 0.1
+  recoilLerpValue: 0.5
 --- !u!114 &253144712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2345,6 +2351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 0}
   lerpValue: 0
+  recoilOffset: 0
+  recoilLerpValue: 0
 --- !u!1 &600124284
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,6 +5887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: {fileID: 0}
   lerpValue: 0
+  recoilOffset: 0
+  recoilLerpValue: 0
 --- !u!1 &1715829723
 GameObject:
   m_ObjectHideFlags: 0
@@ -6435,25 +6445,25 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300006, guid: 53a038b8780575243ba26ffa26147418,
+      objectReference: {fileID: 21300004, guid: d692e7da8d7ccf849a147b00b7cff91d,
         type: 3}
     - target: {fileID: 212254257751236140, guid: ba69048880a42794686af399b44c6d53,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300002, guid: 53a038b8780575243ba26ffa26147418,
+      objectReference: {fileID: 21300006, guid: d692e7da8d7ccf849a147b00b7cff91d,
         type: 3}
     - target: {fileID: 212894022272039496, guid: ba69048880a42794686af399b44c6d53,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300014, guid: 53a038b8780575243ba26ffa26147418,
+      objectReference: {fileID: 21300008, guid: d692e7da8d7ccf849a147b00b7cff91d,
         type: 3}
     - target: {fileID: 212782427742570872, guid: ba69048880a42794686af399b44c6d53,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300008, guid: 53a038b8780575243ba26ffa26147418,
+      objectReference: {fileID: 21300002, guid: d692e7da8d7ccf849a147b00b7cff91d,
         type: 3}
     - target: {fileID: 212017284652384332, guid: ba69048880a42794686af399b44c6d53,
         type: 2}
@@ -6561,7 +6571,7 @@ Prefab:
     - target: {fileID: 20000010705774748, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: orthographic size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 92000011271949406, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
