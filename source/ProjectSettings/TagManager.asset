@@ -66,3 +66,6 @@ TagManager:
   - name: BodyFront
     uniqueID: 3842529867
     locked: 0
+  - name: Projectiles
+    uniqueID: 3054740177
+    locked: 0
