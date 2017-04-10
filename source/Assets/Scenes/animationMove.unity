@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 147352811}
   m_Layer: 0
   m_Name: SlantedStone1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,6 +698,10 @@ Prefab:
     - target: {fileID: 1000010656310600, guid: 7cacf3702b07bb0419c985585321df90, type: 2}
       propertyPath: m_Name
       value: Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010656310600, guid: 7cacf3702b07bb0419c985585321df90, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cacf3702b07bb0419c985585321df90, type: 2}
@@ -1108,8 +1112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPhysics: {fileID: 1410290186}
-  anchor: {fileID: 1092287846}
-  lineRenderer: {fileID: 0}
+  hook: {fileID: 1092287846}
+  lineRenderer: {fileID: 1410290192}
+  speed: 20
+  retract: 0
 --- !u!114 &253144713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1730,7 @@ GameObject:
   - component: {fileID: 388341753}
   m_Layer: 0
   m_Name: Link7
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1848,7 +1854,7 @@ GameObject:
   - component: {fileID: 403059936}
   m_Layer: 0
   m_Name: Link14
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2071,7 +2077,7 @@ GameObject:
   - component: {fileID: 425071712}
   m_Layer: 0
   m_Name: Link10
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2576,7 +2582,7 @@ GameObject:
   - component: {fileID: 573580576}
   m_Layer: 0
   m_Name: Link13
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3038,7 +3044,7 @@ GameObject:
   - component: {fileID: 706140827}
   m_Layer: 0
   m_Name: floor2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3276,7 +3282,7 @@ MonoBehaviour:
   walking: 0
   speed: 0
   inAir: 0
-  ArmLimbs: 7
+  ArmLimbs: 3
 --- !u!1 &806024498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3431,7 @@ GameObject:
   - component: {fileID: 819950448}
   m_Layer: 0
   m_Name: Link9
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3616,7 +3622,7 @@ GameObject:
   - component: {fileID: 846426951}
   m_Layer: 0
   m_Name: Link8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3838,7 +3844,7 @@ GameObject:
   - component: {fileID: 972405335}
   m_Layer: 0
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4104,7 +4110,7 @@ GameObject:
   - component: {fileID: 988663498}
   m_Layer: 0
   m_Name: Link12
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4293,7 +4299,7 @@ GameObject:
   - component: {fileID: 1011936722}
   m_Layer: 0
   m_Name: SlantedStone2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4443,7 +4449,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092287846}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4455,7 +4461,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1092287848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092287846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c169870c41ffea54aa0ba1ae75033873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grapplingHook: {fileID: 0}
 --- !u!1 &1103318746
 GameObject:
   m_ObjectHideFlags: 0
@@ -4470,7 +4488,7 @@ GameObject:
   - component: {fileID: 1103318748}
   m_Layer: 0
   m_Name: Link4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4688,7 +4706,7 @@ GameObject:
   - component: {fileID: 1139626638}
   m_Layer: 0
   m_Name: Link2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5211,7 +5229,7 @@ GameObject:
   - component: {fileID: 1374316698}
   m_Layer: 0
   m_Name: Link11
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5861,7 +5879,7 @@ GameObject:
   - component: {fileID: 1571064517}
   m_Layer: 0
   m_Name: Link5
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6176,7 +6194,7 @@ GameObject:
   - component: {fileID: 1644862991}
   m_Layer: 0
   m_Name: Link1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6578,7 +6596,7 @@ GameObject:
   - component: {fileID: 1715829725}
   m_Layer: 0
   m_Name: Link6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7439,7 +7457,7 @@ GameObject:
   - component: {fileID: 1949778743}
   m_Layer: 0
   m_Name: Link3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
