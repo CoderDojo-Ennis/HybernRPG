@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 95368718626543770}
   - component: {fileID: 114237729998425410}
   - component: {fileID: 70614644081283910}
-  - component: {fileID: 114774736067380196}
   m_Layer: 0
   m_Name: LaserCultist
   m_TagString: Untagged
@@ -383,7 +382,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1239551621626936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: 1.24, z: 0}
+  m_LocalPosition: {x: -10.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4123515922207494}
@@ -595,31 +594,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserCultist: {fileID: 0}
   targets: []
   lastTargetSeen: {fileID: 0}
   bestMatch: {fileID: 0}
   Speed: 10
   jumpForce: 6
   range: 3
-  atkRange: 0.5
+  maxAtkRange: 0
+  minAtkRange: 0
   xScale: 1
+  jumps: 0
   anim: {fileID: 0}
-  jumpHeight: 0.6
+  jumpLevel: 0
   chaseTimer: 0
   idleTimer: 0
   idleWalking: 0
   idleTime: 2
---- !u!114 &114774736067380196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239551621626936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f837e1d597eb0d47a289fd17b43ec90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemyType: 
 --- !u!212 &212012179973610648
 SpriteRenderer:
   m_ObjectHideFlags: 1

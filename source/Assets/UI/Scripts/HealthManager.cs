@@ -9,6 +9,11 @@ public class HealthManager : MonoBehaviour {
 	GameObject Health1;
 	GameObject Health2;
 	GameObject Health3;
+    GameObject Health4;
+    GameObject Health5;
+    GameObject Health6;
+    GameObject Health7;
+    GameObject Health8;
 	
 	public int MaxHealth;
 	public int CurrentHealth;
@@ -21,7 +26,7 @@ public class HealthManager : MonoBehaviour {
 		Health1 = HealthOverview.transform.GetChild(0).gameObject;
 		Health2 = HealthOverview.transform.GetChild(1).gameObject;
 		Health3 = HealthOverview.transform.GetChild(2).gameObject;
-		MaxHealth = 3;
+		MaxHealth = 8;
 		CurrentHealth = MaxHealth;
 		IsDead = false;
 	}
@@ -37,41 +42,48 @@ public class HealthManager : MonoBehaviour {
 		
 		if (CurrentHealth <= 0)
 		{
+            Health1.SetActive(false);
 			IsDead = true;
+            Application.Quit();
 			//I presume something might happen if you die?
 			//Someone else can do that.
 		}
 	}
-	//Woefully inefficient, but it does work.
-	//I hope health doesn't go beyond 4.
+    //Redone health system for 8 HP (not 3)
+    //Not as inefficient!
+    //Still not good
 	void HealthShown ()
 	{
-		if (CurrentHealth <=0)
-		{
-			Health1.SetActive(false);
-			Health2.SetActive(false);
-			Health3.SetActive(false);
-		}
-		
-		if (CurrentHealth == 1)
-		{
-			Health1.SetActive(true);
-			Health2.SetActive(false);
-			Health3.SetActive(false);
-		}
-		
-		if (CurrentHealth == 2)
-		{
-			Health1.SetActive(true);
-			Health2.SetActive(true);
-			Health3.SetActive(false);
-		}
-		
-		if (CurrentHealth == 3)
-		{
-			Health1.SetActive(true);
-			Health2.SetActive(true);
-			Health3.SetActive(true);
-		}
+        if (CurrentHealth > 1)
+            Health1.SetActive(true);
+        else Health1.SetActive(false);
+
+        if (CurrentHealth > 2)
+            Health2.SetActive(true);
+        else Health2.SetActive(false);
+
+        if (CurrentHealth > 3)
+            Health3.SetActive(true);
+        else Health3.SetActive(false);
+
+        if (CurrentHealth > 4)
+            Health4.SetActive(true);
+        else Health4.SetActive(false);
+
+        if (CurrentHealth > 5)
+            Health5.SetActive(true);
+        else Health5.SetActive(false);
+
+        if (CurrentHealth > 6)
+            Health6.SetActive(true);
+        else Health6.SetActive(false);
+
+        if (CurrentHealth > 7)
+            Health7.SetActive(true);
+        else Health7.SetActive(false);
+
+        if (CurrentHealth >= 8)
+            Health8.SetActive(true);
+        else Health8.SetActive(false);
 	}
 }

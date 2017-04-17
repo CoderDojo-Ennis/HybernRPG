@@ -6,15 +6,16 @@ public class LaserCultist : EnemyFramework {
     //Sets variables from EnemyFramework
     public LaserCultist()
     {
-        Attack = 4;
+        Attack = 5;
+        AttackRangeMax = 12f;
+        AttackRangeMin = 4f;
         Beam = true;
-        MaxHealth = 4;
+        HealthCurrent = 4;
+        HealthMax = 4;
         Melee = false;
-        MinAttackRange = 4f;
-        MaxAttackRange = 10f;
         Jumps = 1;
         JumpHeight = 0.5f;
         Projectile = false;
-        Speed = 8f;
+        Speed = 2f;
     }
 }
