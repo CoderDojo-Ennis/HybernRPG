@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: ad66ee7d9028e0c46a8e7e5907cdd7f7
-timeCreated: 1489006285
+timeCreated: 1493057627
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerPhysics: {instanceID: 0}
+  - hook: {instanceID: 0}
+  - lineRenderer: {instanceID: 0}
+  - transitionClip: {fileID: 7400000, guid: 6e187a4c49f75bd4395ffea973bd20a2, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

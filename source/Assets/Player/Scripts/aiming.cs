@@ -20,7 +20,7 @@ public class aiming : MonoBehaviour {
 	public CameraFollow cameraFollow;
 	
 	// Use this for initialization
-	void Start ()
+	void OnEnable()
 	{
        rotation1 = transform.GetChild(0).transform.rotation;
 	   rotation2 = transform.GetChild(1).transform.rotation;
