@@ -8,6 +8,7 @@ public class enemyMove : EnemyFramework {
 	public GameObject[] targets;
 	public GameObject lastTargetSeen = null;
 	public GameObject bestMatch = null;
+    public GameObject Player;
 	public float Speed;
 	public float jumpForce = 2;
 	public float range = 2;
@@ -21,6 +22,7 @@ public class enemyMove : EnemyFramework {
 	public float idleTimer = 0;
 	public float idleWalking = 0;
 	public float idleTime = 2;
+    public float beamSpeed = 1;
     public string enemyType;
     private EnemyFramework enemyFramework;
     private EnemyFramework newEnemy;
@@ -76,10 +78,11 @@ public class enemyMove : EnemyFramework {
 			chaseTimer = 0;
 		}
 		if(t != null) { //if there is a best match
-			if(Vector3.Distance (t.transform.position, transform.position) < maxAtkRange) { //if target within atk range
+			if(Vector3.Distance (t.transform.position, transform.position) > 0) { //if target within atk range
 				/**Temporarily disabled. Error generated when trigger set - James**/
 				//anim.SetTrigger("atk");
 				Speed = 0;
+                BeamAttack(lastTargetSeen);
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
 			} else { //if there is target but not in atk range
 				Speed = newEnemy.Speed;

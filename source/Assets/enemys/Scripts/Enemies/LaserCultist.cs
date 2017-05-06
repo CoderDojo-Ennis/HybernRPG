@@ -7,14 +7,13 @@ public class LaserCultist : EnemyFramework {
     public LaserCultist()
     {
         Attack = 5;
-        AttackRangeMax = 12f;
+        AttackRangeMax = 0f;
         AttackRangeMin = 4f;
         Beam = true;
-        HealthCurrent = 4;
-        HealthMax = 4;
-        Melee = false;
+        Health = 4;
         Jumps = 1;
         JumpHeight = 0.5f;
+        Melee = false;
         Projectile = false;
         Speed = 2f;
     }

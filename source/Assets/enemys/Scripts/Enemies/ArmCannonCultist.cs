@@ -10,11 +10,10 @@ public class ArmCannonCultist : EnemyFramework {
         AttackRangeMax = 0f; //5f
         AttackRangeMin = 2f;
         Beam = false;
-        HealthCurrent = 5;
-        HealthMax = 5;
-        Melee = false;
+        Health = 5;
         Jumps = 1;
         JumpHeight = 0.5f;
+        Melee = false;
         Projectile = true;
         Speed = 0.75f; 
     }
