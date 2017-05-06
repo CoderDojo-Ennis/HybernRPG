@@ -30,19 +30,19 @@ public class EnemyFramework : MonoBehaviour {
     public bool Projectile { get; set; }
     public float Speed { get; set; }
 
-    //Attack in close quarters
+    //Default attack in close quarters
     public void MeleeAttack()
     {
 
     }
     
-    //Ranged attack affected by gravity
+    //Default ranged attack affected by gravity
     public void ProjectileAttack()
     {
 
     }
 
-    //Ranged attack in straight line
+    //Default ranged attack in straight line
     public void BeamAttack(GameObject target)
     {
         Component Control;
@@ -64,7 +64,7 @@ public class EnemyFramework : MonoBehaviour {
         Debug.Log("Over");
         
     }
-    //Only called in enemyMove (Should probably be enemyBehaviour)
+    //Only called in enemyBehaviour
     //'s' is equal to enemyType
     public EnemyFramework EnemyCreation(string s)
     {
