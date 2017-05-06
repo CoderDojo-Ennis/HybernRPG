@@ -11,7 +11,7 @@ public class LaserControl : MonoBehaviour {
 
     public void LaserBehaviour ()
     {
-        Component Control;
+        /*Component Control;
         Control = LaserBeam.GetComponent("LaserControl");
         //LaserBeam.getComponent("LaserControl").LaserBehaviour();
         Vector3 lastPos;
@@ -27,6 +27,6 @@ public class LaserControl : MonoBehaviour {
         Instantiate(LaserBeam);
         //LaserBeam.transform.position = Vector3.MoveTowards(transform.position + new Vector3(0f, 0.6f, 0f), target.transform.position, 2 * Time.deltaTime);
         LaserBeam.transform.position = Vector3.MoveTowards(lastPos, targetPos, 10 * lerpMove);
-        Debug.Log("Over");
+        Debug.Log("Over");*/
     }
 }

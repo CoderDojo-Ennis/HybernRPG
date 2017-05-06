@@ -82,7 +82,7 @@ public class enemyMove : EnemyFramework {
 				/**Temporarily disabled. Error generated when trigger set - James**/
 				//anim.SetTrigger("atk");
 				Speed = 0;
-                BeamAttack(lastTargetSeen);
+                //BeamAttack(lastTargetSeen);
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
 			} else { //if there is target but not in atk range
 				Speed = newEnemy.Speed;
@@ -120,6 +120,7 @@ public class enemyMove : EnemyFramework {
 			}
 			if(idleWalking != 0) {
 				Speed = newEnemy.Speed;
+			
 				xScale = -idleWalking;
 				transform.localScale = new Vector3(xScale, 1f, 1f);
 				Vector3 v = rb.velocity;

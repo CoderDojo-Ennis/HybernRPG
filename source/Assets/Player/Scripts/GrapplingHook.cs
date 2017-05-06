@@ -157,7 +157,7 @@ public class GrapplingHook : MonoBehaviour {
 			
 			float angle = Mathf.Atan2(pointTo.y, pointTo.x) * Mathf.Rad2Deg;
 			
-			Vector2 velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+			Vector2 velocity = Quaternion.EulerAngles(0,0, angle) * new Vector2(speed, 0);//new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
 			
 			//Set properties of hook to properties of forearm
 			hook.transform.position = position1Sub;

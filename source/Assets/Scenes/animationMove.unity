@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 170098310}
   - component: {fileID: 170098309}
   m_Layer: 0
-  m_Name: enemyPrefab (2)
+  m_Name: MeleeCultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,22 +578,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserBeam: {fileID: 0}
   targets: []
   lastTargetSeen: {fileID: 0}
   bestMatch: {fileID: 0}
-  speed: 1
+  Player: {fileID: 0}
+  Speed: 0
   jumpForce: 6
   range: 3
-  atkRange: 0.5
+  maxAtkRange: 0
+  minAtkRange: 0
   xScale: 1
-  jumps: 2
+  jumpAmount: 0
   anim: {fileID: 0}
-  jumpHeight: 0.6
+  jumpLevel: 0
   chaseTimer: 0
   idleTimer: 0
   idleWalking: 0
   idleTime: 2
-  playerStats: {fileID: 1410290191}
+  beamSpeed: 1
+  enemyType: 
 --- !u!95 &170098311
 Animator:
   serializedVersion: 3
@@ -940,6 +944,7 @@ MonoBehaviour:
   hook: {fileID: 916547206}
   retract: 0
   output: 0
+  Angle: 0
 --- !u!114 &253144713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,7 +1181,7 @@ GameObject:
   - component: {fileID: 274070004}
   - component: {fileID: 274070003}
   m_Layer: 0
-  m_Name: enemyPrefab (3)
+  m_Name: MeleeCultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,22 +1213,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserBeam: {fileID: 0}
   targets: []
   lastTargetSeen: {fileID: 0}
   bestMatch: {fileID: 0}
-  speed: 1
+  Player: {fileID: 0}
+  Speed: 0
   jumpForce: 6
   range: 3
-  atkRange: 0.5
+  maxAtkRange: 0
+  minAtkRange: 0
   xScale: 1
-  jumps: 2
+  jumpAmount: 0
   anim: {fileID: 0}
-  jumpHeight: 0.6
+  jumpLevel: 0
   chaseTimer: 0
   idleTimer: 0
   idleWalking: 0
   idleTime: 2
-  playerStats: {fileID: 1410290191}
+  beamSpeed: 1
+  enemyType: 
 --- !u!95 &274070005
 Animator:
   serializedVersion: 3
@@ -1952,7 +1961,7 @@ GameObject:
   - component: {fileID: 635827724}
   - component: {fileID: 635827723}
   m_Layer: 0
-  m_Name: enemyPrefab (1)
+  m_Name: MeleeCultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1984,22 +1993,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserBeam: {fileID: 0}
   targets: []
   lastTargetSeen: {fileID: 0}
   bestMatch: {fileID: 0}
-  speed: 1
+  Player: {fileID: 0}
+  Speed: 0
   jumpForce: 6
   range: 3
-  atkRange: 0.5
+  maxAtkRange: 0
+  minAtkRange: 0
   xScale: 1
-  jumps: 2
+  jumpAmount: 0
   anim: {fileID: 0}
-  jumpHeight: 0.6
+  jumpLevel: 0
   chaseTimer: 0
   idleTimer: 0
   idleWalking: 0
   idleTime: 2
-  playerStats: {fileID: 1410290191}
+  beamSpeed: 1
+  enemyType: 
 --- !u!95 &635827725
 Animator:
   serializedVersion: 3
@@ -3764,7 +3777,7 @@ GameObject:
   - component: {fileID: 1486499756}
   - component: {fileID: 1486499754}
   m_Layer: 0
-  m_Name: enemyPrefab
+  m_Name: MeleeCultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3796,22 +3809,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserBeam: {fileID: 0}
   targets: []
   lastTargetSeen: {fileID: 0}
   bestMatch: {fileID: 0}
-  speed: 1
+  Player: {fileID: 0}
+  Speed: 0
   jumpForce: 6
   range: 3
-  atkRange: 0.5
+  maxAtkRange: 0
+  minAtkRange: 0
   xScale: 1
-  jumps: 2
+  jumpAmount: 0
   anim: {fileID: 0}
-  jumpHeight: 0.6
+  jumpLevel: 0
   chaseTimer: 0
   idleTimer: 0
   idleWalking: 0
   idleTime: 2
-  playerStats: {fileID: 1410290191}
+  beamSpeed: 1
+  enemyType: 
 --- !u!95 &1486499757
 Animator:
   serializedVersion: 3
