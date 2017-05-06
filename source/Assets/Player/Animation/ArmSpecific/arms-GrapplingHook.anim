@@ -60,6 +60,22 @@ AnimationClip:
     path: 
     classID: 114
     script: {fileID: 11500000, guid: b5c45aaf37a38e74f89575710ad084f6, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.9335804
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: rotation.w
+    path: Arms/shoulder1
+    classID: 4
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -146,6 +162,22 @@ AnimationClip:
     path: 
     classID: 114
     script: {fileID: 11500000, guid: b5c45aaf37a38e74f89575710ad084f6, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.9335804
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: rotation.w
+    path: Arms/shoulder1
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0

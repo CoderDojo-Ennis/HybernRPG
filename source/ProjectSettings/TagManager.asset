@@ -45,9 +45,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Floor
     uniqueID: 3131993583
     locked: 0
@@ -62,6 +59,9 @@ TagManager:
     locked: 0
   - name: BodyMiddle
     uniqueID: 1287881407
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: BodyFront
     uniqueID: 3842529867
