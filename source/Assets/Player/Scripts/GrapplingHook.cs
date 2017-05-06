@@ -18,6 +18,9 @@ public class GrapplingHook : MonoBehaviour {
 	
 	public bool retract;
 	
+	public float output;
+	public float Angle;
+	
 	void OnEnable()
 	{
 		rotation1 = transform.GetChild(0).transform.rotation;
@@ -38,9 +41,9 @@ public class GrapplingHook : MonoBehaviour {
 	{
 		if(Input.GetMouseButtonDown(0)){
 				//Mouse pressed
-				FireHook(10.0f);
-				PointShoulderToHook();
 				DisconnectWithSpring();
+				FireHook(5);
+				PointShoulderToHook();
 				ConnectWithChain();
 		}
 		else{
@@ -63,10 +66,15 @@ public class GrapplingHook : MonoBehaviour {
 				AttachForearm();
 				
 				retract = false;
+				//RecallHook();
 				DisconnectWithSpring();
 				DisconnnectWithChain();
 			}
 		}
+		Angle += 0.01f;
+
+		Debug.DrawLine(new Vector3(0,0,0), new Vector3(20 * Mathf.Cos(Angle),20 * Mathf.Sin(Angle),0));
+			
 		SetProperties();
 	}/*
 	void LateUpdate ()
@@ -139,12 +147,17 @@ public class GrapplingHook : MonoBehaviour {
 			GameObject playerPhysics;
 			playerPhysics = transform.parent.parent.gameObject;
 		
-			//Calculate velocity
-			Vector3 velocity;
-			velocity = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			velocity = velocity - transform.GetChild(0).transform.position;
-			velocity.Normalize();
-			velocity *= speed;
+			Vector3 mousePos;
+			mousePos= Input.mousePosition;
+			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+			mousePos = new Vector3(mousePos.x, mousePos.y);
+			
+			Vector3 pointTo;
+			pointTo = mousePos - transform.GetChild(0).transform.position;
+			
+			float angle = Mathf.Atan2(pointTo.y, pointTo.x) * Mathf.Rad2Deg;
+			
+			Vector2 velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
 			
 			//Set properties of hook to properties of forearm
 			hook.transform.position = position1Sub;
@@ -152,11 +165,16 @@ public class GrapplingHook : MonoBehaviour {
 			
 			//Enable script and set velocity
 			hook.GetComponent<HookFly>().enabled = true;
-			hook.GetComponent<Rigidbody2D>().velocity = velocity;
-			hook.GetComponent<Rigidbody2D>().velocity += new Vector2(0, playerPhysics.GetComponent<Rigidbody2D>().velocity.y);
+			hook.GetComponent<Rigidbody2D>().velocity = velocity;//hook.GetComponent<Rigidbody2D>().velocity.normalized;
+			//hook.GetComponent<Rigidbody2D>().velocity.Normalize();
+		
+			
+			//hook.GetComponent<Rigidbody2D>().velocity += new Vector2(0, playerPhysics.GetComponent<Rigidbody2D>().velocity.y);
 			
 			//hide forearm not being used as hook
 			transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+			//Show hook in it's place
+			hook.GetComponent<SpriteRenderer>().enabled = true;
 	}
 	void PointShoulderToHook()
 	{
@@ -190,7 +208,8 @@ public class GrapplingHook : MonoBehaviour {
 		
 		//Show forearm
 		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-		
+		//Hide hook
+		hook.GetComponent<SpriteRenderer>().enabled = false;
 	}
 	void RetractHook()
 	{
@@ -211,20 +230,16 @@ public class GrapplingHook : MonoBehaviour {
 		hookPos = hook.transform.position;
 		//hookPos +=;
 		//Set positions of ends
-		playerPhysics.GetComponent<LineRenderer>().SetPosition(0, hookPos);
-		playerPhysics.GetComponent<LineRenderer>().SetPosition(1, armPos);
+		hook.GetComponent<LineRenderer>().SetPosition(0, hookPos);
+		hook.GetComponent<LineRenderer>().SetPosition(1, armPos);
 		
 		//Display chain
-		playerPhysics.GetComponent<LineRenderer>().enabled = true;
+		hook.GetComponent<LineRenderer>().enabled = true;
 	}
 	void DisconnnectWithChain()
-	{
-		//Find physics object
-		GameObject playerPhysics;
-		playerPhysics = transform.parent.parent.gameObject;
-		
+	{	
 		//Hide Chain
-		playerPhysics.GetComponent<LineRenderer>().enabled = false;
+		hook.GetComponent<LineRenderer>().enabled = false;
 	}
 	void ConnectWithSpring()
 	{
@@ -234,23 +249,33 @@ public class GrapplingHook : MonoBehaviour {
 		
 		//enable spring
 		hook.GetComponent<SpringJoint2D>().connectedBody = playerPhysics.GetComponent<Rigidbody2D>();
+		//hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0,0);
 		hook.GetComponent<SpringJoint2D>().enabled = true;
+		
+		//These are the alternative coordinates for the contact point on the player's collider for the spring
+		//x= -0.1003531y=0.5240884
 	}
 	void DisconnectWithSpring()
 	{	
 		//Enable spring
 		hook.GetComponent<SpringJoint2D>().enabled = false;
 	}
+	void RecallHook()
+	{
+		hook.GetComponent<SpringJoint2D>().connectedBody = null;
+		hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(transform.position.x, transform.position.y);
+		hook.GetComponent<SpringJoint2D>().enabled = true;
+	}
 	void SetProperties()
 	{
 		//Set rotation property for shoulder1
 		transform.GetChild(0).transform.rotation = rotation1;
 		//Set local position property for shoulder1
-		transform.GetChild(0).transform.localPosition = localPosition1;
+		///transform.GetChild(0).transform.localPosition = localPosition1;
 		//Set rotation property for forearm1
 		transform.GetChild(0).GetChild(0).transform.rotation = rotation1Sub;
 		//Set global position property for forearm1
-		transform.GetChild(0).GetChild(0).transform.position = position1Sub;
+		///transform.GetChild(0).GetChild(0).transform.position = position1Sub;
 	}
 	void SmoothTransition(Quaternion rotation)
 	{
@@ -289,3 +314,17 @@ public class GrapplingHook : MonoBehaviour {
 		GetComponent<Animator>().SetInteger("ArmLimbs", 3);
 	}
 }
+/*
+//Calculate velocity
+			Vector3 velocity;
+			velocity = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			velocity = velocity - transform.GetChild(0).transform.position;
+			
+			float angle;
+			angle = Mathf.Atan2 (velocity.y, velocity.x) * Mathf.Rad2Deg;
+			
+			output = angle;
+
+			velocity = new Vector3(speed * Mathf.Cos(10.1f),speed * Mathf.Sin(10.1f),0);
+			//velocity = new Vector3(19.69f,3.507f,0);
+*/

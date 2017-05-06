@@ -17,6 +17,9 @@ public class enemyMove : MonoBehaviour {
 	public float idleTimer = 0;
 	public float idleWalking = 0;
 	public float idleTime = 2;
+	/**Changes by James**/
+	public PlayerStats playerStats;
+	/**Changes by James**/
 	void Start () {
 		anim = GetComponent<Animator> ();
 		transform.hasChanged = false;
@@ -65,7 +68,9 @@ public class enemyMove : MonoBehaviour {
 		}
 		if(t != null) { //if there is a best match
 			if(Vector3.Distance (t.transform.position, transform.position) < atkRange) { //if target within atk range
-				/**Temporarily disabled. Error generated when trigger set - James**/
+				/**added test screen shake attack- James**/
+				playerStats.TakeDamage(1);
+				/** **/
 				//anim.SetTrigger("atk");
 				speed = 0;
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
