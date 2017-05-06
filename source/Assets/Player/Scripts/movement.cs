@@ -12,11 +12,11 @@ public class movement : MonoBehaviour {
 	public KeyCode runKey;
 	
 	private int frames;
-	private Animator  anim;
+	private Animator anim;
 	private Rigidbody2D rb;
-	private float   xScale;
+	private float xScale;
 	private int counter = 0;
-	private bool   isJumpPressed;
+	private bool isJumpPressed;
 	private bool canJump;
 	
 	private Vector3 position;
