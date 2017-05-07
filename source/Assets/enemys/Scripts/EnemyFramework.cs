@@ -29,7 +29,56 @@ public class EnemyFramework : MonoBehaviour {
     public bool Melee { get; set; }
     public bool Projectile { get; set; }
     public float Speed { get; set; }
+	/**
+	Beginning of properties Added by James
+	**/
+	public float runSpeed;
+	public float walkSpeed;
+	public float jumpForce;
+	public Rigidbody rb;
+	/**End of properties Added by James
+	**/
 
+	/**
+	Beginning of functions added by James
+	**/
+	public void Walk(string direction)
+	{
+		if(direction == "right")
+		{
+			if(rb.velocity.x < walkSpeed){
+				rb.AddForce(Vector2.right * ((walkSpeedSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+			}
+		}
+		if(direction == "left")
+		{
+			if(rb.velocity.x > -walkSpeed){
+					rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+			}
+		}
+	}
+	public void Run(string direction)
+	{
+		if(direction == "right")
+		{
+			if(rb.velocity.x < runSpeed){
+				rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+			}
+		}
+		if(direction == "left")
+		{
+			if(rb.velocity.x > -runSpeed){
+					rb.AddForce(Vector2.right * ((-runSpeedSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+			}
+		}
+	}
+	public void Jump()
+	{
+		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+	}
+	/**
+	End of functions added by James
+	**/
     //Default attack in close quarters
     public void MeleeAttack()
     {
