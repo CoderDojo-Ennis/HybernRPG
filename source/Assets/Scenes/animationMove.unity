@@ -943,6 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 916547206}
   retract: 0
+  Displacement: {x: 0, y: 0, z: 0}
   output: 0
   Angle: 0
 --- !u!114 &253144713

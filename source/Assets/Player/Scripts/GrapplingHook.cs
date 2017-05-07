@@ -18,6 +18,7 @@ public class GrapplingHook : MonoBehaviour {
 	
 	public bool retract;
 	
+	public Vector3 Displacement;
 	public float output;
 	public float Angle;
 	
@@ -73,8 +74,8 @@ public class GrapplingHook : MonoBehaviour {
 		}
 		Angle += 0.01f;
 
-		Debug.DrawLine(new Vector3(0,0,0), new Vector3(20 * Mathf.Cos(Angle),20 * Mathf.Sin(Angle),0));
-			
+		//Debug.DrawLine(new Vector3(0,0,0), new Vector3(20 * Mathf.Cos(Angle),20 * Mathf.Sin(Angle),0));
+		Debug.DrawLine(transform.GetChild(0).transform.position + Displacement, transform.GetChild(0).transform.position);
 		SetProperties();
 	}/*
 	void LateUpdate ()
@@ -147,17 +148,13 @@ public class GrapplingHook : MonoBehaviour {
 			GameObject playerPhysics;
 			playerPhysics = transform.parent.parent.gameObject;
 		
-			Vector3 mousePos;
-			mousePos= Input.mousePosition;
-			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
-			mousePos = new Vector3(mousePos.x, mousePos.y);
+			Vector3 direction;
+			direction = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			direction -= transform.GetChild(0).transform.position;
 			
-			Vector3 pointTo;
-			pointTo = mousePos - transform.GetChild(0).transform.position;
+			float angle = Mathf.Atan2(direction.y, direction.x);
 			
-			float angle = Mathf.Atan2(pointTo.y, pointTo.x) * Mathf.Rad2Deg;
-			
-			Vector2 velocity = Quaternion.EulerAngles(0,0, angle) * new Vector2(speed, 0);//new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
+			Vector2 velocity = new Vector2(speed * Mathf.Cos(angle), speed * Mathf.Sin(angle));
 			
 			//Set properties of hook to properties of forearm
 			hook.transform.position = position1Sub;
@@ -165,11 +162,7 @@ public class GrapplingHook : MonoBehaviour {
 			
 			//Enable script and set velocity
 			hook.GetComponent<HookFly>().enabled = true;
-			hook.GetComponent<Rigidbody2D>().velocity = velocity;//hook.GetComponent<Rigidbody2D>().velocity.normalized;
-			//hook.GetComponent<Rigidbody2D>().velocity.Normalize();
-		
-			
-			//hook.GetComponent<Rigidbody2D>().velocity += new Vector2(0, playerPhysics.GetComponent<Rigidbody2D>().velocity.y);
+			hook.GetComponent<Rigidbody2D>().velocity = velocity;
 			
 			//hide forearm not being used as hook
 			transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
