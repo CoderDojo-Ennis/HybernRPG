@@ -35,7 +35,6 @@ public class EnemyFramework : MonoBehaviour {
 	public float runSpeed;
 	public float walkSpeed;
 	public float jumpForce;
-	public Rigidbody2D rb;
 	/**End of properties Added by James
 	**/
 
@@ -44,6 +43,9 @@ public class EnemyFramework : MonoBehaviour {
 	**/
 	public void Walk(string direction)
 	{
+		Rigidbody2D rb;
+		rb = GetComponent<Rigidbody2D>();
+		
 		if(direction == "right")
 		{
 			if(rb.velocity.x < walkSpeed){
@@ -59,6 +61,9 @@ public class EnemyFramework : MonoBehaviour {
 	}
 	public void Run(string direction)
 	{
+		Rigidbody2D rb;
+		rb = GetComponent<Rigidbody2D>();
+		
 		if(direction == "right")
 		{
 			if(rb.velocity.x < runSpeed){
@@ -74,6 +79,9 @@ public class EnemyFramework : MonoBehaviour {
 	}
 	public void Jump()
 	{
+		Rigidbody2D rb;
+		rb = GetComponent<Rigidbody2D>();
+		
 		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 	}
 	/**
