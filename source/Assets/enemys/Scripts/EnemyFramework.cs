@@ -35,7 +35,7 @@ public class EnemyFramework : MonoBehaviour {
 	public float runSpeed;
 	public float walkSpeed;
 	public float jumpForce;
-	public Rigidbody rb;
+	public Rigidbody2D rb;
 	/**End of properties Added by James
 	**/
 
@@ -47,7 +47,7 @@ public class EnemyFramework : MonoBehaviour {
 		if(direction == "right")
 		{
 			if(rb.velocity.x < walkSpeed){
-				rb.AddForce(Vector2.right * ((walkSpeedSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+				rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 		if(direction == "left")
@@ -68,7 +68,7 @@ public class EnemyFramework : MonoBehaviour {
 		if(direction == "left")
 		{
 			if(rb.velocity.x > -runSpeed){
-					rb.AddForce(Vector2.right * ((-runSpeedSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+					rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 	}
