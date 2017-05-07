@@ -35,6 +35,7 @@ public class EnemyFramework : MonoBehaviour {
 	public float runSpeed;
 	public float walkSpeed;
 	public float jumpForce;
+	public bool canJump;
 	/**End of properties Added by James
 	**/
 
@@ -79,10 +80,33 @@ public class EnemyFramework : MonoBehaviour {
 	}
 	public void Jump()
 	{
-		Rigidbody2D rb;
-		rb = GetComponent<Rigidbody2D>();
+		//Use raycasts to check if enemy is on ground.
+		//Colliders and sprites must be positioned so that
+		//raycasts can touch ground when fired.
+		Vector3 offset;
+		offset = new Vector3(0.1f,0,0);
+		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
 		
-		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+		offset = new Vector3(-0.1f,0,0);
+		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.05f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.05f);
+		canJump = groundHitRight || groundHitLeft;
+		
+		//If player is capable of jumping, an upward force is applied
+		if(canJump)
+		{
+			canJump = true;
+		}
+		if(canJump)
+		{
+			Rigidbody2D rb;
+			rb = GetComponent<Rigidbody2D>();
+			
+			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+			//As player is jumping, they should no longer be able to jump
+			canJump = false;
+		}
 	}
 	/**
 	End of functions added by James
