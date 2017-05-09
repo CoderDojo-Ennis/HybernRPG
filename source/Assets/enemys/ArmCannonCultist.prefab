@@ -240,7 +240,6 @@ GameObject:
   - component: {fileID: 212335945028272664}
   - component: {fileID: 50920007463639048}
   - component: {fileID: 95676366359989556}
-  - component: {fileID: 114612732664339958}
   - component: {fileID: 70084565451879352}
   m_Layer: 0
   m_Name: ArmCannonCultist
@@ -568,35 +567,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114612732664339958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1657568815466526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserCultist: {fileID: 0}
-  targets: []
-  lastTargetSeen: {fileID: 0}
-  bestMatch: {fileID: 0}
-  Speed: 10
-  jumpForce: 6
-  range: 3
-  maxAtkRange: 0
-  minAtkRange: 0
-  xScale: 1
-  jumps: 0
-  anim: {fileID: 0}
-  jumpLevel: 0
-  chaseTimer: 0
-  idleTimer: 0
-  idleWalking: 0
-  idleTime: 2
-  enemyType: 
 --- !u!114 &114745276545824310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,6 +582,7 @@ MonoBehaviour:
   lerpValue: 0
   recoilOffset: 0
   recoilLerpValue: 0
+  cameraFollow: {fileID: 0}
 --- !u!212 &212024075532172658
 SpriteRenderer:
   m_ObjectHideFlags: 1

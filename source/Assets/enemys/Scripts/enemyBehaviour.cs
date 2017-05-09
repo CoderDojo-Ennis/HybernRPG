@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 public class enemyBehaviour : EnemyFramework {
-	//Ask Joey about this stuff
+	/*//Ask Joey about this stuff
 	public GameObject[] targets;
 	public GameObject lastTargetSeen = null;
 	public GameObject bestMatch = null;
@@ -92,10 +92,10 @@ public class enemyBehaviour : EnemyFramework {
 			if(Vector3.Distance (t.transform.position, transform.position) > 0) { //if target within atk range
 				/**Temporarily disabled. Error generated when trigger set - James**/
 				//anim.SetTrigger("atk");
-				Speed = 0;
+				//Speed = 0;
                 //BeamAttack(lastTargetSeen);
 				//bestMatch.GetComponent<movement>().ForceMove(2, new Vector2(-xScale, 0), bestMatch.GetComponent<Rigidbody2D> ());
-			} else { //if there is target but not in atk range
+			/*} else { //if there is target but not in atk range
 				Speed = newEnemy.Speed;
 				float h = 0;
 				Vector3 posBM = t.transform.position;
@@ -150,5 +150,5 @@ public class enemyBehaviour : EnemyFramework {
 				Speed = 0;
 			}
 		}
-	}
+	}*/
 }

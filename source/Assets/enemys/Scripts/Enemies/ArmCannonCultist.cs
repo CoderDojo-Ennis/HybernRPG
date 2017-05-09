@@ -6,7 +6,7 @@ public class ArmCannonCultist : EnemyFramework {
     //Sets variables from EnemyFramework
     public ArmCannonCultist()
     {
-        Attack = 2;
+        /*Attack = 2;
         AttackRangeMax = 0f; //5f
         AttackRangeMin = 2f;
         Beam = false;
@@ -15,6 +15,11 @@ public class ArmCannonCultist : EnemyFramework {
         JumpHeight = 0.5f;
         Melee = false;
         Projectile = true;
-        Speed = 0.75f; 
+        Speed = 0.75f; */
+    }
+	//Default ranged attack affected by gravity
+    public void ProjectileAttack()
+    {
+
     }
 }

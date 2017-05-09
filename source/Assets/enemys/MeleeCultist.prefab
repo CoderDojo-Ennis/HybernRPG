@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 212697570876036902}
   - component: {fileID: 50640430965983696}
   - component: {fileID: 95658215163495826}
-  - component: {fileID: 114657129100446886}
   - component: {fileID: 70052983175645892}
   m_Layer: 0
   m_Name: MeleeCultist
@@ -568,35 +567,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114657129100446886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1516241119722034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cb9f9953d895e448bef81818ecfadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserCultist: {fileID: 0}
-  targets: []
-  lastTargetSeen: {fileID: 0}
-  bestMatch: {fileID: 0}
-  Speed: 10
-  jumpForce: 6
-  range: 3
-  maxAtkRange: 0
-  minAtkRange: 0
-  xScale: 1
-  jumps: 0
-  anim: {fileID: 0}
-  jumpLevel: 0
-  chaseTimer: 0
-  idleTimer: 0
-  idleWalking: 0
-  idleTime: 2
-  enemyType: 
 --- !u!114 &114902951434986920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,6 +582,7 @@ MonoBehaviour:
   lerpValue: 0
   recoilOffset: 0
   recoilLerpValue: 0
+  cameraFollow: {fileID: 0}
 --- !u!212 &212201356597507934
 SpriteRenderer:
   m_ObjectHideFlags: 1
