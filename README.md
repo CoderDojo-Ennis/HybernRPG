@@ -1,17 +1,9 @@
-# Hybern RPG
-Dissatisfied with your body?
+# SWAP
+*The new game by Team Hybern*
 
-Do you ever wish that you could just switch your physique out for that of someone else?
+A small community, trapped in a mining world of rock and lava.
 
-Ever wish that you could replace your torso with a cactus?
+A power to escape.
 
-Well, now you can.
-
-Introducing the "as yet unnamed" puzzle adventure from Team Hybern.
-
-The concept is simple, you have gained the ability to swap your limbs for whatever tools you require.
-
-What next?
-
-You must go rescue your dog, of course.
+A dog to rescue.
 
