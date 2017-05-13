@@ -10,21 +10,8 @@ public class LaserCultist : EnemyFramework {
 		runSpeed = 5;
 		jumpForce = 4;
 	}
-	public LaserCultist()
-    {
-        /*Attack = 5;
-        AttackRangeMax = 0f;
-        AttackRangeMin = 4f;
-        Beam = true;
-        Health = 4;
-        Jumps = 1;
-        JumpHeight = 0.5f;
-        Melee = false;
-        Projectile = false;
-        Speed = 2f;*/
-    }
 	//Default ranged attack in straight line
-    public void BeamAttack(GameObject target)
+    public void Attack()
     {
         /*Component Control;
         Control = LaserBeam.GetComponent("LaserControl");
@@ -45,4 +32,7 @@ public class LaserCultist : EnemyFramework {
         Debug.Log("Over");*/
         
     }
+	public void TakeDamage()
+	{
+	}
 }

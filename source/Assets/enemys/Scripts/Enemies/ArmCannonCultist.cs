@@ -10,22 +10,10 @@ public class ArmCannonCultist : EnemyFramework {
 		runSpeed = 5;
 		jumpForce = 4;
 	}
-	public ArmCannonCultist()
+    public void Attack()
     {
-        /*Attack = 2;
-        AttackRangeMax = 0f; //5f
-        AttackRangeMin = 2f;
-        Beam = false;
-        Health = 5;
-        Jumps = 1;
-        JumpHeight = 0.5f;
-        Melee = false;
-        Projectile = true;
-        Speed = 0.75f; */
     }
-	//Default ranged attack affected by gravity
-    public void ProjectileAttack()
-    {
-
-    }
+	public void TakeDamage()
+	{
+	}
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFramework : MonoBehaviour {
+public abstract class EnemyFramework : MonoBehaviour {
 
     //Combat variables
     private int attack;             //Flat damage dealt
@@ -15,10 +15,6 @@ public class EnemyFramework : MonoBehaviour {
 	public float jumpForce;
 	private bool canJump;
 	
-    public int Attack { get; set; }
-    public float AttackRangeMax { get; set; }
-    public float AttackRangeMin { get; set; }
-    public int Health { get; set; }
 	/**
 	Beginning of enemy movement functions
 	**/
@@ -105,9 +101,16 @@ public class EnemyFramework : MonoBehaviour {
 	/**
 	End of enemy movement functions
 	**/
+	public virtual void Attack()
+	{
+	}
+	public virtual void TakeDamage()
+	{
+	}
+	
     //Only called in enemyBehaviour
     //'s' is equal to enemyType
-    public EnemyFramework EnemyCreation(string s)
+    static public EnemyFramework EnemyCreation(string s)
     {
         switch (s)
         {
