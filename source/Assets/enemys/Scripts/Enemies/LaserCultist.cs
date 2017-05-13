@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class LaserCultist : EnemyFramework {
     //Sets variables from EnemyFramework
-    public LaserCultist()
+    void OnEnable()
+	{
+		walkSpeed = 7;
+		runSpeed = 5;
+		jumpForce = 4;
+	}
+	public LaserCultist()
     {
         /*Attack = 5;
         AttackRangeMax = 0f;

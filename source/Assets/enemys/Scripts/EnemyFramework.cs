@@ -6,8 +6,8 @@ public class EnemyFramework : MonoBehaviour {
 
     //Combat variables
     private int attack;             //Flat damage dealt
-    private float maxSenseDistance;  //How far away the enemy can sense the player
 	private int health;             //Maximum amount of damage an enemy can withstand
+    private float maxSenseDistance;  //How far away the enemy can sense the playe
 	
 	//Movement variables
 	public float runSpeed;
@@ -32,12 +32,14 @@ public class EnemyFramework : MonoBehaviour {
 		//walkSpeed for each frame the function is called.
 		if(direction == "right")
 		{
+			transform.localScale = new Vector3(1,1,1);
 			if(rb.velocity.x < walkSpeed){
 				rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 		if(direction == "left")
 		{
+			transform.localScale = new Vector3(-1,1,1);
 			if(rb.velocity.x > -walkSpeed){
 					rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
@@ -53,12 +55,14 @@ public class EnemyFramework : MonoBehaviour {
 		//runSpeed for each frame the function is called.	
 		if(direction == "right")
 		{
+			transform.localScale = new Vector3(1,1,1);
 			if(rb.velocity.x < runSpeed){
 				rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 		if(direction == "left")
 		{
+			transform.localScale = new Vector3(-1,1,1);
 			if(rb.velocity.x > -runSpeed){
 					rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}

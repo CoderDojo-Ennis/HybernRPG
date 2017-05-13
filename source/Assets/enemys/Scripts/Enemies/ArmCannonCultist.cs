@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class ArmCannonCultist : EnemyFramework {
     //Sets variables from EnemyFramework
-    public ArmCannonCultist()
+    void OnEnable()
+	{
+		walkSpeed = 7;
+		runSpeed = 5;
+		jumpForce = 4;
+	}
+	public ArmCannonCultist()
     {
         /*Attack = 2;
         AttackRangeMax = 0f; //5f

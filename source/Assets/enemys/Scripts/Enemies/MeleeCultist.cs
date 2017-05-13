@@ -17,7 +17,13 @@ public class MeleeCultist : EnemyFramework {
         Projectile = false;     //if you up the speed to 20 it becomes the Flash. Extremely quick, flickers a bit when moving, very difficult.
         Speed = 2f;             //if you up the speed to 100 it becomes Goku. Flickers constantly when moving, moves through objects, jumps into the next solar system and is absolutely unstoppable.
 */
-		}
+	}
+	void OnEnable()
+	{
+		walkSpeed = 7;
+		runSpeed = 5;
+		jumpForce = 4;
+	}
 	/*public GameObject[] targets;
 	public GameObject lastTargetSeen = null;
 	public GameObject bestMatch = null;
