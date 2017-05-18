@@ -75,6 +75,11 @@ public class GrapplingHook : MonoBehaviour {
 				
 				DisconnectWithSpring();
 				DisconnnectWithChain();
+				
+				//Disable hook object
+				hook.GetComponent<BoxCollider2D>().enabled = false;
+				hook.GetComponent<HookFly>().enabled = false;
+				hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 				}
 				else{
 				DisconnectWithSpring();
@@ -98,7 +103,7 @@ public class GrapplingHook : MonoBehaviour {
 		}
 		SetProperties();
 	}
-	//List of functions
+	//List of functions not entirely enclusive
 	//void FireHook();
 	//void PointShoulderToHook();
 	//void PointShoulderToMouse();

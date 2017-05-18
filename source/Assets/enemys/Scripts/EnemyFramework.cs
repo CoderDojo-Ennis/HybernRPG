@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class EnemyFramework : MonoBehaviour {
 
     //Combat variables
-    private int attack;             //Flat damage dealt
-	private int health;             //Maximum amount of damage an enemy can withstand
-    private float maxSenseDistance;  //How far away the enemy can sense the playe
+    public int attack;             //Flat damage dealt
+	public int health;             //Maximum amount of damage an enemy can withstand
+    public float maxSenseDistance;  //How far away the enemy can sense the playe
 	
 	//Movement variables
 	public float runSpeed;

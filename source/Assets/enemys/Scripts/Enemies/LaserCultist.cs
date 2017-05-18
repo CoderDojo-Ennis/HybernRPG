@@ -3,36 +3,82 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserCultist : EnemyFramework {
-    //Sets variables from EnemyFramework
+    
+	public float angle;
+	private float angleChange;
+	
     void OnEnable()
 	{
+		//Sets variables from EnemyFramework
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
+		//Sets variables from LaserCultist
+		angle = 0;
+		angleChange = 1;
+	}
+	void Update()
+	{
+		SearchBeam(angle);
+		if(angle > 210){
+			angleChange*= -1;
+		}
+		if(angle < -30){
+			angleChange*= -1;
+		}
+		angle += angleChange;
 	}
 	//Default ranged attack in straight line
     public void Attack()
     {
-        /*Component Control;
-        Control = LaserBeam.GetComponent("LaserControl");
-        //LaserBeam.getComponent("LaserControl").LaserBehaviour();
-        Vector3 lastPos;
-        Vector3 targetPos;
-        float lerpMove = 0;
-        RaycastHit hit;
-        Debug.DrawRay(transform.position + new Vector3(0f, 0.6f, 0f), target.transform.position - transform.position, Color.red);
-        Ray2D ray = new Ray2D(transform.position + new Vector3(0f, 0.6f, 0f), target.transform.position - transform.position);
-        hit = new RaycastHit();
-        lastPos = transform.position;
-        targetPos = hit.point;
-        lerpMove += Time.deltaTime;
-        Instantiate(LaserBeam);
-        //LaserBeam.transform.position = Vector3.MoveTowards(transform.position + new Vector3(0f, 0.6f, 0f), target.transform.position, 2 * Time.deltaTime);
-        LaserBeam.transform.position = Vector3.MoveTowards(lastPos, targetPos, 10 * lerpMove);
-        Debug.Log("Over");*/
+		
         
     }
 	public void TakeDamage()
 	{
+		health -= 1;
+	}
+	private bool SearchBeam(float angle)
+	{
+		//Returns false if player not hit
+
+		//Create vector from angle
+		angle *= Mathf.Deg2Rad;
+		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+		
+		//Create position to fire from
+		Vector2 origin = transform.position + new Vector3(0, 0.5f, 0);
+		
+		RaycastHit2D searchBeam = Physics2D.Raycast(origin, direction);
+		
+		
+		
+		if(searchBeam)
+		{
+			//Hit something, show beam
+			Debug.DrawLine(origin, searchBeam.point);
+			EnableLineRenderer(0.1f, origin, searchBeam.point);
+			if(searchBeam.transform.gameObject.tag == "Good")
+			{
+				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
+				return true;
+			}
+			return false;
+		}
+		//Hit nothing, show beam anyway
+		EnableLineRenderer(0.1f, origin, direction * 100);
+		return false;
+	}
+	private void EnableLineRenderer(float width, Vector2 origin, Vector2 end)
+	{
+		GetComponent<LineRenderer>().widthMultiplier = width;
+		GetComponent<LineRenderer>().SetPosition(0, origin);
+		GetComponent<LineRenderer>().SetPosition(1, end);
+		GetComponent<LineRenderer>().enabled = true;
+		
+	}
+	private void DisableLineRenderer()
+	{
+		GetComponent<LineRenderer>().enabled = false;
 	}
 }
