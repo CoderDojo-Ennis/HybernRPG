@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFramework : MonoBehaviour {
-
     //Combat variables
-    private int attack;             //Flat damage dealt
-    private float maxSenseDistance;  //How far away the enemy can sense the player
-	private int health;             //Maximum amount of damage an enemy can withstand
+    public int attack;             //Flat damage dealt
+    public float maxSenseDistance; //How far away the enemy can sense the player
+	public int health;             //Maximum amount of damage an enemy can withstand
 	
 	//Movement variables
 	public float runSpeed;
@@ -98,7 +97,7 @@ public class EnemyFramework : MonoBehaviour {
 			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		}
 	}
-	/**
+    /**
 	End of enemy movement functions
 	**/
     //Only called in enemyBehaviour
