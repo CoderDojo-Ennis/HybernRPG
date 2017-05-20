@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFramework : MonoBehaviour {
+public abstract class EnemyFramework : MonoBehaviour {
+
     //Combat variables
     public int attack;             //Flat damage dealt
-    public float maxSenseDistance; //How far away the enemy can sense the player
 	public int health;             //Maximum amount of damage an enemy can withstand
+    public float maxSenseDistance;  //How far away the enemy can sense the playe
 	
 	//Movement variables
 	public float runSpeed;
@@ -14,10 +15,6 @@ public class EnemyFramework : MonoBehaviour {
 	public float jumpForce;
 	private bool canJump;
 	
-    public int Attack { get; set; }
-    public float AttackRangeMax { get; set; }
-    public float AttackRangeMin { get; set; }
-    public int Health { get; set; }
 	/**
 	Beginning of enemy movement functions
 	**/
@@ -31,12 +28,14 @@ public class EnemyFramework : MonoBehaviour {
 		//walkSpeed for each frame the function is called.
 		if(direction == "right")
 		{
+			transform.localScale = new Vector3(1,1,1);
 			if(rb.velocity.x < walkSpeed){
 				rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 		if(direction == "left")
 		{
+			transform.localScale = new Vector3(-1,1,1);
 			if(rb.velocity.x > -walkSpeed){
 					rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
@@ -52,12 +51,14 @@ public class EnemyFramework : MonoBehaviour {
 		//runSpeed for each frame the function is called.	
 		if(direction == "right")
 		{
+			transform.localScale = new Vector3(1,1,1);
 			if(rb.velocity.x < runSpeed){
 				rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
 		}
 		if(direction == "left")
 		{
+			transform.localScale = new Vector3(-1,1,1);
 			if(rb.velocity.x > -runSpeed){
 					rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
 			}
@@ -97,12 +98,19 @@ public class EnemyFramework : MonoBehaviour {
 			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		}
 	}
-    /**
+	/**
 	End of enemy movement functions
 	**/
+	public virtual void Attack()
+	{
+	}
+	public virtual void TakeDamage()
+	{
+	}
+	
     //Only called in enemyBehaviour
     //'s' is equal to enemyType
-    public EnemyFramework EnemyCreation(string s)
+    static public EnemyFramework EnemyCreation(string s)
     {
         switch (s)
         {

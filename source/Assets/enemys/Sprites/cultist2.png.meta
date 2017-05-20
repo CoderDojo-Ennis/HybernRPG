@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 53a038b8780575243ba26ffa26147418
-timeCreated: 1494621038
+guid: cdc1d7fe35d0aec4ca0569a3882228c0
+timeCreated: 1494621117
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: head-Redshirt
-    21300002: Shoulder2-Redshirt
-    21300004: torso-Redshirt
-    21300006: shoulder1-Redshirt
-    21300008: forearm2-Redshirt
-    21300010: thigh2-Redshirt
-    21300012: thigh1-Redshirt
-    21300014: forearm1-Redshirt
-    21300016: calf2-Redshirt
-    21300018: calf1-Redshirt
+    21300000: head-cultist
+    21300002: shoulder2-cultist
+    21300004: torso-cultist
+    21300006: shoulder1-cultist
+    21300008: forearm2-cultist
+    21300010: thigh2-cultist
+    21300012: thigh1-cultist
+    21300014: forearm1-cultist
+    21300016: calf2-cultist
+    21300018: calf1-cultist
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -80,130 +80,130 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: head-Redshirt
+      name: head-cultist
       rect:
         serializedVersion: 2
-        x: 33
+        x: 34
         y: 66
-        width: 31
-        height: 33
+        width: 33
+        height: 34
       alignment: 9
-      pivot: {x: 0.5698687, y: 0.050519306}
+      pivot: {x: 0.46125573, y: 0.057108037}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shoulder2-Redshirt
+      name: shoulder2-cultist
       rect:
         serializedVersion: 2
-        x: 20
-        y: 44
-        width: 14
-        height: 20
+        x: 21
+        y: 45
+        width: 12
+        height: 18
       alignment: 9
       pivot: {x: 0.7050314, y: 0.7701591}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: torso-Redshirt
+      name: torso-cultist
       rect:
         serializedVersion: 2
-        x: 35
-        y: 31
+        x: 36
+        y: 29
         width: 30
-        height: 34
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: shoulder1-Redshirt
+      name: shoulder1-cultist
       rect:
         serializedVersion: 2
-        x: 66
+        x: 67
         y: 45
-        width: 14
-        height: 20
+        width: 12
+        height: 18
       alignment: 9
       pivot: {x: 0.3543576, y: 0.8160448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: forearm2-Redshirt
+      name: forearm2-cultist
       rect:
         serializedVersion: 2
-        x: 20
-        y: 26
-        width: 14
-        height: 17
+        x: 21
+        y: 23
+        width: 12
+        height: 19
       alignment: 9
       pivot: {x: 0.7050314, y: 0.8277065}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: thigh2-Redshirt
+      name: thigh2-cultist
       rect:
         serializedVersion: 2
-        x: 35
-        y: 20
-        width: 15
-        height: 9
+        x: 36
+        y: 21
+        width: 13
+        height: 7
       alignment: 9
       pivot: {x: 0.485062, y: 0.8236501}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: thigh1-Redshirt
+      name: thigh1-cultist
       rect:
         serializedVersion: 2
-        x: 51
-        y: 20
-        width: 15
-        height: 9
+        x: 52
+        y: 21
+        width: 13
+        height: 7
       alignment: 9
       pivot: {x: 0.4701246, y: 0.8485463}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: forearm1-Redshirt
+      name: forearm1-cultist
       rect:
         serializedVersion: 2
-        x: 66
-        y: 27
-        width: 14
-        height: 17
+        x: 67
+        y: 23
+        width: 12
+        height: 20
       alignment: 9
       pivot: {x: 0.2556798, y: 0.8160448}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: calf2-Redshirt
+      name: calf2-cultist
       rect:
         serializedVersion: 2
-        x: 35
+        x: 36
         y: 1
-        width: 15
-        height: 18
+        width: 13
+        height: 17
       alignment: 9
       pivot: {x: 0.4999997, y: 0.910787}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: calf1-Redshirt
+      name: calf1-cultist
       rect:
         serializedVersion: 2
-        x: 51
+        x: 52
         y: 1
-        width: 15
-        height: 18
+        width: 13
+        height: 17
       alignment: 9
       pivot: {x: 0.5149376, y: 0.9356833}
       border: {x: 0, y: 0, z: 0, w: 0}

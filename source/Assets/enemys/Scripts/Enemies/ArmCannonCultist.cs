@@ -39,5 +39,6 @@ public class ArmCannonCultist : EnemyFramework {
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
         GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
     }
-	
+
+	}
 }
