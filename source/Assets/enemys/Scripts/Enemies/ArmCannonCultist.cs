@@ -23,9 +23,11 @@ public class ArmCannonCultist : EnemyFramework {
 
     void Update()
     {
-        if (Vector3.Distance(Player.transform.position, this.transform.position) < maxSenseDistance)
+		Vector3 distance = this.transform.position - Player.transform.position;
+        if (distance.sqrMagnitude < maxSenseDistance)
         {
             ProjectileAttack();
+			print("One more");
         }
     }
 
@@ -40,5 +42,4 @@ public class ArmCannonCultist : EnemyFramework {
         GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
     }
 
-	}
 }
