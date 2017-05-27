@@ -7,7 +7,7 @@ public abstract class EnemyFramework : MonoBehaviour {
     //Combat variables
     public int attack;             //Flat damage dealt
 	public int health;             //Maximum amount of damage an enemy can withstand
-    public float maxSenseDistance;  //How far away the enemy can sense the playe
+    public float maxSenseDistance;  //How far away the enemy can sense the player( square of distance)
 	
 	//Movement variables
 	public float runSpeed;

@@ -140,10 +140,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 0
   health: 0
-  maxSenseDistance: 0
+  maxSenseDistance: 4
   runSpeed: 4
   walkSpeed: 1
   jumpForce: 4
+  Player: {fileID: 1410290186}
+  Projectile: {fileID: 1253831165659226, guid: 2011e86381abbc047b0d7f922f7c8a3a, type: 2}
 --- !u!70 &106536342
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
