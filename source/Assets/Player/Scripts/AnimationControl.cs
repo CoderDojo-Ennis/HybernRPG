@@ -32,4 +32,20 @@ public class AnimationControl : MonoBehaviour {
 		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("InAir", inAir);
 	}
+	public void DisableAnimator()
+	{
+		//Turn of animator on child components
+		//Head
+		this.transform.Find("head").GetComponent<Animator>().enabled = false;
+		//Arms
+		this.transform.Find("Arms").GetComponent<Animator>().enabled = false;
+		//Legs
+		this.transform.Find("Legs").GetComponent<Animator>().enabled = false;
+		
+		//Disable scripts associated with limbs
+		//Arms
+		this.transform.Find("Arms").GetComponent<aiming>().enabled = false;
+		this.transform.Find("Arms").GetComponent<GrapplingHook>().enabled = false;
+		this.transform.Find("Arms").GetComponent<Pickaxes>().enabled = false;
+	}
 }
