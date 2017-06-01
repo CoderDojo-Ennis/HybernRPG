@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 106536341}
   m_Layer: 0
   m_Name: ArmCannonCultist
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   walkSpeed: 1
   jumpForce: 4
   Player: {fileID: 1410290186}
-  Projectile: {fileID: 1253831165659226, guid: 2011e86381abbc047b0d7f922f7c8a3a, type: 2}
+  Projectile: {fileID: 1177010944394006, guid: 89cd3bf44caac0d44bdf4d1368bc7c8c, type: 2}
 --- !u!70 &106536342
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 463298766}
   m_Layer: 0
   m_Name: LaserCultist
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2484,7 +2484,7 @@ GameObject:
   - component: {fileID: 1369750647}
   m_Layer: 0
   m_Name: MeleeCultist
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2720,6 +2720,56 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212743174662475292, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212533048214277956, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212300148443671298, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212477938951119034, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212889443017048690, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212506467822406986, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212444531009294656, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212442373036583704, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212753395059205570, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 212839716891929944, guid: 54c0cbff35d2ba14a8f7591a357ed8ff,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54c0cbff35d2ba14a8f7591a357ed8ff, type: 2}
   m_IsPrefabParent: 0

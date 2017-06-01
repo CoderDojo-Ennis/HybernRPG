@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBlast : MonoBehaviour {
+public class EnemyBlast : MonoBehaviour {
 
 	void Start ()
 	{
-		GetComponent<Rigidbody2D>().AddForce(this.transform.rotation * new Vector3(0, -5, 0),ForceMode2D.Impulse);
+		//GetComponent<Rigidbody2D>().AddForce(this.transform.rotation * new Vector3(0, -5, 0),ForceMode2D.Impulse);
 	}
 	void Update()
 	{
@@ -17,13 +17,9 @@ public class PlayerBlast : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.tag == "Enemy")
+		if(collision.gameObject.name == "Player Physics Parent")
 		{
-			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(1);
-			GameObject.Destroy(this.gameObject);
-		}
-		if(collision.gameObject.name != "Player Physics Parent" && collision.gameObject.name != "PlayerBlast(Clone)")
-		{
+			collision.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
 			GameObject.Destroy(this.gameObject);
 		}
 	}

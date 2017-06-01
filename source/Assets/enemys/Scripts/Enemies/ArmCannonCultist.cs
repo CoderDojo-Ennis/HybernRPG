@@ -15,6 +15,7 @@ public class ArmCannonCultist : EnemyFramework {
 		runSpeed = 5;
 		jumpForce = 4;
         maxSenseDistance = 6f;
+		health = 10;
 	}
 
     public void Attack()
@@ -26,8 +27,12 @@ public class ArmCannonCultist : EnemyFramework {
 		Vector3 distance = this.transform.position - Player.transform.position;
         if (distance.sqrMagnitude < maxSenseDistance)
         {
-            ProjectileAttack();
-			print("One more");
+            
+			if(Random.Range(0.0f, 1.0f) < 0.1f)
+			{
+				ProjectileAttack();
+				print("One more");
+			}
         }
     }
 
@@ -39,8 +44,8 @@ public class ArmCannonCultist : EnemyFramework {
     void ProjectileAttack()
 	{
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
-        GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
-		projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(-0.5f, 0, 0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
+		projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
     }
 
 }
