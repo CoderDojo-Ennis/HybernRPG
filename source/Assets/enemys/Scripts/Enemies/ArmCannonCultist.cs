@@ -44,8 +44,10 @@ public class ArmCannonCultist : EnemyFramework {
     void ProjectileAttack()
 	{
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
-        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(-0.5f, 0, 0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
+        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(0,0.5f,0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
 		projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
+		projectile.GetComponent<EnemyBlast>().creator = gameObject;
     }
 
 }

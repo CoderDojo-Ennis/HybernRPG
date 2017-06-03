@@ -17,6 +17,12 @@ public class HookFly : MonoBehaviour {
 		//Enable collider
 		GetComponent<BoxCollider2D>().enabled = true;
 	}
+	void OnDisable()
+	{
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+		GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+		GetComponent<BoxCollider2D>().enabled = false;
+	}
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.name != "Player Physics Parent"){
