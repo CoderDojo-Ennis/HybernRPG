@@ -43,11 +43,26 @@ public class ArmCannonCultist : EnemyFramework {
 	//Ranged attack affected by gravity
     void ProjectileAttack()
 	{
+		//Calculate firing velocity
+		Vector2 velocity = Aim((Vector2)transform.position + new Vector2(0,0.5f), (Vector2)Player.transform.position + new Vector2(0,0.5f), 0.5f);
+		
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
-        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(0,0.5f,0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
-		projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(0,0.5f,0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.forward));
+		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
 		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
 		projectile.GetComponent<EnemyBlast>().creator = gameObject;
     }
-
+	Vector2 Aim(Vector2 launch, Vector2 target, float time)
+	{
+		//Calculates velocity to launce projectile at in order to hit player
+		Vector2 velocity;
+		Vector2 displacement = target - launch;
+		
+		Debug.DrawRay(launch, displacement);
+		
+		velocity.y = displacement.y/time + (9.8f * time)/2;
+		velocity.x = displacement.x/time;
+		
+		return velocity;
+	}
 }
