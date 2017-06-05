@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerBlast : MonoBehaviour {
 
-	void Start ()
+	void Start()
 	{
 		GetComponent<Rigidbody2D>().AddForce(this.transform.rotation * new Vector3(0, -5, 0),ForceMode2D.Impulse);
 		//Upon creation, ignore collisions between the projectile and the player
 		Physics2D.IgnoreCollision(GameObject.Find("Player Physics Parent").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shoot Noise");
 	}
 	void Update()
 	{

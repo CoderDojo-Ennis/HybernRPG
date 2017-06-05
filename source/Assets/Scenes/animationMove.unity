@@ -1665,11 +1665,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fa1802be12ace4da503fb453bd1d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 243273150123082466, guid: bab5229a185b0404c93ec635690ea94c,
+    type: 2}
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Shoot Noise
+    clip: {fileID: 8300000, guid: 3da2cbc0c7cffc04593a40597f03520b, type: 3}
+    volume: 1
+    pitch: 3
     source: {fileID: 0}
 --- !u!4 &952623937
 Transform:
@@ -1729,8 +1731,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -900995045
+  m_SortingLayer: -3
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: c4ae08ded4ae3a24da16a16881f14810, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1798,8 +1800,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -900995045
+  m_SortingLayer: -3
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: 6cb98b6a540e9b64d8053b3dfb186b78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

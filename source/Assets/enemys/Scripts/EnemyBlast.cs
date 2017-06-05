@@ -17,6 +17,7 @@ public class EnemyBlast : MonoBehaviour {
 		else{
 			print("EnemyBlast instance needs to have a gameObject assigned to 'creator' variable, so it can ignore collisions with the enemy who spawned it");
 		}
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shoot Noise");
 	}
 	void Update()
 	{
