@@ -15,7 +15,6 @@ public class ArmCannonCultist : EnemyFramework {
 		runSpeed = 5;
 		jumpForce = 4;
         maxSenseDistance = 6f;
-		health = 10;
 	}
 
     public void Attack()
@@ -27,12 +26,8 @@ public class ArmCannonCultist : EnemyFramework {
 		Vector3 distance = this.transform.position - Player.transform.position;
         if (distance.sqrMagnitude < maxSenseDistance)
         {
-            
-			if(Random.Range(0.0f, 1.0f) < 0.1f)
-			{
-				ProjectileAttack();
-				print("One more");
-			}
+            ProjectileAttack();
+			print("One more");
         }
     }
 
@@ -43,26 +38,9 @@ public class ArmCannonCultist : EnemyFramework {
 	//Ranged attack affected by gravity
     void ProjectileAttack()
 	{
-		//Calculate firing velocity
-		Vector2 velocity = Aim((Vector2)transform.position + new Vector2(0,0.5f), (Vector2)Player.transform.position + new Vector2(0,0.5f), 0.5f);
-		
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
-        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(0,0.5f,0), Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.forward));
-		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
-		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
-		projectile.GetComponent<EnemyBlast>().creator = gameObject;
+        GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.AngleAxis(45 + Random.Range(40, 60), Vector3.up));
+		projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
     }
-	Vector2 Aim(Vector2 launch, Vector2 target, float time)
-	{
-		//Calculates velocity to launce projectile at in order to hit player
-		Vector2 velocity;
-		Vector2 displacement = target - launch;
-		
-		Debug.DrawRay(launch, displacement);
-		
-		velocity.y = displacement.y/time + (9.8f * time)/2;
-		velocity.x = displacement.x/time;
-		
-		return velocity;
-	}
+
 }

@@ -17,25 +17,17 @@ public class HookFly : MonoBehaviour {
 		//Enable collider
 		GetComponent<BoxCollider2D>().enabled = true;
 	}
-	void OnDisable()
-	{
-		GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-		GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-		GetComponent<BoxCollider2D>().enabled = false;
-	}
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.name != "Player Physics Parent"){
 		grapplingHook.retract = true;
 		
 		GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-		//GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+		GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 	
 		//Attach hook to object it collides with
 		transform.parent = collision.transform;
 		transform.localScale = new Vector3(1/transform.parent.localScale.x,1/transform.parent.localScale.y,1/transform.parent.localScale.z);
-		
-		//gameObject.GetComponent<SpringJoint2D>().connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
 		
 		//Disable collider
 		GetComponent<BoxCollider2D>().enabled = false;

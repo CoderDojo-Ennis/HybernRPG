@@ -104,13 +104,8 @@ public abstract class EnemyFramework : MonoBehaviour {
 	public virtual void Attack()
 	{
 	}
-	public virtual void TakeDamage(int damage)
+	public virtual void TakeDamage()
 	{
-		health -= damage;
-		if(health <= 0)
-		{
-			GameObject.Destroy(gameObject);
-		}
 	}
 	
     //Only called in enemyBehaviour

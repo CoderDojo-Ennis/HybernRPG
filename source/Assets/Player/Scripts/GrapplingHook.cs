@@ -18,8 +18,6 @@ public class GrapplingHook : MonoBehaviour {
 	
 	//Grappling Hook gameObject
 	public GameObject hook;
-	//Grappling Hook prefab
-	public GameObject hookPrefab;
 	
 	public bool retract;
 	public bool cancel;
@@ -43,18 +41,6 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(hook == null)
-		{
-			//Create a new hook from the prefab
-			if(hookPrefab == null){
-				print("hook refab unassigned");
-			}
-			else{
-				Vector3 spawnPos = new Vector3(0,0,0);
-				hook = Instantiate(hookPrefab, spawnPos,Quaternion.identity);
-				hook.GetComponent<HookFly>().grapplingHook = this;
-			}
-		}
 		if(Input.GetMouseButtonDown(0)){
 				//Mouse pressed
 				DisconnectWithSpring();

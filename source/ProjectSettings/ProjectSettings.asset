@@ -10,10 +10,10 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Hybern
-  productName: SWAP
-  defaultCursor: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
-  cursorHotspot: {x: 25, y: 30}
+  companyName: DefaultCompany
+  productName: 2DRoguelike
+  defaultCursor: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
@@ -228,15 +228,8 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: 53a038b8780575243ba26ffa26147418,
-    type: 3}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 53a038b8780575243ba26ffa26147418, type: 3}
-      m_Width: 128
-      m_Height: 128
+  resolutionDialogBanner: {fileID: 0}
+  m_BuildTargetIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
