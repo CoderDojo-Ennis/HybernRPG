@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
 	public int health;
+    public GameObject choice;
 	public CameraFollow cameraFollow;
 	
 	public void Start()
 	{
 		health = 10;
 	}
+
 	public void TakeDamage(int damage)
 	{
 		SubtractDamage(damage);
@@ -23,6 +25,7 @@ public class PlayerStats : MonoBehaviour {
 			Die();
 		}
 	}
+
 	private void Die()
 	{
 		//Disable animators on child objects
@@ -73,7 +76,9 @@ public class PlayerStats : MonoBehaviour {
 		
 		//Die() only called when health == 0, and we only want to call Die() once
 		health -= 1;
+        choice.SetActive(true);
 	}
+
 	private void SubtractDamage(int damage)
 	{
 		//A special function is required to take away damage, so that the player's health
