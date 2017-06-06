@@ -1,0 +1,68 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   21.21.13.7892
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.018 seconds
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Cian\Documents\GitHub\New folder\HybernRPG\source\GameAlpha0.2_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 144Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.865134 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.329789 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 811.
+Total: 0.406674 ms (FindLiveObjects: 0.050614 ms CreateObjectMapping: 0.043300 ms MarkObjects: 0.306030 ms  DeleteObjects: 0.006729 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.492398 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 809.
+Total: 0.189293 ms (FindLiveObjects: 0.018724 ms CreateObjectMapping: 0.019309 ms MarkObjects: 0.148041 ms  DeleteObjects: 0.003218 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.555886 ms
+
+Unloading 103 unused Assets to reduce memory usage. Loaded Objects now: 364.
+Total: 0.838510 ms (FindLiveObjects: 0.016091 ms CreateObjectMapping: 0.018432 ms MarkObjects: 0.135460 ms  DeleteObjects: 0.668526 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.371566 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 809.
+Total: 0.212407 ms (FindLiveObjects: 0.023990 ms CreateObjectMapping: 0.021357 ms MarkObjects: 0.163840 ms  DeleteObjects: 0.002925 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.624348 ms
+
+Unloading 103 unused Assets to reduce memory usage. Loaded Objects now: 364.
+Total: 0.853431 ms (FindLiveObjects: 0.010240 ms CreateObjectMapping: 0.012580 ms MarkObjects: 0.123172 ms  DeleteObjects: 0.707145 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.284379 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 809.
+Total: 0.197778 ms (FindLiveObjects: 0.020480 ms CreateObjectMapping: 0.019017 ms MarkObjects: 0.155355 ms  DeleteObjects: 0.002925 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 57ec -> priority: 1 
+  Thread -> id: 2eb4 -> priority: 1 
+  Thread -> id: b20 -> priority: 1 
+  Thread -> id: 3e58 -> priority: 1 

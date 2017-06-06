@@ -9,6 +9,7 @@ public class MeleeCultist : EnemyFramework {
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
+		health = 10;
 	}
 	public void Attack()
     {
