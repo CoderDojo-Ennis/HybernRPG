@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour {
         // Pass all parameters to the character control script.
         Character.Move(xVelocity, crouch, jump);
 
-        // Todo - think after landing
+        // Todo - think after landing/*
         if (Thought == Thoughts.JumpLeft)
         {
             Thought = Thoughts.WalkLeft;
@@ -135,7 +135,7 @@ public class EnemyAI : MonoBehaviour {
 
         if(Thought == Thoughts.Idle)
         {
-            this.Delay(2f, Think);
+            this.Delay(0.25f, Think);
         }
 
         Debug.Log("Thought = " + Thought);
