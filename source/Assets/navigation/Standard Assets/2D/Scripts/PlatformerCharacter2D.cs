@@ -8,6 +8,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
+        [SerializeField] private float m_VisionRange = 10f;
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
@@ -48,8 +49,30 @@ namespace UnityStandardAssets._2D
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);*/
         }
         
-
-        public void Move(float move, bool crouch, bool jump)
+        public bool CheckVision(GameObject target)
+        {
+            RaycastHit2D ray = (Physics2D.Raycast(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position, m_VisionRange));
+            if (ray.collider == null)
+            {
+                Debug.Log("target lost");
+                return false;
+            }
+            else
+            {
+                if (ray.collider.name == target.name)
+                {
+                    Debug.DrawRay(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position);
+                    Debug.Log("target found");
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("target lost");
+                    return false;
+                }
+            }
+        }
+        public void Move(float move, bool crouch, bool jump, bool attack)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch && m_Anim.GetBool("Crouch"))
@@ -90,12 +113,16 @@ namespace UnityStandardAssets._2D
                 }
             }
             // If the player should jump...
-            if (/*m_Grounded &&*/ jump /*&& m_Anim.GetBool("Ground")*/)
+            if (m_Grounded && jump /*&& m_Anim.GetBool("Ground")*/)
             {
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            } 
+            if(attack)
+            {
+                m_Anim.SetBool("Attack", true);
             }
         }
 
