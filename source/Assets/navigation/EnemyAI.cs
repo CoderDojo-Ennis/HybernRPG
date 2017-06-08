@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour {
         bool jump = false;
         bool attack = false;
         float xVelocity = 0;
-        float speed = 0.3f;
+        float x = 1f;
 
         switch (this.Thought)
         {
@@ -59,17 +59,17 @@ public class EnemyAI : MonoBehaviour {
                 xVelocity = 0;
                 break;
             case Thoughts.WalkLeft:
-                xVelocity = -speed;
+                xVelocity = -x;
                 break;
             case Thoughts.WalkRight:
-                xVelocity = speed;
+                xVelocity = x;
                 break;
             case Thoughts.JumpLeft:
-                xVelocity = -speed;
+                xVelocity = -x;
                 jump = true;
                 break;
             case Thoughts.JumpRight:
-                xVelocity = speed;
+                xVelocity = x;
                 jump = true;
                 break;
             case Thoughts.Attack:
@@ -84,15 +84,24 @@ public class EnemyAI : MonoBehaviour {
         // Todo - think after landing/*
         if (Thought == Thoughts.JumpLeft)
         {
-            Thought = Thoughts.WalkLeft;
+            //Thought = Thoughts.WalkLeft;
+            Think();
         }
         else if (Thought == Thoughts.JumpRight)
         {
-            Thought = Thoughts.WalkRight;
+            //Thought = Thoughts.WalkRight;
+            Think();
         }
-        if(Thought == Thoughts.Attack)
+
+        // Check if player is in attack range
+        float dist = (transform.position - Player.transform.position).sqrMagnitude;
+        if (dist <= Character.m_AttackRange * Character.m_AttackRange)
         {
-            this.Delay(0.1f, Think);
+            Thought = Thoughts.Attack;
+        }
+        if (Thought == Thoughts.Attack && dist > Character.m_AttackRange * Character.m_AttackRange)
+        {
+            this.Delay(0.5f, Think);
         }
     }
 
@@ -114,7 +123,7 @@ public class EnemyAI : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Good") 
         {
-            this.Delay(0.1f, Think);
+            this.Delay(0.5f, Think);
         }
     }
 
@@ -122,13 +131,13 @@ public class EnemyAI : MonoBehaviour {
     {
         // Check if player can be seen
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Good");
-        float closestDist = 10f;
+        float closestDist = Character.m_VisionRange * Character.m_VisionRange;
         GameObject bestMatch = null;
         for (int i = 0; i < targets.Length; i++)
         {
             if (Character.CheckVision(targets[i]))
             {
-                float dist = Vector3.Distance(targets[i].transform.position, transform.position);
+                float dist = (transform.position - targets[i].transform.position).sqrMagnitude;
                 if (dist < closestDist)
                 {
                     closestDist = dist;
@@ -138,48 +147,39 @@ public class EnemyAI : MonoBehaviour {
         }
 
         Thought = Thoughts.Idle;
-
         if (bestMatch != null)
-        { 
+        {
             Player = bestMatch;
+            NavPointPath path = FindPathToTarget(Player.transform.position);
 
-            if (closestDist < 1f) //if player in attack range
+
+            if (path != null && path.Neighbors != null && path.Neighbors.Count > 0)
             {
-                Thought = Thoughts.Attack;
-            }
-            else // if not, then go to him
-            {
-                NavPointPath path = FindPathToTarget(Player.transform.position);
-
-
-                if (path != null && path.Neighbors != null && path.Neighbors.Count > 0)
+                // Whats the next action
+                var neighbor = path.Neighbors[0];
+                var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
+                switch (neighbor.TravelType)
                 {
-                    // Whats the next action
-                    var neighbor = path.Neighbors[0];
-                    var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
-                    switch (neighbor.TravelType)
-                    {
-                        case TravelTypes.Walk:
-                            if (neighborVector.x > 0)
-                            {
-                                Thought = Thoughts.WalkRight;
-                            }
-                            else
-                            {
-                                Thought = Thoughts.WalkLeft;
-                            }
-                            break;
-                        case TravelTypes.Jump:
-                            if (neighborVector.x > 0)
-                            {
-                                Thought = Thoughts.JumpRight;
-                            }
-                            else
-                            {
-                                Thought = Thoughts.JumpLeft;
-                            }
-                            break;
-                    }
+                    case TravelTypes.Walk:
+                        if (neighborVector.x > 0)
+                        {
+                            Thought = Thoughts.WalkRight;
+                        }
+                        else
+                        {
+                            Thought = Thoughts.WalkLeft;
+                        }
+                        break;
+                    case TravelTypes.Jump:
+                        if (neighborVector.x > 0)
+                        {
+                            Thought = Thoughts.JumpRight;
+                        }
+                        else
+                        {
+                            Thought = Thoughts.JumpLeft;
+                        }
+                        break;
                 }
             }
         }
@@ -188,7 +188,7 @@ public class EnemyAI : MonoBehaviour {
         {
             if (Thought != Thoughts.Idle && Thought != Thoughts.Attack)
             {
-                this.Delay(0.1f, Think);
+                Think();
             }
         }
         else

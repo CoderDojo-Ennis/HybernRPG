@@ -24,6 +24,9 @@ public class movement : MonoBehaviour {
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	
 	///I like that joke, Joey - James
+
+    ///Why thank you James - Joey
+
 	
 	void Start()
 	{
