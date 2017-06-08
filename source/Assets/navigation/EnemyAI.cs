@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour {
     private PlatformerCharacter2D Character;
     public GameObject NavPointContainer;
     //public GameObject PlayerGO;
-    public Transform Player;
+    public GameObject Player;
     public Thoughts Thought;
     public NavPoint LastNavPoint;
     public NavPoint TargetNavPoint;
@@ -77,7 +77,7 @@ public class EnemyAI : MonoBehaviour {
                 attack = true;
                 break;
         }
-        Debug.Log(transform.hasChanged);
+        //Debug.Log(transform.hasChanged);
         // Pass all parameters to the character control script.
         Character.Move(xVelocity, crouch, jump, attack);
 
@@ -89,6 +89,10 @@ public class EnemyAI : MonoBehaviour {
         else if (Thought == Thoughts.JumpRight)
         {
             Thought = Thoughts.WalkRight;
+        }
+        if(Thought == Thoughts.Attack)
+        {
+            this.Delay(0.1f, Think);
         }
     }
 
@@ -105,6 +109,15 @@ public class EnemyAI : MonoBehaviour {
             }
         }
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Good") 
+        {
+            this.Delay(0.1f, Think);
+        }
+    }
+
     private void Think()
     {
         // Check if player can be seen
@@ -123,60 +136,65 @@ public class EnemyAI : MonoBehaviour {
                 }
             }
         }
+
         Thought = Thoughts.Idle;
-        //Debug.Log("bestMatch = " + bestMatch);
+
         if (bestMatch != null)
         { 
-            Player = bestMatch.transform;
+            Player = bestMatch;
 
-            /*if(closestDist < 1f)
+            if (closestDist < 1f) //if player in attack range
             {
                 Thought = Thoughts.Attack;
-            }*/
-            NavPointPath path = FindPathToTarget(Player.position);
-
-          
-            if (path != null && path.Neighbors != null && path.Neighbors.Count > 0)
+            }
+            else // if not, then go to him
             {
-                // Whats the next action
-                var neighbor = path.Neighbors[0];
-                var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
-                switch (neighbor.TravelType)
+                NavPointPath path = FindPathToTarget(Player.transform.position);
+
+
+                if (path != null && path.Neighbors != null && path.Neighbors.Count > 0)
                 {
-                    case TravelTypes.Walk:
-                        if (neighborVector.x > 0)
-                        {
-                            Thought = Thoughts.WalkRight;
-                        }
-                        else
-                        {
-                            Thought = Thoughts.WalkLeft;
-                        }
-                        break;
-                    case TravelTypes.Jump:
-                        if (neighborVector.x > 0)
-                        {
-                            Thought = Thoughts.JumpRight;
-                        }
-                        else
-                        {
-                            Thought = Thoughts.JumpLeft;
-                        }
-                        break;
+                    // Whats the next action
+                    var neighbor = path.Neighbors[0];
+                    var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
+                    switch (neighbor.TravelType)
+                    {
+                        case TravelTypes.Walk:
+                            if (neighborVector.x > 0)
+                            {
+                                Thought = Thoughts.WalkRight;
+                            }
+                            else
+                            {
+                                Thought = Thoughts.WalkLeft;
+                            }
+                            break;
+                        case TravelTypes.Jump:
+                            if (neighborVector.x > 0)
+                            {
+                                Thought = Thoughts.JumpRight;
+                            }
+                            else
+                            {
+                                Thought = Thoughts.JumpLeft;
+                            }
+                            break;
+                    }
                 }
             }
         }
+        /*
         if (transform.hasChanged == false)
         {
-            if (Thought != Thoughts.Idle /*&& Thought != Thoughts.Attack*/)
+            if (Thought != Thoughts.Idle && Thought != Thoughts.Attack)
             {
-                //Thought = Thoughts.Idle;
+                this.Delay(0.1f, Think);
             }
         }
         else
         {
             transform.hasChanged = false;
-        }
+        }*/
         if (Thought == Thoughts.Idle)
         {
             this.Delay(0.5f, Think);
