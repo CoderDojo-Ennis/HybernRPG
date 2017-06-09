@@ -34,7 +34,6 @@ public class ArmCannonCultist : EnemyFramework {
 			if(Random.Range(0.0f, 1.0f) < 0.1f)
 			{
 				ProjectileAttack();
-				print("One more");
 			}
         }
     }

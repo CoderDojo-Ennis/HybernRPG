@@ -13,6 +13,8 @@ public class CameraFollow : MonoBehaviour {
 	{
 		position = transform.position;
 		shaking = false;
+		
+		Player = GameObject.Find("Player Physics Parent").transform;
 	}
 	void FixedUpdate()
 	{
