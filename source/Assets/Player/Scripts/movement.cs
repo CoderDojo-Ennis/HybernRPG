@@ -12,7 +12,6 @@ public class movement : MonoBehaviour {
 	public KeyCode runKey;
 	
 	private int frames;
-	private Animator anim;
 	private Rigidbody2D rb;
 	private float xScale;
 	private int counter = 0;
@@ -30,7 +29,6 @@ public class movement : MonoBehaviour {
 	
 	void Start()
 	{
-		anim    =    GetComponent<Animator>();
 		rb	    = GetComponent<Rigidbody2D>();
 		xScale  = 							1;
 		isJumpPressed =	 				false;
@@ -154,84 +152,3 @@ public class movement : MonoBehaviour {
 	}
 	
 }
-/*public void ForceMove(float force, Vector2 dir , Rigidbody2D rBody)
-	{
-		rBody.velocity = new Vector2 (0, 0);
-		rBody.velocity += dir * force;
-		Debug.Log(dir);
-	}*/
-	/*public void ForceMove(float force, Vector2 dir , Rigidbody2D rBody)
-	{
-		rBody.velocity = new Vector2 (0, 0);
-		rBody.velocity += dir * force;
-		Debug.Log(dir);
-	}
-	void Update () {
-		
-		//if (Input.GetKey (KeyCode.W)) {
-		//	speed = 2;			
-		//} else {
-		//	speed = 1;
-		//}
-		
-
-	}
-
-	void FixedUpdate ()
-	{
-		RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 0.05f);
-		Debug.DrawRay(transform.position, Vector2.down * 0.05f);
-		Rigidbody2D rb = GetComponent<Rigidbody2D> (); 
-		
-		if (Input.GetKey (leftKey)) { //move left
-			xScale = 1f;
-			if (Input.GetKey (runKey)) { 
-				speed = 2;			
-			} else { 
-				speed = 1;
-			}
-
-			float h = Vector2.left.x;
-			Vector3 v = rb.velocity;
-			v.x = h * speed;
-			rb.velocity = v; 
-
-		} else if (Input.GetKey (rightKey)) { //move right
-			xScale = -1f;
-			if (Input.GetKey (runKey)) {
-				speed = 2;			
-			} else { 
-				speed = 1;
-			}
-			float h = Vector2.right.x;
-			Vector3 v = rb.velocity;
-			v.x = h * speed;
-			rb.velocity = v; 
-
-		} else {
-			speed = 0;
-		}
-		transform.localScale = new Vector3(xScale, 1f, 1f);
-		anim.SetFloat ("speed", speed);
-		if (Input.GetKeyDown (jumpKey)) { //jump
-			//Debug.Log("jump!");
-			if (jumps > 0) {
-				anim.SetTrigger ("jump");
-				//rb.velocity = new Vector2 (0, 0);
-				//rb.velocity += new Vector2 (0, force + speed);
-				ForceMove(force + speed, Vector2.up, rb);
-				jumps--;
-			}
-		}
-		if (Input.GetMouseButton(1)) { //aiming
-			anim.SetBool ("aiming", true);
-		} else {
-			anim.SetBool ("aiming", false);
-		}
-		if (Input.GetMouseButton (0)) {
-			anim.SetTrigger ("atk");
-		}
-		if(groundHit) {
-			jumps = 2;
-		}
-	}*/

@@ -196,7 +196,7 @@ public class GrapplingHook : MonoBehaviour {
 		GameObject playerPhysics;
 		playerPhysics = transform.parent.parent.gameObject;
 		
-		float scale = playerPhysics.transform.localScale.x;
+		//float scale = playerPhysics.transform.localScale.x;
 		
 		Vector3 armPos;
 		Vector3 hookPos;

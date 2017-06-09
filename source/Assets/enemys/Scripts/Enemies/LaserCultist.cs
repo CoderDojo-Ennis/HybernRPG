@@ -35,10 +35,6 @@ public class LaserCultist : EnemyFramework {
 		
         
     }
-	public void TakeDamage()
-	{
-		health -= 1;
-	}
 	private bool SearchBeam(float angle)
 	{
 		//Returns false if player not hit

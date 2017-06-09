@@ -21,13 +21,14 @@ public class ArmCannonCultist : EnemyFramework {
 		Player = GameObject.Find("Player Physics Parent");
 	}
 
-    public void Attack()
+    override public void Attack()
     {
     }
 
     void Update()
     {
-		Vector3 distance = this.transform.position - Player.transform.position;
+		Vector3 distance;
+		distance = this.transform.position - Player.transform.position;
         if (distance.sqrMagnitude < maxSenseDistance)
         {
             
@@ -37,10 +38,6 @@ public class ArmCannonCultist : EnemyFramework {
 			}
         }
     }
-
-    public void TakeDamage()
-	{
-	}
 	
 	//Ranged attack affected by gravity
     void ProjectileAttack()
