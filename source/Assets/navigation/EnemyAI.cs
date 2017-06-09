@@ -28,15 +28,19 @@ public class EnemyAI : MonoBehaviour {
 
     private void Awake()
     {
+		Player = GameObject.Find("Player Physics Parent");
+		NavPointContainer = GameObject.Find("NavPoints");
+		
         Thought = Thoughts.Idle;
         Character = GetComponent<PlatformerCharacter2D>();
         AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
         Debug.Log(this.name + " starting near " + LastNavPoint.name);
+		
     }
 
     private void Start()
-    {
+    {	
         Think();
     }
 
