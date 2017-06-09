@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserCultist : EnemyFramework {
     
-	public float angle;
+	private float angle;
 	private float angleChange;
 	
     void OnEnable()
@@ -30,7 +30,7 @@ public class LaserCultist : EnemyFramework {
 		angle += angleChange;
 	}
 	//Default ranged attack in straight line
-    public void Attack()
+    override public void Attack()
     {
 		
         

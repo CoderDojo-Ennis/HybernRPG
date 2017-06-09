@@ -127,7 +127,13 @@ namespace UnityStandardAssets._2D
             } 
             if(attack)
             {
-                m_Anim.SetBool("Attack", true);
+                //m_Anim.SetBool("Attack", true);
+				//Deduct health from player
+				GameObject player;
+				player = GameObject.Find("Player Physics Parent");
+				
+				PlayerStats playerStats;
+				player.GetComponent<PlayerStats>().TakeDamage(1);
             }
         }
 

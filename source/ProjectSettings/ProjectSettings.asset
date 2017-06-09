@@ -12,7 +12,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Hybern
   productName: SWAP
-  defaultCursor: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  defaultCursor: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
   cursorHotspot: {x: 25, y: 30}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
   m_ShowUnitySplashScreen: 1

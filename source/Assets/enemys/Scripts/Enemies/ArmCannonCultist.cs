@@ -16,6 +16,9 @@ public class ArmCannonCultist : EnemyFramework {
 		jumpForce = 4;
         maxSenseDistance = 6f;
 		health = 10;
+		
+		//Find player
+		Player = GameObject.Find("Player Physics Parent");
 	}
 
     public void Attack()

@@ -33,26 +33,26 @@ public class GrapplingHook : MonoBehaviour {
 		position1Sub = transform.GetChild(0).GetChild(0).transform.position;
 		localPosition1Sub = transform.GetChild(0).GetChild(0).transform.localPosition;
 		
-		hook.GetComponent<HookFly>().grapplingHook = this;
-		
 		retract = false;
 		cancel = false;
 		
-		//Ignore grappling hook collisions with player
-		Physics2D.IgnoreCollision(hook.GetComponent<Collider2D>(), transform.parent.parent.GetComponent<Collider2D>());
+		hook = null;
 	}
 	void LateUpdate()
 	{
 		if(hook == null)
 		{
-			//Create a new hook from the prefab
+			//Create a new hook from the prefab if not already in existence
 			if(hookPrefab == null){
-				print("hook refab unassigned");
+				print("hook prefab unassigned");
 			}
 			else{
 				Vector3 spawnPos = new Vector3(0,0,0);
 				hook = Instantiate(hookPrefab, spawnPos,Quaternion.identity);
 				hook.GetComponent<HookFly>().grapplingHook = this;
+				
+				//Ignore grappling hook collisions with player
+				Physics2D.IgnoreCollision(hook.GetComponent<Collider2D>(), transform.parent.parent.GetComponent<Collider2D>());
 			}
 		}
 		if(Input.GetMouseButtonDown(0)){
