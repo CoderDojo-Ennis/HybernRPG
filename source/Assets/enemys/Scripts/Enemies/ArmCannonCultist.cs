@@ -54,12 +54,13 @@ public class ArmCannonCultist : EnemyFramework {
 		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
 		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
 		projectile.GetComponent<EnemyBlast>().creator = gameObject;
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(2.5f));
+        
     }
 
-    private IEnumerator Wait()
+    private IEnumerator Wait(float s)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(s);
         ProjectileAvailable = true;
     }
 
