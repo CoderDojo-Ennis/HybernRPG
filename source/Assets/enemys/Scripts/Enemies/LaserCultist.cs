@@ -9,11 +9,12 @@ public class LaserCultist : EnemyFramework {
 	
     void OnEnable()
 	{
-		//Sets variables from EnemyFramework
+        //Sets variables from EnemyFramework
+        attack = 1;
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
-		health = 10;
+		health = 4;
 		//Sets variables from LaserCultist
 		angle = 0;
 		angleChange = 1;
@@ -33,7 +34,6 @@ public class LaserCultist : EnemyFramework {
     override public void Attack()
     {
 		
-        
     }
 	private bool SearchBeam(float angle)
 	{
@@ -57,7 +57,7 @@ public class LaserCultist : EnemyFramework {
 			EnableLineRenderer(0.1f, origin, searchBeam.point);
 			if(searchBeam.transform.gameObject.tag == "Good")
 			{
-				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
+				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
 				return true;
 			}
 			return false;

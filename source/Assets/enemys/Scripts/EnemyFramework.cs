@@ -112,22 +112,4 @@ public abstract class EnemyFramework : MonoBehaviour {
 			GameObject.Destroy(gameObject);
 		}
 	}
-	
-    //Only called in enemyBehaviour
-    //'s' is equal to enemyType
-    static public EnemyFramework EnemyCreation(string s)
-    {
-        switch (s)
-        {
-            //Sorted alphabetically
-            case "ArmCannonCultist":
-                return new ArmCannonCultist();
-            case "LaserCultist":
-                return new LaserCultist();
-            case "MeleeCultist":
-                return new MeleeCultist();
-            default:
-                return null;
-        }
-    }
 }

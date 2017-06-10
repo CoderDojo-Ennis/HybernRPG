@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void Start()
 	{
-		health = 10;
+		health = 8;
 		cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
 		menu = GameObject.Find("UI").transform.Find("Canvas").gameObject;
 	}
