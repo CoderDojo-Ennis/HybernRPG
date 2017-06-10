@@ -127,12 +127,21 @@ public abstract class EnemyFramework : MonoBehaviour {
 
     public virtual void Die()
     {
+        Component[] monos;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GetComponent<CapsuleCollider2D>().enabled = false;
-        GetComponent<EnemyFramework>().enabled = false;                     //Script disabled
-        if (GetComponent<LineRenderer>())
-            GetComponent<LineRenderer>().enabled = false;                   //For LaserCultist
+        GetComponent<EnemyFramework>().enabled = false;                     //Main Script disabled
+        if (GetComponent<LineRenderer>())                                   //For LaserCultist, ...
+            GetComponent<LineRenderer>().enabled = false;
+        if (GetComponent<MonoBehaviour>())                                  //For MeleeCultist, ...
+        {
+            monos = GetComponents<MonoBehaviour>();
+            foreach (MonoBehaviour mono in monos)
+            {
+                mono.enabled = false;
+            }
+        }
 
         //Rigidbody2D
         rigidbodys = GetComponentsInChildren<Rigidbody2D>();
@@ -161,7 +170,7 @@ public abstract class EnemyFramework : MonoBehaviour {
 
     private IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
     }
 }

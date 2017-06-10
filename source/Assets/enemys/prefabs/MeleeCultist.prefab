@@ -56,6 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4161209011890936}
   - component: {fileID: 212110706238937490}
+  - component: {fileID: 50682082757730476}
+  - component: {fileID: 61990520436445920}
   m_Layer: 0
   m_Name: torso
   m_TagString: Untagged
@@ -79,7 +81,7 @@ GameObject:
   - component: {fileID: 95415470013855694}
   m_Layer: 0
   m_Name: MeleeCultist
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,6 +544,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50682082757730476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180952235025078}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50886377706555594
 Rigidbody2D:
   serializedVersion: 4
@@ -677,6 +699,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13104537, y: 0.44404852}
   m_EdgeRadius: 0
+--- !u!61 &61990520436445920
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180952235025078}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2870871, y: 0.33493495}
+    newSize: {x: 0.2870871, y: 0.33493495}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2870871, y: 0.33493495}
+  m_EdgeRadius: 0
 --- !u!70 &70913987747126218
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -752,7 +799,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200348308184840}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9f1ffdd043b3374c9c2abfd5b0ccbc7, type: 3}
   m_Name: 
@@ -760,9 +807,9 @@ MonoBehaviour:
   attack: 0
   health: 0
   maxSenseDistance: 0
-  runSpeed: 5
-  walkSpeed: 2
-  jumpForce: 1
+  runSpeed: 0
+  walkSpeed: 0
+  jumpForce: 0
   rigidbodys: []
   bcolliders: []
   ccolliders: []

@@ -749,10 +749,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 0
   health: 0
-  maxSenseDistance: 4
-  runSpeed: 4
-  walkSpeed: 1
-  jumpForce: 4
+  maxSenseDistance: 0
+  runSpeed: 0
+  walkSpeed: 0
+  jumpForce: 0
   rigidbodys: []
   bcolliders: []
   ccolliders: []

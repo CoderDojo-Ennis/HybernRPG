@@ -14,7 +14,7 @@ public class LaserCultist : EnemyFramework {
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
-		health = 4;
+		health = 3;
 		//Sets variables from LaserCultist
 		angle = 0;
 		angleChange = 1;

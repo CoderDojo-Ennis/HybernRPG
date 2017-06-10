@@ -16,12 +16,13 @@ public class ArmCannonCultist : EnemyFramework {
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
-        maxSenseDistance = 16f;
-		health = 4;
+        maxSenseDistance = 25f;
+		health = 2;
 		
 		//Find player
 		Player = GameObject.Find("Player Physics Parent");
-
+        
+        //Can shoot
         ProjectileAvailable = true;
 	}
 
@@ -54,7 +55,7 @@ public class ArmCannonCultist : EnemyFramework {
 		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
 		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
 		projectile.GetComponent<EnemyBlast>().creator = gameObject;
-        StartCoroutine(Wait(2.5f));
+        StartCoroutine(Wait(1.5f));
         
     }
 
