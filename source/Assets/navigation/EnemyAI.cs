@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour {
         Character = GetComponent<PlatformerCharacter2D>();
         AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
-        Debug.Log(this.name + " starting near " + LastNavPoint.name);
+        //Debug.Log(this.name + " starting near " + LastNavPoint.name);
 		
     }
 
@@ -205,7 +205,7 @@ public class EnemyAI : MonoBehaviour {
         }
 
 
-        Debug.Log("Thought = " + Thought);
+        //Debug.Log("Thought = " + Thought);
     }
 
     private NavPointPath FindPathToTarget(Vector3 target)
