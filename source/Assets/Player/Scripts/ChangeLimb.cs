@@ -18,7 +18,7 @@ public class ChangeLimb : MonoBehaviour {
 		
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
-            //animationControl.ArmLimbs = 1;
+            animationControl.ArmLimbs = 0;
         }
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
@@ -28,9 +28,13 @@ public class ChangeLimb : MonoBehaviour {
 		{
             animationControl.ArmLimbs = 3;
         }
+		if (Input.GetKeyDown(KeyCode.Alpha9))
+		{
+            animationControl.TorsoLimbs = 0;
+        }
 		if (Input.GetKeyDown(KeyCode.Alpha0))
 		{
-            animationControl.ArmLimbs = 0;
+            animationControl.TorsoLimbs = 1;
         }
 	}
 }

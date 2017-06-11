@@ -7,16 +7,35 @@ public class AnimationControl : MonoBehaviour {
 	public bool walking;
 	public float speed;
 	public bool inAir;
+	
 	public int ArmLimbs;
+	public int TorsoLimbs;
+	
+	//Toro Limbs
+	//0 - normal
+	//1 - heavy torso
 	void Update ()
 	{
 		
-		speed = Mathf.Abs(GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>().velocity.x)/2;
+		Rigidbody2D rb;
+		rb = GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>();
+		
+		//See if player is walking
+		speed = Mathf.Abs(rb.velocity.x)/2;
 		if(speed < 0.05){
 			walking = false;
 		}
 		else{
 			walking = true;
+		}
+		//See if player has a normal or heavy torso
+		if(TorsoLimbs == 0){
+			//normal
+			rb.mass = 1;
+		}
+		else{
+			//normal
+			rb.mass = 3;
 		}
 		
 		this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
@@ -27,6 +46,8 @@ public class AnimationControl : MonoBehaviour {
 		this.transform.Find("Arms").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("Arms").GetComponent<Animator>().SetBool("InAir", inAir);
 		this.transform.Find("Arms").GetComponent<Animator>().SetInteger("ArmLimbs", ArmLimbs);
+		
+		this.transform.Find("torso").GetComponent<Animator>().SetInteger("TorsoLimbs", TorsoLimbs);
 		
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
