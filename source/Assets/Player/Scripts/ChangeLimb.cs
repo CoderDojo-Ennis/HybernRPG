@@ -28,6 +28,10 @@ public class ChangeLimb : MonoBehaviour {
 		{
             animationControl.ArmLimbs = 3;
         }
+		if (Input.GetKeyDown(KeyCode.Alpha4))
+		{
+            animationControl.ArmLimbs = 2;
+        }
 		if (Input.GetKeyDown(KeyCode.Alpha9))
 		{
             animationControl.TorsoLimbs = 0;
