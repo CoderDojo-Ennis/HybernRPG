@@ -21,6 +21,8 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+		
+		public Transform jumpTarget;         //Target to jump to
 
         private void Awake()
         {
@@ -120,10 +122,23 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if (m_Grounded && jump /*&& m_Anim.GetBool("Ground")*/)
             {
-                // Add a vertical force to the player.
-                m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(m_MaxSpeed * move, m_JumpForce));
-                m_Grounded = false;
+				//Variables for calculating jump velocity
+				Vector2 origin;
+				Vector2 target;
+				float height;
+				
+				//Assign variables for calculating jump velocity
+				origin = transform.position;
+				target = jumpTarget.position;
+				height = 1;
+				
+				//Calculate jump velocity
+				m_Rigidbody2D.velocity = FindJumpVelocity(origin, target, height);
+				
+				//Character is off ground
+				m_Grounded = false;
+				//Tell the animator about this fact
+				m_Anim.SetBool("Ground", false);
             } 
             if(attack)
             {
@@ -148,5 +163,46 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+		private Vector2 FindJumpVelocity(Vector2 origin, Vector2 target, float height)
+	{
+		//The goal here is to find the velocity needed to launch the rigidbody
+		//from origin to target. Height is the distance above whichever of the
+		//two points is heigher, the maximum height of the arc.
+		//
+		//initial speed = Sqrt(19.6 * maxDisplacement)
+		//
+		//
+		Vector2 displacement;
+		displacement = target - origin;
+		
+		float maxHeight;
+		if(origin.y < target.y){
+			//target is heigher point
+			maxHeight = displacement.y + height;
+			
+		}else{
+			//origin is heigher point
+			maxHeight = height;
+		}
+		
+		//Find y component of initial velocity
+		Vector2 velocity;
+		velocity.y = Mathf.Sqrt(19.62f * maxHeight);
+		
+		//Find y component of final velocity
+		float finalVelocity;
+		finalVelocity = -Mathf.Sqrt(19.62f * (maxHeight - displacement.y));
+		
+		//Find time taken
+		float time;
+		time = Mathf.Sqrt(Mathf.Abs((velocity.y - finalVelocity)/(9.81f)));
+		
+		//Find x component of initial velocity
+		velocity.x = displacement.x/time;
+		
+		//Give back the answer
+		return velocity;
+	}
     }
+	
 }

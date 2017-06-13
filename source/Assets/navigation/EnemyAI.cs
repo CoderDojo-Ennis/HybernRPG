@@ -161,6 +161,11 @@ public class EnemyAI : MonoBehaviour {
             {
                 // Whats the next action
                 var neighbor = path.Neighbors[0];
+				
+				//Find transform of next navpoint, just in case we want to jump to it
+				Character.jumpTarget = neighbor.NeighborPoint.transform;
+				
+				
                 var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
                 switch (neighbor.TravelType)
                 {
@@ -216,6 +221,8 @@ public class EnemyAI : MonoBehaviour {
         NavPoint from = LastNavPoint;
         NavPoint to = TargetNavPoint;
         NavPointPath BestPath = from.GetBestPath(to, this.AllNavPoints);
+		
+		
         return BestPath;
     }
 }
