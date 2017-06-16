@@ -202,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802930422168450}
   - component: {fileID: 114959253150365594}
+  - component: {fileID: 114854618925941070}
   m_Layer: 0
   m_Name: PlayerAnimation
   m_TagString: Untagged
@@ -625,8 +626,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5166016, y: 0.6202187}
-    oldSize: {x: 0.5741742, y: 0.55503505}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2870871, y: 0.3253654}
     newSize: {x: 0.5741742, y: 0.55503505}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -675,8 +676,8 @@ BoxCollider2D:
   m_Offset: {x: 0.020891313, y: -0.18434493}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.3319893, y: 0.7196779}
-    oldSize: {x: 0.15311313, y: 0.19139141}
+    pivot: {x: 0.3543576, y: 0.8160448}
+    oldSize: {x: 0.13397399, y: 0.19139141}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -697,18 +698,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.054669023, y: -0.118556686}
+  m_Offset: {x: -0.04666066, y: -0.060265522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.8176179, y: 0.90045714}
-    oldSize: {x: 0.15311313, y: 0.17225227}
+    pivot: {x: 0.7050314, y: 0.8277065}
+    oldSize: {x: 0.13397399, y: 0.1626827}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58942086, y: 0.115281925}
+  m_Size: {x: 0.6648358, y: 0.09927287}
   m_EdgeRadius: 0
 --- !u!61 &61780521254786474
 BoxCollider2D:
@@ -750,8 +751,8 @@ BoxCollider2D:
   m_Offset: {x: -0.02745773, y: -0.17745891}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.794019, y: 0.68891585}
-    oldSize: {x: 0.15311313, y: 0.18182184}
+    pivot: {x: 0.7050314, y: 0.7701591}
+    oldSize: {x: 0.13397399, y: 0.19139141}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -898,7 +899,7 @@ Animator:
   m_GameObject: {fileID: 1059847720176208}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c9746ef5f2c4d514f95c684ca473c141, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1034,6 +1035,40 @@ MonoBehaviour:
   recoilOffset: 0.1
   recoilLerpValue: 0.5
   cameraFollow: {fileID: 0}
+--- !u!114 &114854618925941070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869284745270504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de3d76bf9cf6864f84bfbf7b1167a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 21300000, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  shoulder1: {fileID: 21300006, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  shoulder2: {fileID: 21300002, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  forearm1: {fileID: 21300014, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  forearm2: {fileID: 21300008, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  torso: {fileID: 21300004, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  thigh1: {fileID: 21300012, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  thigh2: {fileID: 21300010, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  calf1: {fileID: 21300018, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  calf2: {fileID: 21300016, guid: 53a038b8780575243ba26ffa26147418, type: 3}
+  shoulder1Pickaxe: {fileID: 21300002, guid: 0d91f6d2e69b86542b3c03d31ea82150, type: 3}
+  shoulder2Pickaxe: {fileID: 21300000, guid: 0d91f6d2e69b86542b3c03d31ea82150, type: 3}
+  shoulder2Shield: {fileID: 21300004, guid: 5c47b821da9a5b2469be8cf6235a078e, type: 3}
+  forearm2Shield: {fileID: 21300000, guid: 5c47b821da9a5b2469be8cf6235a078e, type: 3}
+  shoulder1GrapplingHook: {fileID: 21300002, guid: 50649fe2a61ebe7479ecd67af0cf88c5,
+    type: 3}
+  forearm1GrapplingHook: {fileID: 21300004, guid: 50649fe2a61ebe7479ecd67af0cf88c5,
+    type: 3}
+  shoulder1ArmCannon: {fileID: 21300004, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  shoulder2ArmCannon: {fileID: 21300006, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  forearm1ArmCannon: {fileID: 21300008, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  forearm2ArmCannon: {fileID: 21300002, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  torsoHeavy: {fileID: 21300000, guid: 7efc9cc2b7786c24fa9f2d2abede1776, type: 3}
 --- !u!114 &114959253150365594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1082,7 +1117,7 @@ SpriteRenderer:
   m_SortingLayerID: 1287881407
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7efc9cc2b7786c24fa9f2d2abede1776, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1162,7 +1197,7 @@ SpriteRenderer:
   m_SortingLayerID: -452437429
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300004, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1242,7 +1277,7 @@ SpriteRenderer:
   m_SortingLayerID: -452437429
   m_SortingLayer: 1
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300008, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1282,7 +1317,7 @@ SpriteRenderer:
   m_SortingLayerID: -38100403
   m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300002, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1402,7 +1437,7 @@ SpriteRenderer:
   m_SortingLayerID: -38100403
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

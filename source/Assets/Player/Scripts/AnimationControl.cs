@@ -11,7 +11,14 @@ public class AnimationControl : MonoBehaviour {
 	public int ArmLimbs;
 	public int TorsoLimbs;
 	
-	//Toro Limbs
+	//Arm Limbs
+	//0 - normal
+	//1 - pickaxes
+	//2 - shield
+	//3-  grapplin hook
+	//7 - arm cannon
+	
+	//Torso Limbs
 	//0 - normal
 	//1 - heavy torso
 	void Update ()

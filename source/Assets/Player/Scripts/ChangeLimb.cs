@@ -5,6 +5,16 @@ using UnityEngine;
 public class ChangeLimb : MonoBehaviour {
 
 	private GameObject child;
+	//Arm Limbs
+	//0 - normal
+	//1 - pickaxes
+	//2 - shield
+	//3-  grapplin hook
+	//7 - arm cannon
+	
+	//Torso Limbs
+	//0 - normal
+	//1 - heavy torso
 	
 	void Start ()
 	{
@@ -32,6 +42,10 @@ public class ChangeLimb : MonoBehaviour {
 		{
             animationControl.ArmLimbs = 2;
         }
+		if (Input.GetKeyDown(KeyCode.Alpha5))
+		{
+            //animationControl.ArmLimbs = 1;
+        }
 		if (Input.GetKeyDown(KeyCode.Alpha9))
 		{
             animationControl.TorsoLimbs = 0;
@@ -40,5 +54,9 @@ public class ChangeLimb : MonoBehaviour {
 		{
             animationControl.TorsoLimbs = 1;
         }
+		if(Input.anyKey)
+		{
+			child.GetComponent<SpriteControl>().SetSprites(animationControl.ArmLimbs, animationControl.TorsoLimbs);
+		}
 	}
 }

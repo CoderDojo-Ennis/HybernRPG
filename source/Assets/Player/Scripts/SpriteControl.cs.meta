@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 6de3d76bf9cf6864f84bfbf7b1167a1d
+timeCreated: 1497634852
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - head: {instanceID: 0}
+  - shoulder1: {instanceID: 0}
+  - shoulder2: {instanceID: 0}
+  - forearm1: {instanceID: 0}
+  - forearm2: {instanceID: 0}
+  - torso: {instanceID: 0}
+  - thigh1: {instanceID: 0}
+  - thigh2: {instanceID: 0}
+  - calf1: {instanceID: 0}
+  - calf2: {instanceID: 0}
+  - shoulder1ArmCannon: {instanceID: 0}
+  - shoulder2ArmCannon: {instanceID: 0}
+  - forearm1ArmCannon: {instanceID: 0}
+  - forearm2ArmCannon: {fileID: 21300002, guid: d692e7da8d7ccf849a147b00b7cff91d,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
