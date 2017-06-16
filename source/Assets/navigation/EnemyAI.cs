@@ -123,14 +123,6 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Good") 
-        {
-            this.Delay(0.5f, Think);
-        }
-    }
-
     private void Think()
     {
         // Check if player can be seen
