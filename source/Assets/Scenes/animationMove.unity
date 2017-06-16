@@ -235,6 +235,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 61829241428108550, guid: 7721f7a4b4154b041aeac75bf2c92684,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.7050314
+      objectReference: {fileID: 0}
+    - target: {fileID: 61829241428108550, guid: 7721f7a4b4154b041aeac75bf2c92684,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.7701591
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7721f7a4b4154b041aeac75bf2c92684, type: 2}
   m_IsPrefabParent: 0
@@ -793,10 +803,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1366175841168120, guid: 0d3f2f3b30cff4c4c9cd8abfe4f363f4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d3f2f3b30cff4c4c9cd8abfe4f363f4, type: 2}
   m_IsPrefabParent: 0
@@ -838,10 +844,6 @@ Prefab:
     - target: {fileID: 4667114200477862, guid: 1f6f7b0b2e217a1419050b01151bb603, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1177122956452524, guid: 1f6f7b0b2e217a1419050b01151bb603, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f6f7b0b2e217a1419050b01151bb603, type: 2}
