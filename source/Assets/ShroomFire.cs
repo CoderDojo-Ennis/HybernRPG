@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityStandardAssets._2D;
 
 public class ShroomFire : MonoBehaviour {
     public Animator anim;
     public float visionRange;
+    public GameObject Player;
     // Use this for initialization
     void Start () {
 		
@@ -14,16 +17,16 @@ public class ShroomFire : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void OnTriggerEnter2D(Collider2D coll) {
+    public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
-            Debug.Log("gotcha");
             anim.SetBool("fire", true);
+            //Player.GetComponent<PlayerStats>().Die();
+            this.Delay(1f, Player.GetComponent<PlayerStats>().Die);
         }
     }
-    public void OnTriggerExit2D(Collider2D coll) {
-        //Debug.Log(coll.gameObject.tag);
+    public void OnCollisionExit2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
-            Debug.Log("nooo");
+            
             anim.SetBool("fire", false);
         }
     }
@@ -53,5 +56,7 @@ public class ShroomFire : MonoBehaviour {
         } else {
             anim.SetBool("charge", true);
         }
+    }
+    private void Think() {
     }
 }
