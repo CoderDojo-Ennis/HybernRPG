@@ -320,7 +320,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065958658148958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.45, y: 0.39, z: 0}
+  m_LocalPosition: {x: 2.83, y: 1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802930422168450}
@@ -899,7 +899,7 @@ Animator:
   m_GameObject: {fileID: 1059847720176208}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9746ef5f2c4d514f95c684ca473c141, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1006,6 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2ed54b9990ad546a03fa8e2dc1da23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheel: {fileID: 0}
 --- !u!114 &114658854918609634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1083,8 +1084,9 @@ MonoBehaviour:
   walking: 0
   speed: 0
   inAir: 0
-  ArmLimbs: 3
+  ArmLimbs: 0
   TorsoLimbs: 0
+  HeadLimbs: 0
 --- !u!212 &212013372389892228
 SpriteRenderer:
   m_ObjectHideFlags: 1

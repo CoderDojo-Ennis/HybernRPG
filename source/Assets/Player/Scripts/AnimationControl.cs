@@ -10,18 +10,23 @@ public class AnimationControl : MonoBehaviour {
 	
 	public int ArmLimbs;
 	public int TorsoLimbs;
-	
-	//Arm Limbs
-	//0 - normal
-	//1 - pickaxes
-	//2 - shield
-	//3-  grapplin hook
-	//7 - arm cannon
-	
-	//Torso Limbs
-	//0 - normal
-	//1 - heavy torso
-	void Update ()
+    public int HeadLimbs;
+    /// is significantly incomplete
+
+    //Arm Limbs
+    //0 - normal
+    ///1 - pickaxes
+    //2 - shield
+    //3 - grapplin hook
+    ///4 - wings
+    //7 - arm cannon
+
+    //Torso Limbs
+    //0 - normal
+    //1 - heavy torso
+    ///2 - cactus || jetpack
+    
+    void Update ()
 	{
 		
 		Rigidbody2D rb;
@@ -40,12 +45,20 @@ public class AnimationControl : MonoBehaviour {
 			//normal
 			rb.mass = 1;
 		}
-		else{
-			//normal
-			rb.mass = 3;
-		}
-		
-		this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
+
+        if (TorsoLimbs == 1)
+        {
+            //normal
+            rb.mass = 3;
+        }
+
+        if (TorsoLimbs == 2)
+        {
+            //normal
+            rb.mass = 0.5f;
+        }
+
+        this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("head").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("head").GetComponent<Animator>().SetBool("InAir", inAir);
 		
@@ -60,6 +73,7 @@ public class AnimationControl : MonoBehaviour {
 		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("InAir", inAir);
 	}
+
 	public void DisableAnimator()
 	{
 		//Turn of animator on child components
