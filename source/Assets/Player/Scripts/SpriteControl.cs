@@ -51,9 +51,9 @@ public class SpriteControl : MonoBehaviour {
 		SetCalf2(calf2);
 		
 	}
-	public void SetSprites(int armLimbs, int torsoLimbs)
+	public void SetSprites(int armLimbs, int torsoLimbs, int headLimbs)
 	{
-		switch(armLimbs)
+		switch (armLimbs)
 		{
 			case 0: //Normal
 			SetShoulder1(shoulder1);
@@ -79,14 +79,23 @@ public class SpriteControl : MonoBehaviour {
 			SetForearm1(forearm1GrapplingHook);
 			SetForearm2(forearm2);
 			break;
-			case 7: //Arm cannon
+            /*
+            case 4://Wings
+			SetShoulder1(shoulder1GrapplingHook);
+			SetShoulder2(shoulder2);
+			SetForearm1(forearm1GrapplingHook);
+			SetForearm2(forearm2);
+			break;
+             */
+            case 7: //Arm cannon
 			SetShoulder1(shoulder1ArmCannon);
 			SetShoulder2(shoulder2ArmCannon);
 			SetForearm1(forearm1ArmCannon);
 			SetForearm2(forearm2ArmCannon);
 			break;
 		}
-		switch(torsoLimbs)
+
+		switch (torsoLimbs)
 		{
 			case 0:
 			SetTorso(torso);
@@ -94,8 +103,18 @@ public class SpriteControl : MonoBehaviour {
 			case 1:
 			SetTorso(torsoHeavy);
 			break;
-		}
-	}
+            case 2:
+            SetTorso(torso);    //cactus || jetpack
+            break;
+        }
+
+        switch (headLimbs)
+        {
+            case 0:
+            SetHead(head);
+            break;
+        }
+    }
 	private void SetHead(Sprite sprite)
 	{
 		transform.Find("head").GetComponent<SpriteRenderer>().sprite = sprite;
