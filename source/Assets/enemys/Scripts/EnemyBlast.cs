@@ -17,6 +17,7 @@ public class EnemyBlast : MonoBehaviour {
 		else{
 			print("EnemyBlast instance needs to have a gameObject assigned to 'creator' variable, so it can ignore collisions with the enemy who spawned it");
 		}
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shoot Noise");
 	}
 	void Update()
 	{
@@ -29,11 +30,11 @@ public class EnemyBlast : MonoBehaviour {
 	{
 		if(collision.gameObject.name == "Player Physics Parent")
 		{
-			collision.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
+			collision.gameObject.GetComponent<PlayerStats>().TakeDamage(5);
 		}
 		if(collision.gameObject.GetComponent<EnemyFramework>() != null)
 		{
-			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(1);
+			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(5);
 		}
 		if(collision.gameObject.name != "EnemyBlast(Clone)")
 		{

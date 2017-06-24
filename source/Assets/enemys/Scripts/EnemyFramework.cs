@@ -14,11 +14,15 @@ public abstract class EnemyFramework : MonoBehaviour {
 	public float walkSpeed;
 	public float jumpForce;
 	private bool canJump;
-	
-	/**
+
+    public Component[] rigidbodys;
+    public Component[] bcolliders;
+    public Component[] ccolliders;
+
+    /**
 	Beginning of enemy movement functions
 	**/
-	public void Walk(string direction)
+    public void Walk(string direction)
 	{
 		//Finds Rigidbody2D of enemy
 		Rigidbody2D rb;
@@ -98,36 +102,66 @@ public abstract class EnemyFramework : MonoBehaviour {
 			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		}
 	}
-	/**
+    /**
 	End of enemy movement functions
 	**/
-	public virtual void Attack()
+
+    /**
+    Start of enemy combat functions
+    **/
+    //Waits
+
+    public virtual void Attack()
 	{
+
 	}
+
 	public virtual void TakeDamage(int damage)
 	{
 		health -= damage;
-		if(health < 0)
+		if(health <= 0)
 		{
-			GameObject.Destroy(gameObject);
+            Die();
 		}
 	}
-	
-    //Only called in enemyBehaviour
-    //'s' is equal to enemyType
-    static public EnemyFramework EnemyCreation(string s)
+
+    public virtual void Die()
     {
-        switch (s)
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<EnemyFramework>().enabled = false;                     //Script disabled
+        if (GetComponent<LineRenderer>())
+            GetComponent<LineRenderer>().enabled = false;                   //For LaserCultist
+
+        //Rigidbody2D
+        rigidbodys = GetComponentsInChildren<Rigidbody2D>();
+        foreach (Rigidbody2D rb in rigidbodys)
         {
-            //Sorted alphabetically
-            case "ArmCannonCultist":
-                return new ArmCannonCultist();
-            case "LaserCultist":
-                return new LaserCultist();
-            case "MeleeCultist":
-                return new MeleeCultist();
-            default:
-                return null;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.velocity = new Vector2(Random.Range(-3, 5), Random.Range(-3, 5));
         }
+
+        //CircleColliders
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        ccolliders = GetComponentsInChildren<CircleCollider2D>();
+        foreach (CircleCollider2D cc in ccolliders)
+        {
+            cc.enabled = true;
+        }
+
+        //BoxColliders
+        bcolliders = GetComponentsInChildren<BoxCollider2D>();
+        foreach (BoxCollider2D bc in bcolliders)
+        {
+            bc.enabled = true;
+        }
+        StartCoroutine(Destroy());
+    }
+
+    private IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(4f);
+        Destroy(this.gameObject);
     }
 }

@@ -11,10 +11,7 @@ public class MeleeCultist : EnemyFramework {
 		jumpForce = 4;
 		health = 10;
 	}
-	public void Attack()
+	override public void Attack()
     {
     }
-	public void TakeDamage()
-	{
-	}
 }

@@ -100,7 +100,7 @@ public class NavPoint : MonoBehaviour
             this.AllPaths = FindAllPaths();
 
             foreach (var path in this.AllPaths) {
-                Debug.Log(path.Key);
+                //Debug.Log(path.Key);
             }
         }
 

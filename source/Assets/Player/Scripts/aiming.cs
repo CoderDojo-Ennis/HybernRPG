@@ -34,6 +34,8 @@ public class aiming : MonoBehaviour {
 	   restY2 = transform.GetChild(1).GetChild(0).transform.localPosition.y;
 	   recoil = false;
 	   finishedRecoil = false;
+	   
+	   cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
     }
 	
 	// Update is called once per frame

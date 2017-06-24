@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class LaserCultist : EnemyFramework {
     
-	public float angle;
+	private float angle;
 	private float angleChange;
 	
     void OnEnable()
 	{
-		//Sets variables from EnemyFramework
+        //Sets variables from EnemyFramework
+        attack = 1;
 		walkSpeed = 7;
 		runSpeed = 5;
 		jumpForce = 4;
-		health = 10;
+		health = 4;
 		//Sets variables from LaserCultist
 		angle = 0;
 		angleChange = 1;
@@ -30,15 +31,10 @@ public class LaserCultist : EnemyFramework {
 		angle += angleChange;
 	}
 	//Default ranged attack in straight line
-    public void Attack()
+    override public void Attack()
     {
 		
-        
     }
-	public void TakeDamage()
-	{
-		health -= 1;
-	}
 	private bool SearchBeam(float angle)
 	{
 		//Returns false if player not hit
@@ -61,7 +57,7 @@ public class LaserCultist : EnemyFramework {
 			EnableLineRenderer(0.1f, origin, searchBeam.point);
 			if(searchBeam.transform.gameObject.tag == "Good")
 			{
-				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
+				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
 				return true;
 			}
 			return false;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
+	public AudioMixerGroup audioMixer;
     public Sound[] sounds;
 
 	// Use this for initialization
@@ -12,6 +13,7 @@ public class AudioManager : MonoBehaviour {
             {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+			s.source.outputAudioMixerGroup = audioMixer;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
@@ -22,7 +24,7 @@ public class AudioManager : MonoBehaviour {
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
+        s.source.PlayOneShot(s.source.clip, s.source.volume);
     }
-}
+	
 }
