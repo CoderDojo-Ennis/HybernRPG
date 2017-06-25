@@ -205,6 +205,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1065958658148958, guid: 7721f7a4b4154b041aeac75bf2c92684,
     type: 2}
   m_PrefabInternal: {fileID: 239722458}
+--- !u!114 &127864036 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114559913090230572, guid: 7721f7a4b4154b041aeac75bf2c92684,
+    type: 2}
+  m_PrefabInternal: {fileID: 239722458}
+  m_Script: {fileID: 11500000, guid: bd2ed54b9990ad546a03fa8e2dc1da23, type: 3}
 --- !u!1001 &139235850
 Prefab:
   m_ObjectHideFlags: 0
@@ -301,6 +307,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114559913090230572, guid: 7721f7a4b4154b041aeac75bf2c92684,
+        type: 2}
+      propertyPath: wheel
+      value: 
+      objectReference: {fileID: 1276297718}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7721f7a4b4154b041aeac75bf2c92684, type: 2}
   m_IsPrefabParent: 0
@@ -1309,6 +1320,71 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114450637651134656, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114450637651134656, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchTorso
+      objectReference: {fileID: 0}
+    - target: {fileID: 114639439882730940, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114639439882730940, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 114903379146088224, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114903379146088224, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 114903379146088224, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451305521108412, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114451305521108412, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 114686359103313252, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114686359103313252, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchArms
+      objectReference: {fileID: 0}
+    - target: {fileID: 114988270959612384, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127864036}
+    - target: {fileID: 114988270959612384, guid: eae82e8bffdce5e4b865540fe43df547,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchTorso
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eae82e8bffdce5e4b865540fe43df547, type: 2}
   m_IsPrefabParent: 0
@@ -1691,6 +1767,11 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &1276297718 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1021577268902692, guid: eae82e8bffdce5e4b865540fe43df547,
+    type: 2}
+  m_PrefabInternal: {fileID: 1046858469}
 --- !u!1001 &1368862777
 Prefab:
   m_ObjectHideFlags: 0

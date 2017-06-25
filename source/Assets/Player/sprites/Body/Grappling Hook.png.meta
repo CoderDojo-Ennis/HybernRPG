@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a5ffd18033b59344ac77469b70fd385
-timeCreated: 1497784436
+guid: 9a620af4a988bb24290d9454e48e9865
+timeCreated: 1498386041
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: shoulder1-GrapplingHook
+    21300000: shoulder1 - GrapplingHook
     21300002: forearm1-GrapplingHook
   serializedVersion: 4
   mipmaps:
@@ -72,15 +72,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shoulder1-GrapplingHook
+      name: shoulder1 - GrapplingHook
       rect:
         serializedVersion: 2
-        x: 45
-        y: 43
+        x: 41
+        y: 44
         width: 15
-        height: 21
+        height: 20
       alignment: 9
-      pivot: {x: 0.31406173, y: 0.8087902}
+      pivot: {x: 0.32734272, y: 0.83867323}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -88,12 +88,12 @@ TextureImporter:
       name: forearm1-GrapplingHook
       rect:
         serializedVersion: 2
-        x: 46
-        y: 26
-        width: 14
-        height: 17
+        x: 37
+        y: 19
+        width: 23
+        height: 24
       alignment: 9
-      pivot: {x: 0.3140617, y: 0.82812655}
+      pivot: {x: 0.38739744, y: 0.8984391}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
