@@ -42,6 +42,13 @@ public class GrapplingHook : MonoBehaviour {
 	{
 		if(hook == null)
 		{
+			//Destroy any missing grappling hooks lying around the scene,
+			//thus getting rid of the "multiple grappling hooks" glitch.
+			if(GameObject.Find("Hook(Clone)") != null)
+			{
+				GameObject.Destroy(GameObject.Find("Hook(Clone)"));
+			}
+			
 			//Create a new hook from the prefab if not already in existence
 			if(hookPrefab == null){
 				print("hook prefab unassigned");
