@@ -1,19 +1,20 @@
 fileFormatVersion: 2
-guid: cdc1d7fe35d0aec4ca0569a3882228c0
-timeCreated: 1494621117
+guid: 7698bfa6422d7d74eb7679c479a692d3
+timeCreated: 1497638071
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: head-cultist
     21300002: shoulder2-cultist
-    21300004: torso-cultist
-    21300006: shoulder1-cultist
+    21300004: shoulder1-cultist
+    21300006: torso-cultist
     21300008: forearm2-cultist
-    21300010: thigh2-cultist
-    21300012: thigh1-cultist
-    21300014: forearm1-cultist
-    21300016: calf2-cultist
-    21300018: calf1-cultist
+    21300010: forearm1-cultist
+    21300012: thigh2-cultist
+    21300014: thigh1-cultist
+    21300016: cultist_30
+    21300018: calf2-cultist
+    21300020: calf1-cultist
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -83,12 +84,12 @@ TextureImporter:
       name: head-cultist
       rect:
         serializedVersion: 2
-        x: 34
+        x: 14
         y: 66
-        width: 33
-        height: 34
+        width: 34
+        height: 31
       alignment: 9
-      pivot: {x: 0.46125573, y: 0.057108037}
+      pivot: {x: 0.44096178, y: 0.04409298}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -96,25 +97,12 @@ TextureImporter:
       name: shoulder2-cultist
       rect:
         serializedVersion: 2
-        x: 21
-        y: 45
-        width: 12
-        height: 18
+        x: 0
+        y: 43
+        width: 14
+        height: 20
       alignment: 9
       pivot: {x: 0.7050314, y: 0.7701591}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: torso-cultist
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 29
-        width: 30
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -122,12 +110,25 @@ TextureImporter:
       name: shoulder1-cultist
       rect:
         serializedVersion: 2
-        x: 67
-        y: 45
-        width: 12
-        height: 18
+        x: 46
+        y: 44
+        width: 14
+        height: 20
       alignment: 9
       pivot: {x: 0.3543576, y: 0.8160448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: torso-cultist
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -135,9 +136,9 @@ TextureImporter:
       name: forearm2-cultist
       rect:
         serializedVersion: 2
-        x: 21
+        x: 0
         y: 23
-        width: 12
+        width: 13
         height: 19
       alignment: 9
       pivot: {x: 0.7050314, y: 0.8277065}
@@ -145,13 +146,26 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
+      name: forearm1-cultist
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 25
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.2556798, y: 0.8160448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: thigh2-cultist
       rect:
         serializedVersion: 2
-        x: 36
-        y: 21
-        width: 13
-        height: 7
+        x: 15
+        y: 19
+        width: 15
+        height: 9
       alignment: 9
       pivot: {x: 0.485062, y: 0.8236501}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,25 +175,25 @@ TextureImporter:
       name: thigh1-cultist
       rect:
         serializedVersion: 2
-        x: 52
-        y: 21
-        width: 13
-        height: 7
+        x: 31
+        y: 19
+        width: 15
+        height: 9
       alignment: 9
       pivot: {x: 0.4701246, y: 0.8485463}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: forearm1-cultist
+      name: cultist_30
       rect:
         serializedVersion: 2
-        x: 67
-        y: 23
+        x: 48
+        y: 13
         width: 12
-        height: 20
-      alignment: 9
-      pivot: {x: 0.2556798, y: 0.8160448}
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -187,10 +201,10 @@ TextureImporter:
       name: calf2-cultist
       rect:
         serializedVersion: 2
-        x: 36
-        y: 1
-        width: 13
-        height: 17
+        x: 15
+        y: 0
+        width: 15
+        height: 18
       alignment: 9
       pivot: {x: 0.4999997, y: 0.910787}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +214,10 @@ TextureImporter:
       name: calf1-cultist
       rect:
         serializedVersion: 2
-        x: 52
-        y: 1
-        width: 13
-        height: 17
+        x: 31
+        y: 0
+        width: 15
+        height: 18
       alignment: 9
       pivot: {x: 0.5149376, y: 0.9356833}
       border: {x: 0, y: 0, z: 0, w: 0}

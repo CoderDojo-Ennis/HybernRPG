@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: 53a038b8780575243ba26ffa26147418
-timeCreated: 1494621038
+timeCreated: 1497622839
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: head-Redshirt
-    21300002: Shoulder2-Redshirt
+    21300002: shoulder2-Redshirt
     21300004: torso-Redshirt
     21300006: shoulder1-Redshirt
     21300008: forearm2-Redshirt
@@ -93,7 +93,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Shoulder2-Redshirt
+      name: shoulder2-Redshirt
       rect:
         serializedVersion: 2
         x: 20

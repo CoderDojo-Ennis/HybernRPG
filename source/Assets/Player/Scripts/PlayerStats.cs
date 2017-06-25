@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour {
 		}
 	}
 
-	private void Die()
+	public void Die()
 	{
 		//Disable animators on child objects
 		this.transform.GetChild(0).GetComponent<AnimationControl>().DisableAnimator();

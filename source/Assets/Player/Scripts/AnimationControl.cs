@@ -7,19 +7,58 @@ public class AnimationControl : MonoBehaviour {
 	public bool walking;
 	public float speed;
 	public bool inAir;
+	
 	public int ArmLimbs;
-	void Update ()
+	public int TorsoLimbs;
+    public int HeadLimbs;
+    /// is significantly incomplete
+
+    //Arm Limbs
+    //0 - normal
+    ///1 - pickaxes
+    //2 - shield
+    //3 - grapplin hook
+    ///4 - wings
+    //7 - arm cannon
+
+    //Torso Limbs
+    //0 - normal
+    //1 - heavy torso
+    ///2 - cactus || jetpack
+    
+    void Update ()
 	{
 		
-		speed = Mathf.Abs(GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>().velocity.x)/2;
+		Rigidbody2D rb;
+		rb = GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>();
+		
+		//See if player is walking
+		speed = Mathf.Abs(rb.velocity.x)/2;
 		if(speed < 0.05){
 			walking = false;
 		}
 		else{
 			walking = true;
 		}
-		
-		this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
+		//See if player has a normal or heavy torso
+		if(TorsoLimbs == 0){
+			//normal
+			rb.mass = 1;
+		}
+
+        if (TorsoLimbs == 1)
+        {
+            //normal
+            rb.mass = 3;
+        }
+
+        if (TorsoLimbs == 2)
+        {
+            //normal
+            rb.mass = 0.5f;
+        }
+
+        this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("head").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("head").GetComponent<Animator>().SetBool("InAir", inAir);
 		
@@ -28,10 +67,13 @@ public class AnimationControl : MonoBehaviour {
 		this.transform.Find("Arms").GetComponent<Animator>().SetBool("InAir", inAir);
 		this.transform.Find("Arms").GetComponent<Animator>().SetInteger("ArmLimbs", ArmLimbs);
 		
+		this.transform.Find("torso").GetComponent<Animator>().SetInteger("TorsoLimbs", TorsoLimbs);
+		
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("Legs").GetComponent<Animator>().SetBool("InAir", inAir);
 	}
+
 	public void DisableAnimator()
 	{
 		//Turn of animator on child components

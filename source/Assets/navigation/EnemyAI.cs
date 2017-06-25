@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour {
         Character = GetComponent<PlatformerCharacter2D>();
         AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
-        Debug.Log(this.name + " starting near " + LastNavPoint.name);
+        //Debug.Log(this.name + " starting near " + LastNavPoint.name);
 		
     }
 
@@ -123,14 +123,6 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Good") 
-        {
-            this.Delay(0.5f, Think);
-        }
-    }
-
     private void Think()
     {
         // Check if player can be seen
@@ -161,6 +153,11 @@ public class EnemyAI : MonoBehaviour {
             {
                 // Whats the next action
                 var neighbor = path.Neighbors[0];
+				
+				//Find transform of next navpoint, just in case we want to jump to it
+				Character.jumpTarget = neighbor.NeighborPoint.transform;
+				
+				
                 var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
                 switch (neighbor.TravelType)
                 {
@@ -205,7 +202,7 @@ public class EnemyAI : MonoBehaviour {
         }
 
 
-        Debug.Log("Thought = " + Thought);
+        //Debug.Log("Thought = " + Thought);
     }
 
     private NavPointPath FindPathToTarget(Vector3 target)
@@ -216,6 +213,8 @@ public class EnemyAI : MonoBehaviour {
         NavPoint from = LastNavPoint;
         NavPoint to = TargetNavPoint;
         NavPointPath BestPath = from.GetBestPath(to, this.AllNavPoints);
+		
+		
         return BestPath;
     }
 }
