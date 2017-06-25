@@ -1,0 +1,59 @@
+From b6bf2b70189f706e0c840d5fc90e60b729122951 Mon Sep 17 00:00:00 2001
+From: "DRFIONN\\Owner-PC" <fionnthegamer@outlook.ie>
+Date: Thu, 8 Jun 2017 21:06:28 +0100
+Subject: [PATCH] This may fix the problem
+
+---
+ source/Assets/AudioManager.cs | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/source/Assets/AudioManager.cs b/source/Assets/AudioManager.cs
+index c160b33..2cdb679 100644
+--- a/source/Assets/AudioManager.cs
++++ b/source/Assets/AudioManager.cs
+@@ -1,13 +1,13 @@
+-﻿using UnityEngine.Audio;
+-using System;
+-using UnityEngine;
+-
+-public class AudioManager : MonoBehaviour {
+-
+-    public Sound[] sounds;
+-
+-	// Use this for initialization
+-	void Awake () {
++﻿using UnityEngine.Audio;
++using System;
++using UnityEngine;
++
++public class AudioManager : MonoBehaviour {
++
++    public Sound[] sounds;
++
++	// Use this for initialization
++	void Awake () {
+         foreach (Sound s in sounds)
+             {
+             s.source = gameObject.AddComponent<AudioSource>();
+@@ -15,8 +15,8 @@ public class AudioManager : MonoBehaviour {
+ 
+             s.source.volume = s.volume;
+             s.source.pitch = s.pitch;
+-        }
+-		
++        }
++		
+ 	}
+ 
+     public void Play (string name)
+@@ -24,5 +24,5 @@ public class AudioManager : MonoBehaviour {
+         Sound s = Array.Find(sounds, sound => sound.name == name);
+         s.source.Play();
+     }
+-}
+-}
++}
++}
+-- 
+2.11.0.windows.1
+
