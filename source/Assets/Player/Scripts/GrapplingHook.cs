@@ -38,6 +38,9 @@ public class GrapplingHook : MonoBehaviour {
 		
 		hook = null;
 	}
+	void OnDisable()
+	{
+	}
 	void LateUpdate()
 	{
 		if(hook == null)
@@ -114,6 +117,11 @@ public class GrapplingHook : MonoBehaviour {
 				PointShoulderToMouse();
 				RetractHook();
 				AttachForearm();
+				
+				//Disable hook object
+				hook.GetComponent<BoxCollider2D>().enabled = false;
+				hook.GetComponent<HookFly>().enabled = false;
+				hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 				
 				retract = false;
 				cancel = false;
