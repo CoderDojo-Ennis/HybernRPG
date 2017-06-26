@@ -14,3 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameDemo.unity
     guid: 4df71a076b8ff2f45ad1a1b60efb2cda
+  - enabled: 1
+    path: Assets/Scenes/jacksidioticattemptatmakinggames.unity
+    guid: 2e793dfc02ee58e42b6ed731b74d9151
+  - enabled: 1
+    path: Assets/Scenes/W4-A00 the terror that dosent exsist and a island i dont no
+      what to do with.unity
+    guid: d2e8ee49fe3e9a04d882154dfa271502
+  - enabled: 1
+    path: Assets/Scenes/W3 star wreckin.unity
+    guid: 8b7ed71f584d51c459cc71a1ad445880
