@@ -78,26 +78,26 @@ namespace UnityStandardAssets._2D
         public void Move(float move, bool crouch, bool jump, bool attack)
         {
             // If crouching, check to see if the character can stand up
-            if (!crouch && m_Anim.GetBool("Crouch"))
+            /*if (!crouch && m_Anim.GetBool("Crouch"))
             {
                 // If the character has a ceiling preventing them from standing up, keep them crouching
                 if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
                 {
                     crouch = true;
                 }
-            }
+            }*/
 
             // Set whether or not the character is crouching in the animator
-            m_Anim.SetBool("Crouch", crouch);
+            //m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
             {
                 // Reduce the speed if crouching by the crouchSpeed multiplier
-                move = (crouch ? move*m_CrouchSpeed : move);
+                //move = (crouch ? move*m_CrouchSpeed : move);
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
-                m_Anim.SetFloat("Speed", Mathf.Abs(move));
+                //m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
                 //Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
@@ -206,3 +206,80 @@ namespace UnityStandardAssets._2D
     }
 	
 }
+/*
+public void Move(float move, bool crouch, bool jump, bool attack)
+        {
+            // If crouching, check to see if the character can stand up
+            if (!crouch && m_Anim.GetBool("Crouch"))
+            {
+                // If the character has a ceiling preventing them from standing up, keep them crouching
+                if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+                {
+                    crouch = true;
+                }
+            }
+
+            // Set whether or not the character is crouching in the animator
+            m_Anim.SetBool("Crouch", crouch);
+
+            //only control the player if grounded or airControl is turned on
+            if (m_Grounded || m_AirControl)
+            {
+                // Reduce the speed if crouching by the crouchSpeed multiplier
+                move = (crouch ? move*m_CrouchSpeed : move);
+
+                // The Speed animator parameter is set to the absolute value of the horizontal input.
+                m_Anim.SetFloat("Speed", Mathf.Abs(move));
+
+                // Move the character
+                //Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+
+                if (Mathf.Abs(m_Rigidbody2D.velocity.x) < m_MaxSpeed)
+                {
+                    m_Rigidbody2D.AddForce(Vector2.right * (((m_MaxSpeed - m_Rigidbody2D.velocity.x) * move))/10, ForceMode2D.Impulse);
+                }
+                // If the input is moving the player right and the player is facing left...
+                if (move > 0 && !m_FacingRight)
+                {
+                    // ... flip the player.
+                    Flip();
+                }
+                    // Otherwise if the input is moving the player left and the player is facing right...
+                else if (move < 0 && m_FacingRight)
+                {
+                    // ... flip the player.
+                    Flip();
+                }
+            }
+            // If the player should jump...
+            if (m_Grounded && jump /*&& m_Anim.GetBool("Ground"))
+            {
+				//Variables for calculating jump velocity
+				Vector2 origin;
+				Vector2 target;
+				float height;
+				
+				//Assign variables for calculating jump velocity
+				origin = transform.position;
+				target = jumpTarget.position;
+				height = 1;
+				
+				//Calculate jump velocity
+				m_Rigidbody2D.velocity = FindJumpVelocity(origin, target, height);
+				
+				//Character is off ground
+				m_Grounded = false;
+				//Tell the animator about this fact
+				m_Anim.SetBool("Ground", false);
+            } 
+            if(attack)
+            {
+                //m_Anim.SetBool("Attack", true);
+				//Deduct health from player
+				GameObject player;
+				player = GameObject.Find("Player Physics Parent");
+				
+				PlayerStats playerStats;
+				player.GetComponent<PlayerStats>().TakeDamage(1);
+            }
+*/

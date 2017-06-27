@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 5c47b821da9a5b2469be8cf6235a078e
-timeCreated: 1497622104
+guid: abb849e211637b045b8a3b60b3d6a7ed
+timeCreated: 1498557770
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: forearm2-Shield
+    21300000: shoulder2-Shield
     21300002: forearm2-Shield
-    21300004: shoulder2-Shield
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -94,7 +93,7 @@ TextureImporter:
         width: 70
         height: 17
       alignment: 9
-      pivot: {x: 0.5654577, y: 1.0390648}
+      pivot: {x: 0.5398439, y: 0.8046889}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
