@@ -5,19 +5,28 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
 	public int health;
-	public GameObject menu;
-	public CameraFollow cameraFollow;
+	private CameraFollow cameraFollow;
+	private GameObject menu;
+	private GameObject healthCanvas;
+	
 	
 	public void Start()
 	{
 		health = 8;
 		cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
 		menu = GameObject.Find("UI").transform.Find("Canvas").gameObject;
+		healthCanvas = GameObject.Find("UI").transform.Find("HealthDisplay").gameObject;
+		
+		//Display health
+		healthCanvas.GetComponent<HealthManager>().DisplayHealth(health);
 	}
 
 	public void TakeDamage(int damage)
 	{
 		SubtractDamage(damage);
+		
+		//Display health
+		healthCanvas.GetComponent<HealthManager>().DisplayHealth(health);
 		
 		StopAllCoroutines();
 		StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));

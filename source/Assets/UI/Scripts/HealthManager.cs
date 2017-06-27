@@ -4,86 +4,83 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour {
-	//Manages Health
-	public GameObject HealthOverview;
-	GameObject Health1;
-	GameObject Health2;
-	GameObject Health3;
-    GameObject Health4;
-    GameObject Health5;
-    GameObject Health6;
-    GameObject Health7;
-    GameObject Health8;
 	
-	public int MaxHealth;
-	public int CurrentHealth;
-	public int Damage;
+	public GameObject orbPrefab;
+	public Vector2 StartPosition;
+	public Sprite bigOrb;
+	public Sprite smallOrb;
+	private List<GameObject> orbs;
 	
-	public bool IsDead;
-	
-	void Start () 
+
+	void OnEnable()
 	{
-		Health1 = HealthOverview.transform.GetChild(0).gameObject;
-		Health2 = HealthOverview.transform.GetChild(1).gameObject;
-		Health3 = HealthOverview.transform.GetChild(2).gameObject;
-		MaxHealth = 8;
-		CurrentHealth = MaxHealth;
-		IsDead = false;
+		orbs = new List<GameObject>();
 	}
-	
-	void Update () 
+
+	public void DisplayHealth(int health)
 	{
-		HealthShown();
-		if (Damage != 0)
+		//1 orb has 2 states, so a given value of health can
+		//be displayed with half as many orbs
+		if(health <= 0)
 		{
-			CurrentHealth = CurrentHealth - Damage;
-			Damage = 0;
+			//Clear list
+			for(int counter = 0; counter < orbs.Count; counter++)
+			{
+				GameObject.Destroy(orbs[counter]);
+			}
+			orbs.Clear();
+			return;
 		}
 		
-		if (CurrentHealth <= 0)
+		//How many orbs do we need
+		int desiredOrbsAmount = (int) Mathf.Ceil(health/2);
+		
+		//If we already have some of the orbs we need 
+		if(orbs.Count < desiredOrbsAmount)
 		{
-            Health1.SetActive(false);
-			IsDead = true;
-            Application.Quit();
-			//I presume something might happen if you die?
-			//Someone else can do that.
+			//Set lastest created orb to bigOrb
+			if(orbs.Count- 1 >= 0)
+			{
+				orbs[orbs.Count- 1].GetComponent<Image>().sprite = bigOrb;
+			}
+			//Make the remaining ones
+			Vector2 offset = new Vector2(100, 0);
+			for(int counter = orbs.Count; counter < desiredOrbsAmount; counter++)
+			{
+				GameObject orb = GameObject.Instantiate(orbPrefab, StartPosition + offset * counter, Quaternion.identity);
+				orb.transform.SetParent(transform);
+				orbs.Add(orb);
+			}
+			//Decide if last orb should be a big orb or a small orb
+			if(health%2 == 0){
+				//Even, big orb
+				orbs[orbs.Count -1].GetComponent<Image>().sprite = bigOrb;
+			}
+			else{
+				//Odd, small orb
+				orbs[orbs.Count -1].GetComponent<Image>().sprite = smallOrb;
+			}
 		}
-	}
-    //Redone health system for 8 HP (not 3)
-    //Not as inefficient!
-    //Still not good
-	void HealthShown ()
-	{
-        if (CurrentHealth > 1)
-            Health1.SetActive(true);
-        else Health1.SetActive(false);
-
-        if (CurrentHealth > 2)
-            Health2.SetActive(true);
-        else Health2.SetActive(false);
-
-        if (CurrentHealth > 3)
-            Health3.SetActive(true);
-        else Health3.SetActive(false);
-
-        if (CurrentHealth > 4)
-            Health4.SetActive(true);
-        else Health4.SetActive(false);
-
-        if (CurrentHealth > 5)
-            Health5.SetActive(true);
-        else Health5.SetActive(false);
-
-        if (CurrentHealth > 6)
-            Health6.SetActive(true);
-        else Health6.SetActive(false);
-
-        if (CurrentHealth > 7)
-            Health7.SetActive(true);
-        else Health7.SetActive(false);
-
-        if (CurrentHealth >= 8)
-            Health8.SetActive(true);
-        else Health8.SetActive(false);
+		//If we have too many orbs
+		if(orbs.Count > desiredOrbsAmount)
+		{
+			for(int counter = orbs.Count; counter > desiredOrbsAmount; counter--)
+			{
+				GameObject.Destroy(orbs[orbs.Count -1]);
+				orbs.RemoveAt(orbs.Count-1);
+			}
+			//Decide if last orb should be a big orb or a small orb
+			if(orbs.Count- 1 >= 0)
+			{
+				if(health%2 == 0){
+					//Even, big orb
+					orbs[orbs.Count -1].GetComponent<Image>().sprite = bigOrb;
+				}
+				else{
+					//Odd, small orb
+					orbs[orbs.Count-1].GetComponent<Image>().sprite = smallOrb;
+				}
+			}
+		}
 	}
 }
