@@ -107,7 +107,7 @@ public class aiming : MonoBehaviour {
 			Instantiate(ammo, this.transform.position + playerBlastPos2, Quaternion.AngleAxis (a2+90, Vector3.forward));
 			recoil = true;
 			StopAllCoroutines();
-			StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));
+			StartCoroutine(cameraFollow.MyRoutine(0.2f, 0.05f, 0.05f));
 		}
 		if(recoil == true)
 		{

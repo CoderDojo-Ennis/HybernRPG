@@ -30,11 +30,11 @@ public class EnemyBlast : MonoBehaviour {
 	{
 		if(collision.gameObject.name == "Player Physics Parent")
 		{
-			collision.gameObject.GetComponent<PlayerStats>().TakeDamage(5);
+			collision.gameObject.GetComponent<PlayerStats>().TakeDamage(1);
 		}
 		if(collision.gameObject.GetComponent<EnemyFramework>() != null)
 		{
-			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(5);
+			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(1);
 		}
 		if(collision.gameObject.name != "EnemyBlast(Clone)")
 		{

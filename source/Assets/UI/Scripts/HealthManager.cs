@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour {
 		}
 		
 		//How many orbs do we need
-		int desiredOrbsAmount = (int) Mathf.Ceil(health/2);
+		int desiredOrbsAmount = (int) Mathf.Ceil((float)health/2f);
 		
 		//If we already have some of the orbs we need 
 		if(orbs.Count < desiredOrbsAmount)
@@ -80,6 +80,22 @@ public class HealthManager : MonoBehaviour {
 					//Odd, small orb
 					orbs[orbs.Count-1].GetComponent<Image>().sprite = smallOrb;
 				}
+			}
+		}
+		//If we have just enough orbs
+		if(orbs.Count == desiredOrbsAmount)
+		{
+			//Decide if last orb should be a big orb or a small orb
+			if(orbs.Count- 1 >= 0)
+			{
+				if(health%2 == 0){
+						//Even, big orb
+						orbs[orbs.Count -1].GetComponent<Image>().sprite = bigOrb;
+					}
+					else{
+						//Odd, small orb
+						orbs[orbs.Count-1].GetComponent<Image>().sprite = smallOrb;
+					}
 			}
 		}
 	}

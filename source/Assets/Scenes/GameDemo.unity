@@ -2648,6 +2648,16 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ae6521ca85f619340b39e7717dd0c899, type: 3}
+    - target: {fileID: 114112860467642184, guid: 768feb696d1245247a6511245f3b5098,
+        type: 2}
+      propertyPath: shakeOffset.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112860467642184, guid: 768feb696d1245247a6511245f3b5098,
+        type: 2}
+      propertyPath: shakeOffset.y
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 768feb696d1245247a6511245f3b5098, type: 2}
   m_IsPrefabParent: 0
