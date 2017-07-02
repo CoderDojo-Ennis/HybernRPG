@@ -39,6 +39,7 @@ public class PlayerStats : MonoBehaviour {
 
 	public void Die()
 	{
+		
 		//Disable animators on child objects
 		this.transform.GetChild(0).GetComponent<AnimationControl>().DisableAnimator();
 		//Disable rigidBody
@@ -86,7 +87,7 @@ public class PlayerStats : MonoBehaviour {
 		GetComponent<movement>().enabled = false;
 		
 		//Die() only called when health == 0, and we only want to call Die() once
-		health -= 1;
+		health = -1;
 		menu.SetActive(true);
         
 	}

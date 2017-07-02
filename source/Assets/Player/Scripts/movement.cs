@@ -4,6 +4,7 @@ using System.Collections;
 public class movement : MonoBehaviour {
 	public float walkSpeed = 2;
 	public float runSpeed = 3;
+	public float deathBelowYPos = -10;
 	public AnimationControl animationControl;
 	
 	public KeyCode leftKey;
@@ -40,7 +41,16 @@ public class movement : MonoBehaviour {
 	}
 	//Test for ground below player (to replenish jumps).
 	void FixedUpdate()
-	{		
+	{
+		//If player is below certain height, they die
+		if(rb.position.y < deathBelowYPos)
+		{
+			PlayerStats playerStats = GetComponent<PlayerStats>();
+			int health = playerStats.health; 
+			
+			//Sets health to 0
+			playerStats.TakeDamage(health);
+		}
 		if(Input.GetKey(leftKey))
 		{
 			xScale = -1;
