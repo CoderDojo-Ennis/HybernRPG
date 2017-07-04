@@ -33,7 +33,7 @@ public class AnimationControl : MonoBehaviour {
 		rb = GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>();
 		
 		//See if player is walking
-		speed = Mathf.Abs(rb.velocity.x)/2;
+		speed = Mathf.Abs(rb.velocity.x);
 		if(speed < 0.05){
 			walking = false;
 		}
@@ -58,6 +58,9 @@ public class AnimationControl : MonoBehaviour {
             rb.mass = 0.5f;
         }
 
+		//Scale speed down slightly
+		speed /= 2;
+		
         this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
 		this.transform.Find("head").GetComponent<Animator>().SetFloat("Speed", speed);
 		this.transform.Find("head").GetComponent<Animator>().SetBool("InAir", inAir);

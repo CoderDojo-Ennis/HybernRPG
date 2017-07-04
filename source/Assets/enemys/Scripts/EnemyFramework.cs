@@ -127,7 +127,9 @@ public abstract class EnemyFramework : MonoBehaviour {
 
     public virtual void Die()
     {
-        Component[] monos;
+        transform.GetChild(0).GetComponent<Animator>().enabled = false; //Cancel animations
+		
+		Component[] monos;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GetComponent<CapsuleCollider2D>().enabled = false;
