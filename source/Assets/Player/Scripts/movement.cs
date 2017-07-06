@@ -15,9 +15,12 @@ public class movement : MonoBehaviour {
 	private int frames;
 	private Rigidbody2D rb;
 	private float xScale;
-	private int counter = 0;
+	public int counter = 0;
 	private bool isJumpPressed;
 	private bool canJump;
+	public bool jetpack;
+	public int jetpackFrames;
+	public int jetpackCounter;
 	
 	private Vector3 position;
 	
@@ -30,9 +33,12 @@ public class movement : MonoBehaviour {
 	
 	void Start()
 	{
-		rb	    = GetComponent<Rigidbody2D>();
-		xScale  = 							1;
-		isJumpPressed =	 				false;
+		rb	     = GetComponent<Rigidbody2D>();
+		xScale   =						   	 1;
+		isJumpPressed  = 				 false;
+		jetpackFrames  =                    30;
+		counter        =                     0;
+		jetpackCounter =                     0;
 	}
 	void Update()
 	{
@@ -102,18 +108,7 @@ public class movement : MonoBehaviour {
 		
 		animationControl.inAir = !canJump;
 		
-		/*if(rb.velocity.y == 0)
-		{
-			animationControl.inAir = false;
-		}
-		if(rb.velocity.y <= -0.2)
-		{
-			animationControl.inAir = true;
-		}
-		if(rb.velocity.y >= 0.2)
-		{
-			animationControl.inAir = true;
-		}*/
+		
 		
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		
@@ -135,14 +130,30 @@ public class movement : MonoBehaviour {
 		{
 			counter = 0;
 		}
+		//Condition for beginning to use jetpack
+		if(Input.GetKey(jumpKey))
+		{
+			if(jetpackCounter > 0)
+			{
+				jetpackCounter++;
+			}
+			if(!canJump && !isJumpPressed)
+			{
+				jetpackCounter++;
+			}
+		}
+		else
+		{
+			jetpackCounter = 0;
+		}
 		
 		//Jumping controls
 		if(Input.GetKey(jumpKey))
 		{		
 			if(counter <= frames && counter > 0)
 			{
-				rb.AddForce(Vector2.up * 4f, ForceMode2D.Force);
-				//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+					rb.AddForce(Vector2.up * 4f, ForceMode2D.Force);
+					//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
 			}
 			if(!isJumpPressed)
 			{
@@ -153,6 +164,19 @@ public class movement : MonoBehaviour {
 					canJump = false;
 				}
 			}
+			//Jetpack
+			if(jetpackCounter <= jetpackFrames && jetpackCounter > 0)
+			{
+					rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
+					//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+					if(!isJumpPressed){
+						GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack");
+					}
+			}
+		}
+		else
+		{
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
 		}
 		
 		isJumpPressed = Input.GetKey(jumpKey);
