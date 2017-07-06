@@ -133,18 +133,24 @@ public class movement : MonoBehaviour {
 		//Condition for beginning to use jetpack
 		if(Input.GetKey(jumpKey))
 		{
-			if(jetpackCounter > 0)
-			{
+			if(jetpackCounter > 0){
 				jetpackCounter++;
 			}
-			if(!canJump && !isJumpPressed)
-			{
+			if(!canJump && !isJumpPressed && jetpackCounter == 0){
 				jetpackCounter++;
 			}
 		}
 		else
 		{
-			jetpackCounter = 0;
+			if(canJump){
+				jetpackCounter = 0;
+			}
+			else{
+				if(jetpackCounter > jetpackFrames)
+				{
+					jetpackCounter = -1;
+				}
+			}
 		}
 		
 		//Jumping controls

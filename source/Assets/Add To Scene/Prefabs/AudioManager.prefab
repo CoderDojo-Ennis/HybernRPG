@@ -59,3 +59,10 @@ MonoBehaviour:
     volume: 1
     pitch: 3
     source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Jetpack
+    clip: {fileID: 8300000, guid: 6366687058ee201439aa1424de7f63a3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
