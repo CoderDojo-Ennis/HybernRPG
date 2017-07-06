@@ -66,3 +66,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: Jetpack Stopped
+    clip: {fileID: 8300000, guid: 079f9b3d397cf03498aa9002d3044a88, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0

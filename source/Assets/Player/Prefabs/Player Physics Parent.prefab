@@ -320,7 +320,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065958658148958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.78, y: 1.01, z: 0}
+  m_LocalPosition: {x: 2.83, y: 1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802930422168450}
@@ -977,12 +977,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   runSpeed: 3
+  jetpack: 1
+  inWater: 0
   deathBelowYPos: -10
   animationControl: {fileID: 114959253150365594}
   leftKey: 97
   rightKey: 100
   jumpKey: 119
   runKey: 115
+  jetpackCounter: 0
 --- !u!114 &114438574511612404
 MonoBehaviour:
   m_ObjectHideFlags: 1

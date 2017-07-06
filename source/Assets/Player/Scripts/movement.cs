@@ -4,6 +4,9 @@ using System.Collections;
 public class movement : MonoBehaviour {
 	public float walkSpeed = 2;
 	public float runSpeed = 3;
+	public bool jetpack;
+	//[HideInInspector]
+	public bool inWater;
 	public float deathBelowYPos = -10;
 	public AnimationControl animationControl;
 	
@@ -15,12 +18,12 @@ public class movement : MonoBehaviour {
 	private int frames;
 	private Rigidbody2D rb;
 	private float xScale;
-	public int counter = 0;
+	private int counter = 0;
 	private bool isJumpPressed;
 	private bool canJump;
-	public bool jetpack;
-	public int jetpackFrames;
+	private int jetpackFrames;
 	public int jetpackCounter;
+	private bool inWaterLastFrame;
 	
 	private Vector3 position;
 	
@@ -39,6 +42,7 @@ public class movement : MonoBehaviour {
 		jetpackFrames  =                    30;
 		counter        =                     0;
 		jetpackCounter =                     0;
+		inWaterLastFrame =               false;
 	}
 	void Update()
 	{
@@ -131,26 +135,34 @@ public class movement : MonoBehaviour {
 			counter = 0;
 		}
 		//Condition for beginning to use jetpack
-		if(Input.GetKey(jumpKey))
+		if(jetpack)
 		{
-			if(jetpackCounter > 0){
-				jetpackCounter++;
+			if(Input.GetKey(jumpKey))
+			{
+				if(jetpackCounter > 0){
+					jetpackCounter++;
+				}
+				if(!canJump && !isJumpPressed && jetpackCounter == 0){
+					jetpackCounter++;
+				}
 			}
-			if(!canJump && !isJumpPressed && jetpackCounter == 0){
-				jetpackCounter++;
+			else
+			{
+				if(canJump || (inWater && !inWaterLastFrame)){
+					jetpackCounter = 0;
+				}
+				else{
+					if(jetpackCounter > jetpackFrames)
+					{
+						jetpackCounter = -1;
+					}
+				}
 			}
 		}
 		else
 		{
-			if(canJump){
-				jetpackCounter = 0;
-			}
-			else{
-				if(jetpackCounter > jetpackFrames)
-				{
-					jetpackCounter = -1;
-				}
-			}
+			jetpackCounter = 0;
+			
 		}
 		
 		//Jumping controls
@@ -171,13 +183,22 @@ public class movement : MonoBehaviour {
 				}
 			}
 			//Jetpack
-			if(jetpackCounter <= jetpackFrames && jetpackCounter > 0)
+			if(jetpack)
 			{
-					rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
-					//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
-					if(!isJumpPressed){
-						GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack");
-					}
+				if(jetpackCounter <= jetpackFrames && jetpackCounter > 0)
+				{
+						rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
+						//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+						if(!isJumpPressed){
+							GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack");
+						}
+				}
+				if(jetpackCounter == jetpackFrames+1)
+				{
+					GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
+					GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack Stopped");
+				}
+				
 			}
 		}
 		else
@@ -186,6 +207,7 @@ public class movement : MonoBehaviour {
 		}
 		
 		isJumpPressed = Input.GetKey(jumpKey);
+		inWaterLastFrame = inWater;
 		
 		Debug.DrawLine(new Vector3(rb.position.x,rb.position.y, 0), position, Color.green, 4, false);
 		position = rb.position;
