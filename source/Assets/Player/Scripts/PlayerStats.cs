@@ -68,10 +68,13 @@ public class PlayerStats : MonoBehaviour {
 			rb.velocity = new Vector2(1,1);
 			this.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<BoxCollider2D>().enabled = true;
 		//Torso
+		///As a part of the code for the cactus body, the torso's box collider may sometimes
+		///be used as a trigger, it is necessary to make sure it is NOT a trigger when the player dies
 		rb = this.transform.GetChild(0).GetChild(2).GetComponent<Rigidbody2D>();
 		rb.bodyType = RigidbodyType2D.Dynamic;
 		rb.velocity = new Vector2(0,2);
 		this.transform.GetChild(0).GetChild(2).GetComponent<BoxCollider2D>().enabled = true;
+		this.transform.GetChild(0).GetChild(2).GetComponent<BoxCollider2D>().isTrigger = false;
 		//Legs
 			//Thigh1
 			rb = this.transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<Rigidbody2D>();
