@@ -129,7 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95053286339996186}
   visionRange: 3
-  Player: {fileID: 0}
+  cameraFollow: {fileID: 0}
+  whiteFlash: {fileID: 0}
 --- !u!212 &212123450916678688
 SpriteRenderer:
   m_ObjectHideFlags: 1
