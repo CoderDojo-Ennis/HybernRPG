@@ -69,6 +69,9 @@ public class aiming : MonoBehaviour {
 			rotation1 = Quaternion.Lerp(rotation1 ,Quaternion.AngleAxis(a1+90, Vector3.forward), lerpValue);
 		}
 		transform.GetChild(0).transform.rotation = rotation1;
+		
+		//Set rotation of forearm
+		transform.GetChild(0).GetChild(0).transform.rotation = rotation1;
 	
 		//Shoulder 2
 		//Calculate displacement vector to mouse position
@@ -82,6 +85,9 @@ public class aiming : MonoBehaviour {
 			rotation2 = Quaternion.Lerp(rotation2 ,Quaternion.AngleAxis(a2+90, Vector3.forward), lerpValue);
 		}
 		transform.GetChild(1).transform.rotation = rotation2;
+		
+		//Set rotation of forearm
+		transform.GetChild(1).GetChild(0).transform.rotation = rotation2;
 		
 		//Fire arm cannon if mouse clicked
 		if (Input.GetMouseButtonUp(0) && !recoil)
