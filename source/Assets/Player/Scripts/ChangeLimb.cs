@@ -29,6 +29,7 @@ public class ChangeLimb : MonoBehaviour {
 	{
 		child = transform.GetChild(0).gameObject;
         animationControl = child.GetComponent<AnimationControl>();
+        wheel = GameObject.Find("UI").transform.GetChild(0).gameObject;
     }
 
     void Awake()
