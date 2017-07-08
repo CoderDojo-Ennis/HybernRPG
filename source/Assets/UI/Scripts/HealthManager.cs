@@ -44,7 +44,7 @@ public class HealthManager : MonoBehaviour {
 				orbs[orbs.Count- 1].GetComponent<Image>().sprite = bigOrb;
 			}
 			//Make the remaining ones
-			Vector2 offset = new Vector2(100, 0);
+			Vector2 offset = new Vector2(105, 0);
 			for(int counter = orbs.Count; counter < desiredOrbsAmount; counter++)
 			{
 				GameObject orb = GameObject.Instantiate(orbPrefab, StartPosition + offset * counter, Quaternion.identity);
