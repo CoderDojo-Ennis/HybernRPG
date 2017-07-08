@@ -7,28 +7,36 @@ using UnityStandardAssets._2D;
 public class ShroomFire : MonoBehaviour {
     public Animator anim;
     public float visionRange;
-    public GameObject Player;
-    // Use this for initialization
+    public CameraFollow cameraFollow;
+    public WhiteFlash whiteFlash;
+
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
+        cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+        whiteFlash = GameObject.Find("WhiteExplosionEffect").GetComponent<WhiteFlash>();
+    }
+
 	void Update () {
 		
 	}
+
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
             anim.SetBool("fire", true);
-            //Player.GetComponent<PlayerStats>().Die();
-            this.Delay(1f, Player.GetComponent<PlayerStats>().Die);
+            this.Delay(1f, coll.gameObject.GetComponent<PlayerStats>().Die);
+            this.Delay(1f, destroy);
+            this.Delay(0.5f, whiteFlash.Explode);
+            StartCoroutine(cameraFollow.MyRoutine(5f, 0.1f, 0.1f));
         }
     }
+
     public void OnCollisionExit2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
             
             anim.SetBool("fire", false);
         }
+    }
+    private void destroy() {
+        Destroy(gameObject);
     }
     void FixedUpdate() {
         anim = GetComponentInChildren<Animator>();
@@ -40,7 +48,8 @@ public class ShroomFire : MonoBehaviour {
             //which target is closest
             if (dist < closestDist) {
                 closestDist = dist;
-                bestMatch = targets[i]; 
+                bestMatch = targets[i];
+
                 //is target on my right or left?
                 if(targets[i].transform.position.x - transform.position.x > 0) {
                     transform.localScale = new Vector3(1f, 1f, 1f);
@@ -56,7 +65,5 @@ public class ShroomFire : MonoBehaviour {
         } else {
             anim.SetBool("charge", true);
         }
-    }
-    private void Think() {
     }
 }

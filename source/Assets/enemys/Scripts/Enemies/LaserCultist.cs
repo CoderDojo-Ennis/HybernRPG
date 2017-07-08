@@ -4,78 +4,98 @@ using UnityEngine;
 
 public class LaserCultist : EnemyFramework {
     
-	private float angle;
-	private float angleChange;
+	public GameObject navPointContainer;
+	private NavPoint[] allNavPoints;
 	
-    void OnEnable()
+	private List<NavPoint> possibleDestinations;
+	
+	void OnEnable ()
 	{
-        //Sets variables from EnemyFramework
-        attack = 1;
-		walkSpeed = 7;
-		runSpeed = 5;
-		jumpForce = 4;
-		health = 3;
-		//Sets variables from LaserCultist
-		angle = 0;
-		angleChange = 30;
+		allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
+		FindNewDestination();
 	}
-	void Update()
+	void FindNewDestination ()
 	{
-		SearchBeam(angle);
-		if(angle > 210){
-			angleChange*= -1;
-		}
-		if(angle < -30){
-			angleChange*= -1;
-		}
-		angle += angleChange * Time.deltaTime;
-	}
-	//Default ranged attack in straight line
-    override public void Attack()
-    {
-		
-    }
-	private bool SearchBeam(float angle)
-	{
-		//Returns false if player not hit
-
-		//Create vector from angle
-		angle *= Mathf.Deg2Rad;
-		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-		
-		//Create position to fire from
-		Vector2 origin = transform.position + new Vector3(0, 0.5f, 0);
-		
-		RaycastHit2D searchBeam = Physics2D.Raycast(origin, direction);
-		
-		
-		
-		if(searchBeam)
+		//Find all the navpoints from which the cultist can see
+		//the player
+		foreach( NavPoint navPoint in allNavPoints )
 		{
-			//Hit something, show beam
-			Debug.DrawLine(origin, searchBeam.point);
-			EnableLineRenderer(0.1f, origin, searchBeam.point);
-			if(searchBeam.transform.gameObject.tag == "Good")
+			Vector3 position;
+			Vector3 targetPosition;
+			
+			position = navPoint.transform.position;
+			targetPosition = GameObject.Find( "Player Physics Parent" ).transform.position;
+			
+			if( CheckVision( position, targetPosition ) )
 			{
-				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
+				//LaserCultist could see the player from this point
+				possibleDestinations.Add( navPoint );
+			}
+		}
+		
+		
+		//Now pick the navpoint in possibleDestinations which is
+		//closest to the laser cultist
+		NavPoint closest;
+		closest = FindClosestDestination();
+	}
+	
+	bool CheckVision ( Vector3 position, Vector3 targetPosition )
+	{
+		//Position to fire raycast from is slightly above  position of navpoint
+		position += new Vector3(0, 0.6f, 0);
+		//Fire raycast
+		RaycastHit2D ray = Physics2D.Raycast(position, targetPosition - position);
+		 
+		 if (ray.collider == null)
+                return false;
+         else
+        {
+			if (ray.collider.gameObject.name == "Player Physics Parent")
+			{
+				//Debug.DrawRay(position, targetPosition - position);
 				return true;
 			}
-			return false;
+			else
+			{
+				return false;
+			}
 		}
-		//Hit nothing, show beam anyway
-		EnableLineRenderer(0.1f, origin, direction * 100);
-		return false;
-	}
-	private void EnableLineRenderer(float width, Vector2 origin, Vector2 end)
-	{
-		GetComponent<LineRenderer>().widthMultiplier = width;
-		GetComponent<LineRenderer>().SetPosition(0, origin);
-		GetComponent<LineRenderer>().SetPosition(1, end);
-		GetComponent<LineRenderer>().enabled = true;
 		
 	}
-	private void DisableLineRenderer()
+	
+	NavPoint FindClosestDestination ( )
 	{
-		GetComponent<LineRenderer>().enabled = false;
+		if(possibleDestinations.Count == 0)
+		return null;
+		
+		NavPoint closest;
+		Vector3 position;
+		
+		closest = null;
+		position = transform.position;
+		
+		foreach( NavPoint navPoint in possibleDestinations)
+		{
+			if(closest == null)
+			{
+				closest = navPoint;
+				continue;
+			}
+			
+			//Compute displacement to nav point
+			Vector3 displacementNew = position - navPoint.transform.position;
+			//Compute displacement to current closest
+			Vector3 displacementOld = position - closest.transform.position;
+			
+			//compare
+			if(displacementNew.sqrMagnitude < displacementOld.sqrMagnitude)
+			{
+				closest = navPoint;
+			}
+			
+		}
+		
+		return closest;
 	}
 }
