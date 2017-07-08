@@ -127,23 +127,7 @@ public abstract class EnemyFramework : MonoBehaviour {
 
     public virtual void Die()
     {
-        transform.GetChild(0).GetComponent<Animator>().enabled = false; //Cancel animations
-		
-		Component[] monos;
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        GetComponent<CapsuleCollider2D>().enabled = false;
-        GetComponent<EnemyFramework>().enabled = false;                     //Main Script disabled
-        if (GetComponent<LineRenderer>())                                   //For LaserCultist, ...
-            GetComponent<LineRenderer>().enabled = false;
-        if (GetComponent<MonoBehaviour>())                                  //For MeleeCultist, ...
-        {
-            monos = GetComponents<MonoBehaviour>();
-            foreach (MonoBehaviour mono in monos)
-            {
-                mono.enabled = false;
-            }
-        }
+		//Work with gameObject children first
 
         //Rigidbody2D
         rigidbodys = GetComponentsInChildren<Rigidbody2D>();
@@ -167,6 +151,25 @@ public abstract class EnemyFramework : MonoBehaviour {
         {
             bc.enabled = true;
         }
+		
+		transform.GetChild(0).GetComponent<Animator>().enabled = false; //Cancel animations
+		
+		Component[] monos;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<EnemyFramework>().enabled = false;                     //Main Script disabled
+        if (GetComponent<LineRenderer>())                                   //For LaserCultist, ...
+            GetComponent<LineRenderer>().enabled = false;
+        if (GetComponent<MonoBehaviour>())                                  //For MeleeCultist, ...
+        {
+            monos = GetComponents<MonoBehaviour>();
+            foreach (MonoBehaviour mono in monos)
+            {
+                mono.enabled = false;
+            }
+        }
+		
         StartCoroutine(Destroy());
     }
 
