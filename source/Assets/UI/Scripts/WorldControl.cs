@@ -13,10 +13,10 @@ public class WorldControl : MonoBehaviour {
 	public void ReloadScene()
 	{
 		//Find current scene index
-			int currentIndex = SceneManager.GetActiveScene().buildIndex;
-            
-			//Change to next scene in build
-			Application.LoadLevel(currentIndex );
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //Change to next scene in build
+        SceneManager.LoadSceneAsync(currentIndex);
 	}
 
     public void Exit()

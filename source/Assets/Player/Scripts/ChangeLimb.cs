@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ChangeLimb : MonoBehaviour {
     AnimationControl animationControl;
+    private bool time;
     private GameObject child;
+
+    public movement Movement;
     public GameObject wheel;
+    
     /// is significantly incomplete
     
 	//Arm Limbs
@@ -26,8 +30,13 @@ public class ChangeLimb : MonoBehaviour {
 		child = transform.GetChild(0).gameObject;
         animationControl = child.GetComponent<AnimationControl>();
     }
-	
-	void Update ()
+
+    void Awake()
+    {
+        time = true;
+    }
+
+    void Update ()
 	{
         //Arms
 		if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -72,11 +81,19 @@ public class ChangeLimb : MonoBehaviour {
         //Part Wheel
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            //Here
             WheelControl();
-            //Here
 		}
-	}
+
+        //Time Control
+        if (time)
+        {
+            Time.timeScale = 1;
+        }
+        if (time == false)
+        {
+            Time.timeScale = 0.1f;
+        }
+    }
 
     public void SwitchArms(int i)
     {
@@ -99,5 +116,7 @@ public class ChangeLimb : MonoBehaviour {
     public void WheelControl()
     {
         wheel.SetActive(!wheel.activeSelf);
+        time = !time;
+        Movement.enabled = !Movement.enabled;
     }
 }
