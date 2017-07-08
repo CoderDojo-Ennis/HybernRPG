@@ -989,7 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   runSpeed: 3
-  jetpack: 1
+  jetpack: 0
   inWater: 0
   deathBelowYPos: -10
   animationControl: {fileID: 114959253150365594}

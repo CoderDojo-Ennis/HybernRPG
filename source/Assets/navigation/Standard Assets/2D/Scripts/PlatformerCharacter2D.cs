@@ -46,7 +46,7 @@ namespace UnityStandardAssets._2D
 					
             }
 			m_Anim.SetBool("OnGround", m_Grounded);
-			m_Anim.SetFloat("Speed", m_Rigidbody2D.velocity.x/2);
+			m_Anim.SetFloat("Speed", Mathf.Abs(m_Rigidbody2D.velocity.x/2));
         }
         
         public bool CheckVision(GameObject target)
@@ -64,7 +64,7 @@ namespace UnityStandardAssets._2D
                 {
                     Debug.DrawRay(transform.position + new Vector3(0, 0.6f, 0), target.transform.position - transform.position);
                     //Debug.Log("target found");
-                    m_Anim.SetBool("Charging", true);
+                    //m_Anim.SetBool("Charging", true);
 					return true;
                 }
                 else

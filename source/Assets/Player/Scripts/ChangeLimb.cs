@@ -66,7 +66,15 @@ public class ChangeLimb : MonoBehaviour {
         }
 
         //Torso
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            SwitchTorso(3);
+        }
+		if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            SwitchTorso(2);
+        }
+		if (Input.GetKeyDown(KeyCode.Alpha9))
 		{
             SwitchTorso(0);
         }
@@ -74,10 +82,7 @@ public class ChangeLimb : MonoBehaviour {
 		{
             SwitchTorso(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            SwitchTorso(2);
-        }
+        
 
         //Part Wheel
         if (Input.GetKeyDown(KeyCode.Mouse1))

@@ -104,8 +104,11 @@ public class SpriteControl : MonoBehaviour {
 			SetTorso(torsoHeavy);
 			break;
             case 2:
-            SetTorso(torso);    //cactus || jetpack
-            break;
+            SetTorso(torso);    //jetpack
+			break;
+            case 3:				//cactus
+            SetTorso(torso);
+			break;
         }
 
         switch (headLimbs)

@@ -40,22 +40,40 @@ public class AnimationControl : MonoBehaviour {
 		else{
 			walking = true;
 		}
-		//See if player has a normal or heavy torso
+		//See what kind of torso player has
+		movement movement;
+		movement = GameObject.Find("Player Physics Parent").GetComponent<movement>();
+		CactusController cactusController;
+		cactusController = GameObject.Find("Player Physics Parent").transform.GetChild(0).GetChild(2).GetComponent<CactusController>();
+		
 		if(TorsoLimbs == 0){
 			//normal
 			rb.mass = 1;
+			movement.jetpack = false;
+			cactusController.enabled = false;
 		}
 
         if (TorsoLimbs == 1)
         {
             //normal
             rb.mass = 3;
+			movement.jetpack = false;
+			cactusController.enabled = false;
         }
 
         if (TorsoLimbs == 2)
         {
             //normal
-            rb.mass = 0.5f;
+            rb.mass = 1f;
+			movement.jetpack = true;
+			cactusController.enabled = false;
+        }
+		if (TorsoLimbs == 3)
+        {
+            //normal
+            rb.mass = 1f;
+			movement.jetpack = false;
+			cactusController.enabled = true;
         }
 
 		//Scale speed down slightly

@@ -807,7 +807,7 @@ MonoBehaviour:
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4294967295
   m_VisionRange: 7
   m_AttackRange: 1
   m_Grounded: 0
