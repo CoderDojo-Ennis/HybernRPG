@@ -14,6 +14,9 @@ public abstract class EnemyFramework : MonoBehaviour {
 	public float walkSpeed;
 	public float jumpForce;
 	private bool canJump;
+	
+	//Sounds for death
+	public List<string> sounds;
 
     public Component[] rigidbodys;
     public Component[] bcolliders;
@@ -127,6 +130,12 @@ public abstract class EnemyFramework : MonoBehaviour {
 
     public virtual void Die()
     {
+		//Play death sound
+		if(sounds.Count != 0)
+		{
+			int index = Random.Range(0, sounds.Count);
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(sounds[index]);
+		}
 		//Work with gameObject children first
 
         //Rigidbody2D

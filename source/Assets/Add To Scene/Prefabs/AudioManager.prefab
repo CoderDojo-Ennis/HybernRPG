@@ -66,9 +66,27 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
-  - name: Jetpack Stopped
-    clip: {fileID: 8300000, guid: 079f9b3d397cf03498aa9002d3044a88, type: 3}
+  - name: Manly Grunt 1
+    clip: {fileID: 8300000, guid: 2413aa7c0b6a4714e8a352363ae1bb7b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-    useAudioMixer: 0
+    useAudioMixer: 1
+  - name: Manly Grunt2
+    clip: {fileID: 8300000, guid: b648e37e919963241aec538a9667f010, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Manly Grunt 3
+    clip: {fileID: 8300000, guid: dc235d6a33eb81d4181bd15e709dee89, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Manly Grunt 4
+    clip: {fileID: 8300000, guid: 2cd83f535b71b2940a124f493f33c63c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1

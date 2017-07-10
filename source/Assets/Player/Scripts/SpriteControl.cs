@@ -34,6 +34,9 @@ public class SpriteControl : MonoBehaviour {
 	
 	///sprites for Torso
 	public Sprite torsoHeavy;
+	public Sprite torsoCactus;
+	public Sprite torsoJetpack;
+	
 	
 	
 	
@@ -104,10 +107,10 @@ public class SpriteControl : MonoBehaviour {
 			SetTorso(torsoHeavy);
 			break;
             case 2:
-            SetTorso(torso);    //jetpack
+            SetTorso(torsoJetpack);    //jetpack
 			break;
             case 3:				//cactus
-            SetTorso(torso);
+            SetTorso(torsoCactus);
 			break;
         }
 

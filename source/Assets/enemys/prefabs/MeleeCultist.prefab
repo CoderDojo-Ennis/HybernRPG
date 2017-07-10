@@ -829,6 +829,11 @@ MonoBehaviour:
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0
+  sounds:
+  - Manly Grunt 1
+  - Manly Grunt 2
+  - Manly Grunt 3
+  - Manly Grunt 4
   rigidbodys: []
   bcolliders: []
   ccolliders: []

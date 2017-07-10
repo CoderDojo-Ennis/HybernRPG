@@ -9,6 +9,7 @@ public class ChangeLimb : MonoBehaviour {
 
     public movement Movement;
     public GameObject wheel;
+	public GameObject healthDisplay;
     
     /// is significantly incomplete
     
@@ -16,20 +17,21 @@ public class ChangeLimb : MonoBehaviour {
 	//0 - normal
 	///1 - pickaxes
 	//2 - shield
-	//3 - grapplin hook
-    ///4 - wings
+	//3 - grappling hook
 	//7 - arm cannon
 	
 	//Torso Limbs
 	//0 - normal
 	//1 - heavy torso
-    ///2 - cactus || jetpack
+    //2 - jetpack
+	//3 - cactus
 	
 	void Start ()
 	{
 		child = transform.GetChild(0).gameObject;
         animationControl = child.GetComponent<AnimationControl>();
         wheel = GameObject.Find("UI").transform.GetChild(0).gameObject;
+		healthDisplay = GameObject.Find("UI").transform.GetChild(1).gameObject;
     }
 
     void Awake()
@@ -59,10 +61,6 @@ public class ChangeLimb : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Alpha5))
 		{
             SwitchArms(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            SwitchArms(4);
         }
 
         //Torso
@@ -110,7 +108,7 @@ public class ChangeLimb : MonoBehaviour {
     public void SwitchTorso(int i)
     {
         animationControl.TorsoLimbs = i;
-        child.GetComponent<SpriteControl>().SetSprites(animationControl.ArmLimbs, animationControl.TorsoLimbs, animationControl.HeadLimbs);
+        child.GetComponent<SpriteControl>().SetSprites(animationControl.ArmLimbs, i, animationControl.HeadLimbs);
     }
 
     public void SwitchHead(int i)
@@ -122,6 +120,7 @@ public class ChangeLimb : MonoBehaviour {
     public void WheelControl()
     {
         wheel.SetActive(!wheel.activeSelf);
+		healthDisplay.SetActive(!healthDisplay.activeSelf);
         time = !time;
         Movement.enabled = !Movement.enabled;
     }
