@@ -55,7 +55,7 @@ public class AnimationControl : MonoBehaviour {
 
         if (TorsoLimbs == 1)
         {
-            //normal
+            //heavy
             rb.mass = 3;
 			movement.jetpack = false;
 			cactusController.enabled = false;

@@ -321,7 +321,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065958658148958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.83, y: 1.78, z: 0}
+  m_LocalPosition: {x: 1.24, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802930422168450}
@@ -1022,6 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Movement: {fileID: 114301165876795094}
   wheel: {fileID: 0}
+  healthDisplay: {fileID: 0}
 --- !u!114 &114658854918609634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1085,6 +1086,8 @@ MonoBehaviour:
   forearm1ArmCannon: {fileID: 21300008, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
   forearm2ArmCannon: {fileID: 21300002, guid: d692e7da8d7ccf849a147b00b7cff91d, type: 3}
   torsoHeavy: {fileID: 21300000, guid: 7efc9cc2b7786c24fa9f2d2abede1776, type: 3}
+  torsoCactus: {fileID: 21300000, guid: f502ab078bada68428ea78f3d514ed8e, type: 3}
+  torsoJetpack: {fileID: 21300004, guid: 56573e42251801940a84052e8dba43e7, type: 3}
 --- !u!114 &114959253150365594
 MonoBehaviour:
   m_ObjectHideFlags: 1

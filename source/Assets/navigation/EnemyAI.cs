@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour {
     public NavPoint TargetNavPoint;
 
     private NavPoint[] AllNavPoints;
+	private bool agro;
 
     public enum Thoughts
     {
@@ -36,6 +37,7 @@ public class EnemyAI : MonoBehaviour {
         AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
         //Debug.Log(this.name + " starting near " + LastNavPoint.name);
+		agro = false;
 		
     }
 
@@ -107,6 +109,12 @@ public class EnemyAI : MonoBehaviour {
         {
             this.Delay(0.5f, Think);
         }
+		///Experimental agro system
+		if(!agro)
+		{
+			GameObject[] targets = GameObject.FindGameObjectsWithTag("Good");
+			agro = Character.CheckVision(targets[0]);
+		}
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -131,7 +139,17 @@ public class EnemyAI : MonoBehaviour {
         GameObject bestMatch = null;
         for (int i = 0; i < targets.Length; i++)
         {
-            if (Character.CheckVision(targets[i]))
+            /**if (Character.CheckVision(targets[i]))
+            {
+                float dist = (transform.position - targets[i].transform.position).sqrMagnitude;
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    bestMatch = targets[i]; //best match is the closest target that can be seen
+                }
+            }**/
+			///Trying out permanent agro system
+			if (agro)
             {
                 float dist = (transform.position - targets[i].transform.position).sqrMagnitude;
                 if (dist < closestDist)
