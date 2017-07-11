@@ -18,9 +18,9 @@ public abstract class EnemyFramework : MonoBehaviour {
 	//Sounds for death
 	public List<string> sounds;
 
-    public Component[] rigidbodys;
-    public Component[] bcolliders;
-    public Component[] ccolliders;
+    private Component[] rigidbodys;
+    private Component[] bcolliders;
+    private Component[] ccolliders;
 
     /**
 	Beginning of enemy movement functions
