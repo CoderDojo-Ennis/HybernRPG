@@ -13,13 +13,26 @@ public class LaserCultist : EnemyFramework {
 	//laser display variables
 	public Material laser;
 	public Material deathLaser;
-	//attack variables
-	private bool attacking;
+	private float laserWidth;
+	private float deathLaserWidth;
+	//variable dictating what the laser is doing
+	public LaserActions laserAction;
 	
 	public GameObject navPointContainer;
 	private NavPoint[] allNavPoints;
-	
 	private List<NavPoint> possibleDestinations;
+	
+	
+	public enum LaserActions
+    {
+		noBeam,
+        searchBeam,
+        searchBeamGrowing,
+		searchBeamShrinking,
+        deathLaser,
+		deathLaserGrowing,
+        deathLaserShrinking
+    }
 	
 	void Start()
 	{
@@ -28,31 +41,106 @@ public class LaserCultist : EnemyFramework {
 		
 		allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
 		FindNewDestination();
-		attacking = false;
+		laserWidth = 0;
+		deathLaserWidth = 0;
 		
 		//EnemyFramework variables
 		attack = 2;
 	}
-	void LateUpdate()
+	void OnEnable()
 	{
-		//Find player
-		Vector2 displacement;
-		displacement = GameObject.Find("Player Physics Parent").transform.position - arm.position;
-		laserAngle = Mathf.Atan2 (displacement.y, displacement.x) * Mathf.Rad2Deg;
-		laserAngle += 90;
-		
+		laserAction = LaserActions.searchBeamGrowing;
+		laserWidth = 0;
+		deathLaserWidth = 0;
+	}
+	void LateUpdate()
+	{	
+		//Move arm to point in desired angle
 		Quaternion rotation = Quaternion.Euler(0, 0, laserAngle);
 		armRot = Quaternion.Lerp( armRot, rotation, armSpeed);
 		arm.rotation = armRot;
+	}
+	void FixedUpdate ()
+	{
+		//Find player
+		Vector2 displacement;
+		displacement = (GameObject.Find("Player Physics Parent").transform.position + new Vector3(0, 0.5f, 0)) - arm.position;
+		laserAngle = Mathf.Atan2 (displacement.y, displacement.x) * Mathf.Rad2Deg;
+		laserAngle += 90;
 		
-		if(!attacking)
+		switch ( laserAction )
 		{
-			if(SearchBeam(armRot.eulerAngles.z - 90))
-			StartCoroutine(LaserOfDeath());
-		}
-		else
-		{
-			Attack();
+			case LaserActions.noBeam:
+				///Not showing a beam, so disable the line renderer
+				DisableLineRenderer();
+				laserWidth = 0;
+				deathLaserWidth = 0;
+			break;
+			case LaserActions.searchBeam:
+				///Regular red search beam, non lethal
+				laserWidth = 0.05f;
+				ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
+				if(SearchBeam(armRot.eulerAngles.z)){
+				StartCoroutine(LaserOfDeath());
+				}
+			break;
+			case LaserActions.searchBeamGrowing:
+				///SearchBeam quickly grows to its full size
+				if( laserWidth < 0.05f ){
+					laserWidth += 0.002f;
+					ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
+				}
+				else{
+					laserAction = LaserActions.searchBeam;
+				}
+			break;
+			case LaserActions.searchBeamShrinking:
+				///SearchBeam quickly shrinks to nothing
+				if( laserWidth > 0.005f ){
+					laserWidth -= 0.002f;
+					ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
+				}
+				else{
+					laserAction = LaserActions.noBeam;
+				}
+			break;
+			case LaserActions.deathLaser:
+				///Extra large deathLaser, which does damage
+				deathLaserWidth = 0.2f;
+				ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
+				//See if player is in the way of beam
+				if(SearchBeam(armRot.eulerAngles.z))
+				{
+					GameObject.Find( "Player Physics Parent" ).GetComponent<PlayerStats>().TakeDamage(attack);
+				}
+				
+				//animate beam
+				deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
+			break;
+			case LaserActions.deathLaserGrowing:
+				///Death Laser Beam quickly grows to its full size
+				if( deathLaserWidth < 0.2f ){
+					deathLaserWidth += 0.05f;
+					//animate beam
+					deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
+					ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
+				}
+				else{
+					laserAction = LaserActions.deathLaser;
+				}
+			break;
+			case LaserActions.deathLaserShrinking:
+				///SearchBeam quickly shrinks to nothing
+				if( deathLaserWidth > 0.005f ){
+					deathLaserWidth -= 0.005f;
+					//animate beam
+					deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
+					ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
+				}
+				else{
+					laserAction = LaserActions.deathLaserShrinking;
+				}
+			break;
 		}
 	}
 	void FindNewDestination ()
@@ -174,6 +262,7 @@ public class LaserCultist : EnemyFramework {
 		//Returns false if player not hit
 
 		//Create vector from angle
+		angle -= 90;
 		angle *= Mathf.Deg2Rad;
 		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         //Create position to fire from
@@ -186,17 +275,17 @@ public class LaserCultist : EnemyFramework {
 		{
 			//Hit something, show beam
 			Debug.DrawLine(origin, searchBeam.point);
-			EnableLineRenderer(0.05f, origin, searchBeam.point, laser);
+			//EnableLineRenderer(0.05f, origin, searchBeam.point, laser);
 			if(searchBeam.transform.gameObject.tag == "Good")
 			{
 				origin += (Vector2) ( arm.rotation * new Vector2(0, -0.3f) );
-				EnableLineRenderer(0.0f, origin, searchBeam.point, deathLaser);
+				//EnableLineRenderer(0.0f, origin, searchBeam.point, deathLaser);
 				return true;
 			}
 			return false;
 		}
 		//Hit nothing, show beam anyway
-		EnableLineRenderer(0.05f, origin, direction * 100, laser);
+		//EnableLineRenderer(0.05f, origin, direction * 100, laser);
 		return false;
 	}
 	private void EnableLineRenderer(float width, Vector2 origin, Vector2 end, Material material)
@@ -216,38 +305,42 @@ public class LaserCultist : EnemyFramework {
 	}
 	private IEnumerator LaserOfDeath()
 	{
-		yield return new WaitForSeconds(0.5f);
-		
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Portal Sound Effect");
-		
-		float angle;
-		angle = armRot.eulerAngles.z -90;
+		laserAction = LaserActions.searchBeamShrinking;
+		yield return new WaitForSeconds(0.5f);
+		laserAction = LaserActions.deathLaserGrowing;
+		yield return new WaitForSeconds(1f);
+		laserAction = LaserActions.deathLaserShrinking;
+		yield return new WaitForSeconds(0.5f);
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Portal Sound Effect");
+		yield return new WaitForSeconds(0.5f);
+		laserAction = LaserActions.searchBeamGrowing;
+	}
+	void ShowLaser(float angle, float width, Material laser)
+	{
+		angle -= 90;
 		angle *= Mathf.Deg2Rad;
 		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-        //Create position to fire from
+       
+	   //Create position to fire from
 		Vector2 origin;
 		origin = arm.position;
 		origin += new Vector2(0.015f, 0) * transform.localScale.x;//This just makes sure the raycast fires from within the collider
 		RaycastHit2D searchBeam = Physics2D.Raycast(origin, direction);
 		
-		
+		//Offset so that the laser begins where the cultist's arm ends
 		origin += (Vector2) ( arm.rotation * new Vector2(0, -0.3f) );
+		
 		if(searchBeam)
 		{
 			//Hit something, show beam
 			Debug.DrawLine(origin, searchBeam.point);
-			EnableLineRenderer(0.2f, origin, searchBeam.point, deathLaser);
-			if(searchBeam.transform.gameObject.tag == "Good")
-			{
-				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
-			}
+			EnableLineRenderer(width, origin, searchBeam.point, laser);
 			
 		}
 		else//Hit nothing, show beam anyway
 		{
-			EnableLineRenderer(0.2f, origin, direction * 100, deathLaser);
+			EnableLineRenderer(width, origin, direction * 100, laser);
 		}
-		attacking = true;
-		
 	}
 }
