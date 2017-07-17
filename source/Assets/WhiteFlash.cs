@@ -10,7 +10,7 @@ public class WhiteFlash : MonoBehaviour {
 
     void Update() {
         if (flash) {
-            myCG.alpha = myCG.alpha - Time.deltaTime/20;
+            myCG.alpha = myCG.alpha - Time.deltaTime/10;
             if (myCG.alpha <= 0) {
                 myCG.alpha = 0;
                 flash = false;
