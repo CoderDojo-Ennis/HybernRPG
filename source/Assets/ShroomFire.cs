@@ -38,6 +38,7 @@ public class ShroomFire : MonoBehaviour {
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
             anim.SetBool("fire", true);
+<<<<<<< Updated upstream
             //GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
             this.Delay(0.25f, () => {
@@ -47,6 +48,10 @@ public class ShroomFire : MonoBehaviour {
             this.Delay(2f, () => {
                 burn(coll.gameObject);
             });
+=======
+            this.Delay(1f, coll.gameObject.GetComponent<PlayerStats>().Die);
+            this.Delay(2f, burn(coll.gameObject));
+>>>>>>> Stashed changes
             this.Delay(1f, destroy);
             this.Delay(0.75f, whiteFlash.Explode);
             StartCoroutine(cameraFollow.MyRoutine(5f, 0.1f, 0.1f));
@@ -63,12 +68,17 @@ public class ShroomFire : MonoBehaviour {
     private void destroy() {
         Destroy(gameObject);
     }
+<<<<<<< Updated upstream
     public void burn(GameObject go) { 
         SpriteRenderer[] spriteR;
         spriteR = go.GetComponentsInChildren<SpriteRenderer>();
         foreach(SpriteRenderer sr in spriteR) {
             sr.color = Color.black;
         }
+=======
+    public void burn(GameObject go) {
+        go.GetComponent<SpriteRenderer>().color = Color.black;
+>>>>>>> Stashed changes
     } 
     void FixedUpdate() {
         anim = GetComponentInChildren<Animator>();
