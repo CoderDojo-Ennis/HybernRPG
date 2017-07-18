@@ -25,20 +25,19 @@ public class ShroomFire : MonoBehaviour {
             lerp += Time.deltaTime;
             sr.color = Color.Lerp(Color.white, Color.red, lerp);
             transform.localScale = Vector3.Lerp(new Vector3(1f, 1f, 1f), new Vector3(explodeScale, 1f, explodeScale), lerp);
-            Debug.Log(lerp);
         }
         if (lerp >= 1f) {
             whiteFlash.Explode();
-            darkHaze.Explode();
             StartCoroutine(cameraFollow.MyRoutine(2f, 0.1f, 0.1f));
             this.Delay(1f, destroy);
+            darkHaze.Explode();
         }
     }
 
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
             anim.SetBool("fire", true);
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
             //GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
             this.Delay(0.25f, () => {
@@ -68,18 +67,15 @@ public class ShroomFire : MonoBehaviour {
     private void destroy() {
         Destroy(gameObject);
     }
-<<<<<<< Updated upstream
-    public void burn(GameObject go) { 
+    //<<<<<<< Updated upstream
+    public void burn(GameObject go) {
         SpriteRenderer[] spriteR;
         spriteR = go.GetComponentsInChildren<SpriteRenderer>();
-        foreach(SpriteRenderer sr in spriteR) {
+        foreach (SpriteRenderer sr in spriteR) {
             sr.color = Color.black;
         }
-=======
-    public void burn(GameObject go) {
-        go.GetComponent<SpriteRenderer>().color = Color.black;
->>>>>>> Stashed changes
-    } 
+    }
+   
     void FixedUpdate() {
         anim = GetComponentInChildren<Animator>();
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Good");

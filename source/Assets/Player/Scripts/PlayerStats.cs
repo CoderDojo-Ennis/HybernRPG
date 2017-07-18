@@ -27,10 +27,11 @@ public class PlayerStats : MonoBehaviour {
 		
 		//Display health
 		healthCanvas.GetComponent<HealthManager>().DisplayHealth(health);
-		
-		StopAllCoroutines();
-		StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));
-		
+        if (damage > 0) {
+
+            StopAllCoroutines();
+            StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));
+        }
 		if(health == 0)
 		{
 			Die();
