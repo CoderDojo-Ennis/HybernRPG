@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1183714071478490}
+  m_IsPrefabParent: 1
+--- !u!1 &1183714071478490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4366169481368938}
+  - component: {fileID: 114966502612199122}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4366169481368938
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183714071478490}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.870862, z: -13.3947}
+  m_LocalScale: {x: 1.33947, y: 1.33947, z: 1.33947}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114966502612199122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1183714071478490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fa1802be12ace4da503fb453bd1d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 243273150123082466, guid: bab5229a185b0404c93ec635690ea94c,
+    type: 2}
+  sounds:
+  - name: Shoot Noise
+    clip: {fileID: 8300000, guid: 3da2cbc0c7cffc04593a40597f03520b, type: 3}
+    volume: 1
+    pitch: 3
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Jetpack
+    clip: {fileID: 8300000, guid: cdb5355fd84f25b42ad57b5a2170f907, type: 3}
+    volume: 0.719
+    pitch: 1.03
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: Manly Grunt 1
+    clip: {fileID: 8300000, guid: 2413aa7c0b6a4714e8a352363ae1bb7b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Manly Grunt2
+    clip: {fileID: 8300000, guid: b648e37e919963241aec538a9667f010, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Manly Grunt 3
+    clip: {fileID: 8300000, guid: dc235d6a33eb81d4181bd15e709dee89, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Manly Grunt 4
+    clip: {fileID: 8300000, guid: 2cd83f535b71b2940a124f493f33c63c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Nuclear Explosion
+    clip: {fileID: 8300000, guid: 3065956ec5562884b9e3f60c442c79f7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Water Splash
+    clip: {fileID: 8300000, guid: 9a36a7cc11ace634cb3e6871419ef5b9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Water Splash 2
+    clip: {fileID: 8300000, guid: 51df35a13691fad4eb4f4f4066ff57bd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
