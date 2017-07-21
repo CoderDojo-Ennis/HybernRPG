@@ -61,9 +61,9 @@ MonoBehaviour:
     source: {fileID: 0}
     useAudioMixer: 1
   - name: Jetpack
-    clip: {fileID: 8300000, guid: 6366687058ee201439aa1424de7f63a3, type: 3}
-    volume: 1
-    pitch: 1
+    clip: {fileID: 8300000, guid: cdb5355fd84f25b42ad57b5a2170f907, type: 3}
+    volume: 0.719
+    pitch: 1.03
     source: {fileID: 0}
     useAudioMixer: 0
   - name: Manly Grunt 1
@@ -86,6 +86,24 @@ MonoBehaviour:
     useAudioMixer: 1
   - name: Manly Grunt 4
     clip: {fileID: 8300000, guid: 2cd83f535b71b2940a124f493f33c63c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Nuclear Explosion
+    clip: {fileID: 8300000, guid: 3065956ec5562884b9e3f60c442c79f7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Water Splash
+    clip: {fileID: 8300000, guid: 9a36a7cc11ace634cb3e6871419ef5b9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Water Splash 2
+    clip: {fileID: 8300000, guid: 51df35a13691fad4eb4f4f4066ff57bd, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
