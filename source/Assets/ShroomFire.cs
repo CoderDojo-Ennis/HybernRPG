@@ -3,29 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityStandardAssets._2D;
-
 public class ShroomFire : MonoBehaviour {
     public Animator anim;
     public float visionRange;
     public CameraFollow cameraFollow;
     public WhiteFlash whiteFlash;
-
+    public DarkHaze darkHaze;
+    public SpriteRenderer sr;
+    private float lerp = 0;
+    public float explodeScale;
     void Start () {
         cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
         whiteFlash = GameObject.Find("WhiteExplosionEffect").GetComponent<WhiteFlash>();
+        darkHaze = GameObject.Find("AfterExplosionEffect").GetComponent<DarkHaze>();
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
 
 	void Update () {
-		
-	}
+		if(anim.GetBool("fire") == true) {
+            anim.Play("fire");
+            lerp += Time.deltaTime;
+            sr.color = Color.Lerp(Color.white, Color.red, lerp);
+            transform.localScale = Vector3.Lerp(new Vector3(1f, 1f, 1f), new Vector3(explodeScale, 1f, explodeScale), lerp);
+        }
+        if (lerp >= 1f) {
+            whiteFlash.Explode();
+            StartCoroutine(cameraFollow.MyRoutine(2f, 0.1f, 0.1f));
+            this.Delay(1f, destroy);
+            darkHaze.Explode();
+        }
+    }
 
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.tag == "Good") {
             anim.SetBool("fire", true);
+//<<<<<<< Updated upstream
+            //GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
+            this.Delay(0.25f, () => {
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Nuclear Explosion");
+            });
+            this.Delay(1f, coll.gameObject.GetComponent<PlayerStats>().Die);/*
+            this.Delay(2f, () => {
+                burn(coll.gameObject);
+            });
+=======
             this.Delay(1f, coll.gameObject.GetComponent<PlayerStats>().Die);
+            this.Delay(2f, burn(coll.gameObject));
+>>>>>>> Stashed changes
             this.Delay(1f, destroy);
-            this.Delay(0.5f, whiteFlash.Explode);
+            this.Delay(0.75f, whiteFlash.Explode);
             StartCoroutine(cameraFollow.MyRoutine(5f, 0.1f, 0.1f));
+            */
         }
     }
 
@@ -38,6 +67,15 @@ public class ShroomFire : MonoBehaviour {
     private void destroy() {
         Destroy(gameObject);
     }
+    //<<<<<<< Updated upstream
+    public void burn(GameObject go) {
+        SpriteRenderer[] spriteR;
+        spriteR = go.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in spriteR) {
+            sr.color = Color.black;
+        }
+    }
+   
     void FixedUpdate() {
         anim = GetComponentInChildren<Animator>();
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Good");
