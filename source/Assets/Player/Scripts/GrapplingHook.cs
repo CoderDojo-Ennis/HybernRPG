@@ -43,30 +43,9 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(hook == null)
-		{
-			//Destroy any missing grappling hooks lying around the scene,
-			//thus getting rid of the "multiple grappling hooks" glitch.
-			if(GameObject.Find("Hook(Clone)") != null)
-			{
-				GameObject.Destroy(GameObject.Find("Hook(Clone)"));
-			}
-			
-			//Create a new hook from the prefab if not already in existence
-			if(hookPrefab == null){
-				print("hook prefab unassigned");
-			}
-			else{
-				Vector3 spawnPos = new Vector3(0,0,0);
-				hook = Instantiate(hookPrefab, spawnPos,Quaternion.identity);
-				hook.GetComponent<HookFly>().grapplingHook = this;
-				
-				//Ignore grappling hook collisions with player
-				Physics2D.IgnoreCollision(hook.GetComponent<Collider2D>(), transform.parent.parent.GetComponent<Collider2D>());
-			}
-		}
 		if(Input.GetMouseButtonDown(0)){
 				//Mouse pressed
+				CreateHook ();
 				DisconnectWithSpring();
 				FireHook(5.0f);
 				PointShoulderToHook();
@@ -75,40 +54,52 @@ public class GrapplingHook : MonoBehaviour {
 		else{
 		
 			if(Input.GetMouseButton(0)){
-				//Mouse held down
-				PointShoulderToHook();
-				
-				//Check if max distance has been exceeded
-				if(maxDistance < DistanceToHook())
+				if(hook != null) //Check to see if hook has been destroyed
 				{
+					//Mouse held down
+					PointShoulderToHook();
+					
+					//Check if max distance has been exceeded
+					if(maxDistance < DistanceToHook())
+					{
+						cancel = true;
+					}
+				}
+				else
+				{
+					//Hook has been destroyed
 					cancel = true;
+					retract = false;
 				}
 				
 				//If retracting, connect spring to hook
 				//If canceled,stop firing hook
 				//Otherwise, keep firing hook
-				if(retract){
-				ConnectWithSpring();
-				ConnectWithChain();
-				}else{
 				if(cancel){
-				//Shooting hook canceled
-				PointShoulderToMouse();
-				RetractHook();
-				AttachForearm();
-				
-				DisconnectWithSpring();
-				DisconnnectWithChain();
-				
-				//Disable hook object
-				hook.GetComponent<BoxCollider2D>().enabled = false;
-				hook.GetComponent<HookFly>().enabled = false;
-				hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+					//Shooting hook canceled
+					PointShoulderToMouse();
+					RetractHook();
+					AttachForearm();
+					
+					DisconnectWithSpring();
+					DisconnnectWithChain();
+					
+					if(hook != null)
+					{
+						//Disable hook object
+						hook.GetComponent<BoxCollider2D>().enabled = false;
+						hook.GetComponent<HookFly>().enabled = false;
+						hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+					}
 				}
 				else{
-				DisconnectWithSpring();
-				ConnectWithChain();
-				}
+					if(retract){
+						ConnectWithSpring();
+						ConnectWithChain();
+					}else{
+						DisconnectWithSpring();
+						ConnectWithChain();
+					}
 				}
 				
 			}
@@ -119,10 +110,14 @@ public class GrapplingHook : MonoBehaviour {
 				AttachForearm();
 				
 				//Disable hook object
-				hook.GetComponent<BoxCollider2D>().enabled = false;
-				hook.GetComponent<HookFly>().enabled = false;
-				hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-				
+				if(hook != null)
+				{
+					hook.GetComponent<BoxCollider2D>().enabled = false;
+					hook.GetComponent<HookFly>().enabled = false;
+					hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+				}
+
+					
 				retract = false;
 				cancel = false;
 				
@@ -200,62 +195,79 @@ public class GrapplingHook : MonoBehaviour {
 		//Show forearm
 		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
 		//Hide hook
-		hook.GetComponent<SpriteRenderer>().enabled = false;
+		if(hook != null){
+			hook.GetComponent<SpriteRenderer>().enabled = false;
+		}
 	}
 	void RetractHook()
 	{
 	}
 	void ConnectWithChain()
 	{
-		//Find physics object
-		GameObject playerPhysics;
-		playerPhysics = transform.parent.parent.gameObject;
-		
-		//float scale = playerPhysics.transform.localScale.x;
-		
-		Vector3 armPos;
-		Vector3 hookPos;
-		armPos = transform.position;
-		//armPos += rotation1 * new Vector3(0, -0.17f, 0);//-0.08f * scale
-		
-		hookPos = hook.transform.position;
-		//hookPos +=;
-		//Set positions of ends
-		hook.GetComponent<LineRenderer>().SetPosition(0, hookPos);
-		hook.GetComponent<LineRenderer>().SetPosition(1, armPos);
-		
-		//Display chain
-		hook.GetComponent<LineRenderer>().enabled = true;
+		if(hook != null)
+		{
+			//Find physics object
+			GameObject playerPhysics;
+			playerPhysics = transform.parent.parent.gameObject;
+			
+			//float scale = playerPhysics.transform.localScale.x;
+			
+			Vector3 armPos;
+			Vector3 hookPos;
+			armPos = transform.position;
+			//armPos += rotation1 * new Vector3(0, -0.17f, 0);//-0.08f * scale
+			
+			hookPos = hook.transform.position;
+			//hookPos +=;
+			//Set positions of ends
+			hook.GetComponent<LineRenderer>().SetPosition(0, hookPos);
+			hook.GetComponent<LineRenderer>().SetPosition(1, armPos);
+			
+			//Display chain
+			hook.GetComponent<LineRenderer>().enabled = true;
+		}
 	}
 	void DisconnnectWithChain()
 	{	
-		//Hide Chain
-		hook.GetComponent<LineRenderer>().enabled = false;
+		if(hook != null)
+		{
+			//Hide Chain
+			hook.GetComponent<LineRenderer>().enabled = false;
+		}
 	}
 	void ConnectWithSpring()
 	{
-		//Find physics object
-		GameObject playerPhysics;
-		playerPhysics = transform.parent.parent.gameObject;
-		
-		//enable spring
-		hook.GetComponent<SpringJoint2D>().connectedBody = playerPhysics.GetComponent<Rigidbody2D>();
-		//hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0,0);
-		hook.GetComponent<SpringJoint2D>().enabled = true;
-		
-		//These are the alternative coordinates for the contact point on the player's collider for the spring
-		//x= -0.1003531y=0.5240884
+		if(hook != null)
+		{
+			//Find physics object
+			GameObject playerPhysics;
+			playerPhysics = transform.parent.parent.gameObject;
+			
+			//enable spring
+			hook.GetComponent<SpringJoint2D>().connectedBody = playerPhysics.GetComponent<Rigidbody2D>();
+			//hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0,0);
+			hook.GetComponent<SpringJoint2D>().enabled = true;
+			
+			//These are the alternative coordinates for the contact point on the player's collider for the spring
+			//x= -0.1003531y=0.5240884
+		}
 	}
 	void DisconnectWithSpring()
-	{	
-		//Enable spring
-		hook.GetComponent<SpringJoint2D>().enabled = false;
+	{
+		if(hook != null)
+		{
+			//Enable spring
+			hook.GetComponent<SpringJoint2D>().enabled = false;
+		}
 	}
 	void RecallHook()
 	{
-		hook.GetComponent<SpringJoint2D>().connectedBody = null;
-		hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(transform.position.x, transform.position.y);
-		hook.GetComponent<SpringJoint2D>().enabled = true;
+		if(hook != null)
+		{
+			hook.GetComponent<SpringJoint2D>().connectedBody = null;
+			hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(transform.position.x, transform.position.y);
+			hook.GetComponent<SpringJoint2D>().enabled = true;
+		}
 	}
 	float DistanceToHook()
 	{
@@ -308,5 +320,31 @@ public class GrapplingHook : MonoBehaviour {
 		//transitionClip.SetCurve("shoulder1", typeof(Transform), "localRotation.w", rotWcurve);
 		
 		GetComponent<Animator>().SetInteger("ArmLimbs", 3);
+	}
+	void CreateHook ()
+	{
+		if(hook == null)
+		{
+			print("New Hook");
+			//Destroy any missing grappling hooks lying around the scene,
+			//thus getting rid of the "multiple grappling hooks" glitch.
+			if(GameObject.Find("Hook(Clone)") != null)
+			{
+				GameObject.Destroy(GameObject.Find("Hook(Clone)"));
+			}
+			
+			//Create a new hook from the prefab if not already in existence
+			if(hookPrefab == null){
+				print("hook prefab unassigned");
+			}
+			else{
+				Vector3 spawnPos = new Vector3(0,0,0);
+				hook = Instantiate(hookPrefab, spawnPos,Quaternion.identity);
+				hook.GetComponent<HookFly>().grapplingHook = this;
+				
+				//Ignore grappling hook collisions with player
+				Physics2D.IgnoreCollision(hook.GetComponent<Collider2D>(), transform.parent.parent.GetComponent<Collider2D>());
+			}
+		}
 	}
 }
