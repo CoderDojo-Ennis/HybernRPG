@@ -133,7 +133,7 @@ public abstract class EnemyFramework : MonoBehaviour {
 		//Play death sound
 		if(sounds.Count != 0)
 		{
-			int index = Random.Range(0, sounds.Count);
+			int index = Random.Range(0, sounds.Count - 1);
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(sounds[index]);
 		}
 		//Work with gameObject children first

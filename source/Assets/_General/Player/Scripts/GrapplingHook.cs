@@ -40,6 +40,19 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void OnDisable()
 	{
+		AttachForearm();
+					
+		DisconnectWithSpring();
+		DisconnnectWithChain();
+		
+		if(hook != null)
+		{
+			//Disable hook object
+			hook.GetComponent<BoxCollider2D>().enabled = false;
+			hook.GetComponent<HookFly>().enabled = false;
+			hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+		}
+		
 	}
 	void LateUpdate()
 	{

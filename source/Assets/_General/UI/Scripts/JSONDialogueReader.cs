@@ -23,15 +23,18 @@ public class JSONDialogueReader : MonoBehaviour {
     public GameObject DialogueTextUI;
     public GameObject SpeakerTextUI;
     
-	void Start () 
+	void Awake () 
     {
         DialogueTextUI.transform.parent.gameObject.SetActive(false);
-        textData = File.ReadAllText(Application.dataPath + "/JSON/dialogue.json");
+        textData = File.ReadAllText(Application.dataPath + "/_World1/JSON/Intruder.json");
         dialogueData = JsonMapper.ToObject(textData);
         ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
         //Debug
         //Debug.Log(GetText("Player", "0"));
-        //DisplayDialogue("Player", "0"); // Latest DisplayDialogue called appears.
+		Debug.Log("Hello World");
+        DisplayDialogue("Cultist", "0"); // Latest DisplayDialogue called appears.
+		
+		Pause();
 	}
 
 	string GetText (string speaker, string id) //Searches dialogue.json for text. Can be debugged like shown in Start().
@@ -45,6 +48,13 @@ public class JSONDialogueReader : MonoBehaviour {
     }
     void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it. Can be called like shown in Start(). 
     {
+		if(id == "exit")
+		{
+			DialogueTextUI.transform.parent.gameObject.SetActive(false);
+			UnPause();
+			return;
+		}
+		
         DisplaySpeaker = speaker;
         DisplayID = id;
         if (!DialogueTextUI.transform.parent.gameObject.activeSelf)
@@ -55,7 +65,7 @@ public class JSONDialogueReader : MonoBehaviour {
         DialogueTextUI.GetComponent<Text>().text = GetText(speaker, id);
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
-    bool GetNext(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
+    string GetNext(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -65,22 +75,30 @@ public class JSONDialogueReader : MonoBehaviour {
                 if (dialogueData[speaker][i]["next"] != null)
                 {
                     Debug.Log("FUNCTION CALLED");
-                    return true;
+                    return dialogueData[speaker][i]["next"][0]["id"].ToString();
                 }
             }
         }
-        return false;
+        return "FAIL";
     }
-    void ContinueButtonFunction ()
+    public void ContinueButtonFunction ()
     {
         
-        if (GetNext(DisplaySpeaker, DisplayID))
+        if (GetNext(DisplaySpeaker, DisplayID) != "FAIL")
         {
-
+			DisplayDialogue (DisplaySpeaker, GetNext(DisplaySpeaker, DisplayID));
         }
         else
         {
             DialogueTextUI.SetActive(false);
         }
     }
+	void Pause()
+	{
+		Time.timeScale = 0;
+	}
+	void UnPause()
+	{
+		Time.timeScale = 1;
+	}
 }

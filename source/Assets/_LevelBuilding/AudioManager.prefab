@@ -72,7 +72,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 1
-  - name: Manly Grunt2
+  - name: Manly Grunt 2
     clip: {fileID: 8300000, guid: b648e37e919963241aec538a9667f010, type: 3}
     volume: 1
     pitch: 1
@@ -104,6 +104,18 @@ MonoBehaviour:
     useAudioMixer: 1
   - name: Water Splash 2
     clip: {fileID: 8300000, guid: 51df35a13691fad4eb4f4f4066ff57bd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: Cultist Laser
+    clip: {fileID: 8300000, guid: 7dda406728649f949851d0ab63ca2845, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: Sizzle
+    clip: {fileID: 8300000, guid: a9b6ed4df7567424ab8c23a126cead9c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
