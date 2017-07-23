@@ -120,3 +120,27 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 1
+  - name: HookFire
+    clip: {fileID: 8300000, guid: 5d16d6c0d0e637b4ca42885a8256fcd4, type: 3}
+    volume: 0.7
+    pitch: 0.5
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: HookHit
+    clip: {fileID: 8300000, guid: fb44cc518aa75524a93cdea998076de0, type: 3}
+    volume: 0.663
+    pitch: 1.74
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: HookChain
+    clip: {fileID: 8300000, guid: a4a0144ef4c3b0345b1198d95d754407, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: HookCancel
+    clip: {fileID: 8300000, guid: 0cf6330623d682046be94bd70f094b98, type: 3}
+    volume: 0.6
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0

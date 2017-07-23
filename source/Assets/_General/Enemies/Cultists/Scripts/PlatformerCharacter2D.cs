@@ -30,7 +30,14 @@ namespace UnityStandardAssets._2D
             m_Anim = transform.GetChild(0).GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
-
+		private void OnDisable()
+		{
+			//disable box colliders on arms
+				Transform arms = transform.GetChild(0).GetChild(1);
+				
+				arms.GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
+				arms.GetChild(1).GetComponent<BoxCollider2D>().isTrigger = false;
+		}
 
         private void FixedUpdate()
         {
@@ -125,13 +132,21 @@ namespace UnityStandardAssets._2D
             if(attack)
             {
                 m_Anim.SetBool("Attack", true);
-				//Deduct health from player
-				GameObject player;
-				player = GameObject.Find("Player Physics Parent");
+				//Enable box colliders on arms
+				Transform arms = transform.GetChild(0).GetChild(1);
 				
-				PlayerStats playerStats;
-				player.GetComponent<PlayerStats>().TakeDamage(1);
+				
+				arms.GetChild(1).GetComponent<BoxCollider2D>().enabled = true;
+				arms.GetChild(1).GetComponent<BoxCollider2D>().isTrigger = true;
             }
+			else{
+				 m_Anim.SetBool("Attack", false);
+				//disable box colliders on arms
+				Transform arms = transform.GetChild(0).GetChild(1);
+								
+				arms.GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
+				arms.GetChild(1).GetComponent<BoxCollider2D>().isTrigger = false;
+			}
         }
 
 
