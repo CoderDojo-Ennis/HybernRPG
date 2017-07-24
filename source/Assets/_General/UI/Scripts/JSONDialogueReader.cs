@@ -62,7 +62,9 @@ public class JSONDialogueReader : MonoBehaviour {
             DialogueTextUI.transform.parent.gameObject.SetActive(true);
             DialogueTextUI.SetActive(true);
         }
-        DialogueTextUI.GetComponent<Text>().text = GetText(speaker, id);
+        //display text
+		StartCoroutine( "PrintText" );
+		
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
     string GetNext(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
@@ -107,5 +109,22 @@ public class JSONDialogueReader : MonoBehaviour {
 	void UnPause()
 	{
 		Time.timeScale = 1;
+	}
+	IEnumerator PrintText ()
+	{
+		//Store text characters in an array
+		char[] characters = GetText(DisplaySpeaker, DisplayID).ToCharArray();
+		
+		//Empty text box
+		DialogueTextUI.GetComponent<Text>().text = null;
+		
+		//Cycle through text and transfer it to text box
+		for( int counter = 0; counter < characters.Length; counter++)
+		{
+			DialogueTextUI.GetComponent<Text>().text += characters[counter];
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("TextProgression");
+			
+			yield return null;
+		}
 	}
 }
