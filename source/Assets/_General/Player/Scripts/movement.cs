@@ -4,6 +4,7 @@ using System.Collections;
 public class movement : MonoBehaviour {
 	public float walkSpeed = 2;
 	public float runSpeed = 3;
+	public float maxVelocity = 5;
 	public bool jetpack;
 	//[HideInInspector]
 	public bool inWater;
@@ -200,6 +201,7 @@ public class movement : MonoBehaviour {
 				}
 				
 			}
+			
 		}
 		else
 		{
@@ -211,6 +213,13 @@ public class movement : MonoBehaviour {
 		
 		Debug.DrawLine(new Vector3(rb.position.x,rb.position.y, 0), position, Color.green, 4, false);
 		position = rb.position;
+		
+		//If player is going too fast, limit velocity
+		/*if(rb.velocity.sqrMagnitude > maxVelocity * maxVelocity)
+		{
+			rb.velocity.Normalize();
+			rb.velocity *= maxVelocity;
+		}*/
 	}
 	
 }
