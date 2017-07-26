@@ -87,16 +87,6 @@ public class ChangeLimb : MonoBehaviour {
         {
             WheelControl();
 		}
-
-        //Time Control
-        if (time)
-        {
-            Time.timeScale = 1;
-        }
-        if (time == false)
-        {
-            Time.timeScale = 0.1f;
-        }
     }
 
     public void SwitchArms(int i)
@@ -121,7 +111,16 @@ public class ChangeLimb : MonoBehaviour {
     {
         wheel.SetActive(!wheel.activeSelf);
 		healthDisplay.SetActive(!healthDisplay.activeSelf);
-        time = !time;
+        
         Movement.enabled = !Movement.enabled;
+		
+		
+		//Time Control
+		if(Time.timeScale == 1){
+			Time.timeScale = 0;
+		}
+		else{
+			Time.timeScale = 1;
+		}
     }
 }

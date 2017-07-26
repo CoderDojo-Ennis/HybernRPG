@@ -17,6 +17,7 @@ public class LaserCultist : EnemyFramework {
 	private float deathLaserWidth;
 	//variable dictating what the laser is doing
 	public LaserActions laserAction;
+	private bool playerHitAlready;
 	
 	public GameObject navPointContainer;
 	private NavPoint[] allNavPoints;
@@ -43,6 +44,7 @@ public class LaserCultist : EnemyFramework {
 		FindNewDestination();
 		laserWidth = 0;
 		deathLaserWidth = 0;
+		playerHitAlready = false;
 		
 		//EnemyFramework variables
 		attack = 2;
@@ -111,13 +113,18 @@ public class LaserCultist : EnemyFramework {
 				//See if player is in the way of beam
 				if(SearchBeam(armRot.eulerAngles.z))
 				{
-					GameObject.Find( "Player Physics Parent" ).GetComponent<PlayerStats>().TakeDamage(attack);
+					if( !playerHitAlready )
+					{
+						GameObject.Find( "Player Physics Parent" ).GetComponent<PlayerStats>().TakeDamage(attack);
+						playerHitAlready = true;
+					}
 				}
 				
 				//animate beam
 				deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
 			break;
 			case LaserActions.deathLaserGrowing:
+				playerHitAlready = false;
 				///Death Laser Beam quickly grows to its full size
 				if( deathLaserWidth < 0.2f ){
 					deathLaserWidth += 0.05f;
@@ -305,14 +312,14 @@ public class LaserCultist : EnemyFramework {
 	}
 	private IEnumerator LaserOfDeath()
 	{
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Portal Sound Effect");
 		laserAction = LaserActions.searchBeamShrinking;
 		yield return new WaitForSeconds(0.5f);
+		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Cultist Laser");
 		laserAction = LaserActions.deathLaserGrowing;
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.7f);
 		laserAction = LaserActions.deathLaserShrinking;
 		yield return new WaitForSeconds(0.5f);
-		GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Portal Sound Effect");
+		//GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Cultist Laser");
 		yield return new WaitForSeconds(0.5f);
 		laserAction = LaserActions.searchBeamGrowing;
 	}

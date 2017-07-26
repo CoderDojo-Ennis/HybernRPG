@@ -2,7 +2,13 @@
     "Player": [
         {
             "id": 0,
-            "text": "This is a string of dialogue!"
+            "text": "This is a string of dialogue!",
+			"next": [
+                {
+                    "speaker": "Player",
+                    "id": 1
+                }
+			]
         },
         {
             "id": 1,
@@ -10,7 +16,17 @@
             "next": [
                 {
                     "speaker": "Player",
-                    "id": 0
+                    "id": 2
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "Good evening friend. Looks like I'll be forced to <color=red>kill</color> you",
+            "next": [
+                {
+                    "speaker": "Player",
+                    "id": "exit"
                 }
             ]
         }

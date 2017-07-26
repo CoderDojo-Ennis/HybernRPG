@@ -133,9 +133,24 @@ public abstract class EnemyFramework : MonoBehaviour {
 		//Play death sound
 		if(sounds.Count != 0)
 		{
-			int index = Random.Range(0, sounds.Count);
+			int index = Random.Range(0, sounds.Count - 1);
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play(sounds[index]);
 		}
+		
+		Component[] monos;
+		
+		GetComponent<EnemyFramework>().enabled = false;                     //Main Script disabled
+        if (GetComponent<LineRenderer>())                                   //For LaserCultist, ...
+            GetComponent<LineRenderer>().enabled = false;
+        if (GetComponent<MonoBehaviour>())                                  //For MeleeCultist, ...
+        {
+            monos = GetComponents<MonoBehaviour>();
+            foreach (MonoBehaviour mono in monos)
+            {
+                mono.enabled = false;
+            }
+        }
+		
 		//Work with gameObject children first
 
         //Rigidbody2D
@@ -163,21 +178,11 @@ public abstract class EnemyFramework : MonoBehaviour {
 		
 		transform.GetChild(0).GetComponent<Animator>().enabled = false; //Cancel animations
 		
-		Component[] monos;
+		
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GetComponent<CapsuleCollider2D>().enabled = false;
-        GetComponent<EnemyFramework>().enabled = false;                     //Main Script disabled
-        if (GetComponent<LineRenderer>())                                   //For LaserCultist, ...
-            GetComponent<LineRenderer>().enabled = false;
-        if (GetComponent<MonoBehaviour>())                                  //For MeleeCultist, ...
-        {
-            monos = GetComponents<MonoBehaviour>();
-            foreach (MonoBehaviour mono in monos)
-            {
-                mono.enabled = false;
-            }
-        }
+        
 		
         StartCoroutine(Destroy());
     }

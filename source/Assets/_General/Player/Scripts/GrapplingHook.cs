@@ -37,9 +37,24 @@ public class GrapplingHook : MonoBehaviour {
 		cancel = false;
 		
 		hook = null;
+		
+		
 	}
 	void OnDisable()
 	{
+		AttachForearm();
+					
+		DisconnectWithSpring();
+		DisconnnectWithChain();
+		
+		if(hook != null)
+		{
+			//Disable hook object
+			hook.GetComponent<BoxCollider2D>().enabled = false;
+			hook.GetComponent<HookFly>().enabled = false;
+			hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+		}
+		
 	}
 	void LateUpdate()
 	{
@@ -50,6 +65,8 @@ public class GrapplingHook : MonoBehaviour {
 				FireHook(5.0f);
 				PointShoulderToHook();
 				ConnectWithChain();
+				
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("HookChain");
 		}
 		else{
 		
@@ -86,9 +103,14 @@ public class GrapplingHook : MonoBehaviour {
 					
 					if(hook != null)
 					{
+						
 						//Disable hook object
+						if(hook.GetComponent<HookFly>().enabled) //Check so audio is only played once
+						{
+							hook.GetComponent<HookFly>().enabled = false;
+							GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("HookCancel");
+						}
 						hook.GetComponent<BoxCollider2D>().enabled = false;
-						hook.GetComponent<HookFly>().enabled = false;
 						hook.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 					}
 				}
