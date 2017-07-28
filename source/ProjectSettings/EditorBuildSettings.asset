@@ -9,21 +9,27 @@ EditorBuildSettings:
     path: Assets/_General/Menu/Scenes/Menu.unity
     guid: bfd819e5a41679c4da76184eed37a1b6
   - enabled: 1
-    path: Assets/_World1/Scenes/pathFinding.unity
-    guid: 016455e528db2ba4db9278ec1baf32aa
+    path: Assets/_World1/Scenes/Beginning.unity
+    guid: 3c4868e79243fba479bef7d8b5a1674c
   - enabled: 1
+    path: Assets/_World1/Scenes/laser cultist workbench.unity
+    guid: a90d5c76f912d754ba0b6316a042cc8e
+  - enabled: 0
     path: Assets/_World1/Scenes/GameDemo.unity
     guid: 4df71a076b8ff2f45ad1a1b60efb2cda
-  - enabled: 1
+  - enabled: 0
+    path: Assets/_World1/Scenes/pathFinding.unity
+    guid: 016455e528db2ba4db9278ec1baf32aa
+  - enabled: 0
     path: Assets/_World1/Scenes/jacksidioticattemptatmakinggames.unity
     guid: 2e793dfc02ee58e42b6ed731b74d9151
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/W4-A00 the terror that dosent exsist and a island
       i dont no what to do with.unity
     guid: d2e8ee49fe3e9a04d882154dfa271502
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/W3 star wreckin.unity
     guid: 8b7ed71f584d51c459cc71a1ad445880
-  - enabled: 0
-    path: Assets/_World1/Scenes/laser cultist workbench.unity
-    guid: a90d5c76f912d754ba0b6316a042cc8e
+  - enabled: 1
+    path: Assets/_World1/Scenes/Boss.unity
+    guid: a3d19e02f6d50644884019d9e037bb34
