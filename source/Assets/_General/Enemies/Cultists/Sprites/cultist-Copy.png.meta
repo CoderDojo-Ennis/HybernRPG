@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: fd6c78546c6361a45a5466755443329c
+timeCreated: 1499878301
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: head-cultistBlue
+    21300002: shoulder2-cultistBlue
+    21300004: shoulder1-cultistBlue
+    21300006: torso-cultistBlue
+    21300008: forearm2-cultistBlue
+    21300010: forearm1-cultistBlue
+    21300012: thigh2-cultistBlue
+    21300014: thigh1-cultistBlue
+    21300016: cultist_30
+    21300018: calf2-cultistBlue
+    21300020: calf1-cultistBlue
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 104.4979
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: head-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 66
+        width: 34
+        height: 31
+      alignment: 9
+      pivot: {x: 0.44096178, y: 0.04409298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: shoulder2-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.7050314, y: 0.7701591}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: shoulder1-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 44
+        width: 14
+        height: 20
+      alignment: 9
+      pivot: {x: 0.3543576, y: 0.8160448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: torso-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 28
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forearm2-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0.7050314, y: 0.8277065}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forearm1-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 25
+        width: 13
+        height: 18
+      alignment: 9
+      pivot: {x: 0.2556798, y: 0.8160448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: thigh2-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 19
+        width: 15
+        height: 9
+      alignment: 9
+      pivot: {x: 0.485062, y: 0.8236501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: thigh1-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 19
+        width: 15
+        height: 9
+      alignment: 9
+      pivot: {x: 0.4701246, y: 0.8485463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cultist_30
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 13
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: calf2-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.910787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: calf1-cultistBlue
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 15
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5149376, y: 0.9356833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

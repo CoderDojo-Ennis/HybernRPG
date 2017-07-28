@@ -46,6 +46,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: ForeGround
+    uniqueID: 3830803187
+    locked: 0
   - name: Floor
     uniqueID: 3131993583
     locked: 0
@@ -61,11 +64,11 @@ TagManager:
   - name: BodyMiddle
     uniqueID: 1287881407
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: BodyFront
     uniqueID: 3842529867
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Projectiles
     uniqueID: 3054740177
