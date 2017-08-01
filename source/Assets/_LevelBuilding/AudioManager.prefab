@@ -145,7 +145,7 @@ MonoBehaviour:
     source: {fileID: 0}
     useAudioMixer: 0
   - name: TextProgression
-    clip: {fileID: 8300000, guid: 45783c5594d7fb54f8fab2c06e14d334, type: 3}
+    clip: {fileID: 8300000, guid: 76b11d953822ce642b63974ab2ab21cb, type: 3}
     volume: 0.6
     pitch: 1
     source: {fileID: 0}

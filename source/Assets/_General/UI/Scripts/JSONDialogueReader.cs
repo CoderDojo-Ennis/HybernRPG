@@ -18,6 +18,7 @@ public class JSONDialogueReader : MonoBehaviour {
     private string DisplayID;
     private string NextSpeaker;
     private string NextID;
+	private PlayerStats playerStats;
 
     public Button ContinueButton;
     public GameObject DialogueTextUI;
@@ -25,13 +26,13 @@ public class JSONDialogueReader : MonoBehaviour {
     
 	void Start() 
     {
-        DialogueTextUI.transform.parent.gameObject.SetActive(false);
-        
+        //DialogueTextUI.transform.parent.gameObject.SetActive(false);
+        playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
+		
 		ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
 		
         //Debug
         //Debug.Log(GetText("Player", "0"));
-		Debug.Log("Hello World");
         //DisplayDialogue("Cultist", "0"); // Latest DisplayDialogue called appears.
 		
 		
@@ -63,6 +64,7 @@ public class JSONDialogueReader : MonoBehaviour {
             DialogueTextUI.SetActive(true);
         }
         //display text
+		StopAllCoroutines();
 		StartCoroutine( "PrintText" );
 		
         SpeakerTextUI.GetComponent<Text>().text = speaker;
@@ -104,24 +106,25 @@ public class JSONDialogueReader : MonoBehaviour {
 	}
 	void Pause()
 	{
-		Time.timeScale = 0;
+		playerStats.paused = true;
 	}
 	void UnPause()
 	{
-		Time.timeScale = 1;
+		playerStats.paused = false;
 	}
 	IEnumerator PrintText ()
 	{
 		//Store text characters in an array
 		char[] characters = GetText(DisplaySpeaker, DisplayID).ToCharArray();
-		
 		//Empty text box
 		DialogueTextUI.GetComponent<Text>().text = null;
 		
 		//Cycle through text and transfer it to text box
 		for( int counter = 0; counter < characters.Length; counter++)
 		{
+			
 			DialogueTextUI.GetComponent<Text>().text += characters[counter];
+			
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("TextProgression");
 			
 			yield return null;

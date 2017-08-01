@@ -18,6 +18,7 @@ public class aiming : MonoBehaviour {
 	public float recoilOffset;
 	public float recoilLerpValue;
 	public CameraFollow cameraFollow;
+	private PlayerStats playerStats;
 	
 	// Use this for initialization
 	void OnEnable()
@@ -36,84 +37,88 @@ public class aiming : MonoBehaviour {
 	   finishedRecoil = false;
 	   
 	   cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+	   playerStats = GameObject.Find( "Player Physics Parent").GetComponent<PlayerStats>();
     }
 	
 	// Update is called once per frame
 	void LateUpdate ()
 	{
-		//Make sure that lerpValue is greater than
-		//zero and less than or equal to 1.
-		lerpValue = Mathf.Clamp(lerpValue, 0, 1);
-		if(lerpValue == 0)
+		if(!playerStats.paused)
 		{
-			lerpValue = 1;
-		}
-		
-		Vector3 mousePos;
-		mousePos= Input.mousePosition;
-		mousePos = Camera.main.ScreenToWorldPoint (mousePos);
-		
-		Vector3 pointTo;
-		float a1;
-		float a2;
-		
-		//Shoulder 1
-		//Calculate displacement vector to mouse position
-		pointTo = mousePos - transform.GetChild(0).transform.position;
-		a1 = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
-		//a1 = ClampAngle(a1);
-		
-		//Interpolate towards desired direction
-		if(!recoil)
-		{
-			rotation1 = Quaternion.Lerp(rotation1 ,Quaternion.AngleAxis(a1+90, Vector3.forward), lerpValue);
-		}
-		transform.GetChild(0).transform.rotation = rotation1;
-		
-		//Set rotation of forearm
-		transform.GetChild(0).GetChild(0).transform.rotation = rotation1;
-	
-		//Shoulder 2
-		//Calculate displacement vector to mouse position
-		pointTo = mousePos - transform.GetChild(1).transform.position;
-		a2 = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
-		//a2 = ClampAngle(a2);
-		
-		//Interpolate towards desired direction
-		if(!recoil)
-		{
-			rotation2 = Quaternion.Lerp(rotation2 ,Quaternion.AngleAxis(a2+90, Vector3.forward), lerpValue);
-		}
-		transform.GetChild(1).transform.rotation = rotation2;
-		
-		//Set rotation of forearm
-		transform.GetChild(1).GetChild(0).transform.rotation = rotation2;
-		
-		//Fire arm cannon if mouse clicked
-		if (Input.GetMouseButtonUp(0) && !recoil)
-		{
-			Vector3 playerBlastPos1;
-			Vector3 playerBlastPos2;
+			//Make sure that lerpValue is greater than
+			//zero and less than or equal to 1.
+			lerpValue = Mathf.Clamp(lerpValue, 0, 1);
+			if(lerpValue == 0)
+			{
+				lerpValue = 1;
+			}
 			
-			//Find which direction the player is facing in
-			//Due to an unforntunate set up of directions at the beginning, the
-			//xScale of the physics parent must be multiplied by -1 to work with
-			//the maths in this transform
-			scale = new Vector3(transform.parent.parent.localScale.x * -1, 1, 1);
+			Vector3 mousePos;
+			mousePos= Input.mousePosition;
+			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
 			
-			playerBlastPos1 =  position1;
-			playerBlastPos1 = Vector3.Scale(playerBlastPos1,scale);
-			playerBlastPos1 += rotation1 * new Vector3(0, -0.25f, 0);
+			Vector3 pointTo;
+			float a1;
+			float a2;
 			
-			playerBlastPos2 =  position2;
-			playerBlastPos2 = Vector3.Scale(playerBlastPos2,scale);
-			playerBlastPos2 += rotation2 * new Vector3(0, -0.25f, 0);
+			//Shoulder 1
+			//Calculate displacement vector to mouse position
+			pointTo = mousePos - transform.GetChild(0).transform.position;
+			a1 = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
+			//a1 = ClampAngle(a1);
 			
-			Instantiate(ammo, this.transform.position + playerBlastPos1, Quaternion.AngleAxis (a1+90, Vector3.forward));
-			Instantiate(ammo, this.transform.position + playerBlastPos2, Quaternion.AngleAxis (a2+90, Vector3.forward));
-			recoil = true;
-			StopAllCoroutines();
-			StartCoroutine(cameraFollow.MyRoutine(0.2f, 0.05f, 0.05f));
+			//Interpolate towards desired direction
+			if(!recoil)
+			{
+				rotation1 = Quaternion.Lerp(rotation1 ,Quaternion.AngleAxis(a1+90, Vector3.forward), lerpValue);
+			}
+			transform.GetChild(0).transform.rotation = rotation1;
+			
+			//Set rotation of forearm
+			transform.GetChild(0).GetChild(0).transform.rotation = rotation1;
+		
+			//Shoulder 2
+			//Calculate displacement vector to mouse position
+			pointTo = mousePos - transform.GetChild(1).transform.position;
+			a2 = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
+			//a2 = ClampAngle(a2);
+			
+			//Interpolate towards desired direction
+			if(!recoil)
+			{
+				rotation2 = Quaternion.Lerp(rotation2 ,Quaternion.AngleAxis(a2+90, Vector3.forward), lerpValue);
+			}
+			transform.GetChild(1).transform.rotation = rotation2;
+			
+			//Set rotation of forearm
+			transform.GetChild(1).GetChild(0).transform.rotation = rotation2;
+			
+			//Fire arm cannon if mouse clicked
+			if (Input.GetMouseButtonUp(0) && !recoil)
+			{
+				Vector3 playerBlastPos1;
+				Vector3 playerBlastPos2;
+				
+				//Find which direction the player is facing in
+				//Due to an unforntunate set up of directions at the beginning, the
+				//xScale of the physics parent must be multiplied by -1 to work with
+				//the maths in this transform
+				scale = new Vector3(transform.parent.parent.localScale.x * -1, 1, 1);
+				
+				playerBlastPos1 =  position1;
+				playerBlastPos1 = Vector3.Scale(playerBlastPos1,scale);
+				playerBlastPos1 += rotation1 * new Vector3(0, -0.25f, 0);
+				
+				playerBlastPos2 =  position2;
+				playerBlastPos2 = Vector3.Scale(playerBlastPos2,scale);
+				playerBlastPos2 += rotation2 * new Vector3(0, -0.25f, 0);
+				
+				Instantiate(ammo, this.transform.position + playerBlastPos1, Quaternion.AngleAxis (a1+90, Vector3.forward));
+				Instantiate(ammo, this.transform.position + playerBlastPos2, Quaternion.AngleAxis (a2+90, Vector3.forward));
+				recoil = true;
+				StopAllCoroutines();
+				StartCoroutine(cameraFollow.MyRoutine(0.2f, 0.05f, 0.05f));
+			}
 		}
 		if(recoil == true)
 		{
