@@ -11,6 +11,8 @@ TagManager:
   - Good
   - Bad
   - Obstacle
+  - Checkpoint
+  - checkpoint
   layers:
   - Default
   - TransparentFX

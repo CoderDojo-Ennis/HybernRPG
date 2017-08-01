@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 2
-  health: 10
+  health: 5
   maxSenseDistance: 0
   runSpeed: 0
   walkSpeed: 0

@@ -21,6 +21,9 @@ public class GrapplingHook : MonoBehaviour {
 	//Grappling Hook prefab
 	public GameObject hookPrefab;
 	
+	//reference to PlayerStats
+	private PlayerStats playerStats;
+	
 	public bool retract;
 	public bool cancel;
 	
@@ -32,6 +35,8 @@ public class GrapplingHook : MonoBehaviour {
 		rotation1Sub = transform.GetChild(0).GetChild(0).transform.rotation;
 		position1Sub = transform.GetChild(0).GetChild(0).transform.position;
 		localPosition1Sub = transform.GetChild(0).GetChild(0).transform.localPosition;
+		
+		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
 		
 		retract = false;
 		cancel = false;
@@ -58,7 +63,7 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && !playerStats.paused){
 				//Mouse pressed
 				CreateHook ();
 				DisconnectWithSpring();
@@ -70,7 +75,7 @@ public class GrapplingHook : MonoBehaviour {
 		}
 		else{
 		
-			if(Input.GetMouseButton(0)){
+			if(Input.GetMouseButton(0) && !playerStats.paused){
 				if(hook != null) //Check to see if hook has been destroyed
 				{
 					//Mouse held down

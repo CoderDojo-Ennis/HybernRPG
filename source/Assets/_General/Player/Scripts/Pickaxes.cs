@@ -13,6 +13,8 @@ public class Pickaxes : MonoBehaviour {
 	private float offset;
 	private bool slicing;
 	
+	private PlayerStats playerStats;
+	
 	void OnEnable()
 	{
 		//Find player's collider
@@ -35,6 +37,8 @@ public class Pickaxes : MonoBehaviour {
 		
 		pickaxe1.enabled = false;
 		pickaxe2.enabled = false;
+		
+		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
 	}
 	void OnDisable ()
 	{
@@ -46,33 +50,36 @@ public class Pickaxes : MonoBehaviour {
 	}
 	void LateUpdate ()
 	{
-		float scale = transform.parent.parent.localScale.x;
-		if(scale == 1){
-			GetComponent<Animator>().transform.GetChild(0).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) - 180 -offset);
-			GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) - 180 - offset);
-		}
-		else{
-			GetComponent<Animator>().transform.GetChild(0).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
-			GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
-		}
-		if(Input.GetMouseButtonDown(0))
+		if(!playerStats.paused)
 		{
-			slicing = true;
-		}
-		if(slicing)
-		{
-			offset += 10;
-			if(offset == 180){
-				offset = 0;
-				slicing = false;
+			float scale = transform.parent.parent.localScale.x;
+			if(scale == 1){
+				GetComponent<Animator>().transform.GetChild(0).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) - 180 -offset);
+				GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) - 180 - offset);
 			}
-			pickaxe1.enabled = true;
-			pickaxe2.enabled = true;
-		}
-		else
-		{
-			pickaxe1.enabled = false;
-			pickaxe2.enabled = false;
+			else{
+				GetComponent<Animator>().transform.GetChild(0).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
+				GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
+			}
+			if(Input.GetMouseButtonDown(0))
+			{
+				slicing = true;
+			}
+			if(slicing)
+			{
+				offset += 10;
+				if(offset == 180){
+					offset = 0;
+					slicing = false;
+				}
+				pickaxe1.enabled = true;
+				pickaxe2.enabled = true;
+			}
+			else
+			{
+				pickaxe1.enabled = false;
+				pickaxe2.enabled = false;
+			}
 		}
 		
 	}

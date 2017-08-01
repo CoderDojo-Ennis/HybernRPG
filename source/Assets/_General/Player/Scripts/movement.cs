@@ -25,6 +25,7 @@ public class movement : MonoBehaviour {
 	private int jetpackFrames;
 	public int jetpackCounter;
 	private bool inWaterLastFrame;
+	PlayerStats playerStats;
 	
 	private Vector3 position;
 	
@@ -44,6 +45,7 @@ public class movement : MonoBehaviour {
 		counter        =                     0;
 		jetpackCounter =                     0;
 		inWaterLastFrame =               false;
+		playerStats = GetComponent<PlayerStats>();
 	}
 	void Update()
 	{
@@ -56,13 +58,12 @@ public class movement : MonoBehaviour {
 		//If player is below certain height, they die
 		if(rb.position.y < deathBelowYPos)
 		{
-			PlayerStats playerStats = GetComponent<PlayerStats>();
 			int health = playerStats.health; 
 			
 			//Sets health to 0
 			playerStats.TakeDamage(health);
 		}
-		if(Input.GetKey(leftKey))
+		if(Input.GetKey(leftKey) && !playerStats.paused)
 		{
 			xScale = -1;
 			if(Input.GetKey(runKey))
@@ -80,7 +81,7 @@ public class movement : MonoBehaviour {
 				}
 			}
 		}
-		if(Input.GetKey(rightKey))
+		if(Input.GetKey(rightKey) && !playerStats.paused)
 		{
 			xScale = 1;
 			if(Input.GetKey(runKey))
@@ -117,7 +118,7 @@ public class movement : MonoBehaviour {
 		
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		
-		if(Input.GetKey(jumpKey))
+		if(Input.GetKey(jumpKey) && !playerStats.paused)
 		{
 			if(counter > 0)
 			{
@@ -138,7 +139,7 @@ public class movement : MonoBehaviour {
 		//Condition for beginning to use jetpack
 		if(jetpack)
 		{
-			if(Input.GetKey(jumpKey))
+			if(Input.GetKey(jumpKey) && !playerStats.paused)
 			{
 				if(jetpackCounter > 0){
 					jetpackCounter++;
@@ -167,7 +168,7 @@ public class movement : MonoBehaviour {
 		}
 		
 		//Jumping controls
-		if(Input.GetKey(jumpKey))
+		if(Input.GetKey(jumpKey) && !playerStats.paused)
 		{		
 			if(counter <= frames && counter > 0)
 			{

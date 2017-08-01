@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
 	public int health;
+	public bool paused;
 	private CameraFollow cameraFollow;
 	private GameObject menu;
 	private GameObject healthCanvas;
-	
+    
 	
 	public void Start()
 	{
