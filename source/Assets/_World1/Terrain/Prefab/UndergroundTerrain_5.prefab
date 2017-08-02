@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4234529388804960}
   - component: {fileID: 212199729670799246}
-  - component: {fileID: 61458043774064848}
+  - component: {fileID: 61221632938349504}
   m_Layer: 0
   m_Name: UndergroundTerrain_5
   m_TagString: Untagged
@@ -35,13 +35,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849113822311220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44, y: 42, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61458043774064848
+--- !u!61 &61221632938349504
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53,10 +53,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.35885888, y: -0.35885888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 1}
     oldSize: {x: 0.71771777, y: 0.71771777}
     newSize: {x: 0.71771777, y: 0.71771777}
     adaptiveTilingThreshold: 0.5
