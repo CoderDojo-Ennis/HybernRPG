@@ -91,11 +91,11 @@ MonoBehaviour:
     source: {fileID: 0}
     useAudioMixer: 1
   - name: Nuclear Explosion
-    clip: {fileID: 8300000, guid: 3065956ec5562884b9e3f60c442c79f7, type: 3}
+    clip: {fileID: 8300000, guid: a6ce3a8444e90d64e94e4e63fcb4f01d, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-    useAudioMixer: 1
+    useAudioMixer: 0
   - name: Water Splash
     clip: {fileID: 8300000, guid: 9a36a7cc11ace634cb3e6871419ef5b9, type: 3}
     volume: 1
