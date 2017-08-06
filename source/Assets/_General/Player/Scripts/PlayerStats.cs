@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerStats : MonoBehaviour {
-
+public class PlayerStats : MonoBehaviour
+{
 	public int health;
 	public bool paused;
 	private CameraFollow cameraFollow;
@@ -113,4 +111,13 @@ public class PlayerStats : MonoBehaviour {
 			health -= damage;
 		}
 	}
+
+    //Temporary Load Function
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SaveLoad.Load();
+        }
+    }
 }

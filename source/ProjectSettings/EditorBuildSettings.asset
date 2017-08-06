@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_World1/Scenes/Boss.unity
     guid: a3d19e02f6d50644884019d9e037bb34
+  - enabled: 1
+    path: Assets/_World1/Scenes/pathFinding.unity
+    guid: 016455e528db2ba4db9278ec1baf32aa

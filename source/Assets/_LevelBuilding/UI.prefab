@@ -802,6 +802,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4897021438246950}
+  - component: {fileID: 114576601353336270}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2587,6 +2588,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114576601353336270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990964746414864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddb9c8336576d44c93f66be67852a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114577889263931952
 MonoBehaviour:
   m_ObjectHideFlags: 1
