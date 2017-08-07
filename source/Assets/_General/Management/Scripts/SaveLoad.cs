@@ -5,7 +5,7 @@ using System.IO;
 
 public static class SaveLoad
 {
-    public static bool load;
+    public static bool load = false;
 
     //File stored in "C:\Users\###\AppData\LocalLow\Hybern\SWAP" as "checkpoint.extremelyimportantsavefile".
     //If you want to understand anything about this file ask Cian.
@@ -15,8 +15,13 @@ public static class SaveLoad
     public static void Save (int cpindex)
     {
         load = false;
-        Game Current = new Game(cpindex);
-        BinaryFormatter bf = new BinaryFormatter();
+		
+		//Which scene is this?
+		int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+		
+        Game Current = new Game(sceneIndex, cpindex);
+        
+		BinaryFormatter bf = new BinaryFormatter();
         if (File.Exists(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile"))
         {
             File.Delete(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile");
@@ -24,6 +29,9 @@ public static class SaveLoad
         FileStream file = File.Create(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile");
         bf.Serialize(file, Current);
         file.Close();
+		WorldControl control;
+        control = GameObject.Find("WorldControl").GetComponent<WorldControl>();
+        control.StoreIndex( Current.CPIndex );
     }
 
     //Load the Game
@@ -39,7 +47,15 @@ public static class SaveLoad
             SceneManager.LoadSceneAsync(Current.SceneIndex);
             WorldControl control;
             control = GameObject.Find("WorldControl").GetComponent<WorldControl>();
-            control.StoreIndex(Current.CPIndex);
+            control.StoreIndex( Current.CPIndex );
         }
     }
+	//Remove save file
+	public static void DeleteSave ()
+	{
+		if (File.Exists(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile"))
+        {
+            File.Delete(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile");
+        }
+	}
 }
