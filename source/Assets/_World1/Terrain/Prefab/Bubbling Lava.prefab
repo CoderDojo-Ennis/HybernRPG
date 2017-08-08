@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1326510600533964}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 12.6, y: -1.69, z: 0}
+  m_LocalPosition: {x: 12.6, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4239457521361676}
@@ -224,7 +224,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 859743817
+  randomSeed: -206946604
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3324,7 +3324,7 @@ BuoyancyEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_SurfaceLevel: 5.15
-  m_Density: 5
+  m_Density: 100
   m_LinearDrag: 5
   m_AngularDrag: 5
   m_FlowAngle: 0
