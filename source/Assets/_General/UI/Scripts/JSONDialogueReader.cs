@@ -95,11 +95,11 @@ public class JSONDialogueReader : MonoBehaviour {
             DialogueTextUI.SetActive(false);
         }
     }
-	public void BeginDialogue (string fileName, string speaker, string id)
+	public void BeginDialogue (int worldNumber, string fileName, string speaker, string id)
 	{
 		Pause();
 		
-		textData = File.ReadAllText(Application.dataPath + "/_World1/JSON/" + fileName + ".json");
+		textData = File.ReadAllText(Application.dataPath + "/_World" + worldNumber + "/JSON/" + fileName + ".json");
         dialogueData = JsonMapper.ToObject(textData);
         
 		DisplayDialogue (speaker, id);

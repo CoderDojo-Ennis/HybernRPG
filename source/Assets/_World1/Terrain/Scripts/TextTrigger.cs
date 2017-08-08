@@ -15,7 +15,7 @@ public class TextTrigger : MonoBehaviour {
 	}
 	void OnTriggerEnter2D()
 	{
-		dialouge.BeginDialogue (fileName, speaker, id);
+		dialouge.BeginDialogue (1,fileName, speaker, id);
 		
 		GameObject.Destroy( this.gameObject );
 	}
