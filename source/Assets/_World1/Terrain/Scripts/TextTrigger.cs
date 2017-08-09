@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextTrigger : MonoBehaviour {
 
 	private JSONDialogueReader dialouge;
+	public int worldNumber;
 	public string fileName;
 	public string speaker;
 	public string id;
@@ -15,7 +16,7 @@ public class TextTrigger : MonoBehaviour {
 	}
 	void OnTriggerEnter2D()
 	{
-		dialouge.BeginDialogue (1,fileName, speaker, id);
+		dialouge.BeginDialogue (worldNumber,fileName, speaker, id);
 		
 		GameObject.Destroy( this.gameObject );
 	}
