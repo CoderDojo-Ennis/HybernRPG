@@ -8,21 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_General/Menu/Scenes/Menu.unity
     guid: bfd819e5a41679c4da76184eed37a1b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/Intro.unity
     guid: d9ea0286644e8504eaa0126465d0196d
   - enabled: 1
+    path: "Assets/_World3/Scenes/\xFCberCultist.unity"
+    guid: b1bd0afc4af35a44c8ea0cd23fbe0601
+  - enabled: 0
     path: Assets/_World1/Scenes/Village.unity
     guid: dbef68abc11d7a9419c66d06f2fd0130
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/Lava Escape.unity
     guid: ce126136b160da3478ffdea4930e1653
   - enabled: 0
     path: Assets/_World1/Scenes/laser cultist workbench.unity
     guid: a90d5c76f912d754ba0b6316a042cc8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/Boss.unity
     guid: a3d19e02f6d50644884019d9e037bb34
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/pathFinding.unity
     guid: 016455e528db2ba4db9278ec1baf32aa

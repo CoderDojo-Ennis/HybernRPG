@@ -93,7 +93,7 @@ namespace UnityStandardAssets._2D
 
                 if (Mathf.Abs(m_Rigidbody2D.velocity.x) < m_MaxSpeed)
                 {
-                    m_Rigidbody2D.AddForce(Vector2.right * (((m_MaxSpeed - m_Rigidbody2D.velocity.x) * move))/10, ForceMode2D.Impulse);
+                    m_Rigidbody2D.AddForce(Vector2.right * (((m_MaxSpeed - m_Rigidbody2D.velocity.x) * move))/5, ForceMode2D.Impulse);
                 }
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)

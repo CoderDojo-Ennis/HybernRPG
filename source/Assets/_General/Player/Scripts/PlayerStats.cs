@@ -111,13 +111,4 @@ public class PlayerStats : MonoBehaviour
 			health -= damage;
 		}
 	}
-
-    //Temporary Load Function
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SaveLoad.Load();
-        }
-    }
 }
