@@ -17,7 +17,7 @@ public class FlyBetweenPoints : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rb.velocity = VectorToTarget() * speed;
-		rb.velocity += Mathf.Sin( (position2 - rb.position).magnitude );
+		//rb.velocity += Mathf.Sin( (position2 - rb.position).magnitude );
 	}
 	Vector2 VectorToTarget ()
 	{
