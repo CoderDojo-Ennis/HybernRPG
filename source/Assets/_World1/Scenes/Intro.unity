@@ -1818,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5734254153a6fcc4b88a9fe5d57874bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldNumber: 1
   fileName: FirstDogEncounter
   speaker: Dog
   id: 0
