@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TextTrigger : MonoBehaviour {
 
@@ -14,10 +12,9 @@ public class TextTrigger : MonoBehaviour {
 	{
 		dialouge = GameObject.Find("TextBoxCanvas").GetComponent<JSONDialogueReader>();
 	}
-	void OnTriggerEnter2D()
+	public void OnTriggerEnter2D()
 	{
-		dialouge.BeginDialogue (worldNumber,fileName, speaker, id);
-		
-		GameObject.Destroy( this.gameObject );
+		dialouge.BeginDialogue (worldNumber, fileName, speaker, id);
+        Destroy(this.GetComponent<TextTrigger>());
 	}
 }

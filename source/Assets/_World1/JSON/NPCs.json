@@ -1,0 +1,60 @@
+{
+    "Major Miner": [
+        {
+            "id": 0,
+            "text": "Hello there! I am the head miner here.",
+			"next": [
+                {
+                    "speaker": "Major Miner",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "This is where we mine for our dark overlords.",
+            "next": [
+                {
+                    "speaker": "Major Miner",
+                    "id": "exit"
+                }
+            ]
+        }
+    ],
+
+	"Mary": [
+        {
+            "id": 0,
+            "text": "'Ello there! My name is Mary, what's yer's?",
+			"next": [
+                {
+                    "speaker": "Player",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 2,
+            "text": "A silent type? Ah well, see you later love, I'm busy 'ere.",
+            "next": [
+                {
+                    "speaker": "Mary",
+                    "id": "exit"
+                }
+            ]
+        }
+    ],
+
+	"Player": [
+        {
+            "id": 1,
+            "text": "'Ello there! My name is Mary, what's yer's?",
+			"next": [
+                {
+                    "speaker": "Mary",
+                    "id": 2
+                }
+			]
+        }
+    ]
+}
