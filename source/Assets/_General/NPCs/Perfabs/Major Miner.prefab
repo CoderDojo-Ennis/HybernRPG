@@ -123,9 +123,10 @@ GameObject:
   - component: {fileID: 4463822486675242}
   - component: {fileID: 70019625202379538}
   - component: {fileID: 50117370884467290}
+  - component: {fileID: 114462461648149280}
   m_Layer: 0
   m_Name: Major Miner
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,6 +754,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114462461648149280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749478968114884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989ad5e67aff664468f0b3dee23b8a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldNumber: 1
+  fileName: NPCs
+  speaker: Major Miner
+  id: 0
 --- !u!212 &212110852216610050
 SpriteRenderer:
   m_ObjectHideFlags: 1

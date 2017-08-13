@@ -12,7 +12,7 @@ TagManager:
   - Bad
   - Obstacle
   - Checkpoint
-  - checkpoint
+  - NPC
   layers:
   - Default
   - TransparentFX
