@@ -13,6 +13,7 @@ TagManager:
   - Obstacle
   - Checkpoint
   - NPC
+  - Reflect Lasers
   layers:
   - Default
   - TransparentFX
