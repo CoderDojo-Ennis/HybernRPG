@@ -2,52 +2,55 @@
 
 public class PelicanFight : PelicanBehaviour
 {
-    public void Think ()
-    {
-        switch (CurrentPhase)
-        {
-            case 1:
-                PelicanBehaveOne();
-                break;
-
-            case 2:
-                PelicanBehaveTwo();
-                break;
-
-            case 3:
-                PelicanBehaveThree();
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    private void PelicanBehaveOne()
+    public void PelicanBehaviourPhaseOne()
     {
         //Peck 1 to 3 times
-        int currentPeck = 0;
-        int maxPeck;
-        maxPeck = Random.Range(1, 4);
-        while (currentPeck <= maxPeck)
-        {
-            Peck();
-            currentPeck++;
-        }
+        Peck();
         //After pecking, WingAttack()
-        if (currentPeck > maxPeck)
-        {
+        WingAttack();
+        Debug.Log("Finito");
+    }
 
+    public void PelicanBehaviourPhaseTwo()
+    {
+
+    }
+
+    public void PelicanBehaviourPhaseThree()
+    {
+
+    }
+
+    public void Update()
+    {
+        GameObject bestMatch = player;
+        if (CurrentPhase == 1)
+        {
+            //Travel(player.transform.position);
+        }
+
+        else if (CurrentPhase == 2)
+        {
+        
+            NavPointPath path = FindPathToTarget(player.transform.position);
+            if (path != null && path.Neighbors != null && path.Neighbors.Count > 0)
+            {
+                // Whats the next action
+                var neighbor = path.Neighbors[0];
+                var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
+                Travel(neighbor.NeighborPoint.transform.position);
+            }
         }
     }
 
-    private void PelicanBehaveTwo()
+    private NavPointPath FindPathToTarget(Vector3 target)
     {
-        Random.Range(1, 4);
-    }
+        TargetNavPoint = NavPoint.FindClosestNavPoint(target, this.AllNavPoints);
+        Debug.Log(gameObject.name + " is dreaming of getting to " + TargetNavPoint.name);
 
-    private void PelicanBehaveThree()
-    {
-        Random.Range(1, 4);
+        NavPoint from = LastNavPoint;
+        NavPoint to = TargetNavPoint;
+        NavPointPath BestPath = from.GetBestPath(to, this.AllNavPoints);
+        return BestPath;
     }
 }
