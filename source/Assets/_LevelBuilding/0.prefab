@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4401288266600386}
   - component: {fileID: 212847397116797380}
   - component: {fileID: 50072445098361660}
-  - component: {fileID: 233985822907506286}
   - component: {fileID: 58432454732106044}
   - component: {fileID: 114107540400475610}
+  - component: {fileID: 114380251060005334}
   m_Layer: 0
   m_Name: 0
   m_TagString: Checkpoint
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134992752764466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 16.71, y: 1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134992752764466}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -76,9 +76,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06347895, y: 0.030930638}
+  m_Offset: {x: -0.01198864, y: 0.116459906}
   serializedVersion: 2
-  m_Radius: 0.46478498
+  m_Radius: 0.5955934
 --- !u!114 &114107540400475610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,6 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CPName: 0
+--- !u!114 &114380251060005334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134992752764466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c5935aeeb956641963a4c6cd4bc953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300002, guid: 48ecd2e4f1bf6b541aa4d1258456a99c, type: 3}
 --- !u!212 &212847397116797380
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,34 +135,11 @@ SpriteRenderer:
   m_SortingLayerID: -900995045
   m_SortingLayer: -4
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 37e899a94e77a3b4f818e14ab4a3ad46, type: 3}
-  m_Color: {r: 0.5845001, g: 0.25, b: 1, a: 1}
+  m_Sprite: {fileID: 21300004, guid: 48ecd2e4f1bf6b541aa4d1258456a99c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.11, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
---- !u!233 &233985822907506286
-HingeJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134992752764466}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1, y: 1}
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: -300
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359

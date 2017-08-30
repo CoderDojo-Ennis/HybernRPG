@@ -15,7 +15,9 @@ public class CheckPointBehaviour : MonoBehaviour
         if (col.gameObject.name == "Player Physics Parent")
         {
             SaveLoad.Save(CPName);
-            Destroy(this.gameObject);
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("CheckPointActivated");
+			GetComponentInChildren<ParticleSystem>().Play();
+            Destroy(this);
         }
     }
 }

@@ -156,3 +156,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: CheckPointActivated
+    clip: {fileID: 8300000, guid: c4d7b693fb9aec74583b21119af544c6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0

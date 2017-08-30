@@ -9,22 +9,10 @@ EditorBuildSettings:
     path: Assets/_General/Menu/Scenes/Menu.unity
     guid: bfd819e5a41679c4da76184eed37a1b6
   - enabled: 1
-    path: Assets/_World1/Scenes/Intro.unity
-    guid: d9ea0286644e8504eaa0126465d0196d
-  - enabled: 1
-    path: Assets/_World1/Scenes/Village.unity
-    guid: dbef68abc11d7a9419c66d06f2fd0130
-  - enabled: 1
-    path: Assets/_World1/Scenes/Beginning.unity
-    guid: 3c4868e79243fba479bef7d8b5a1674c
-  - enabled: 1
     path: Assets/_World1/Scenes/Lava Escape.unity
     guid: ce126136b160da3478ffdea4930e1653
   - enabled: 1
-    path: Assets/_World1/Scenes/Connor.unity
-    guid: dbf42e2afcfed4949a510cf2b99234c1
-  - enabled: 1
-    path: Assets/_World1/Scenes/actual star wrekin.unity
+    path: Assets/_World3/Scenes/actual star wrekin.unity
     guid: 1878bdcdbd156b04b8d92bbaebe7065a
   - enabled: 1
     path: "Assets/_World3/Scenes/\xFCberCultist.unity"
