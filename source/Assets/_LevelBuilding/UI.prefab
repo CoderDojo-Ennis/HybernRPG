@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 224909311214156694}
   - component: {fileID: 222382569906597558}
   - component: {fileID: 114182792209525386}
+  - component: {fileID: 114682834365824018}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -578,6 +579,7 @@ GameObject:
   - component: {fileID: 4909750490531960}
   - component: {fileID: 114876747742230322}
   - component: {fileID: 114169421467269302}
+  - component: {fileID: 114890255970222248}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2679,7 +2681,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cd0d7bef714a36b4eb638ed776099ba1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2933,7 +2935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Pickaxe
 --- !u!114 &114573718051874874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3200,6 +3202,17 @@ MonoBehaviour:
   StartPosition: {x: 50, y: 50}
   bigOrb: {fileID: 21300002, guid: 207b5a1438f754742a77f6b4ce9f3d97, type: 3}
   smallOrb: {fileID: 21300000, guid: 207b5a1438f754742a77f6b4ce9f3d97, type: 3}
+--- !u!114 &114682834365824018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390365124073520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c88441808caca449182b2fb9a5027e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114687242118172206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3739,9 +3752,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59d5a2b9f9033f44a26fbae59f82890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplaySpeaker: 
+  DisplayID: 
   ContinueButton: {fileID: 114953139188380352}
   DialogueTextUI: {fileID: 1447130583930974}
   SpeakerTextUI: {fileID: 1688138758686660}
+--- !u!114 &114890255970222248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613144853096670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114893725480138310
 MonoBehaviour:
   m_ObjectHideFlags: 1
