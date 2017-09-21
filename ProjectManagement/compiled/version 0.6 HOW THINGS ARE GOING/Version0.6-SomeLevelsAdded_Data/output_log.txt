@@ -19,7 +19,7 @@ Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManageme
 Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.6 HOW THINGS ARE GOING\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.6 HOW THINGS ARE GOING\Version0.6-SomeLevelsAdded_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.6 HOW THINGS ARE GOING\Version0.6-SomeLevelsAdded_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.138 seconds
+- Completed reload, in  0.106 seconds
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.6 HOW THINGS ARE GOING\Version0.6-SomeLevelsAdded_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.6 HOW THINGS ARE GOING\Version0.6-SomeLevelsAdded_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
@@ -27,39 +27,53 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 5.776397 ms
+UnloadTime: 4.852263 ms
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 27.550005 ms
+UnloadTime: 25.203745 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1114.
-Total: 3.214167 ms (FindLiveObjects: 0.221774 ms CreateObjectMapping: 0.186968 ms MarkObjects: 2.741167 ms  DeleteObjects: 0.063364 ms)
+Total: 2.174460 ms (FindLiveObjects: 0.155286 ms CreateObjectMapping: 0.134314 ms MarkObjects: 1.833543 ms  DeleteObjects: 0.050869 ms)
 
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.474317 ms
+UnloadTime: 3.511800 ms
 
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2406.
-Total: 8.166831 ms (FindLiveObjects: 0.469429 ms CreateObjectMapping: 0.232037 ms MarkObjects: 2.241394 ms  DeleteObjects: 5.222184 ms)
+Total: 8.177540 ms (FindLiveObjects: 0.369029 ms CreateObjectMapping: 0.184737 ms MarkObjects: 2.099494 ms  DeleteObjects: 5.523387 ms)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.098566 ms
+UnloadTime: 7.000842 ms
 
 Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2301.
-Total: 5.783983 ms (FindLiveObjects: 0.277998 ms CreateObjectMapping: 0.188307 ms MarkObjects: 2.292710 ms  DeleteObjects: 3.023628 ms)
+Total: 6.103481 ms (FindLiveObjects: 0.281568 ms CreateObjectMapping: 0.199909 ms MarkObjects: 2.293602 ms  DeleteObjects: 3.327508 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.903997 ms
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 2317.
+Total: 4.014250 ms (FindLiveObjects: 0.304326 ms CreateObjectMapping: 0.185630 ms MarkObjects: 3.479671 ms  DeleteObjects: 0.043283 ms)
 
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.580511 ms
+UnloadTime: 7.305614 ms
 NullReferenceException: Object reference not set to an instance of an object
   at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
  
@@ -92,426 +106,13 @@ NullReferenceException: Object reference not set to an instance of an object
 
 
 Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2093.
-Total: 13.010616 ms (FindLiveObjects: 0.336454 ms CreateObjectMapping: 0.187414 ms MarkObjects: 1.985706 ms  DeleteObjects: 10.499255 ms)
+Total: 13.396156 ms (FindLiveObjects: 0.255687 ms CreateObjectMapping: 0.192769 ms MarkObjects: 1.850053 ms  DeleteObjects: 11.095860 ms)
 
 NullReferenceException: Object reference not set to an instance of an object
   at LaserCultist.Start () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.507755 ms
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 1252.
-Total: 8.934786 ms (FindLiveObjects: 0.153948 ms CreateObjectMapping: 0.125389 ms MarkObjects: 1.788474 ms  DeleteObjects: 6.866082 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.482795 ms
-
-Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 1063.
-Total: 9.851335 ms (FindLiveObjects: 0.208833 ms CreateObjectMapping: 0.155286 ms MarkObjects: 1.720201 ms  DeleteObjects: 7.765227 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 7.599231 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 4.082077 ms (FindLiveObjects: 0.236946 ms CreateObjectMapping: 0.202586 ms MarkObjects: 3.612200 ms  DeleteObjects: 0.028558 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.957112 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 4.359629 ms (FindLiveObjects: 0.137437 ms CreateObjectMapping: 0.149931 ms MarkObjects: 4.035669 ms  DeleteObjects: 0.035251 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 5.347574 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.840675 ms (FindLiveObjects: 0.182060 ms CreateObjectMapping: 0.118696 ms MarkObjects: 2.503775 ms  DeleteObjects: 0.035698 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.297590 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 3.711263 ms (FindLiveObjects: 0.207495 ms CreateObjectMapping: 0.188307 ms MarkObjects: 3.281993 ms  DeleteObjects: 0.031682 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 2.973651 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.156164 ms (FindLiveObjects: 0.128066 ms CreateObjectMapping: 0.090137 ms MarkObjects: 1.917433 ms  DeleteObjects: 0.018741 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.613071 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 3.120459 ms (FindLiveObjects: 0.184737 ms CreateObjectMapping: 0.184291 ms MarkObjects: 2.721087 ms  DeleteObjects: 0.029897 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.360954 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 4.037008 ms (FindLiveObjects: 0.204817 ms CreateObjectMapping: 0.175366 ms MarkObjects: 3.627818 ms  DeleteObjects: 0.027219 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Behaviour:set_enabled(Boolean)
-UberCultistBehaviour:Update()
- 
-(Filename:  Line: -1)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.953542 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.927689 ms (FindLiveObjects: 0.153055 ms CreateObjectMapping: 0.126282 ms MarkObjects: 2.613100 ms  DeleteObjects: 0.034805 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.923199 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.945538 ms (FindLiveObjects: 0.215527 ms CreateObjectMapping: 0.180275 ms MarkObjects: 2.515376 ms  DeleteObjects: 0.032574 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 5.692953 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.258350 ms (FindLiveObjects: 0.132529 ms CreateObjectMapping: 0.103970 ms MarkObjects: 1.993738 ms  DeleteObjects: 0.027666 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 5.486350 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 3.177576 ms (FindLiveObjects: 0.223113 ms CreateObjectMapping: 0.179382 ms MarkObjects: 2.746968 ms  DeleteObjects: 0.025881 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 4.783098 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.644336 ms (FindLiveObjects: 0.181167 ms CreateObjectMapping: 0.132529 ms MarkObjects: 2.309666 ms  DeleteObjects: 0.019187 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 4.505099 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.162858 ms (FindLiveObjects: 0.113787 ms CreateObjectMapping: 0.084782 ms MarkObjects: 1.945099 ms  DeleteObjects: 0.018295 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.820567 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.414976 ms (FindLiveObjects: 0.145023 ms CreateObjectMapping: 0.143238 ms MarkObjects: 2.099940 ms  DeleteObjects: 0.025881 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 7.032078 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.652368 ms (FindLiveObjects: 0.157071 ms CreateObjectMapping: 0.116465 ms MarkObjects: 2.352504 ms  DeleteObjects: 0.025434 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 6.272155 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.971866 ms (FindLiveObjects: 0.171797 ms CreateObjectMapping: 0.113787 ms MarkObjects: 2.657723 ms  DeleteObjects: 0.027219 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Behaviour:set_enabled(Boolean)
-UberCultistBehaviour:Update()
- 
-(Filename:  Line: -1)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-NullReferenceException: Object reference not set to an instance of an object
-  at ShroomExplosion.Awake () [0x00000] in <filename unknown>:0 
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion)
-Missile:OnDestroy()
- 
-(Filename:  Line: -1)
-
-UnloadTime: 9.513542 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1103.
-Total: 4.246288 ms (FindLiveObjects: 0.212849 ms CreateObjectMapping: 0.179829 ms MarkObjects: 3.822819 ms  DeleteObjects: 0.029897 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-UnloadTime: 5.437712 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 3.432371 ms (FindLiveObjects: 0.211957 ms CreateObjectMapping: 0.175366 ms MarkObjects: 3.009795 ms  DeleteObjects: 0.033913 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Behaviour:set_enabled(Boolean)
-UberCultistBehaviour:Update()
- 
-(Filename:  Line: -1)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.747393 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
-  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
-  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1079.
-Total: 2.657723 ms (FindLiveObjects: 0.147700 ms CreateObjectMapping: 0.130744 ms MarkObjects: 2.353396 ms  DeleteObjects: 0.024542 ms)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Behaviour:set_enabled(Boolean)
-UberCultistBehaviour:Update()
- 
-(Filename:  Line: -1)
-
-UnityException: Transform child out of bounds
-  at (wrapper managed-to-native) UnityEngine.Transform:GetChild (int)
-  at UberCultistController.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Object:Destroy(Object, Single)
-UnityEngine.Object:Destroy(Object)
-UberCultistBehaviour:TakeDamage(Int32)
-PlayerBlast:OnCollisionEnter2D(Collision2D)
- 
-(Filename:  Line: -1)
-
 Setting up 2 worker threads for Enlighten.
   Thread -> id: 1640 -> priority: 1 
-  Thread -> id: 2d88 -> priority: 1 
+  Thread -> id: 2a8c -> priority: 1 

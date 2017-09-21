@@ -1,0 +1,56 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Vendor:   Intel
+    VRAM:     848 MB
+    Driver:   9.17.10.4459
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.114 seconds
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initialized touch support.
+UnloadTime: 3.384179 ms
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.382797 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1114.
+Total: 0.783126 ms (FindLiveObjects: 0.068272 ms CreateObjectMapping: 0.041499 ms MarkObjects: 0.663092 ms  DeleteObjects: 0.009816 ms)
+
+IsolatedStorageException: Could not find a part of the path "C:\Users\James_2\Documents\GitHub\Team Hybern\ProjectManagement\compiled\version 0.5 SOME LEVELS ADDED\Version0.6-SomeLevelsAdded_Data\_World1\JSON\FirstDogEncounter.json".
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.File.OpenRead (System.String path) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <filename unknown>:0 
+  at System.IO.File.ReadAllText (System.String path) [0x00000] in <filename unknown>:0 
+  at JSONDialogueReader.BeginDialogue (Int32 worldNumber, System.String fileName, System.String speaker, System.String id) [0x00000] in <filename unknown>:0 
+  at TextTrigger.OnTriggerEnter2D () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1e84 -> priority: 1 
+  Thread -> id: 3764 -> priority: 1 

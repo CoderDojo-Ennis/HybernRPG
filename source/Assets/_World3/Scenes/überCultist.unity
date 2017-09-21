@@ -1484,7 +1484,7 @@ Prefab:
     - target: {fileID: 224274989856723522, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -311.99988
+      value: -288
       objectReference: {fileID: 0}
     - target: {fileID: 1821065638494968, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
@@ -1493,6 +1493,41 @@ Prefab:
     - target: {fileID: 1167044646803600, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169548496318404, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Text
+      value: "<b>\xDCber Cultist</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 224274989856723522, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.523481
+      objectReference: {fileID: 0}
+    - target: {fileID: 224274989856723522, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -26
+      objectReference: {fileID: 0}
+    - target: {fileID: 224274989856723522, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169548496318404, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169548496318404, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169548496318404, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
