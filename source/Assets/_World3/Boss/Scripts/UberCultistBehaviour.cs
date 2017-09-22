@@ -7,6 +7,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public State state;
 	public GameObject missileDroppers;
 	public GameObject missile;
+	public GameObject worldControl;
 	
 	private int health = 100;
 	private int maxHealth = 100;
@@ -70,7 +71,8 @@ public class UberCultistBehaviour : MonoBehaviour {
 		health -= damage;
 		healthSlider.value = (float)health/maxHealth;
 		if(health <= 0)
-		{	
+		{
+			worldControl.GetComponent<WorldControl>().SwitchScene(10);
 			GameObject.Destroy( gameObject );
 		}
 	}
