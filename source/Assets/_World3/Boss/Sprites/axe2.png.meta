@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: abb849e211637b045b8a3b60b3d6a7ed
-timeCreated: 1506190664
+guid: c8aeb7ef9e5b7a6429bc10d8f45c006b
+timeCreated: 1506190976
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: shoulder2-Shield
-    21300002: forearm2-Shield
+  fileIDToRecycleName: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -36,11 +34,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.5464748, y: 0.1962429}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 104.4979
   alphaUsage: 1
@@ -70,33 +68,7 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: shoulder2-Shield
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 53
-        width: 14
-        height: 20
-      alignment: 9
-      pivot: {x: 0.7050314, y: 0.7701591}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: forearm2-Shield
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 35
-        width: 72
-        height: 18
-      alignment: 9
-      pivot: {x: 0.5420644, y: 0.9734429}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

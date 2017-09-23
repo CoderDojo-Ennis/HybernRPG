@@ -207,17 +207,17 @@ Prefab:
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0.6102941
+      value: 0.36206898
       objectReference: {fileID: 0}
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0.6102941
+      value: 0.15707405
       objectReference: {fileID: 0}
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0.6102941
+      value: 0.15707405
       objectReference: {fileID: 0}
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
@@ -1327,6 +1327,18 @@ Prefab:
       value: 
       objectReference: {fileID: 1651943243145918, guid: 1250a72a8a8447346911bbc904bbcffd,
         type: 2}
+    - target: {fileID: 212302260947129520, guid: e367a1174c8c0434ca2a13d8e0ce81e6,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 20dcf46ca7b0d4a4fb9f509a0c0b3b62,
+        type: 3}
+    - target: {fileID: 212231366323209162, guid: e367a1174c8c0434ca2a13d8e0ce81e6,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a073f303af272d44bbcabb52eb201175,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e367a1174c8c0434ca2a13d8e0ce81e6, type: 2}
   m_IsPrefabParent: 0

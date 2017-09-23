@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: abb849e211637b045b8a3b60b3d6a7ed
-timeCreated: 1506190664
+guid: 4f4b2cf0f49f0044d8e15177f2ac1346
+timeCreated: 1506190684
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: shoulder2-Shield
-    21300002: forearm2-Shield
+    21300000: Shoulder1-Pickaxe
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -72,28 +71,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shoulder2-Shield
+      name: Shoulder1-Pickaxe
       rect:
         serializedVersion: 2
-        x: 39
-        y: 53
-        width: 14
-        height: 20
-      alignment: 9
-      pivot: {x: 0.7050314, y: 0.7701591}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: forearm2-Shield
-      rect:
-        serializedVersion: 2
-        x: 11
+        x: 20
         y: 35
-        width: 72
-        height: 18
+        width: 51
+        height: 38
       alignment: 9
-      pivot: {x: 0.5420644, y: 0.9734429}
+      pivot: {x: 0.5046944, y: 0.8624681}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
