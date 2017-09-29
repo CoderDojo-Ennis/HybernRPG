@@ -67,8 +67,8 @@ public class Pickaxes : MonoBehaviour {
 			}
 			if(slicing)
 			{
-				offset += 10;
-				if(offset == 180){
+				offset += 750 * Time.deltaTime;
+				if(offset > 180){
 					offset = 0;
 					slicing = false;
 				}

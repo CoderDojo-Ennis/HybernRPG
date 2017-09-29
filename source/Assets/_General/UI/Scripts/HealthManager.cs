@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour {
 	private List<GameObject> orbs;
 	
 
-	void OnEnable()
+	void Awake()
 	{
 		orbs = new List<GameObject>();
 	}

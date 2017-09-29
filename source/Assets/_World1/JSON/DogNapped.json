@@ -22,7 +22,7 @@
         },
 		{
             "id": 2,
-            "text": "Left hand click with those <color=green>pickaxe arms</color> to attack.",
+            "text": "Left hand click with those <color=lime>pickaxe arms</color> to attack.",
 			"next": [
                 {
                     "speaker": "Cultist",
