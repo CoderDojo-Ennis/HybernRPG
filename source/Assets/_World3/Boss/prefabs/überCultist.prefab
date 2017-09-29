@@ -54,9 +54,9 @@ GameObject:
   - component: {fileID: 50014904750488860}
   - component: {fileID: 114357598511227714}
   - component: {fileID: 114556024432606878}
-  - component: {fileID: 58703720541419058}
   - component: {fileID: 114022686690059544}
   - component: {fileID: 114301351529007394}
+  - component: {fileID: 58703720541419058}
   - component: {fileID: 61858144423387800}
   - component: {fileID: 70213936802673854}
   m_Layer: 0
@@ -219,8 +219,8 @@ BoxCollider2D:
   m_Offset: {x: 0.06634995, y: 0.49832514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.43065482, y: 0.23561162}
-    oldSize: {x: 0.9091092, y: 1.4354355}
+    pivot: {x: 0.54647475, y: 0.19624294}
+    oldSize: {x: 0.956957, y: 1.4641442}
     newSize: {x: 0.9091092, y: 1.4354355}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -338,6 +338,9 @@ MonoBehaviour:
   state: 0
   missileDroppers: {fileID: 0}
   missile: {fileID: 1698630860763312, guid: 8997eac8926d11d44b6b5872ac983390, type: 2}
+  worldControl: {fileID: 1651943243145918, guid: 1250a72a8a8447346911bbc904bbcffd,
+    type: 2}
+  audioManager: {fileID: 0}
 --- !u!114 &114556024432606878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,7 +395,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 1d903b359b73c4f4d8e45ba9691897bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a073f303af272d44bbcabb52eb201175, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -472,7 +475,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f9a47ba18eeb0a4989d71b446050426, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20dcf46ca7b0d4a4fb9f509a0c0b3b62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

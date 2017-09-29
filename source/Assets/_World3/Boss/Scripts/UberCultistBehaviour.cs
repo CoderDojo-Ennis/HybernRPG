@@ -8,11 +8,12 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject missileDroppers;
 	public GameObject missile;
 	public GameObject worldControl;
-	
-	private int health = 100;
-	private int maxHealth = 100;
+
+    private int health = 50;
+	private int maxHealth = 50;
 	private Slider healthSlider;
-	private CircleCollider2D forceField;
+    private AudioManager audioManager;
+    private CircleCollider2D forceField;
 	private SpriteRenderer forceFieldSprite;
 	private GameObject player;
 	
@@ -29,23 +30,23 @@ public class UberCultistBehaviour : MonoBehaviour {
 		forceField = GetComponent<CircleCollider2D>();
 		forceFieldSprite = transform.Find("ForceField").gameObject.GetComponent<SpriteRenderer>();
 		player = GameObject.Find("Player Physics Parent");
-		
-		StartCoroutine( Control () );
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+		StartCoroutine(Control());
 	}
 	void Update () {
 		if(state == State.Axe)
 		{
 			GetComponent<UberCultistAI>().enabled = true;
 			GetComponent<UberCultistController>().enabled = true;
-			if((player.transform.position - transform.position).magnitude < 3)
+			if((player.transform.position - transform.position).magnitude < 2 && health < 25)
+			{
+				forceField.enabled = true;
+                forceFieldSprite.enabled = true;
+            }
+			else
 			{
 				forceField.enabled = false;
 				forceFieldSprite.enabled = false;
-			}
-			else
-			{
-				forceField.enabled = true;
-				forceFieldSprite.enabled = true;
 			}
 		}
 		else
@@ -64,6 +65,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		foreach(Transform child in missileDroppers.transform)
 		{
 			Instantiate( missile, child.transform.position, Quaternion.identity);
+
 		}
 	}
 	public void TakeDamage(int damage)
@@ -73,17 +75,19 @@ public class UberCultistBehaviour : MonoBehaviour {
 		if(health <= 0)
 		{
 			worldControl.GetComponent<WorldControl>().SwitchScene(10);
-			GameObject.Destroy( gameObject );
+            Destroy(gameObject);
 		}
 	}
+
 	IEnumerator Control ()
 	{
 		while (true)
 		{
 			state = State.Axe;
-			yield return new WaitForSeconds(20);
-			
-			state = State.AirStrike;
+			yield return new WaitForSeconds(15);
+            audioManager.Play("Air Siren");
+            yield return new WaitForSeconds(5);
+            state = State.AirStrike;
 			yield return new WaitForSeconds(1);
 			AirStrike();
 			yield return new WaitForSeconds(5);

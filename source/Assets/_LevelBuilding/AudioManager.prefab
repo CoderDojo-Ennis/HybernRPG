@@ -162,3 +162,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: Air Siren
+    clip: {fileID: 8300000, guid: 8bbf5a31de680694183e3e40776e142f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
