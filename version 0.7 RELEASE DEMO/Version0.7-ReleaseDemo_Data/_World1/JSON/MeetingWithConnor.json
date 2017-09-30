@@ -1,0 +1,156 @@
+{
+    "Dog": [
+        {
+            "id": 0,
+            "text": "Friend!!!",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "Help!!! PLEASE!!!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": 0
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "SAVE ME FRIEND!!!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": 6
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "NOOOOOO!!!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "exit"
+                }
+            ]
+        }
+    ],
+	"Connor": [
+        {
+            "id": 0,
+            "text": "Scream all you like, little doggy.",
+			"next": [
+                {
+                    "speaker": "Connor",
+                    "id": "1"
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "No one can resist the power of the <color=red>Cult Of The Sacred Pelican</color>.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": 2
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "But excuse me, I've forgotten my manners.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "I am the leader of the <color=red>Cult</color>. They call me ...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "...<color=red>Connor.</color>",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "Silence!!!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "7"
+                }
+            ]
+        },
+		{
+            "id": 7,
+            "text": "We require this dog as our sacrifice to awaken our great master ...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "...<color=red>The Sacred Pelican.</color>",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "9"
+                }
+            ]
+        },
+		{
+            "id": 9,
+            "text": "But I'm tired of talking....",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "10"
+                }
+            ]
+        },
+		{
+            "id": 10,
+            "text": "You'll never get through my maze.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "3"
+                }
+            ]
+        }
+    ]
+}

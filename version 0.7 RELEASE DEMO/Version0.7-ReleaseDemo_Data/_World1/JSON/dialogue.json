@@ -1,0 +1,34 @@
+{
+    "Player": [
+        {
+            "id": 0,
+            "text": "This is a string of dialogue!",
+			"next": [
+                {
+                    "speaker": "Player",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "This is definitely dialogue! The button on the right should definitely have a graphic, perhaps a <color=green>green</color> arrow?",
+            "next": [
+                {
+                    "speaker": "Player",
+                    "id": 2
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "Good evening friend. Looks like I'll be forced to <color=red>kill</color> you",
+            "next": [
+                {
+                    "speaker": "Player",
+                    "id": "exit"
+                }
+            ]
+        }
+    ]
+}
