@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/_World5/Scenes/SceneTransitionB.unity
     guid: 1f79f08a0c222b940801e9bfe4d45144
   - enabled: 1
+    path: Assets/_World5/Scenes/SceneTransitionC.unity
+    guid: 85971ea61b7d4e64590fbb052d334b04
+  - enabled: 1
+    path: Assets/_World5/Scenes/SceneTransitionD.unity
+    guid: c781837b211c4cd4b936336166e99c83
+  - enabled: 1
     path: Assets/_World3/Scenes/actual star wrekin.unity
     guid: 1878bdcdbd156b04b8d92bbaebe7065a
   - enabled: 1

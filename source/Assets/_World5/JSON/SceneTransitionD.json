@@ -1,0 +1,124 @@
+{
+    "Dog": [
+        {
+            "id": 0,
+            "text": "...",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "... hey ... pal ...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "I've been weakening...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "Using so much energy to give you new abilities has left me drained.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "But ... I can still help. I'm a good dog after all.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "Take this - a <color=lime>Jetpack.</color>",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "6"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "Double jumping should be enough to activate it.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "7"
+                }
+            ]
+        },
+		{
+            "id": 7,
+            "text": "Oh, how I'd love to jump around and play again ...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "Once you rescue me, that'll be the first thing I do.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "9"
+                }
+            ]
+        },
+		{
+            "id": 9,
+            "text": "Wait - someone's coming!",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "10"
+                }
+            ]
+        },
+		{
+            "id": 10,
+            "text": "Take care, friend.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "11"
+                }
+            ]
+        },
+		{
+            "id": 11,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "exit"
+                }
+            ]
+        }
+    ]
+}
