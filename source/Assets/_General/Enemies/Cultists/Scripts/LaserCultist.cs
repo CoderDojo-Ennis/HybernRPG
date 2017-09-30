@@ -16,12 +16,14 @@ public class LaserCultist : EnemyFramework {
 	private float laserWidth;
 	private float deathLaserWidth;
 	//variable dictating what the laser is doing
+	private LaserManager laserManager;
 	public LaserActions laserAction;
 	private bool playerHitAlready;
 	
 	public GameObject navPointContainer;
 	private NavPoint[] allNavPoints;
 	private List<NavPoint> possibleDestinations;
+
 	
 	
 	public enum LaserActions
@@ -46,6 +48,9 @@ public class LaserCultist : EnemyFramework {
 		deathLaserWidth = 0;
 		playerHitAlready = false;
 		
+		//laserManager = 
+		laserManager.gameObject = gameObject;
+		
 		//EnemyFramework variables
 		attack = 2;
 	}
@@ -58,7 +63,7 @@ public class LaserCultist : EnemyFramework {
 	void LateUpdate()
 	{	
 		//Move arm to point in desired angle
-		Quaternion rotation = Quaternion.Euler(0, 0, laserAngle);
+		Quaternion rotation = Quaternion.Euler(0, 0, laserAngle + 90);
 		armRot = Quaternion.Lerp( armRot, rotation, armSpeed);
 		arm.rotation = armRot;
 	}
@@ -68,8 +73,19 @@ public class LaserCultist : EnemyFramework {
 		Vector2 displacement;
 		displacement = (GameObject.Find("Player Physics Parent").transform.position + new Vector3(0, 0.5f, 0)) - arm.position;
 		laserAngle = Mathf.Atan2 (displacement.y, displacement.x) * Mathf.Rad2Deg;
-		laserAngle += 90;
+		//laserAngle += 90;
 		
+		laserManager = new LaserManager();
+		laserManager.gameObject = gameObject;
+		
+		Vector2 direction = new Vector2(Mathf.Cos(laserAngle), Mathf.Sin(laserAngle));
+       
+	   //Create position to fire from
+		Vector2 origin;
+		origin = arm.position;
+		origin += new Vector2(0.015f, 0) * transform.localScale.x;//This just makes sure the raycast fires from within the collider
+		
+		GameObject raycastResult;
 		switch ( laserAction )
 		{
 			case LaserActions.noBeam:
@@ -81,16 +97,18 @@ public class LaserCultist : EnemyFramework {
 			case LaserActions.searchBeam:
 				///Regular red search beam, non lethal
 				laserWidth = 0.05f;
-				ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
-				if(SearchBeam(armRot.eulerAngles.z)){
-				StartCoroutine(LaserOfDeath());
+				
+				raycastResult = laserManager.FireLaser ( origin, laserAngle, laserWidth, laser);
+				if( raycastResult != null){
+					if( raycastResult.name == "Player Physics Parent" )
+					StartCoroutine( LaserOfDeath() );
 				}
 			break;
 			case LaserActions.searchBeamGrowing:
 				///SearchBeam quickly grows to its full size
 				if( laserWidth < 0.05f ){
 					laserWidth += 0.002f;
-					ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
+					laserManager.FireLaser ( origin, laserAngle, laserWidth, laser);
 				}
 				else{
 					laserAction = LaserActions.searchBeam;
@@ -100,7 +118,7 @@ public class LaserCultist : EnemyFramework {
 				///SearchBeam quickly shrinks to nothing
 				if( laserWidth > 0.005f ){
 					laserWidth -= 0.002f;
-					ShowLaser(armRot.eulerAngles.z, laserWidth, laser);
+					laserManager.FireLaser ( origin, laserAngle, laserWidth, laser);
 				}
 				else{
 					laserAction = LaserActions.noBeam;
@@ -109,9 +127,9 @@ public class LaserCultist : EnemyFramework {
 			case LaserActions.deathLaser:
 				///Extra large deathLaser, which does damage
 				deathLaserWidth = 0.2f;
-				ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
-				//See if player is in the way of beam
-				if(SearchBeam(armRot.eulerAngles.z))
+				raycastResult = laserManager.FireLaser ( origin, laserAngle, deathLaserWidth, deathLaser);
+				
+				if( raycastResult.name == "Player Physics Parent" )
 				{
 					if( !playerHitAlready )
 					{
@@ -130,7 +148,7 @@ public class LaserCultist : EnemyFramework {
 					deathLaserWidth += 0.05f;
 					//animate beam
 					deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
-					ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
+					laserManager.FireLaser ( origin, laserAngle, deathLaserWidth, deathLaser);
 				}
 				else{
 					laserAction = LaserActions.deathLaser;
@@ -142,7 +160,7 @@ public class LaserCultist : EnemyFramework {
 					deathLaserWidth -= 0.005f;
 					//animate beam
 					deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
-					ShowLaser(armRot.eulerAngles.z, deathLaserWidth, deathLaser);
+					laserManager.FireLaser ( origin, laserAngle, deathLaserWidth, deathLaser);
 				}
 				else{
 					laserAction = LaserActions.deathLaserShrinking;
@@ -251,7 +269,7 @@ public class LaserCultist : EnemyFramework {
 		if(searchBeam)
 		{
 			//Hit something, show beam
-			Debug.DrawLine(origin, searchBeam.point);
+			//Debug.DrawLine(origin, searchBeam.point);
 			EnableLineRenderer(0.2f, origin, searchBeam.point, deathLaser);
 			if(searchBeam.transform.gameObject.tag == "Good")
 			{
@@ -281,7 +299,7 @@ public class LaserCultist : EnemyFramework {
 		if(searchBeam)
 		{
 			//Hit something, show beam
-			Debug.DrawLine(origin, searchBeam.point);
+			//Debug.DrawLine(origin, searchBeam.point);
 			//EnableLineRenderer(0.05f, origin, searchBeam.point, laser);
 			if(searchBeam.transform.gameObject.tag == "Good")
 			{
@@ -325,14 +343,20 @@ public class LaserCultist : EnemyFramework {
 	}
 	void ShowLaser(float angle, float width, Material laser)
 	{
+		laserManager = new LaserManager();
+		laserManager.gameObject = gameObject;
+		
 		angle -= 90;
-		angle *= Mathf.Deg2Rad;
+		//angle *= Mathf.Deg2Rad;
 		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
        
 	   //Create position to fire from
 		Vector2 origin;
 		origin = arm.position;
 		origin += new Vector2(0.015f, 0) * transform.localScale.x;//This just makes sure the raycast fires from within the collider
+		
+		laserManager.FireLaser ( origin, angle, width, laser);
+		/*
 		RaycastHit2D searchBeam = Physics2D.Raycast(origin, direction);
 		
 		//Offset so that the laser begins where the cultist's arm ends
@@ -348,6 +372,6 @@ public class LaserCultist : EnemyFramework {
 		else//Hit nothing, show beam anyway
 		{
 			EnableLineRenderer(width, origin, direction * 100, laser);
-		}
+		}*/
 	}
 }

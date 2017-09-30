@@ -10,6 +10,11 @@ public class PickaxeAttack : MonoBehaviour {
 		if( enemy != null)
 		{
 			enemy.TakeDamage(1);
+			return;
+		}
+		if(collider.gameObject.name == "überCultist")
+		{
+			collider.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
 		}
 	}
 }

@@ -15,14 +15,26 @@ EditorBuildSettings:
     path: Assets/_World1/Scenes/Village.unity
     guid: dbef68abc11d7a9419c66d06f2fd0130
   - enabled: 1
+    path: Assets/_World1/Scenes/Beginning.unity
+    guid: 3c4868e79243fba479bef7d8b5a1674c
+  - enabled: 1
     path: Assets/_World1/Scenes/Lava Escape.unity
     guid: ce126136b160da3478ffdea4930e1653
+  - enabled: 1
+    path: Assets/_World1/Scenes/Connor.unity
+    guid: dbf42e2afcfed4949a510cf2b99234c1
+  - enabled: 1
+    path: Assets/_World1/Scenes/actual star wrekin.unity
+    guid: 1878bdcdbd156b04b8d92bbaebe7065a
+  - enabled: 1
+    path: "Assets/_World3/Scenes/\xFCberCultist.unity"
+    guid: b1bd0afc4af35a44c8ea0cd23fbe0601
   - enabled: 0
     path: Assets/_World1/Scenes/laser cultist workbench.unity
     guid: a90d5c76f912d754ba0b6316a042cc8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/Boss.unity
     guid: a3d19e02f6d50644884019d9e037bb34
-  - enabled: 1
+  - enabled: 0
     path: Assets/_World1/Scenes/pathFinding.unity
     guid: 016455e528db2ba4db9278ec1baf32aa

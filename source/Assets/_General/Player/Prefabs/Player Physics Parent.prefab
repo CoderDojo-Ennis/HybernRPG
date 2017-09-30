@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 212880365140354290}
   - component: {fileID: 50780922448643464}
   - component: {fileID: 61829241428108550}
+  - component: {fileID: 114274656551834660}
   m_Layer: 0
   m_Name: shoulder2
   m_TagString: Untagged
@@ -96,6 +97,7 @@ GameObject:
   - component: {fileID: 212329991137184154}
   - component: {fileID: 50911357579919168}
   - component: {fileID: 61386400716258832}
+  - component: {fileID: 114471408324324002}
   m_Layer: 0
   m_Name: shoulder1
   m_TagString: Untagged
@@ -257,7 +259,7 @@ GameObject:
   - component: {fileID: 61652985846430826}
   m_Layer: 0
   m_Name: forearm2
-  m_TagString: Untagged
+  m_TagString: Reflect Lasers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +323,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065958658148958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.24, y: 0.1, z: 0}
+  m_LocalPosition: {x: -20, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802930422168450}
@@ -699,7 +701,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04666066, y: -0.060265522}
+  m_Offset: {x: -0.04666066, y: -0.041}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.7050314, y: 0.8277065}
@@ -937,6 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  paused: 0
 --- !u!114 &114133804653651212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -976,6 +979,17 @@ MonoBehaviour:
   hookPrefab: {fileID: 1968490529800654, guid: d9bac41a1783c5f438f77c6e2d2539a4, type: 2}
   retract: 0
   cancel: 0
+--- !u!114 &114274656551834660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230844424177228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd63e15c2fb004479ba53b613f2dce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114301165876795094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1010,6 +1024,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e18d33d2ae67f4cab3c1fe50916c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114471408324324002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256875750913886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd63e15c2fb004479ba53b613f2dce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114559913090230572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1024,6 +1049,7 @@ MonoBehaviour:
   Movement: {fileID: 114301165876795094}
   wheel: {fileID: 0}
   healthDisplay: {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!114 &114658854918609634
 MonoBehaviour:
   m_ObjectHideFlags: 1

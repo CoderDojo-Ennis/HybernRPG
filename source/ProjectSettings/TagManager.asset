@@ -12,7 +12,8 @@ TagManager:
   - Bad
   - Obstacle
   - Checkpoint
-  - checkpoint
+  - NPC
+  - Reflect Lasers
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: ForeGround
+  - name: Background
     uniqueID: 3830803187
     locked: 0
   - name: Floor

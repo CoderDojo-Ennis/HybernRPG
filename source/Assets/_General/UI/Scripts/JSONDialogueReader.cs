@@ -69,7 +69,7 @@ public class JSONDialogueReader : MonoBehaviour {
 		
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
-    string GetNext(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
+    string GetNextID(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -83,12 +83,26 @@ public class JSONDialogueReader : MonoBehaviour {
         }
         return "FAIL";
     }
+	string GetNextSpeaker(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
+    {
+        for (int i = 0; i < dialogueData[speaker].Count; i++)
+        {
+            if (dialogueData[speaker][i]["id"].ToString() == id)
+            {
+                if (dialogueData[speaker][i]["next"] != null)
+                {
+                    return dialogueData[speaker][i]["next"][0]["speaker"].ToString();
+                }
+            }
+        }
+        return "FAIL";
+    }
     public void ContinueButtonFunction ()
     {
         
-        if (GetNext(DisplaySpeaker, DisplayID) != "FAIL")
+        if (GetNextID(DisplaySpeaker, DisplayID) != "FAIL" && GetNextSpeaker(DisplaySpeaker, DisplayID) != "FAIL")
         {
-			DisplayDialogue (DisplaySpeaker, GetNext(DisplaySpeaker, DisplayID));
+			DisplayDialogue (GetNextSpeaker(DisplaySpeaker, DisplayID), GetNextID(DisplaySpeaker, DisplayID));
         }
         else
         {
@@ -118,16 +132,29 @@ public class JSONDialogueReader : MonoBehaviour {
 		char[] characters = GetText(DisplaySpeaker, DisplayID).ToCharArray();
 		//Empty text box
 		DialogueTextUI.GetComponent<Text>().text = null;
+		//Have I encountered a fomatting tag yet?
+		bool tagEncountered = false;
+		
 		
 		//Cycle through text and transfer it to text box
 		for( int counter = 0; counter < characters.Length; counter++)
 		{
-			
-			DialogueTextUI.GetComponent<Text>().text += characters[counter];
-			
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("TextProgression");
-			
-			yield return null;
+			if(characters[counter] == '<' || characters[counter] == '>')
+			{
+				tagEncountered = !tagEncountered;
+				continue;
+			}
+			else if(!tagEncountered){
+				DialogueTextUI.GetComponent<Text>().text += characters[counter];
+				
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("TextProgression");
+			}
+			else
+			{
+				continue;
+			}
+				yield return null;
 		}
+		DialogueTextUI.GetComponent<Text>().text = GetText(DisplaySpeaker, DisplayID).ToString();
 	}
 }

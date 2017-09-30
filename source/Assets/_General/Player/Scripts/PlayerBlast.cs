@@ -29,5 +29,10 @@ public class PlayerBlast : MonoBehaviour {
 		{
 			GameObject.Destroy(this.gameObject);
 		}
+		if(collision.gameObject.name == "überCultist")
+		{
+			collision.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
+			GameObject.Destroy(this.gameObject);
+		}
 	}
 }
