@@ -14,6 +14,7 @@ public class Dialogue
 public class JSONDialogueReader : MonoBehaviour {
     private string textData;
     private JsonData dialogueData;
+	private GameObject healthDisplay;
     public string DisplaySpeaker;
     public string DisplayID;
     private string NextSpeaker;
@@ -53,6 +54,12 @@ public class JSONDialogueReader : MonoBehaviour {
     {
 		if(id == "exit")
 		{
+			//Show health display again
+			if( healthDisplay != null )
+			{
+				healthDisplay.SetActive(true);
+			}
+		
 			DialogueTextUI.transform.parent.gameObject.SetActive(false);
 			UnPause();
 			return;
@@ -118,6 +125,13 @@ public class JSONDialogueReader : MonoBehaviour {
         dialogueData = JsonMapper.ToObject(textData);
         
 		DisplayDialogue (speaker, id);
+		
+		//Hide health display
+		healthDisplay = GameObject.Find( "HealthDisplay");
+		if( healthDisplay != null)
+		{
+			GameObject.Find("HealthDisplay").SetActive(false);
+		}
 	}
 	void Pause()
 	{
