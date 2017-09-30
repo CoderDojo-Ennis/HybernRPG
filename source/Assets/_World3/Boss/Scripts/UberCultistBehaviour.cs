@@ -8,6 +8,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject missileDroppers;
 	public GameObject missile;
 	public GameObject worldControl;
+	public PlayerStats playerStats;
 
     private int health = 50;
 	private int maxHealth = 50;
@@ -24,12 +25,12 @@ public class UberCultistBehaviour : MonoBehaviour {
 		Charge
 	}
 	void Start () {
-		
 		healthSlider = GameObject.Find("BossHealth").GetComponent<Slider>();
 		state = State.Axe;
 		forceField = GetComponent<CircleCollider2D>();
 		forceFieldSprite = transform.Find("ForceField").gameObject.GetComponent<SpriteRenderer>();
 		player = GameObject.Find("Player Physics Parent");
+		playerStats = player.GetComponent<PlayerStats>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		StartCoroutine(Control());
 	}
@@ -38,7 +39,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		{
 			GetComponent<UberCultistAI>().enabled = true;
 			GetComponent<UberCultistController>().enabled = true;
-			if((player.transform.position - transform.position).magnitude < 2 && health < 25)
+			if((player.transform.position - transform.position).magnitude < 3 && health < 25)
 			{
 				forceField.enabled = true;
                 forceFieldSprite.enabled = true;
@@ -54,18 +55,27 @@ public class UberCultistBehaviour : MonoBehaviour {
 			GetComponent<UberCultistAI>().enabled = false;
 			GetComponent<UberCultistController>().enabled = false;
 		}
+		
 		if( state == State.AirStrike)
 		{
 			forceField.enabled = true;
 			forceFieldSprite.enabled = true;
+			if((player.transform.position - transform.position).magnitude < 2)
+			{
+				playerStats.shielded = true;
+            }
+			
+			if((player.transform.position - transform.position).magnitude > 2)
+			{
+				playerStats.shielded = false;
+            }
 		}
 	}
 	void AirStrike()
 	{
 		foreach(Transform child in missileDroppers.transform)
 		{
-			Instantiate( missile, child.transform.position, Quaternion.identity);
-
+			Instantiate(missile, child.transform.position, Quaternion.identity);
 		}
 	}
 	public void TakeDamage(int damage)
@@ -83,6 +93,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 	{
 		while (true)
 		{
+			playerStats.shielded = false;
 			state = State.Axe;
 			yield return new WaitForSeconds(15);
             audioManager.Play("Air Siren");

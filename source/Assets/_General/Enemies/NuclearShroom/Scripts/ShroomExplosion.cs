@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShroomExplosion : MonoBehaviour {
+public class ShroomExplosion : MonoBehaviour 
+{
+	private PlayerStats playerStats;
 	private CameraFollow cameraFollow;
+	
 	void Awake ()
 	{
 		//find camera script
 		cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
+		
+		//find playerStats script
+		playerStats = GameObject.Find("Player Physics Parent").GetComponent< PlayerStats >();
 		
 		//Shake the screen
 		StartCoroutine(cameraFollow.MyRoutine(1f, 0.3f, 0.3f));
@@ -18,16 +24,23 @@ public class ShroomExplosion : MonoBehaviour {
 		this.Delay(0.2f, () => {
                 GetComponent< Collider2D >().enabled = false;
             });
+		
 	}
+	
 	void OnTriggerEnter2D (Collider2D collider)
 	{
 		if( collider.gameObject.name == "Player Physics Parent" )
 		{
-			PlayerStats playerStats;
-			playerStats = collider.gameObject.GetComponent< PlayerStats >();
-			
-			playerStats.TakeDamage ( playerStats.health );
+			if (!playerStats.shielded)
+			{
+				playerStats.TakeDamage ( playerStats.health );
+			}
+			if (playerStats.shielded)
+			{
+				
+			}
 		}
+		
 		if( collider.gameObject.GetComponent< ShroomFire >() != null )
 		{
 			ShroomFire shroomFire;
@@ -39,6 +52,7 @@ public class ShroomExplosion : MonoBehaviour {
                 shroomFire.BlowUp ();
             });
 		}
+		
 		if( collider.gameObject.GetComponent< EnemyFramework >() != null )
 		{
 			EnemyFramework enemy;

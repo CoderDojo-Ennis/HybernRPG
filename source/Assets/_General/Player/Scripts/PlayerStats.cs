@@ -4,9 +4,11 @@ public class PlayerStats : MonoBehaviour
 {
 	public int health;
 	public bool paused;
+	public bool shielded;
 	private CameraFollow cameraFollow;
 	private GameObject menu;
 	private GameObject healthCanvas;
+	
     
 	
 	public void Start()
