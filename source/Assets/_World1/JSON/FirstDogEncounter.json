@@ -22,7 +22,7 @@
         },
 		{
             "id": 2,
-            "text": "Forgotten what your good old <color=green>pet dog </color> looks like?",
+            "text": "Forgotten what your good old <color=lime>pet dog </color> looks like?",
             "next": [
                 {
                     "speaker": "Dog",
@@ -62,7 +62,7 @@
         },
 		{
             "id": 6,
-            "text": "I can give you the amazing power to change your arms into <color=green>pickaxes!!!!</color>",
+            "text": "I can give you the amazing power to change your arms into <color=lime>pickaxes!!!!</color>",
             "next": [
                 {
                     "speaker": "Dog",
@@ -82,7 +82,7 @@
         },
 		{
             "id": 8,
-            "text": "Right hand click to <color=green>swap your arms to pickaxes.</color>",
+            "text": "Right hand click to <color=lime>swap your arms to pickaxes.</color>",
             "next": [
                 {
                     "speaker": "Dog",

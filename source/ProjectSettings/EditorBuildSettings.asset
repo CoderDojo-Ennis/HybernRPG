@@ -18,14 +18,11 @@ EditorBuildSettings:
     path: Assets/_World1/Scenes/laser cultist workbench.unity
     guid: a90d5c76f912d754ba0b6316a042cc8e
   - enabled: 1
-    path: Assets/_World1/Scenes/Lava Escape.unity
-    guid: ce126136b160da3478ffdea4930e1653
+    path: Assets/_World1/Scenes/GrapplingHookLevel.unity
+    guid: eaa2138c12132d14788738a3faf40567
   - enabled: 1
     path: Assets/_World1/Scenes/World1-scene5.unity
     guid: 0b4a80a11290af24680bdcd405dd0ace
-  - enabled: 1
-    path: Assets/_World1/Scenes/World1-scene4.unity
-    guid: 628952b097db4be42a93e9ae2617cbad
   - enabled: 1
     path: Assets/_World3/Scenes/actual star wrekin.unity
     guid: 1878bdcdbd156b04b8d92bbaebe7065a
