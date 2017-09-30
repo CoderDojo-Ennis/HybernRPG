@@ -2,7 +2,7 @@
     "Dog": [
         {
             "id": 0,
-            "text": "Howdy!!!",
+            "text": "Hey - friend ...",
 			"next": [
                 {
                     "speaker": "Dog",
@@ -12,17 +12,17 @@
         },
         {
             "id": 1,
-            "text": "Watsa matter?",
+            "text": "Can you hear me?",
             "next": [
                 {
                     "speaker": "Dog",
-                    "id": 2
+                    "id": "2"
                 }
             ]
         },
 		{
             "id": 2,
-            "text": "Forgotten what your good old <color=lime>pet dog </color> looks like?",
+            "text": "I'm using my <color=lime>magic dog powers</color> to communicate with you.",
             "next": [
                 {
                     "speaker": "Dog",
@@ -32,7 +32,7 @@
         },
 		{
             "id": 3,
-            "text": "Listen pal ... we've known each other a while now ...",
+            "text": "I have a gift for you. I'll transport it to you.",
             "next": [
                 {
                     "speaker": "Dog",
@@ -42,7 +42,7 @@
         },
 		{
             "id": 4,
-            "text": "But there's something I've never told you before.",
+            "text": "It's a <color=lime>grappling hook.</color>",
             "next": [
                 {
                     "speaker": "Dog",
@@ -52,7 +52,7 @@
         },
 		{
             "id": 5,
-            "text": "I'm a <color=lime>magic dog.</color>",
+            "text": "Good luck friend...",
             "next": [
                 {
                     "speaker": "Dog",
@@ -62,33 +62,13 @@
         },
 		{
             "id": 6,
-            "text": "I can give you the amazing power to change your arms into <color=lime>pickaxes!!!!</color>",
-            "next": [
-                {
-                    "speaker": "Dog",
-                    "id": "7"
-                }
-            ]
-        },
-		{
-            "id": 7,
-            "text": "I mean ... If you wanted to do that for some reason ...",
-            "next": [
-                {
-                    "speaker": "Dog",
-                    "id": "8"
-                }
-            ]
-        },
-		{
-            "id": 8,
-            "text": "Right hand click to <color=lime>swap your arms to pickaxes.</color>",
+            "text": "...",
             "next": [
                 {
                     "speaker": "Dog",
                     "id": "exit"
                 }
             ]
-        }
+        } 
     ]
 }

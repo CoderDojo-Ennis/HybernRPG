@@ -27,8 +27,10 @@ public class JSONDialogueReader : MonoBehaviour {
 	void Start() 
     {
         //DialogueTextUI.transform.parent.gameObject.SetActive(false);
-        playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
-		
+        if(GameObject.Find("Player Physics Parent"))
+		{
+			playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
+		}
 		ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
 		
         //Debug
@@ -99,7 +101,6 @@ public class JSONDialogueReader : MonoBehaviour {
     }
     public void ContinueButtonFunction ()
     {
-        
         if (GetNextID(DisplaySpeaker, DisplayID) != "FAIL" && GetNextSpeaker(DisplaySpeaker, DisplayID) != "FAIL")
         {
 			DisplayDialogue (GetNextSpeaker(DisplaySpeaker, DisplayID), GetNextID(DisplaySpeaker, DisplayID));
@@ -120,10 +121,12 @@ public class JSONDialogueReader : MonoBehaviour {
 	}
 	void Pause()
 	{
-		playerStats.paused = true;
+		if( playerStats )
+			playerStats.paused = true;
 	}
 	void UnPause()
 	{
+		if( playerStats )
 		playerStats.paused = false;
 	}
 	IEnumerator PrintText ()

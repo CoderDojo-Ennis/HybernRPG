@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e07d34dcc7fb024587705ab9a29aa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 6
+  ID: 3
   Speaker: Dog
 --- !u!95 &172965810
 Animator:
@@ -1350,6 +1350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldNumber: 5
-  fileName: SceneTransitionA
+  fileName: SceneTransitionB
   speaker: Dog
   id: 0
