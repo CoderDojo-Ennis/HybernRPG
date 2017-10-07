@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class WorldControl : MonoBehaviour
 {
     private static int CPIndex = -1;
+	private static int sceneIndex = -1;
 
     //Scene Control
     public void SwitchScene(int i)
@@ -11,15 +12,15 @@ public class WorldControl : MonoBehaviour
 		//Find current scene index
 		int currentIndex = SceneManager.GetActiveScene().buildIndex;
 		
-		if(i != currentIndex)
-		{
-			//Tell everyone not to position the player at a checkpoint
-			SaveLoad.load = false;
-			StoreIndex( -1);
-		}
         SceneManager.LoadSceneAsync(i);
-		
     }
+	public void NextScene ()
+	{
+		//Find current scene index
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		
+        SceneManager.LoadSceneAsync(currentIndex + 1);
+	}
 
     public void ReloadScene()
 	{
@@ -64,15 +65,25 @@ public class WorldControl : MonoBehaviour
 
     public void OnLevelFinishedLoading(Scene scene1, Scene scene2)
     {
-		if (SaveLoad.load == true)
+		Time.timeScale = 1;
+		
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		
+		if ( currentIndex == sceneIndex )
 		{
 			GameObject.Find("Player Physics Parent").transform.position = GameObject.Find("" + CPIndex).transform.position;
-			Debug.Log("active scene changed");
+			//Debug.Log("current index: " + currentIndex);
+			//Debug.Log("current sceneIndex: " + sceneIndex);
+			//Debug.Log("current CPIndex: " + CPIndex);
 		}
     }
     
     public void StoreIndex(int index)
     {
         CPIndex = index;
+    }
+	public void StoreScene(int index)
+    {
+        sceneIndex = index;
     }
 }

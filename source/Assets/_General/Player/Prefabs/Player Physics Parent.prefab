@@ -323,7 +323,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065958658148958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 80.15, z: 0}
+  m_LocalPosition: {x: -21.6, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802930422168450}
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ac7ccb34c40924ba67247a936ce00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
+  walkSpeed: 2.3
   runSpeed: 3
   maxVelocity: 20
   jetpack: 0
@@ -1100,8 +1100,8 @@ MonoBehaviour:
   thigh2: {fileID: 21300010, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   calf1: {fileID: 21300018, guid: 53a038b8780575243ba26ffa26147418, type: 3}
   calf2: {fileID: 21300016, guid: 53a038b8780575243ba26ffa26147418, type: 3}
-  shoulder1Pickaxe: {fileID: 21300002, guid: 0d91f6d2e69b86542b3c03d31ea82150, type: 3}
-  shoulder2Pickaxe: {fileID: 21300000, guid: 0d91f6d2e69b86542b3c03d31ea82150, type: 3}
+  shoulder1Pickaxe: {fileID: 21300000, guid: 4f4b2cf0f49f0044d8e15177f2ac1346, type: 3}
+  shoulder2Pickaxe: {fileID: 21300000, guid: 4f4b2cf0f49f0044d8e15177f2ac1346, type: 3}
   shoulder2Shield: {fileID: 21300000, guid: abb849e211637b045b8a3b60b3d6a7ed, type: 3}
   forearm2Shield: {fileID: 21300002, guid: abb849e211637b045b8a3b60b3d6a7ed, type: 3}
   shoulder1GrapplingHook: {fileID: 21300000, guid: 9a620af4a988bb24290d9454e48e9865,

@@ -1,0 +1,94 @@
+{
+    "Dog": [
+        {
+            "id": 0,
+            "text": "Listen pal - I don't have long.",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "It's taking a lot of energy to send these messages, so I need to be quick.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "It's taken a lot of concentration, but I've gotten you some extra firepower.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "Some <color=lime>Arm Cannons</color> should suit you nicely.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "Just point and fire, plain and simple.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "But seriously - please hurry. <color=red>Connor</color> has been making preparations ...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "6"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "You're my only hope, friend.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "7"
+                }
+            ]
+        },
+		{
+            "id": 7,
+            "text": "You have to save me ...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "exit"
+                }
+            ]
+        }
+    ]
+}

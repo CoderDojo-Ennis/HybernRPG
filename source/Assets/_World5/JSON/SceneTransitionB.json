@@ -1,0 +1,44 @@
+{
+    "Dog": [
+        {
+            "id": 0,
+            "text": "I'm worried about you friend.",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "I may not be able to help myself with my <color=lime>Dog Powers</color>, but I can help you.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "So much danger, it looks like you'll need a <color=lime>shield</color> to protect yourself.",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "exit"
+                }
+            ]
+        } 
+    ]
+}

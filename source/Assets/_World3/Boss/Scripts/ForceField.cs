@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ForceField : MonoBehaviour {
 
@@ -13,16 +11,16 @@ public class ForceField : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if ( collider.gameObject.name == "PlayerBlast(Clone)" )
-			GameObject.Destroy ( collider.gameObject );
+		if (collider.gameObject.name == "PlayerBlast(Clone)")
+			Destroy (collider.gameObject);
 			
-		if ( collider.gameObject.name == "EnemyBlast(Clone)"  )
-			GameObject.Destroy ( collider.gameObject );
+		if (collider.gameObject.name == "EnemyBlast(Clone)")
+			Destroy (collider.gameObject);
 		
-		if ( collider.gameObject.name == "Missile(Clone)"  )
-			GameObject.Destroy ( collider.gameObject );
+		if (collider.gameObject.name == "Missile(Clone)")
+			Destroy (collider.gameObject);
 			
-		if ( collider.gameObject.name == "Hook(Clone)"  )
+		if (collider.gameObject.name == "Hook(Clone)")
 			arms.GetComponent<GrapplingHook>().cancel = true;
 	}
 }

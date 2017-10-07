@@ -158,6 +158,12 @@ MonoBehaviour:
     useAudioMixer: 0
   - name: CheckPointActivated
     clip: {fileID: 8300000, guid: c4d7b693fb9aec74583b21119af544c6, type: 3}
+    volume: 0.791
+    pitch: 0.86
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: Air Siren
+    clip: {fileID: 8300000, guid: 8bbf5a31de680694183e3e40776e142f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

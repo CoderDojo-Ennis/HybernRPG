@@ -4,16 +4,11 @@ using System.Collections;
 using System.IO;
 using LitJson;
 
-public class Dialogue
+public class JSONDialogueReader : MonoBehaviour
 {
-    int ID { get; set; }
-    string Text { get; set; }
-}
-
-
-public class JSONDialogueReader : MonoBehaviour {
     private string textData;
     private JsonData dialogueData;
+	private GameObject healthDisplay;
     public string DisplaySpeaker;
     public string DisplayID;
     private string NextSpeaker;
@@ -23,22 +18,18 @@ public class JSONDialogueReader : MonoBehaviour {
     public Button ContinueButton;
     public GameObject DialogueTextUI;
     public GameObject SpeakerTextUI;
-    
-	void Start() 
+    public bool talking;
+
+    void Start() 
     {
-        //DialogueTextUI.transform.parent.gameObject.SetActive(false);
-        playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
-		
+        if(GameObject.Find("Player Physics Parent"))
+		{
+			playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
+		}
 		ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
-		
-        //Debug
-        //Debug.Log(GetText("Player", "0"));
-        //DisplayDialogue("Cultist", "0"); // Latest DisplayDialogue called appears.
-		
-		
 	}
 
-	string GetText (string speaker, string id) //Searches dialogue.json for text. Can be debugged like shown in Start().
+	string GetText (string speaker, string id) //Searches dialogue.json for text.
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -47,10 +38,19 @@ public class JSONDialogueReader : MonoBehaviour {
         }
             return null;
     }
-    void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it. Can be called like shown in Start(). 
+
+    void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
     {
-		if(id == "exit")
+        talking = true;
+        if (id == "exit")
 		{
+            talking = false;
+			//Show health display again
+			if( healthDisplay != null )
+			{
+				healthDisplay.SetActive(true);
+			}
+		
 			DialogueTextUI.transform.parent.gameObject.SetActive(false);
 			UnPause();
 			return;
@@ -69,7 +69,8 @@ public class JSONDialogueReader : MonoBehaviour {
 		
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
-    string GetNextID(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
+
+    string GetNextID(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -83,7 +84,8 @@ public class JSONDialogueReader : MonoBehaviour {
         }
         return "FAIL";
     }
-	string GetNextSpeaker(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation. Can likely be debugged in Start().
+
+	string GetNextSpeaker(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation.
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
         {
@@ -97,9 +99,9 @@ public class JSONDialogueReader : MonoBehaviour {
         }
         return "FAIL";
     }
+
     public void ContinueButtonFunction ()
     {
-        
         if (GetNextID(DisplaySpeaker, DisplayID) != "FAIL" && GetNextSpeaker(DisplaySpeaker, DisplayID) != "FAIL")
         {
 			DisplayDialogue (GetNextSpeaker(DisplaySpeaker, DisplayID), GetNextID(DisplaySpeaker, DisplayID));
@@ -109,6 +111,7 @@ public class JSONDialogueReader : MonoBehaviour {
             DialogueTextUI.SetActive(false);
         }
     }
+
 	public void BeginDialogue (int worldNumber, string fileName, string speaker, string id)
 	{
 		Pause();
@@ -117,15 +120,27 @@ public class JSONDialogueReader : MonoBehaviour {
         dialogueData = JsonMapper.ToObject(textData);
         
 		DisplayDialogue (speaker, id);
+		
+		//Hide health display
+		healthDisplay = GameObject.Find( "HealthDisplay");
+		if( healthDisplay != null)
+		{
+			GameObject.Find("HealthDisplay").SetActive(false);
+		}
 	}
+
 	void Pause()
 	{
-		playerStats.paused = true;
+		if( playerStats )
+			playerStats.paused = true;
 	}
+
 	void UnPause()
 	{
+		if( playerStats )
 		playerStats.paused = false;
 	}
+
 	IEnumerator PrintText ()
 	{
 		//Store text characters in an array

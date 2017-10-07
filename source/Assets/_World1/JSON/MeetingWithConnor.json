@@ -54,7 +54,7 @@
         },
         {
             "id": 1,
-            "text": "No one can resist the power of the <color=red>Cult Of The Sacred Pelican</color>.",
+            "text": "No one can resist the power of <color=red>The Cult.</color>.",
             "next": [
                 {
                     "speaker": "Connor",
@@ -114,7 +114,7 @@
         },
 		{
             "id": 7,
-            "text": "We require this dog as our sacrifice to awaken our great master ...",
+            "text": "We require this dog as our sacrifice to awaken the great power ...",
             "next": [
                 {
                     "speaker": "Connor",
@@ -124,7 +124,7 @@
         },
 		{
             "id": 8,
-            "text": "...<color=red>The Sacred Pelican.</color>",
+            "text": "...<color=red>The power to conquer the world!!!</color>",
             "next": [
                 {
                     "speaker": "Connor",
