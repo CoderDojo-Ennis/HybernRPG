@@ -84,7 +84,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		healthSlider.value = (float)health/maxHealth;
 		if(health <= 0)
 		{
-			worldControl.GetComponent<WorldControl>().SwitchScene(10);
+			worldControl.GetComponent<WorldControl>().NextScene();
             Destroy(gameObject);
 		}
 	}
