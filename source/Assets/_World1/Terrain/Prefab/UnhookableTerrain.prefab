@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212925632447860372}
   - component: {fileID: 61663106525500830}
   m_Layer: 0
-  m_Name: UndergroundTerrain_10
-  m_TagString: Untagged
+  m_Name: UnhookableTerrain
+  m_TagString: Unhookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
