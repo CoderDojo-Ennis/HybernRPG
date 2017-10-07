@@ -34,7 +34,9 @@ public class HookFly : MonoBehaviour {
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("HookFire");
 		
 		
-		if (collision.gameObject.name != "Player Physics Parent"){
+		if (collision.gameObject.name != "Player Physics Parent" && collision.gameObject.tag != "Unhookable"){
+
+            Debug.Log(collision.gameObject.tag);
 		grapplingHook.retract = true;
 		
 		GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
