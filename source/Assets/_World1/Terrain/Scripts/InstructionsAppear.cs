@@ -25,7 +25,7 @@ public class InstructionsAppear : MonoBehaviour {
 		GetComponent<SpriteRenderer>().enabled = showText;
 		if(showText)
 		{
-			Vector3 offset = new Vector3(1, 0, 0);
+			Vector3 offset = new Vector3(1, 0.5f, 0);
 			transform.position = new Vector3(camera.position.x, camera.position.y, 0) + offset;
 		}
 	}
@@ -35,7 +35,7 @@ public class InstructionsAppear : MonoBehaviour {
 		
 		showText = true;
 		
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(4);
 		
 		showText = false;
 	}

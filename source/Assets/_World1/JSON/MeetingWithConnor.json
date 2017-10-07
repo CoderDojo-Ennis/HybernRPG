@@ -144,7 +144,7 @@
         },
 		{
             "id": 10,
-            "text": "THROW HIM TO THE BEAST!!!",
+            "text": "You'll never get through my maze.",
             "next": [
                 {
                     "speaker": "Dog",

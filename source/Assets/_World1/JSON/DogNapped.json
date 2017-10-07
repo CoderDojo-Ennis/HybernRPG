@@ -1,0 +1,96 @@
+{
+    "Dog": [
+        {
+            "id": 0,
+            "text": "Aaagggghhhh!!!",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "0"
+                }
+			]
+        },
+		{
+            "id": 1,
+            "text": "Hey Pal - listen.",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": "2"
+                }
+			]
+        },
+		{
+            "id": 2,
+            "text": "Left hand click with those <color=green>pickaxe arms</color> to attack.",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "3"
+                }
+			]
+        }
+    ],
+	"Cultist": [
+        {
+            "id": 0,
+            "text": "Silence dog!!!",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "1"
+                }
+			]
+        },
+		{
+            "id": 1,
+            "text": "And <i>you</i>, what are you looking at?",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "2"
+                }
+			]
+        },
+		{
+            "id": 2,
+            "text": "Is this your doggy? I'm afraid he's required as a <color=red>sacrifice</color> by our leader.",
+			"next": [
+                {
+                    "speaker": "Dog",
+                    "id": "1"
+                }
+			]
+        },
+		{
+            "id": 3,
+            "text": "Shuddup!!!",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "4"
+                }
+			]
+        },
+		{
+            "id": 4,
+            "text": "Our leader will reward us hansomely for capturing you. ",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "5"
+                }
+			]
+        },
+		{
+            "id": 5,
+            "text": " ... ",
+			"next": [
+                {
+                    "speaker": "Cultist",
+                    "id": "exit"
+                }
+			]
+        }
+    ]
+}

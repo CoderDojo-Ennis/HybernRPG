@@ -63,7 +63,7 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(Input.GetMouseButtonDown(0) && !playerStats.paused){
+		if(Input.GetMouseButtonDown(0) && !playerStats.paused && Time.timeScale == 1){
 				//Mouse pressed
 				CreateHook ();
 				DisconnectWithSpring();
@@ -75,7 +75,7 @@ public class GrapplingHook : MonoBehaviour {
 		}
 		else{
 		
-			if(Input.GetMouseButton(0) && !playerStats.paused){
+			if(Input.GetMouseButton(0) && !playerStats.paused && Time.timeScale == 1){
 				if(hook != null) //Check to see if hook has been destroyed
 				{
 					//Mouse held down
@@ -132,7 +132,10 @@ public class GrapplingHook : MonoBehaviour {
 			}
 			else{
 				//Mouse not held down
-				PointShoulderToMouse();
+				if(Time.timeScale == 1)
+				{
+					PointShoulderToMouse();
+				}
 				RetractHook();
 				AttachForearm();
 				

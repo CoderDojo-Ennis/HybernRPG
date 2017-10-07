@@ -7,6 +7,7 @@ public class Shield : MonoBehaviour {
 	private Transform forearm;
 	private Quaternion rotation;
 	public float lerpValue;
+	private PlayerStats playerStats;
 	
 	void OnEnable()
 	{
@@ -20,6 +21,8 @@ public class Shield : MonoBehaviour {
 		player = GameObject.Find("Player Physics Parent").GetComponent<Collider2D>();
 		shield = forearm.GetComponent<Collider2D>();
 		
+		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
+		
 		Physics2D.IgnoreCollision(player, shield);
 	}
 	void OnDisable()
@@ -29,24 +32,27 @@ public class Shield : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		///Find desired direction for arm
-		Vector3 mousePos;
-		mousePos= Input.mousePosition;
-		mousePos = Camera.main.ScreenToWorldPoint (mousePos);
-		
-		Vector3 pointTo;
-		float a;
-		//Calculate displacement vector to mouse position
-		pointTo = mousePos - transform.GetChild(0).transform.position;
-		a = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
-		
-		///Lerp to that direction
-		lerpValue = Mathf.Clamp(lerpValue, 0, 1);
-		if(lerpValue == 0)
+		if(!playerStats.paused && Time.timeScale == 1)
 		{
-			lerpValue = 1;
+			///Find desired direction for arm
+			Vector3 mousePos;
+			mousePos= Input.mousePosition;
+			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+			
+			Vector3 pointTo;
+			float a;
+			//Calculate displacement vector to mouse position
+			pointTo = mousePos - transform.GetChild(0).transform.position;
+			a = Mathf.Atan2 (pointTo.y, pointTo.x) * Mathf.Rad2Deg;
+			
+			///Lerp to that direction
+			lerpValue = Mathf.Clamp(lerpValue, 0, 1);
+			if(lerpValue == 0)
+			{
+				lerpValue = 1;
+			}
+			rotation = Quaternion.Lerp(rotation ,Quaternion.AngleAxis(a+90, Vector3.forward), lerpValue);
+			transform.Find("shoulder2").rotation = rotation;
 		}
-		rotation = Quaternion.Lerp(rotation ,Quaternion.AngleAxis(a+90, Vector3.forward), lerpValue);
-		transform.Find("shoulder2").rotation = rotation;
 	}
 }
