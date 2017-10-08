@@ -13,7 +13,9 @@ public class SceneChanger : MonoBehaviour {
             
 			//Change to next scene in build
 			Application.LoadLevel(currentIndex + 1);
-            
+           
+			//If this is a portal
+			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("PortalSoundEffect");
         }
     }
 }

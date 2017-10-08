@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af330e1cb8c6e16469c70210619e1f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: f244e1285c41a684ba43c1300192f069, type: 3}
+  music: {fileID: 8300000, guid: d5fccfad4fa25c847ab1238510ff5eb7, type: 3}
 --- !u!4 &489338576
 Transform:
   m_ObjectHideFlags: 0
@@ -1666,7 +1666,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1767,7 +1767,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.9411765, g: 0.48235294, b: 0.07058824, a: 0}
+  m_BackGroundColor: {r: 0.9411765, g: 0.3019608, b: 0.07058824, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
