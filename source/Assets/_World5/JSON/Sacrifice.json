@@ -82,7 +82,7 @@
         },
 		{
             "id": 8,
-            "text": "And now, you must fight our greatest ally!!!!",
+            "text": "Your wretched canine is <color=red>dead!</color>",
             "next": [
                 {
                     "speaker": "Connor",
@@ -92,7 +92,7 @@
         },
 		{
             "id": 9,
-            "text": "The <color=red>Über Cultist</color>",
+            "text": "And his power is free - free for the taking.",
             "next": [
                 {
                     "speaker": "Connor",
@@ -102,7 +102,67 @@
         },
 		{
             "id": 10,
-            "text": " ",
+            "text": "I can feel it - coursing through my veins.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "exit"
+                }
+            ]
+        },
+		{
+            "id": 11,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "11"
+                }
+            ]
+        },
+		{
+            "id": 12,
+            "text": "It's strength, it becomes <b><i>my</i></b> strength",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "13"
+                }
+            ]
+        },
+		{
+            "id": 13,
+            "text": "You've used this power to <color=lime>swap</color> your limbs, to <i>transform</i> yourself ...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "14"
+                }
+            ]
+        },
+		{
+            "id": 14,
+            "text": "Well, I've got a little transformation of my own ...",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "15"
+                }
+            ]
+        },
+		{
+            "id": 15,
+            "text": "Prepare to die - ",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "16"
+                }
+            ]
+        },
+		{
+            "id": 16,
+            "text": "... <color=red>friend</color>",
             "next": [
                 {
                     "speaker": "Connor",

@@ -52,7 +52,7 @@
         },
 		{
             "id": 5,
-            "text": "I'm a <color=green>magic dog.</color>",
+            "text": "I'm a <color=lime>magic dog.</color>",
             "next": [
                 {
                     "speaker": "Dog",

@@ -168,3 +168,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: PortalSoundEffect
+    clip: {fileID: 8300000, guid: 6c3332f1e9d9a0e438dc4b6f69867f42, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
