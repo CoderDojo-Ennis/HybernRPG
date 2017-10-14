@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: abb849e211637b045b8a3b60b3d6a7ed
-timeCreated: 1498557770
+timeCreated: 1506190664
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -75,8 +75,8 @@ TextureImporter:
       name: shoulder2-Shield
       rect:
         serializedVersion: 2
-        x: 40
-        y: 43
+        x: 39
+        y: 53
         width: 14
         height: 20
       alignment: 9
@@ -88,12 +88,12 @@ TextureImporter:
       name: forearm2-Shield
       rect:
         serializedVersion: 2
-        x: 12
-        y: 25
-        width: 70
-        height: 17
+        x: 11
+        y: 35
+        width: 72
+        height: 18
       alignment: 9
-      pivot: {x: 0.5398439, y: 0.8046889}
+      pivot: {x: 0.5420644, y: 0.9734429}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

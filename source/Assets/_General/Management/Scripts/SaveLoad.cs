@@ -32,6 +32,7 @@ public static class SaveLoad
 		WorldControl control;
         control = GameObject.Find("WorldControl").GetComponent<WorldControl>();
         control.StoreIndex( Current.CPIndex );
+		control.StoreScene( Current.SceneIndex );
     }
 
     //Load the Game
@@ -44,10 +45,14 @@ public static class SaveLoad
             FileStream file = File.Open(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile", FileMode.Open);
             Game Current = (Game)bf.Deserialize(file);
             file.Close();
-            SceneManager.LoadSceneAsync(Current.SceneIndex);
+            //SceneManager.LoadSceneAsync(Current.SceneIndex);
             WorldControl control;
             control = GameObject.Find("WorldControl").GetComponent<WorldControl>();
-            control.StoreIndex( Current.CPIndex );
+			
+			control.StoreIndex( Current.CPIndex );
+			control.StoreScene( Current.SceneIndex );
+			
+			control.SwitchScene( Current.SceneIndex );
         }
     }
 	//Remove save file

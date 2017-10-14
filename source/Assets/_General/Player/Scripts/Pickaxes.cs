@@ -50,7 +50,7 @@ public class Pickaxes : MonoBehaviour {
 	}
 	void LateUpdate ()
 	{
-		if(!playerStats.paused)
+		if(!playerStats.paused && Time.timeScale == 1)
 		{
 			float scale = transform.parent.parent.localScale.x;
 			if(scale == 1){
@@ -67,8 +67,8 @@ public class Pickaxes : MonoBehaviour {
 			}
 			if(slicing)
 			{
-				offset += 10;
-				if(offset == 180){
+				offset += 750 * Time.deltaTime;
+				if(offset > 180){
 					offset = 0;
 					slicing = false;
 				}

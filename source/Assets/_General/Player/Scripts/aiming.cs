@@ -43,7 +43,7 @@ public class aiming : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate ()
 	{
-		if(!playerStats.paused)
+		if(!playerStats.paused && Time.timeScale == 1)
 		{
 			//Make sure that lerpValue is greater than
 			//zero and less than or equal to 1.

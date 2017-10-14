@@ -45,6 +45,8 @@ public class ChangeLimb : MonoBehaviour {
 	{
 		if(!playerStats.paused)
 		{
+			/*
+			//Hotkeys disabled for time being
 			//Arms
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
@@ -83,7 +85,7 @@ public class ChangeLimb : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.Alpha0))
 			{
 				SwitchTorso(1);
-			}
+			}*/
 			
 
 			//Part Wheel
@@ -121,11 +123,9 @@ public class ChangeLimb : MonoBehaviour {
 		
 		
 		//Time Control
-		if(Time.timeScale == 1){
+		if( wheel.activeSelf)
 			Time.timeScale = 0;
-		}
-		else{
+		else
 			Time.timeScale = 1;
-		}
     }
 }

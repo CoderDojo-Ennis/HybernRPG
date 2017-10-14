@@ -14,8 +14,8 @@ public class Dialogue
 public class JSONDialogueReader : MonoBehaviour {
     private string textData;
     private JsonData dialogueData;
-    private string DisplaySpeaker;
-    private string DisplayID;
+    public string DisplaySpeaker;
+    public string DisplayID;
     private string NextSpeaker;
     private string NextID;
 	private PlayerStats playerStats;

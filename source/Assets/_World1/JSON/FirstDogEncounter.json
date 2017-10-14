@@ -22,7 +22,7 @@
         },
 		{
             "id": 2,
-            "text": "Never seen your good old <color=green>pet dog </color> before?",
+            "text": "Forgotten what your good old <color=lime>pet dog </color> looks like?",
             "next": [
                 {
                     "speaker": "Dog",
@@ -32,7 +32,7 @@
         },
 		{
             "id": 3,
-            "text": "Anyway ... wanna know a secret?",
+            "text": "Listen pal ... we've known each other a while now ...",
             "next": [
                 {
                     "speaker": "Dog",
@@ -42,7 +42,7 @@
         },
 		{
             "id": 4,
-            "text": "This is a <color=green>game demo</color>.",
+            "text": "But there's something I've never told you before.",
             "next": [
                 {
                     "speaker": "Dog",
@@ -52,7 +52,7 @@
         },
 		{
             "id": 5,
-            "text": "What <i>is</i> a <color=green>game demo</color>, you ask?",
+            "text": "I'm a <color=green>magic dog.</color>",
             "next": [
                 {
                     "speaker": "Dog",
@@ -62,17 +62,27 @@
         },
 		{
             "id": 6,
-            "text": "Good question. I don't know the answer.",
+            "text": "I can give you the amazing power to change your arms into <color=lime>pickaxes!!!!</color>",
             "next": [
                 {
                     "speaker": "Dog",
-                    "id": "exit"
+                    "id": "7"
                 }
             ]
         },
 		{
-            "id": 6,
-            "text": "Anyway, follow me!",
+            "id": 7,
+            "text": "I mean ... If you wanted to do that for some reason ...",
+            "next": [
+                {
+                    "speaker": "Dog",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "Right hand click to <color=lime>swap your arms to pickaxes.</color>",
             "next": [
                 {
                     "speaker": "Dog",
