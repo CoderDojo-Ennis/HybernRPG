@@ -46,16 +46,27 @@ public class LaserManager{
 			Debug.DrawLine(origin, origin + direction * 100);
 			line.positionCount += 1;
 			line.SetPosition( line.positionCount - 1, origin + direction * 100);
+			gameObject.transform.GetChild(1).gameObject.SetActive( false );
 			return null;
 		}
 		
 		Debug.DrawLine(origin, raycastHit.point);
 		line.positionCount += 1;
 		line.SetPosition( line.positionCount - 1, raycastHit.point); 		
+		
+		gameObject.transform.GetChild(1).gameObject.SetActive( true );
+		gameObject.transform.GetChild(1).position = raycastHit.point;
+		gameObject.transform.GetChild(1).localScale = new Vector3(Mathf.Clamp(width * 20f, 0, 2), Mathf.Clamp(width * 20f, 0, 2 ), 1);
+		
+		return raycastHit.collider.gameObject;
+		
+		//Removed laser reflection abilities
+		/*
 		if(raycastHit.collider.gameObject.tag == "Reflect Lasers")
-			return ExtendedRaycast( raycastHit.point,  reflectedDirection);
+			//return ExtendedRaycast( raycastHit.point,  reflectedDirection);
 		else
 			return raycastHit.collider.gameObject;
+			*/
 	}
 	Vector2 ReflectVector2D ( Vector2 direction, Vector2 normal )
 	{
