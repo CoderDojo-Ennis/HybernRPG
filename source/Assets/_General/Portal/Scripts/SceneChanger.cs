@@ -14,18 +14,9 @@ public class SceneChanger : MonoBehaviour {
         if (coll.gameObject.name == "Player Physics Parent") {
 			//Find current scene index
 			int currentIndex = SceneManager.GetActiveScene().buildIndex;
-<<<<<<< HEAD
             
 			//Change to next scene in build
 			SceneManager.LoadScene(currentIndex + 1);
-=======
-            
-			//Change to next scene in build
-			Application.LoadLevel(currentIndex + 1);
-           
-			//If this is a portal
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("PortalSoundEffect");
->>>>>>> 71be30888df63a4222f7ef97ca82aa22d96ba444
         }
     }
 }
