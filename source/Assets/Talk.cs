@@ -18,13 +18,10 @@ public class Talk : MonoBehaviour
 
     void Update()
     {
-        bool dist;
-
-
-        if (dist = Vector3.Distance(FindClosestNPC().transform.position, GameObject.Find("Player Physics Parent").transform.position) < 3f && dialogue.talking == false)
+        if (Vector3.Distance(FindClosestNPC().transform.position, GameObject.Find("Player Physics Parent").transform.position) < 2f && dialogue.talking == false)
         {
             readyToSpeak.SetActive(true);
-			readyToSpeak.transform.GetChild(0).transform.position = transform.position + new Vector3(0, 1);
+			readyToSpeak.transform.position = transform.position + new Vector3(-0.3f, 0.75f);
             if (Input.GetKeyDown("e"))
             {
                 dialogue.BeginDialogue(worldNumber, fileName, speaker, id);
