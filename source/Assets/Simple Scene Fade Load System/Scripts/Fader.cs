@@ -5,15 +5,15 @@ public class Fader : MonoBehaviour {
     [HideInInspector]
 	public bool start = false;
     [HideInInspector]
-    public float fadeDamp = 0.0f;
+    public float fadeDamp = 0.1f;
     [HideInInspector]
     public string fadeScene;
     [HideInInspector]
-    public float alpha = 0.0f;
+    public float alpha = 1.0f;
     [HideInInspector]
     public Color fadeColor;
     [HideInInspector]
-    public bool isFadeIn = false;
+    public bool isFadeIn = true;
 
     //Set callback
     void OnEnable()
@@ -42,9 +42,9 @@ public class Fader : MonoBehaviour {
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), myTex);
         //Fade in and out control
         if (isFadeIn)
-			alpha = Mathf.Lerp (alpha, -0.1f, fadeDamp * Time.deltaTime);
+			alpha = Mathf.Lerp (alpha, 0f, fadeDamp * Time.deltaTime);
 		else
-			alpha = Mathf.Lerp (alpha, 1.1f, fadeDamp * Time.deltaTime);
+			alpha = Mathf.Lerp (alpha, 1f, fadeDamp * Time.deltaTime);
         //Load scene
 		if (alpha >= 1 && !isFadeIn) {
             //SceneManager.LoadScene(fadeScene);
