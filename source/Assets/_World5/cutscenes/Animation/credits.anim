@@ -113,22 +113,22 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 16.8
-        value: 0
+        time: 21.816668
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_PlayOnAwake
-    path: 
-    classID: 82
+    attribute: m_IsActive
+    path: AudioSource
+    classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -153,10 +153,10 @@ AnimationClip:
       customType: 14
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 0
-      attribute: 2720275347
+      path: 907064781
+      attribute: 2086281974
       script: {fileID: 0}
-      typeID: 82
+      typeID: 1
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping: []
@@ -450,22 +450,22 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 16.8
-        value: 0
+        time: 21.816668
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_PlayOnAwake
-    path: 
-    classID: 82
+    attribute: m_IsActive
+    path: AudioSource
+    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
@@ -502,7 +502,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 90.01667
+  - time: 82.833336
     functionName: SwitchScene
     data: 
     objectReferenceParameter: {fileID: 0}

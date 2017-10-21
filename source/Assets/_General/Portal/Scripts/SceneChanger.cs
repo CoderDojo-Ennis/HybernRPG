@@ -7,18 +7,14 @@ public class SceneChanger : MonoBehaviour {
 
     public string currentIndex { get; private set; }
 
-	void OnEnable()
-	{
-		//Calls a fade effect upon scene creation.
-		Initiate.Fade(SceneManager.GetActiveScene().ToString(), Color.black, 0.5f, 1, true);
-	}
     void OnTriggerEnter2D(Collider2D coll) {
-        //Initiate.Fade("", Color.black, 0.5f);
-
+	
         if (coll.gameObject.name == "Player Physics Parent") {
+			//Fade out of scene.
 			Initiate.Fade(SceneManager.GetActiveScene().ToString(), Color.black, 0.8f, 0, false);
 			
-			Invoke("ChangeScene", 0.75f);
+			//Change scene after a delay.
+			Invoke("ChangeScene", 0.9f);
 			
         }
     }

@@ -5,36 +5,38 @@ public class WorldControl : MonoBehaviour
 {
     private static int CPIndex = -1;
 	private static int sceneIndex = -1;
+	private int sceneToSwitchTo;
 
     //Scene Control
     public void SwitchScene(int i)
     {
-		//Find current scene index
-		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		//Fade out of scene
+		Initiate.Fade(SceneManager.GetActiveScene().ToString(), Color.black, 1f, 0, false);
 		
-        SceneManager.LoadSceneAsync(i);
+		//Tell computer which scene we want to switch to.
+		sceneToSwitchTo = i;
+		
+		Invoke("InitiateSwithcSceneLoading", 1.2f);
+		
     }
 	public void NextScene ()
 	{
-		//Find current scene index
-		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		//Fade out of scene
+		Initiate.Fade(SceneManager.GetActiveScene().ToString(), Color.black, 0.9f, 0, false);
 		
-        SceneManager.LoadSceneAsync(currentIndex + 1);
+		//Call code for loading next scene after a delay.
+		//The delay is necessary in order to allow the screen time to fade to black.
+        Invoke("InitiateNextSceneloading", 0.9f);
 	}
 
     public void ReloadScene()
 	{
-		//Find current scene index
-		int currentIndex = SceneManager.GetActiveScene().buildIndex;
-		
-		if(CPIndex != -1)
-		{
-			//Position player at any active checkpoints
-			SaveLoad.load = true;
-		}
-
-        //Change to next scene in build
-        SceneManager.LoadSceneAsync(currentIndex);
+		//Fade out of scene.
+		Initiate.Fade(SceneManager.GetActiveScene().ToString(), Color.black, 0.8f, 0, false);
+			
+		//Call code for reloading scene after a delay.
+		//The delay is necessary in order to allow the screen time to fade to black.
+		Invoke("InitiateSceneReloading", 1.2f);
 	}
 	public void NewGame ()
 	{
@@ -86,4 +88,34 @@ public class WorldControl : MonoBehaviour
     {
         sceneIndex = index;
     }
+	//Actual code for reloading scene.
+	//called from SceneReload after a delay
+	//to insure fade effect can occur first.
+	public void InitiateSceneReloading()
+	{
+		//Find current scene index
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		
+		if(CPIndex != -1)
+		{
+			//Position player at any active checkpoints
+			SaveLoad.load = true;
+		}
+
+        //Change to next scene in build
+        SceneManager.LoadSceneAsync(currentIndex);
+	}
+	public void InitiateNextSceneloading()
+	{
+		//Find current scene index
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		
+		//load next scene
+		SceneManager.LoadSceneAsync(currentIndex + 1);
+	}
+	public void InitiateSwithcSceneLoading()
+	{
+		//using stored value, switch to a new scene;
+        SceneManager.LoadSceneAsync(sceneToSwitchTo);
+	}
 }
