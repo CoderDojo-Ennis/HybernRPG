@@ -3055,7 +3055,7 @@ Prefab:
     - target: {fileID: 114301165876795094, guid: 7721f7a4b4154b041aeac75bf2c92684,
         type: 2}
       propertyPath: deathBelowYPos
-      value: -100
+      value: -1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7721f7a4b4154b041aeac75bf2c92684, type: 2}
@@ -3069,11 +3069,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4213323247412532, guid: b4feca1c5dd26bf4c9695fedb9388740, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 63.8
+      value: 31.84
       objectReference: {fileID: 0}
     - target: {fileID: 4213323247412532, guid: b4feca1c5dd26bf4c9695fedb9388740, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -130.4
+      value: -134.76
       objectReference: {fileID: 0}
     - target: {fileID: 4213323247412532, guid: b4feca1c5dd26bf4c9695fedb9388740, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5514,7 +5514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1990964746414864, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1568058092411722, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
