@@ -41,7 +41,7 @@ public class ShroomExplosion : MonoBehaviour
 			}
 		}
 		
-		if( collider.gameObject.GetComponent< ShroomFire >() != null )
+		if( collider.gameObject.GetComponent<ShroomFire>() != null )
 		{
 			ShroomFire shroomFire;
 			shroomFire = collider.gameObject.GetComponent< ShroomFire >();
@@ -53,7 +53,7 @@ public class ShroomExplosion : MonoBehaviour
             });
 		}
 		
-		if( collider.gameObject.GetComponent< EnemyFramework >() != null )
+		if( collider.gameObject.GetComponent<EnemyFramework>() != null )
 		{
 			EnemyFramework enemy;
 			enemy = collider.gameObject.GetComponent< EnemyFramework >();
