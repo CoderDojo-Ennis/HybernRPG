@@ -29,6 +29,9 @@ public class movement : MonoBehaviour {
 	
 	private Vector3 position;
 	
+	//Particle system for jetpack
+	private ParticleSystem jetpackFlames;
+	
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	
 	///I like that joke, Joey - James
@@ -46,6 +49,7 @@ public class movement : MonoBehaviour {
 		jetpackCounter =                     0;
 		inWaterLastFrame =               false;
 		playerStats = GetComponent<PlayerStats>();
+		jetpackFlames = GetComponentInChildren<ParticleSystem>();
 	}
 	void Update()
 	{
@@ -193,12 +197,16 @@ public class movement : MonoBehaviour {
 						//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
 						if(!isJumpPressed){
 							GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack");
+							jetpackFlames.Play();
 						}
+						
 				}
 				if(jetpackCounter == jetpackFrames+1)
 				{
 					GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
 					GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack Stopped");
+					
+					jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 				}
 				
 			}
@@ -207,6 +215,7 @@ public class movement : MonoBehaviour {
 		else
 		{
 			GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
+			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 		}
 		
 		isJumpPressed = Input.GetKey(jumpKey);
