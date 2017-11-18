@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class ConnorController : EnemyFramework 
+public class ConnorController : MonoBehaviour 
 {
 	public void Win()
 	{
-		LoadSceneAsync(16);
+        
 	}
 }

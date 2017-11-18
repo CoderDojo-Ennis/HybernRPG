@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBlast : MonoBehaviour {
 
@@ -25,21 +23,16 @@ public class PlayerBlast : MonoBehaviour {
 		if(collision.gameObject.tag == "Enemy")
 		{
 			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(1);
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 		if(collision.gameObject.name != "Player Physics Parent" && collision.gameObject.name != "PlayerBlast(Clone)")
 		{
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 		if(collision.gameObject.name == "überCultist")
 		{
 			collision.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
-			GameObject.Destroy(this.gameObject);
-		}
-		if(collision.gameObject.tag == "Connor")
-		{
-			collision.gameObject.GetComponent<ConnorController>().Win();
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }
