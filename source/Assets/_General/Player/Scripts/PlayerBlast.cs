@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBlast : MonoBehaviour {
 
@@ -11,6 +9,7 @@ public class PlayerBlast : MonoBehaviour {
 		Physics2D.IgnoreCollision(GameObject.Find("Player Physics Parent").GetComponent<Collider2D>(), GetComponent<Collider2D>());
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shoot Noise");
 	}
+	
 	void Update()
 	{
 		Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
@@ -18,21 +17,22 @@ public class PlayerBlast : MonoBehaviour {
 		
 		transform.rotation = Quaternion.AngleAxis (angle+90 , Vector3.forward);
 	}
+	
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.gameObject.tag == "Enemy")
 		{
 			collision.gameObject.GetComponent<EnemyFramework>().TakeDamage(1);
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 		if(collision.gameObject.name != "Player Physics Parent" && collision.gameObject.name != "PlayerBlast(Clone)")
 		{
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 		if(collision.gameObject.name == "überCultist")
 		{
 			collision.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
-			GameObject.Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }

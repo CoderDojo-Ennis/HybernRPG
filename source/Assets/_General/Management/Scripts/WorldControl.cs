@@ -19,6 +19,7 @@ public class WorldControl : MonoBehaviour
 		Invoke("InitiateSwithcSceneLoading", 1.2f);
 		
     }
+
 	public void NextScene ()
 	{
 		//Fade out of scene

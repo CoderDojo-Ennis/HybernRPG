@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour
 	private GameObject menu;
 	private GameObject healthCanvas;
 
-
 	public void Start()
 	{
 		health = 8;
