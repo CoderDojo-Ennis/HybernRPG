@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyFramework : MonoBehaviour {
+public abstract class EnemyFramework : MonoBehaviour 
+{
 
     //Combat variables
     public int attack;             //Flat damage dealt
