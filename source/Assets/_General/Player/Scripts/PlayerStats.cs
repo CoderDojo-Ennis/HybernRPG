@@ -5,6 +5,7 @@ public class PlayerStats : MonoBehaviour
 	public int health;
 	public bool paused;
 	public bool shielded;
+	public bool invunerable;
 	private CameraFollow cameraFollow;
 	private GameObject menu;
 	private GameObject healthCanvas;
@@ -22,19 +23,21 @@ public class PlayerStats : MonoBehaviour
 	}
 
 	public void TakeDamage(int damage)
-	{
-		SubtractDamage(damage);
-		
-		//Display health
-		healthCanvas.GetComponent<HealthManager>().DisplayHealth(health);
-        if (damage > 0) {
+	{	
+		if(invunerable == false) {
+			SubtractDamage(damage);
+			
+			//Display health
+			healthCanvas.GetComponent<HealthManager>().DisplayHealth(health);
+			if (damage > 0) {
 
-            StopAllCoroutines();
-            StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));
-        }
-		if(health == 0)
-		{
-			Die();
+				StopAllCoroutines();
+				StartCoroutine(cameraFollow.MyRoutine(0.5f, 0.05f, 0.05f));
+			}
+			if(health == 0)
+			{
+				Die();
+			}
 		}
 	}
 
