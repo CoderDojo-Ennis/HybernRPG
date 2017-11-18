@@ -22,9 +22,9 @@ public class JSONDialogueReader : MonoBehaviour
 
     void Start() 
     {
-        if(GameObject.Find("Player Physics Parent"))
+        if (GameObject.Find("Player Physics Parent"))
 		{
-			playerStats = GameObject.Find( "Player Physics Parent").GetComponent< PlayerStats >();
+			playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
 		}
 		ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
 	}
@@ -36,7 +36,7 @@ public class JSONDialogueReader : MonoBehaviour
             if (dialogueData[speaker][i]["id"].ToString() == id)
                 return dialogueData[speaker][i]["text"].ToString();
         }
-            return null;
+        return null;
     }
 
     void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
@@ -46,7 +46,7 @@ public class JSONDialogueReader : MonoBehaviour
 		{
             talking = false;
 			//Show health display again
-			if( healthDisplay != null )
+			if (healthDisplay != null)
 			{
 				healthDisplay.SetActive(true);
 			}
@@ -65,7 +65,7 @@ public class JSONDialogueReader : MonoBehaviour
         }
         //display text
 		StopAllCoroutines();
-		StartCoroutine( "PrintText" );
+		StartCoroutine("PrintText");
 		
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }

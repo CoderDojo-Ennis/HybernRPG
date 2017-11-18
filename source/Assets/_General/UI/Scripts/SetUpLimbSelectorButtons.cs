@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SetUpLimbSelectorButtons : MonoBehaviour {
@@ -23,7 +21,7 @@ public class SetUpLimbSelectorButtons : MonoBehaviour {
 		}
 	}
 
-	void ButtonClicked ( string limb) {
+	void ButtonClicked (string limb) {
 		switch(limb)
 		{
 			case "Normal Arms":

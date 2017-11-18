@@ -8,9 +8,8 @@ public class PlayerStats : MonoBehaviour
 	private CameraFollow cameraFollow;
 	private GameObject menu;
 	private GameObject healthCanvas;
-	
-    
-	
+
+
 	public void Start()
 	{
 		health = 8;
