@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ConnorController : EnemyFramework 
 {
-	public override void Die()
+	public void Win()
 	{
-		GameObject.Find("WorldControl").GetComponent<WorldControl>().NextScene();
+		LoadSceneAsync(16);
 	}
 }

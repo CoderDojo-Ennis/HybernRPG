@@ -38,7 +38,7 @@ public class PlayerBlast : MonoBehaviour {
 		}
 		if(collision.gameObject.tag == "Connor")
 		{
-			collision.gameObject.GetComponent<ConnorController>().Die();
+			collision.gameObject.GetComponent<ConnorController>().Win();
 			GameObject.Destroy(this.gameObject);
 		}
 	}
