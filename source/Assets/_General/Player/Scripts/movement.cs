@@ -50,6 +50,7 @@ public class movement : MonoBehaviour {
 		inWaterLastFrame =               false;
 		playerStats = GetComponent<PlayerStats>();
 		jetpackFlames = GetComponentInChildren<ParticleSystem>();
+		Physics2D.IgnoreCollision(GameObject.Find("triangle").GetComponent<Collider2D>(), GetComponent<Collider2D>());
 	}
 	void Update()
 	{

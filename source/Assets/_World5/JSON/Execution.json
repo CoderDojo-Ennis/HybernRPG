@@ -1,0 +1,74 @@
+{
+    "Connor": [
+        {
+            "id": 0,
+            "text": "How...",
+			"next": [
+                {
+                    "speaker": "Connor",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "How did you defeat me?!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "After everything I did... Some fellow with a <color=red>dead dog</color> is better than me?!",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "Heh.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "What's the point now?",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "Just get it over with.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "6"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "You've won, I've lost everything and there's nothing left for me.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "exit"
+                }
+            ]
+        }
+    ]
+}
