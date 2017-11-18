@@ -53,6 +53,7 @@ public class Shield : MonoBehaviour {
 			}
 			rotation = Quaternion.Lerp(rotation ,Quaternion.AngleAxis(a+90, Vector3.forward), lerpValue);
 			transform.Find("shoulder2").rotation = rotation;
+			transform.Find("Forearm2").rotation = Quaternion.AngleAxis(0, Vector3.forward );
 		}
 	}
 }
