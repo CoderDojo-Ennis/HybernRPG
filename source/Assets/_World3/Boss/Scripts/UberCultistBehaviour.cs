@@ -10,13 +10,15 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject worldControl;
 	public PlayerStats playerStats;
 
-    private int health = 50;
+    private int health = 2;
 	private int maxHealth = 50;
 	private Slider healthSlider;
     private AudioManager audioManager;
     private CircleCollider2D forceField;
 	private SpriteRenderer forceFieldSprite;
 	private GameObject player;
+	
+	public GameObject explosion;
 	
 	public enum State {
 		Axe,
@@ -84,8 +86,11 @@ public class UberCultistBehaviour : MonoBehaviour {
 		healthSlider.value = (float)health/maxHealth;
 		if(health <= 0)
 		{
-			worldControl.GetComponent<WorldControl>().NextScene();
-            Destroy(gameObject);
+			this.Delay( 6, () => {
+                worldControl.GetComponent<WorldControl>().NextScene();
+            });
+			
+			StartCoroutine( BlowUp () );
 		}
 	}
 
@@ -103,5 +108,20 @@ public class UberCultistBehaviour : MonoBehaviour {
 			AirStrike();
 			yield return new WaitForSeconds(5);
 		}
+	}
+	IEnumerator BlowUp ()
+	{
+		for(int i = 0; i < 10; i++)
+		{
+			Vector3 offset;
+			offset = new Vector3(Random.Range(-1f, 0.1f), Random.Range(-1, 1) , 0);
+			offset += new Vector3(0,1,0);
+			
+			GameObject clone = Instantiate(explosion, transform.position + offset, Quaternion.identity);
+			clone.transform.parent = this.transform;
+			
+			yield return new WaitForSeconds(0.5f);
+		}
+		Destroy(this.gameObject);
 	}
 }

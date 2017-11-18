@@ -2777,6 +2777,12 @@ Prefab:
       propertyPath: missileDroppers
       value: 
       objectReference: {fileID: 2132191562}
+    - target: {fileID: 114357598511227714, guid: e367a1174c8c0434ca2a13d8e0ce81e6,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1045708622574318, guid: 4464e6f3f86513a41910bd28eb5248bd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e367a1174c8c0434ca2a13d8e0ce81e6, type: 2}
   m_IsPrefabParent: 0

@@ -28,13 +28,13 @@
             "text": "'Ello there! My name is Mary, what's yer's?",
 			"next": [
                 {
-                    "speaker": "Player",
+                    "speaker": "Mary",
                     "id": 1
                 }
 			]
         },
         {
-            "id": 2,
+            "id": 1,
             "text": "A silent type? Ah well, see you later love, I'm busy 'ere.",
             "next": [
                 {
@@ -44,17 +44,128 @@
             ]
         }
     ],
-
-	"Player": [
+	"Bob": [
         {
-            "id": 1,
-            "text": "'Ello there! My name is Mary, what's yer's?",
+            "id": 0,
+            "text": "Hi there laddie!",
 			"next": [
                 {
-                    "speaker": "Mary",
-                    "id": 2
+                    "speaker": "Bob",
+                    "id": 1
                 }
 			]
+        },
+        {
+            "id": 1,
+            "text": "I'm in a spot of bother.",
+            "next": [
+                {
+                    "speaker": "Bob",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "Why? Some of those blasted cultists stole by boat's engine.",
+            "next": [
+                {
+                    "speaker": "Bob",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "I'd love some help in getting in back. If only this game had sidequests ...",
+            "next": [
+                {
+                    "speaker": "Bob",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "Alas, the developers never added a sidequest feature.",
+            "next": [
+                {
+                    "speaker": "Bob",
+                    "id": "exit"
+                }
+            ]
+        }
+    ],
+	"Eve": [
+        {
+            "id": 0,
+            "text": "What's that worried expression on your face?",
+			"next": [
+                {
+                    "speaker": "Eve",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "Looks like you've had a run in with those cultists.",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "What's that?",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "They took your dog!!!",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "That's ... evil ...",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "What kind of person would kidnap someone's dog ...",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "6"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "You go rescue your doggy - show those cultists that they don't control us.",
+            "next": [
+                {
+                    "speaker": "Eve",
+                    "id": "exit"
+                }
+            ]
         }
     ]
 }
