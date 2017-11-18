@@ -24,7 +24,8 @@ public class UberCultistBehaviour : MonoBehaviour {
 		Axe,
 		Laser,
 		AirStrike,
-		Charge
+		Charge,
+		Defeated
 	}
 	void Start () {
 		healthSlider = GameObject.Find("BossHealth").GetComponent<Slider>();
@@ -72,6 +73,14 @@ public class UberCultistBehaviour : MonoBehaviour {
 				playerStats.shielded = false;
             }
 		}
+		if( state == State.Defeated )
+		{
+			forceField.enabled = false;
+			forceFieldSprite.enabled = false;
+			
+			GetComponent<UberCultistAI>().enabled = false;
+			GetComponent<UberCultistController>().enabled = false;
+		}
 	}
 	void AirStrike()
 	{
@@ -85,11 +94,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		health -= damage;
 		healthSlider.value = (float)health/maxHealth;
 		if(health <= 0)
-		{
-			this.Delay( 6, () => {
-                worldControl.GetComponent<WorldControl>().NextScene();
-            });
-			
+		{	
 			StartCoroutine( BlowUp () );
 		}
 	}
@@ -99,29 +104,50 @@ public class UberCultistBehaviour : MonoBehaviour {
 		while (true)
 		{
 			playerStats.shielded = false;
+			if( state != State.Defeated )
 			state = State.Axe;
+			
 			yield return new WaitForSeconds(15);
-            audioManager.Play("Air Siren");
-            yield return new WaitForSeconds(5);
-            state = State.AirStrike;
+            if( state != State.Defeated )
+			audioManager.Play("Air Siren");
+            
+			yield return new WaitForSeconds(5);
+            if( state != State.Defeated )
+			state = State.AirStrike;
+			
 			yield return new WaitForSeconds(1);
+			if( state != State.Defeated )
 			AirStrike();
+			
 			yield return new WaitForSeconds(5);
 		}
 	}
 	IEnumerator BlowUp ()
 	{
+		//Stop music
+		GameObject.Find("Main Camera").GetComponent<AudioSource>().clip = null;
+		
+		//Stop moving
+		state = State.Defeated;
+		
 		for(int i = 0; i < 10; i++)
 		{
+			//Random offset for explosion
 			Vector3 offset;
 			offset = new Vector3(Random.Range(-1f, 0.1f), Random.Range(-1, 1) , 0);
 			offset += new Vector3(0,1,0);
 			
+			//Spawn explosion
 			GameObject clone = Instantiate(explosion, transform.position + offset, Quaternion.identity);
 			clone.transform.parent = this.transform;
 			
+			//Wait
 			yield return new WaitForSeconds(0.5f);
 		}
+		//Onwards!!!
+		worldControl.GetComponent<WorldControl>().NextScene();
+		
+		//Get rid of Uber Cultist
 		Destroy(this.gameObject);
 	}
 }

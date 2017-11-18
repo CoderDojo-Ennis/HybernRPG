@@ -830,7 +830,7 @@ MonoBehaviour:
   laserAngle: 90
   armSpeed: 0.13
   laser: {fileID: 2100000, guid: 254767a7f33f3ab47b027d07619c9ef5, type: 2}
-  deathLaser: {fileID: 2100000, guid: 7e4cc3eac1008f84e97454a6721d00d0, type: 2}
+  deathLaser: {fileID: 2100000, guid: 3b3e46a68dee5fe4bb2e8cbf4b61a8d9, type: 2}
   laserAction: 0
   navPointContainer: {fileID: 0}
 --- !u!114 &114859947532241424
