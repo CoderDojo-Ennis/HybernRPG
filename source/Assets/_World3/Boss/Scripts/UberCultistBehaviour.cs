@@ -10,7 +10,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject worldControl;
 	public PlayerStats playerStats;
 
-    private int health = 2;
+    private int health = 50;
 	private int maxHealth = 50;
 	private Slider healthSlider;
     private AudioManager audioManager;
