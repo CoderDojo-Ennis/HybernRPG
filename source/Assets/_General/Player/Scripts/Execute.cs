@@ -8,7 +8,6 @@ public class Execute : MonoBehaviour
 	
 	void Start ()
 	{
-		ammo = GameObject.Find("PlayerBlast");
         worldControl = GameObject.Find("WorldControl").GetComponent<WorldControl>();
 	}
 	
