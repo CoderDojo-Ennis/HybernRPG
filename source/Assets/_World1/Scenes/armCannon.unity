@@ -4311,17 +4311,17 @@ Prefab:
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 1
+      value: 0.9411765
       objectReference: {fileID: 0}
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0.67058825
+      value: 0.3019608
       objectReference: {fileID: 0}
     - target: {fileID: 20752122989685842, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0.17647058
+      value: 0.07058824
       objectReference: {fileID: 0}
     - target: {fileID: 114112860467642184, guid: 768feb696d1245247a6511245f3b5098,
         type: 2}
@@ -7384,6 +7384,11 @@ Prefab:
       propertyPath: m_Name
       value: LaserCultist (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114544658818923236, guid: 1f6f7b0b2e217a1419050b01151bb603,
+        type: 2}
+      propertyPath: armSpeed
+      value: 0.004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f6f7b0b2e217a1419050b01151bb603, type: 2}
   m_IsPrefabParent: 0
@@ -9932,7 +9937,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1136730411459454, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1770212251791452, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
@@ -9977,42 +9982,42 @@ Prefab:
     - target: {fileID: 224344191296895056, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 586.4
+      value: 415.9
       objectReference: {fileID: 0}
     - target: {fileID: 224344191296895056, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.7
+      value: 127.7
       objectReference: {fileID: 0}
     - target: {fileID: 224678737753527252, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 586.39844
+      value: 415.9004
       objectReference: {fileID: 0}
     - target: {fileID: 224678737753527252, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.700195
+      value: 127.700195
       objectReference: {fileID: 0}
     - target: {fileID: 224039793563236704, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 586.4
+      value: 415.9
       objectReference: {fileID: 0}
     - target: {fileID: 224039793563236704, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.7
+      value: 127.7
       objectReference: {fileID: 0}
     - target: {fileID: 224851768601798660, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 586.4
+      value: 415.9
       objectReference: {fileID: 0}
     - target: {fileID: 224851768601798660, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.7
+      value: 127.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}

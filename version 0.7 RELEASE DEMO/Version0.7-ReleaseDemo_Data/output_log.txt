@@ -1,172 +1,224 @@
 Initialize engine version: 5.6.1f1 (2860b30f0b54)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
     Vendor:   Intel
-    VRAM:     2111 MB
-    Driver:   21.20.16.4550
+    VRAM:     848 MB
+    Driver:   9.17.10.4459
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\LitJson.dll (this message is harmless)
-Loading C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.049 seconds
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Owner-PC\Documents\HybernRPG\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.095 seconds
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\version 0.7 RELEASE DEMO\Version0.7-ReleaseDemo_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 3.028480 ms
+UnloadTime: 5.612199 ms
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.365013 ms
+UnloadTime: 17.583580 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1116.
-Total: 1.193386 ms (FindLiveObjects: 0.155306 ms CreateObjectMapping: 0.052480 ms MarkObjects: 0.976640 ms  DeleteObjects: 0.008106 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1114.
+Total: 1.749210 ms (FindLiveObjects: 0.133421 ms CreateObjectMapping: 0.104863 ms MarkObjects: 1.480135 ms  DeleteObjects: 0.029897 ms)
+
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.388654 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1114.
+Total: 1.592138 ms (FindLiveObjects: 0.117357 ms CreateObjectMapping: 0.139669 ms MarkObjects: 1.316816 ms  DeleteObjects: 0.017402 ms)
+
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.867441 ms
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1114.
+Total: 3.207927 ms (FindLiveObjects: 0.234269 ms CreateObjectMapping: 0.182953 ms MarkObjects: 2.755452 ms  DeleteObjects: 0.033020 ms)
 
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.268480 ms
+UnloadTime: 1.373933 ms
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2407.
-Total: 2.546773 ms (FindLiveObjects: 0.144640 ms CreateObjectMapping: 0.053333 ms MarkObjects: 0.718506 ms  DeleteObjects: 1.629440 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2406.
+Total: 3.750985 ms (FindLiveObjects: 0.146808 ms CreateObjectMapping: 0.063810 ms MarkObjects: 0.877282 ms  DeleteObjects: 2.662191 ms)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.338560 ms
+UnloadTime: 3.591236 ms
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2302.
-Total: 1.931520 ms (FindLiveObjects: 0.210773 ms CreateObjectMapping: 0.049066 ms MarkObjects: 0.902826 ms  DeleteObjects: 0.767146 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2301.
+Total: 3.548844 ms (FindLiveObjects: 0.219097 ms CreateObjectMapping: 0.106648 ms MarkObjects: 1.400707 ms  DeleteObjects: 1.821499 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 13.823572 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.208809 ms
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 182 unused Assets to reduce memory usage. Loaded Objects now: 424.
-Total: 6.414080 ms (FindLiveObjects: 0.040960 ms CreateObjectMapping: 0.074666 ms MarkObjects: 0.374186 ms  DeleteObjects: 5.924266 ms)
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.531733 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1270.
-Total: 2.153813 ms (FindLiveObjects: 0.333653 ms CreateObjectMapping: 0.204800 ms MarkObjects: 1.601280 ms  DeleteObjects: 0.011520 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 2317.
+Total: 2.103514 ms (FindLiveObjects: 0.201694 ms CreateObjectMapping: 0.097277 ms MarkObjects: 1.788032 ms  DeleteObjects: 0.015171 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.130720 ms
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2315.
+Total: 2.234259 ms (FindLiveObjects: 0.200802 ms CreateObjectMapping: 0.095046 ms MarkObjects: 1.912975 ms  DeleteObjects: 0.024542 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.414525 ms
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+active scene changed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 2317.
+Total: 2.059784 ms (FindLiveObjects: 0.195893 ms CreateObjectMapping: 0.093261 ms MarkObjects: 1.755903 ms  DeleteObjects: 0.013833 ms)
 
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.202346 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2094.
-Total: 2.705493 ms (FindLiveObjects: 0.150613 ms CreateObjectMapping: 0.055466 ms MarkObjects: 0.840960 ms  DeleteObjects: 1.658026 ms)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at LaserCultist.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.358400 ms
-
-Unloading 163 unused Assets to reduce memory usage. Loaded Objects now: 424.
-Total: 8.901546 ms (FindLiveObjects: 0.174080 ms CreateObjectMapping: 0.156160 ms MarkObjects: 1.440853 ms  DeleteObjects: 7.127893 ms)
-
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.127680 ms
+UnloadTime: 3.725550 ms
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1270.
-Total: 4.230826 ms (FindLiveObjects: 0.148053 ms CreateObjectMapping: 0.104106 ms MarkObjects: 3.949226 ms  DeleteObjects: 0.028586 ms)
+Unloading 55 unused Assets to reduce memory usage. Loaded Objects now: 992.
+Total: 3.929922 ms (FindLiveObjects: 0.102632 ms CreateObjectMapping: 0.070503 ms MarkObjects: 0.929491 ms  DeleteObjects: 2.826402 ms)
 
 The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
  
 (Filename:  Line: 1743)
 
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.055146 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.196776 ms
 NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at EnemyAI.Awake () [0x00000] in <filename unknown>:0 
+  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2094.
-Total: 2.812586 ms (FindLiveObjects: 0.122880 ms CreateObjectMapping: 0.048213 ms MarkObjects: 0.650666 ms  DeleteObjects: 1.990400 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1008.
+Total: 1.236495 ms (FindLiveObjects: 0.061579 ms CreateObjectMapping: 0.051316 ms MarkObjects: 1.110659 ms  DeleteObjects: 0.012494 ms)
 
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.802757 ms
 NullReferenceException: Object reference not set to an instance of an object
-  at LaserCultist.Start () [0x00000] in <filename unknown>:0 
+  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1008.
+Total: 1.651932 ms (FindLiveObjects: 0.131190 ms CreateObjectMapping: 0.102632 ms MarkObjects: 1.402492 ms  DeleteObjects: 0.014279 ms)
+
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+UnloadTime: 3.461830 ms
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+NullReferenceException: Object reference not set to an instance of an object
+  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1008.
+Total: 2.482361 ms (FindLiveObjects: 0.142792 ms CreateObjectMapping: 0.121373 ms MarkObjects: 2.192760 ms  DeleteObjects: 0.023650 ms)
+
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.036134 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1008.
+Total: 1.414540 ms (FindLiveObjects: 0.081659 ms CreateObjectMapping: 0.061133 ms MarkObjects: 1.249436 ms  DeleteObjects: 0.021865 ms)
+
+The referenced script on this Behaviour (Game Object 'SampleBackground') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.995974 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at WorldControl.OnLevelFinishedLoading (Scene scene1, Scene scene2) [0x00000] in <filename unknown>:0 
+  at (wrapper delegate-invoke) UnityEngine.Events.UnityAction`2<UnityEngine.SceneManagement.Scene, UnityEngine.SceneManagement.Scene>:invoke_void__this___Scene_Scene (UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)
+  at UnityEngine.SceneManagement.SceneManager.Internal_ActiveSceneChanged (Scene previousActiveScene, Scene newActiveScene) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1008.
+Total: 1.302090 ms (FindLiveObjects: 0.084783 ms CreateObjectMapping: 0.058901 ms MarkObjects: 1.145465 ms  DeleteObjects: 0.012494 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1d34 -> priority: 1 
-  Thread -> id: 15e0 -> priority: 1 
+  Thread -> id: 2c48 -> priority: 1 
+  Thread -> id: 29ac -> priority: 1 

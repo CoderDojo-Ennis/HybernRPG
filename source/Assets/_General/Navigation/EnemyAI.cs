@@ -107,7 +107,7 @@ public class EnemyAI : MonoBehaviour {
         }
         if (Thought == Thoughts.Attack && dist > Character.m_AttackRange * Character.m_AttackRange)
         {
-            this.Delay(0.5f, Think);
+            this.Delay(1, Think);
         }
 		///Experimental agro system
 		if(!agro)
@@ -216,7 +216,7 @@ public class EnemyAI : MonoBehaviour {
         }*/
         if (Thought == Thoughts.Idle)
         {
-            this.Delay(0.5f, Think);
+            this.Delay(1, Think);
         }
 
 
