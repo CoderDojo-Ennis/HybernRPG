@@ -34,5 +34,10 @@ public class PlayerBlast : MonoBehaviour {
 			collision.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
 			Destroy(gameObject);
 		}
+		if(collision.gameObject.name == "Connor")
+		{
+			collision.gameObject.GetComponent<ConnorController>().Win();
+			Destroy(gameObject);
+		}
 	}
 }
