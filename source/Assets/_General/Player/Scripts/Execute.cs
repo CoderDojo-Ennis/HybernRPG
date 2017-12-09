@@ -15,9 +15,8 @@ public class Execute : MonoBehaviour
 	{
 		if (Input.GetMouseButtonUp(0) && !fired)
 		{
-            worldControl.NextScene();
             fired = true;
-            Invoke("Murder", 0.7f);
+            Invoke("Murder", 2f);
         }
 	}
 
