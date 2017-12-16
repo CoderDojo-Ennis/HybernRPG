@@ -144,7 +144,7 @@
         },
 		{
             "id": 10,
-            "text": "You'll never get through my maze.",
+            "text": "You'll never Escape this place alive.",
             "next": [
                 {
                     "speaker": "Dog",

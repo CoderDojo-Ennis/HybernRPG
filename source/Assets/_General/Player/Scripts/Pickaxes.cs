@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pickaxes : MonoBehaviour {
 
+	public bool pickaxesEnabled;
+	
 	private Quaternion rotation1;
 	private Quaternion rotation2;
 	
@@ -32,21 +34,24 @@ public class Pickaxes : MonoBehaviour {
 		offset = 0;
 		slicing = false;
 		
-		pickaxe1.isTrigger = true;
-		pickaxe2.isTrigger = true;
+		//pickaxe1.isTrigger = true;
+		//pickaxe2.isTrigger = true;
 		
-		pickaxe1.enabled = false;
-		pickaxe2.enabled = false;
+		//pickaxe1.enabled = false;
+		//pickaxe2.enabled = false;
+		
+		pickaxesEnabled = false;
 		
 		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
 	}
 	void OnDisable ()
 	{
-		pickaxe1.isTrigger = false;
-		pickaxe2.isTrigger = false;
+		//pickaxe1.isTrigger = false;
+		//pickaxe2.isTrigger = false;
 		
-		pickaxe1.enabled = false;
-		pickaxe2.enabled = false;
+		//pickaxe1.enabled = false;
+		//pickaxe2.enabled = false;
+		pickaxesEnabled = false;
 	}
 	void LateUpdate ()
 	{
@@ -72,13 +77,11 @@ public class Pickaxes : MonoBehaviour {
 					offset = 0;
 					slicing = false;
 				}
-				pickaxe1.enabled = true;
-				pickaxe2.enabled = true;
+				pickaxesEnabled = true;
 			}
 			else
 			{
-				pickaxe1.enabled = false;
-				pickaxe2.enabled = false;
+				pickaxesEnabled = false;
 			}
 		}
 		
