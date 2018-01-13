@@ -17,7 +17,6 @@ public class WorldControl : MonoBehaviour
 		sceneToSwitchTo = i;
 		
 		Invoke("InitiateSwithcSceneLoading", 1.2f);
-		
     }
 
 	public void NextScene ()
@@ -85,10 +84,12 @@ public class WorldControl : MonoBehaviour
     {
         CPIndex = index;
     }
+	
 	public void StoreScene(int index)
     {
         sceneIndex = index;
     }
+	
 	//Actual code for reloading scene.
 	//called from SceneReload after a delay
 	//to insure fade effect can occur first.
@@ -106,6 +107,7 @@ public class WorldControl : MonoBehaviour
         //Change to next scene in build
         SceneManager.LoadSceneAsync(currentIndex);
 	}
+	
 	public void InitiateNextSceneloading()
 	{
 		//Find current scene index
@@ -114,9 +116,15 @@ public class WorldControl : MonoBehaviour
 		//load next scene
 		SceneManager.LoadSceneAsync(currentIndex + 1);
 	}
+	
 	public void InitiateSwithcSceneLoading()
 	{
 		//using stored value, switch to a new scene;
         SceneManager.LoadSceneAsync(sceneToSwitchTo);
 	}
+	
+	public void MainMenu()
+    {
+		SceneManager.LoadSceneAsync(0);
+    }
 }
