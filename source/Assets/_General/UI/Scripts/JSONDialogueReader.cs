@@ -19,9 +19,11 @@ public class JSONDialogueReader : MonoBehaviour
     public GameObject DialogueTextUI;
     public GameObject SpeakerTextUI;
     public bool talking;
+    public bool shootConnor;
 
     void Start() 
     {
+        shootConnor = false;
         if (GameObject.Find("Player Physics Parent"))
 		{
 			playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
@@ -44,6 +46,7 @@ public class JSONDialogueReader : MonoBehaviour
         talking = true;
         if (id == "exit")
 		{
+            shootConnor = true;
             talking = false;
 			//Show health display again
 			if (healthDisplay != null)

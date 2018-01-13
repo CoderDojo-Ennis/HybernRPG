@@ -4,19 +4,21 @@ public class Execute : MonoBehaviour
 {
     public WorldControl worldControl;
 	public GameObject ammo;
+    public JSONDialogueReader reader;
 	public bool fired = false;
 	
 	void Start ()
 	{
         worldControl = GameObject.Find("WorldControl").GetComponent<WorldControl>();
+        reader = GameObject.Find("TextBoxCanvas").GetComponent<JSONDialogueReader>();
 	}
 	
 	void Update()
 	{
-		if (Input.GetMouseButtonUp(0) && !fired)
+		if (Input.GetMouseButtonUp(0) && !fired && reader.shootConnor == true)
 		{
             fired = true;
-            Invoke("Murder", 2f);
+            Murder();
         }
 	}
 
