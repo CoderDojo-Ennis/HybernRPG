@@ -13,11 +13,18 @@ public class PickaxeAttack : MonoBehaviour {
 	
 	void OnTriggerEnter2D ( Collider2D collider )
 	{
-		if( pickaxes.pickaxesEnabled && pickaxes.enabled )
-		{
-			EnemyFramework enemy = collider.GetComponent<EnemyFramework>();
-			if( enemy != null)
+			if(collider.gameObject.name != "PlayerPhysicsParent")
 			{
+				if( !collider.isTrigger )
+				{
+					GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Clink");
+				}
+			}
+			
+			EnemyFramework enemy = collider.GetComponent<EnemyFramework>();
+			
+			if( enemy != null)
+			{	
 				enemy.TakeDamage(1);
 				return;
 			}
@@ -25,6 +32,5 @@ public class PickaxeAttack : MonoBehaviour {
 			{
 				collider.gameObject.GetComponent<UberCultistBehaviour>().TakeDamage(1);
 			}
-		}
 	}
 }
