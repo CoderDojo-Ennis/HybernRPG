@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -71,23 +71,25 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 3
+    m_MixedBakeMode: 2
     m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -107,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &788352
 Prefab:
@@ -421,6 +425,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -840,6 +849,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224039793563236704, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 224039793563236704, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 131.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224678737753527252, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 224678737753527252, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 131.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 224344191296895056, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 224344191296895056, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 131.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224851768601798660, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 224851768601798660, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 131.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
   m_IsPrefabParent: 0
@@ -983,6 +1032,26 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_6 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.533184
+      objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 7.4601593
+      objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -3.2525911
+      objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 6.5051823
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9268a3be87c6337478f3aa2d2cd99b61, type: 2}
   m_IsPrefabParent: 0
@@ -1029,6 +1098,10 @@ Prefab:
         type: 2}
       propertyPath: speaker
       value: Eve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238895358522386, guid: 2cafa289e5dba48418bdcd0832ca9589, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cafa289e5dba48418bdcd0832ca9589, type: 2}
@@ -1123,6 +1196,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_1 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 5.659317
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 11.318634
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
   m_IsPrefabParent: 0
@@ -1173,6 +1256,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -1527,6 +1615,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_8 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 61063239359039814, guid: 20a81712b595e354782187f7808f63b6,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.6351218
+      objectReference: {fileID: 0}
+    - target: {fileID: 61063239359039814, guid: 20a81712b595e354782187f7808f63b6,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 5.1216536
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20a81712b595e354782187f7808f63b6, type: 2}
   m_IsPrefabParent: 0
@@ -1577,6 +1675,16 @@ Prefab:
     - target: {fileID: 1047056811101212, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_1 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.1169293
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.5078835
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
@@ -1679,6 +1787,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -2196,6 +2309,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_7 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 61606373543848880, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 9.429545
+      objectReference: {fileID: 0}
+    - target: {fileID: 61606373543848880, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 20.19325
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8, type: 2}
   m_IsPrefabParent: 0
@@ -2297,6 +2420,16 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.858737
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.3442287
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -2502,6 +2635,26 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.4407253
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.8814507
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.37523997
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.1203911
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -2553,6 +2706,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_0 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -17.099571
+      objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 35.221794
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 085c0f3875e55334f814d2e2680863bf, type: 2}
   m_IsPrefabParent: 0
@@ -2598,6 +2761,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -2697,6 +2865,10 @@ Prefab:
       propertyPath: speaker
       value: Bob
       objectReference: {fileID: 0}
+    - target: {fileID: 1112358954135930, guid: 76a966533a4183948ae948682c5dc29b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76a966533a4183948ae948682c5dc29b, type: 2}
   m_IsPrefabParent: 0
@@ -2742,6 +2914,11 @@ Prefab:
     - target: {fileID: 1047056811101212, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
@@ -2798,6 +2975,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -2878,6 +3060,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2893,6 +3076,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -2909,6 +3093,8 @@ SpriteRenderer:
   m_Size: {x: 1.445005, y: 1.8660662}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &754231045
 Transform:
   m_ObjectHideFlags: 0
@@ -3206,6 +3392,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -3425,6 +3616,16 @@ Prefab:
     - target: {fileID: 1047056811101212, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_1 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.9048119
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.8096237
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
@@ -3693,6 +3894,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_0 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -4.06818
+      objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 9.320129
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 085c0f3875e55334f814d2e2680863bf, type: 2}
   m_IsPrefabParent: 0
@@ -3784,6 +3995,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -3933,6 +4149,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -3983,6 +4204,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -4136,6 +4362,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -4332,6 +4563,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -4428,6 +4664,16 @@ Prefab:
     - target: {fileID: 1047056811101212, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 2.6191998
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 5.2383995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
@@ -4593,6 +4839,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.75046635
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.352377
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -4643,6 +4899,16 @@ Prefab:
     - target: {fileID: 1047056811101212, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.133693
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.4743562
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
@@ -5063,6 +5329,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_0 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -11.714983
+      objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 23.93694
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 085c0f3875e55334f814d2e2680863bf, type: 2}
   m_IsPrefabParent: 0
@@ -5201,6 +5477,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -5658,6 +5939,16 @@ Prefab:
     - target: {fileID: 1568252796309882, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_7 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61606373543848880, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 9.576735
+      objectReference: {fileID: 0}
+    - target: {fileID: 61606373543848880, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 19.15347
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d7cfd8c9de5274ea3dfa7d0f7ab3a8, type: 2}
@@ -6310,6 +6601,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 1.8522992
+      objectReference: {fileID: 0}
+    - target: {fileID: 61962911195912952, guid: 50c4d239f04b76e499966036bd9dcdfc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.7045984
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c4d239f04b76e499966036bd9dcdfc, type: 2}
   m_IsPrefabParent: 0
@@ -6360,6 +6661,16 @@ Prefab:
     - target: {fileID: 1661248053450614, guid: 9268a3be87c6337478f3aa2d2cd99b61, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_6 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 2.1974
+      objectReference: {fileID: 0}
+    - target: {fileID: 61515428047293960, guid: 9268a3be87c6337478f3aa2d2cd99b61,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 6.131727
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9268a3be87c6337478f3aa2d2cd99b61, type: 2}
@@ -6519,6 +6830,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -6672,6 +6988,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -6820,6 +7141,11 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -7019,6 +7345,16 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.76684
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.2541313
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -7972,6 +8308,16 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 17.913242
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 39.457146
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -8177,6 +8523,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -8227,6 +8578,16 @@ Prefab:
     - target: {fileID: 1008505021643510, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_2 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.76684
+      objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.3196297
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
@@ -8279,6 +8640,11 @@ Prefab:
       propertyPath: m_Name
       value: UndergroundTerrain_2 (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 61296721871151706, guid: ac063b3885e8fff439b1f374df709fbd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac063b3885e8fff439b1f374df709fbd, type: 2}
   m_IsPrefabParent: 0
@@ -8329,6 +8695,16 @@ Prefab:
     - target: {fileID: 1502946802909334, guid: 085c0f3875e55334f814d2e2680863bf, type: 2}
       propertyPath: m_Name
       value: UndergroundTerrain_0 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 1.2976513
+      objectReference: {fileID: 0}
+    - target: {fileID: 61637622638530078, guid: 085c0f3875e55334f814d2e2680863bf,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 23.01125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 085c0f3875e55334f814d2e2680863bf, type: 2}
