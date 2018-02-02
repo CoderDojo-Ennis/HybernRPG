@@ -411,7 +411,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1177122956452524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.89, y: -0.21, z: 0}
+  m_LocalPosition: {x: 25.681293, y: -148.06999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4985868324555020}
@@ -828,7 +828,7 @@ MonoBehaviour:
   jumpForce: 0
   sounds: []
   laserAngle: 90
-  armSpeed: 0.13
+  armSpeed: 0.1
   laser: {fileID: 2100000, guid: 254767a7f33f3ab47b027d07619c9ef5, type: 2}
   deathLaser: {fileID: 2100000, guid: 3b3e46a68dee5fe4bb2e8cbf4b61a8d9, type: 2}
   laserAction: 0
@@ -863,7 +863,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e4cc3eac1008f84e97454a6721d00d0, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
