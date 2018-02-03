@@ -32,13 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_World5/Scenes/SceneTransitionB.unity
     guid: 1f79f08a0c222b940801e9bfe4d45144
-  - enabled: 0
+  - enabled: 1
     path: Assets/_World1/Scenes/GET TO COVER.unity
     guid: b5cbbfac68a53f749aafe8b2c5c3d356
   - enabled: 1
     path: Assets/_World5/Scenes/SceneTransitionC.unity
     guid: 85971ea61b7d4e64590fbb052d334b04
-  - enabled: 0
+  - enabled: 1
     path: Assets/_World1/Scenes/armCannon.unity
     guid: f66910a7f32e6ae449d9f3f433adc305
   - enabled: 1
