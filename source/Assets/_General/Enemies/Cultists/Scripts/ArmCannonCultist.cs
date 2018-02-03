@@ -73,7 +73,7 @@ public class ArmCannonCultist : EnemyFramework {
 		//This function is called after the animator, so we're able
 		//to overwrite the arm position set by Unity's animator.
 		Quaternion rotation = Quaternion.Euler(0, 0, armAngle + 90);
-		armQuartern = Quaternion.Lerp (armQuartern, rotation, 0.8f);
+		armQuartern = Quaternion.Slerp (armQuartern, rotation, 0.8f);
 		arm.rotation = armQuartern;
 	}
 	
