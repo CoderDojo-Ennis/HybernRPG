@@ -9,6 +9,9 @@ public class ArmCannonCultist : EnemyFramework {
     private Vector3 scale;
     private Vector3 position;
     private bool ProjectileAvailable;
+	private float armAngle;
+	private Quaternion armQuartern;
+	private Transform arm;
 
     //Sets variables from EnemyFramework
     void OnEnable()
@@ -24,6 +27,11 @@ public class ArmCannonCultist : EnemyFramework {
         
         //Can shoot
         ProjectileAvailable = true;
+		
+		//Find the cultist's arm object
+		arm = transform.GetChild(0).GetChild(1).GetChild(0);
+		//Set arm rotation;
+		armQuartern = Quaternion.identity;
 	}
 
     override public void Attack()
@@ -34,15 +42,40 @@ public class ArmCannonCultist : EnemyFramework {
     {
 		Vector3 distance;
 		distance = this.transform.position - Player.transform.position;
-        if (distance.sqrMagnitude < maxSenseDistance && ProjectileAvailable)
+        //Check if player within sensing distance
+		if ( distance.sqrMagnitude < maxSenseDistance )
         {
-			if(UnityEngine.Random.Range(0.0f, 1.0f) < 0.1f)
+			if (ProjectileAvailable)
 			{
-				ProjectileAttack();
-                ProjectileAvailable = false;
+				//Randomly choose to fire
+				if(UnityEngine.Random.Range(0.0f, 1.0f) < 0.1f)
+				{
+					ProjectileAttack();
+					ProjectileAvailable = false;
+				}
+				//Broadcast aim of cultist to player
+				Vector2 origin = (Vector2)transform.position + new Vector2(0,0.5f);
+				Vector2 target = (Vector2)Player.transform.position + new Vector2(0,0.5f);
+				
+				Vector2 aim = Aim (origin, target, 0.5f);
+				
+				armAngle = Mathf.Atan2 (aim.x, aim.y) * Mathf.Rad2Deg;
 			}
         }
+		else
+		{
+			//Don't aim at player
+			armAngle = -90;
+		}
     }
+	void LateUpdate  ()
+	{
+		//This function is called after the animator, so we're able
+		//to overwrite the arm position set by Unity's animator.
+		Quaternion rotation = Quaternion.Euler(0, 0, armAngle + 90);
+		armQuartern = Quaternion.Lerp (armQuartern, rotation, 0.8f);
+		arm.rotation = armQuartern;
+	}
 	
 	//Ranged attack affected by gravity
     void ProjectileAttack()
