@@ -849,7 +849,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-      value: 240
     - target: {fileID: 224344191296895056, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -893,6 +892,11 @@ Prefab:
     - target: {fileID: 1874463773319338, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82354708531860986, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
@@ -1106,7 +1110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1238895358522386, guid: 2cafa289e5dba48418bdcd0832ca9589, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cafa289e5dba48418bdcd0832ca9589, type: 2}
