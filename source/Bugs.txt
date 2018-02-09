@@ -1,6 +1,6 @@
 Walking speed too slow
 Level 2 basically unbeatable
-Lots of scenes error out on load
+Lots of scenes error out on load (lack of navpoints)
 Sometimes "New Game" does the same as "Continue" : when first checkpoint of game is reached
 Selection for "Normal Arms" has head icon (Intentional??)
 Launching scenes individually in editor doesn't give you necessary parts (not really a bug but would be nice to fix)
