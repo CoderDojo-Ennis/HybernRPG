@@ -12,6 +12,7 @@ public class ArmCannonCultist : EnemyFramework {
 	private float armAngle;
 	private Quaternion armQuartern;
 	private Transform arm;
+	private Transform mouthOfGun;
 
     //Sets variables from EnemyFramework
     void OnEnable()
@@ -30,6 +31,8 @@ public class ArmCannonCultist : EnemyFramework {
 		
 		//Find the cultist's arm object
 		arm = transform.GetChild(0).GetChild(1).GetChild(0);
+		//Find where to launch projectiles from
+		mouthOfGun = arm.GetChild(0).GetChild(0);
 		//Set arm rotation;
 		armQuartern = Quaternion.identity;
 	}
@@ -59,6 +62,8 @@ public class ArmCannonCultist : EnemyFramework {
 				
 				Vector2 aim = Aim (origin, target, 0.5f);
 				
+				LateUpdate ();
+				
 				armAngle = Mathf.Atan2 (aim.x, aim.y) * Mathf.Rad2Deg;
 			}
         }
@@ -79,12 +84,12 @@ public class ArmCannonCultist : EnemyFramework {
 	
 	//Ranged attack affected by gravity
     void ProjectileAttack()
-	{
+	{	
 		//Calculate firing velocity
-		Vector2 velocity = Aim((Vector2)transform.position + new Vector2(0,0.5f), (Vector2)Player.transform.position + new Vector2(0,0.5f), 0.5f);
+		Vector2 velocity = Aim((Vector2)mouthOfGun.position, (Vector2)Player.transform.position + new Vector2(0,0.5f), 0.5f);
 		
 		float distance = Vector3.Distance(transform.position, Player.transform.position);
-        GameObject projectile = Instantiate(Projectile, transform.position + new Vector3(0,0.5f,0), Quaternion.AngleAxis(45 + UnityEngine.Random.Range(40, 60), Vector3.forward));
+        GameObject projectile = Instantiate(Projectile, mouthOfGun.position, Quaternion.AngleAxis(45 + UnityEngine.Random.Range(40, 60), Vector3.forward));
 		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
 		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script
 		projectile.GetComponent<EnemyBlast>().creator = gameObject;
