@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/_World1/Scenes/World1-scene2.unity
     guid: 9363493296ea33f4bac15377eb139b68
   - enabled: 1
-    path: Assets/_World1/Scenes/laser cultist workbench.unity
+    path: Assets/_World1/Scenes/World1-scene3.unity
     guid: a90d5c76f912d754ba0b6316a042cc8e
   - enabled: 1
     path: Assets/_World5/Scenes/SceneTransitionA.unity

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61036330088583688}
   - component: {fileID: 95525806590183360}
   - component: {fileID: 114139370194836472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 70950529345920658}
   - component: {fileID: 114559913090230572}
   - component: {fileID: 114059681392412622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Physics Parent
   m_TagString: Good
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4538809273742810}
   - component: {fileID: 212684522103666896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 50780922448643464}
   - component: {fileID: 61829241428108550}
   - component: {fileID: 114274656551834660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shoulder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 50911357579919168}
   - component: {fileID: 61386400716258832}
   - component: {fileID: 114471408324324002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shoulder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 212777570132999526}
   - component: {fileID: 50043687087179584}
   - component: {fileID: 61127777402462232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thigh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4036857935445722}
   - component: {fileID: 212985496087881816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Calf1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4424123773875632}
   - component: {fileID: 198143432448269312}
   - component: {fileID: 199504720249113456}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 114189903469437570}
   - component: {fileID: 114438574511612404}
   - component: {fileID: 114133804653651212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 95835613903823092}
   - component: {fileID: 50783222401743248}
   - component: {fileID: 58826017394183578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 95490841264171060}
   - component: {fileID: 114658854918609634}
   - component: {fileID: 82836960685894834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 4802930422168450}
   - component: {fileID: 114959253150365594}
   - component: {fileID: 114854618925941070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 212867212521094086}
   - component: {fileID: 50345631250976280}
   - component: {fileID: 61780521254786474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thigh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072518031132296}
   - component: {fileID: 212591430244447436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Calf2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 4005853111981070}
   - component: {fileID: 212714411299426066}
   - component: {fileID: 61652985846430826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm2
   m_TagString: Reflect Lasers
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       scalar: 1
-      minScalar: 0
+      minScalar: 0.0001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1679,11 +1679,11 @@ ParticleSystem:
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
+    m_MeshMaterialIndex: 0
+    m_MeshNormalOffset: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
-    m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
@@ -2364,6 +2364,47 @@ ParticleSystem:
           time: 1
           value: 0.5
           inSlope: 0.5
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    speedModifier:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
@@ -3724,6 +3765,7 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 0
+    mode: 0
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -3768,12 +3810,14 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
+    ribbonCount: 1
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
     generateLightingData: 0
+    splitSubEmitterRibbons: 0
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
