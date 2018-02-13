@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pickaxes : MonoBehaviour {
 
+	public bool pickaxesEnabled;
+	
 	private Quaternion rotation1;
 	private Quaternion rotation2;
 	
@@ -28,6 +30,8 @@ public class Pickaxes : MonoBehaviour {
 		//Ignore grappling hook collisions with player
 		Physics2D.IgnoreCollision(pickaxe1, playerCollider);
 		Physics2D.IgnoreCollision(pickaxe2, playerCollider);
+		//And between the pickaxes
+		Physics2D.IgnoreCollision(pickaxe1, pickaxe2);
 		
 		offset = 0;
 		slicing = false;
@@ -38,6 +42,8 @@ public class Pickaxes : MonoBehaviour {
 		pickaxe1.enabled = false;
 		pickaxe2.enabled = false;
 		
+		pickaxesEnabled = false;
+		
 		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
 	}
 	void OnDisable ()
@@ -47,6 +53,7 @@ public class Pickaxes : MonoBehaviour {
 		
 		pickaxe1.enabled = false;
 		pickaxe2.enabled = false;
+		pickaxesEnabled = false;
 	}
 	void LateUpdate ()
 	{
@@ -64,21 +71,26 @@ public class Pickaxes : MonoBehaviour {
 			if(Input.GetMouseButtonDown(0))
 			{
 				slicing = true;
+				
+				if( offset == 0 )
+				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Slash");
 			}
 			if(slicing)
 			{
-				offset += 750 * Time.deltaTime;
-				if(offset > 180){
+				offset -= 750 * Time.deltaTime;
+				if(offset < -360){
 					offset = 0;
 					slicing = false;
 				}
-				pickaxe1.enabled = true;
+				pickaxe2.isTrigger = true;
 				pickaxe2.enabled = true;
+				pickaxesEnabled = true;
 			}
 			else
 			{
-				pickaxe1.enabled = false;
+				pickaxe2.isTrigger = false;
 				pickaxe2.enabled = false;
+				pickaxesEnabled = false;
 			}
 		}
 		

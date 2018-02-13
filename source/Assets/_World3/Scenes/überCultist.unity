@@ -1586,6 +1586,31 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224376645029837144, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224376645029837144, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224660334271330576, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224660334271330576, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224660334271330576, guid: 375e7f3e51f49854489e301abf2e97ee,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 212165044381166682, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
@@ -2777,6 +2802,12 @@ Prefab:
       propertyPath: missileDroppers
       value: 
       objectReference: {fileID: 2132191562}
+    - target: {fileID: 114357598511227714, guid: e367a1174c8c0434ca2a13d8e0ce81e6,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1045708622574318, guid: 4464e6f3f86513a41910bd28eb5248bd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e367a1174c8c0434ca2a13d8e0ce81e6, type: 2}
   m_IsPrefabParent: 0

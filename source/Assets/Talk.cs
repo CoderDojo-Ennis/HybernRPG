@@ -12,17 +12,16 @@ public class Talk : MonoBehaviour
     void OnEnable()
     {
         dialogue = GameObject.Find("TextBoxCanvas").GetComponent<JSONDialogueReader>();
-        readyToSpeak = transform.GetChild(1).gameObject;
+		readyToSpeak = transform.GetChild(1).gameObject;
         readyToSpeak.SetActive(false);
     }
 
     void Update()
     {
-        bool dist;
-
-        if (dist = Vector3.Distance(FindClosestNPC().transform.position, GameObject.Find("Player Physics Parent").transform.position) < 5f && dialogue.talking == false)
+        if (Vector3.Distance(FindClosestNPC().transform.position, GameObject.Find("Player Physics Parent").transform.position) < 2f && dialogue.talking == false)
         {
             readyToSpeak.SetActive(true);
+			readyToSpeak.transform.position = transform.position + new Vector3(-0.3f, 0.75f);
             if (Input.GetKeyDown("e"))
             {
                 dialogue.BeginDialogue(worldNumber, fileName, speaker, id);

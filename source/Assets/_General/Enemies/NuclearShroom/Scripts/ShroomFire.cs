@@ -4,8 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityStandardAssets._2D;
 public class ShroomFire : MonoBehaviour {
-    public GameObject explosionPrefab;
-	
+    public GameObject explosionPrefab;	
 	public Animator anim;
     public float visionRange;
     public WhiteFlash whiteFlash;
@@ -89,15 +88,21 @@ public class ShroomFire : MonoBehaviour {
             anim.SetBool("charge", true);
         }
     }
-	void OnTriggerEnter2D ( Collider2D collider )
+	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if( collider.gameObject.name == "Player Physics Parent")
+		if(collider.gameObject.name == "Player Physics Parent")
 		{
-			StartCoroutine ( Countdown () );
+			StartCoroutine (Countdown());
 		}
-		if( collider.gameObject.GetComponent< EnemyFramework >() != null )
+		
+		if(collider.gameObject.name == "PlayerBlast(Clone)")
 		{
-			StartCoroutine ( Countdown () );
+			BlowUp();
+		}
+		
+		if(collider.gameObject.GetComponent<EnemyFramework>() != null)
+		{
+			StartCoroutine (Countdown());
 		}
 	}
 	public void BlowUp()

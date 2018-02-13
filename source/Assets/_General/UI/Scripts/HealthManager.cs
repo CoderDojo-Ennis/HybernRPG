@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,8 +46,9 @@ public class HealthManager : MonoBehaviour {
 			Vector2 offset = new Vector2(105, 0);
 			for(int counter = orbs.Count; counter < desiredOrbsAmount; counter++)
 			{
-				GameObject orb = GameObject.Instantiate(orbPrefab, StartPosition + offset * counter, Quaternion.identity);
-				orb.transform.SetParent(transform);
+				GameObject orb = GameObject.Instantiate(orbPrefab, StartPosition + offset * counter, Quaternion.identity, transform);
+				orb.GetComponent<RectTransform>().localPosition = StartPosition + offset * counter;
+				
 				orbs.Add(orb);
 			}
 			//Decide if last orb should be a big orb or a small orb

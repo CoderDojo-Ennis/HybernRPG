@@ -168,3 +168,21 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: PortalSoundEffect
+    clip: {fileID: 8300000, guid: 6c3332f1e9d9a0e438dc4b6f69867f42, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: Slash
+    clip: {fileID: 8300000, guid: fe3875fff5d8a3248b1e3ced66675fed, type: 3}
+    volume: 0.818
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: Clink
+    clip: {fileID: 8300000, guid: f8592ae3ba48cb640b2ca64b424d3e5f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
