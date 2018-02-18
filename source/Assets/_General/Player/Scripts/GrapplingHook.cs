@@ -275,7 +275,7 @@ public class GrapplingHook : MonoBehaviour {
 			
 			//enable spring
 			hook.GetComponent<SpringJoint2D>().connectedBody = playerPhysics.GetComponent<Rigidbody2D>();
-			//hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0,0);
+			hook.GetComponent<SpringJoint2D>().connectedAnchor = new Vector2(0,0);
 			hook.GetComponent<SpringJoint2D>().enabled = true;
 			
 			//These are the alternative coordinates for the contact point on the player's collider for the spring
