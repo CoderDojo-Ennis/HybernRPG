@@ -411,7 +411,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1177122956452524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.11, y: -40.11, z: 0}
+  m_LocalPosition: {x: -49.808617, y: 32.043766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4985868324555020}
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 2
   health: 5
-  maxSenseDistance: 0
+  maxSenseDistance: 5
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1177122956452524}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f249113d5abdd84c8432f1ad8e1783d, type: 3}
   m_Name: 
