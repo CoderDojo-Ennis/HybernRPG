@@ -902,6 +902,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114293851433576856, guid: fb9072492dc7c244fb50e3b6721bb856,
+        type: 2}
+      propertyPath: NavPointContainer
+      value: 
+      objectReference: {fileID: 52505745}
     - target: {fileID: 1200348308184840, guid: fb9072492dc7c244fb50e3b6721bb856, type: 2}
       propertyPath: m_Name
       value: MeleeCultist (1)

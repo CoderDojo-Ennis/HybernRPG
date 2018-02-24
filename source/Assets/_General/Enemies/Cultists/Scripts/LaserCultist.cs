@@ -43,13 +43,13 @@ public class LaserCultist : EnemyFramework {
 		arm = transform.GetChild(0).GetChild(1).GetChild(0);
 		
 		allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
-		FindNewDestination();
+		//FindNewDestination();
 		laserWidth = 0;
 		deathLaserWidth = 0;
 		playerHitAlready = false;
 		
 		//laserManager = 
-		laserManager.gameObject = gameObject;
+		//laserManager.gameObject = gameObject;
 		
 		//EnemyFramework variables
 		attack = 2;
