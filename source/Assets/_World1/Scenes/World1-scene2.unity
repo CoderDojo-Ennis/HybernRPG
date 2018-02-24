@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -169,7 +170,7 @@ Prefab:
     - target: {fileID: 114021110491085072, guid: 46b685541c9475f46bbc627b90a685b2,
         type: 2}
       propertyPath: Neighbors.Array.data[0].TravelType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46b685541c9475f46bbc627b90a685b2, type: 2}
@@ -742,7 +743,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4807387226806116, guid: 4cac8b91e3eaee14a895dc91f9673785, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.26
+      value: 15.994
       objectReference: {fileID: 0}
     - target: {fileID: 4807387226806116, guid: 4cac8b91e3eaee14a895dc91f9673785, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1500,6 +1501,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb9072492dc7c244fb50e3b6721bb856, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &868580052 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1091193442577662, guid: 4cac8b91e3eaee14a895dc91f9673785,
+    type: 2}
+  m_PrefabInternal: {fileID: 283545151}
+--- !u!70 &868580053
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868580052}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.7}
+  m_Size: {x: 0.5, y: 2.5}
+  m_Direction: 0
 --- !u!1001 &905082577
 Prefab:
   m_ObjectHideFlags: 0
@@ -2106,7 +2127,7 @@ Prefab:
     - target: {fileID: 114021110491085072, guid: 46b685541c9475f46bbc627b90a685b2,
         type: 2}
       propertyPath: Neighbors.Array.data[1].TravelType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46b685541c9475f46bbc627b90a685b2, type: 2}
@@ -2323,6 +2344,10 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 236.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874463773319338, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 375e7f3e51f49854489e301abf2e97ee, type: 2}
@@ -2627,7 +2652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980385735178278, guid: 46b685541c9475f46bbc627b90a685b2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.7
+      value: 9.699999
       objectReference: {fileID: 0}
     - target: {fileID: 4980385735178278, guid: 46b685541c9475f46bbc627b90a685b2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2684,7 +2709,7 @@ Prefab:
     - target: {fileID: 114021110491085072, guid: 46b685541c9475f46bbc627b90a685b2,
         type: 2}
       propertyPath: Neighbors.Array.data[1].TravelType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46b685541c9475f46bbc627b90a685b2, type: 2}
