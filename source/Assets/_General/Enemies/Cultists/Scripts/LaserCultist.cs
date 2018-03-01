@@ -39,10 +39,18 @@ public class LaserCultist : EnemyFramework {
 	
 	void Start()
 	{
-	
+        // ToDo: Find a better way to identify this object.
+		//       As it is, adding another element into the heirarcy
+		//       could easily break this code.
 		arm = transform.GetChild(0).GetChild(1).GetChild(0);
-		
-		allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
+
+        if (navPointContainer == null)
+        {
+            Debug.LogWarning("LaserCultist scrtipt for " + this.name + " does not have the NavPointCointainer set");
+        } else {
+            allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
+        }
+
 		//FindNewDestination();
 		laserWidth = 0;
 		deathLaserWidth = 0;
