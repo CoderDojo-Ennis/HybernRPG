@@ -198,30 +198,34 @@ public class LaserCultist : EnemyFramework {
 	{
 		//Position to fire raycast from is slightly above  position of navpoint
 		position += new Vector3(0, 0.6f, 0);
+
 		//Fire raycast
 		RaycastHit2D ray = Physics2D.Raycast(position, targetPosition - position);
-		 
-		 if (ray.collider == null)
-                return false;
-         else
+
+        if (ray.collider == null)
         {
-			if (ray.collider.gameObject.name == "Player Physics Parent")
-			{
-				//Debug.DrawRay(position, targetPosition - position);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		
+            return false;
+        }
+        else
+        {
+            if (ray.collider.gameObject.name == "Player Physics Parent")
+            {
+                //Debug.DrawRay(position, targetPosition - position);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 	}
 	
 	NavPoint FindClosestDestination ( )
 	{
-		if(possibleDestinations.Count == 0)
-		return null;
+        if (possibleDestinations.Count == 0)
+        {
+            return null;
+        }
 		
 		NavPoint closest;
 		Vector3 position;
@@ -276,9 +280,10 @@ public class LaserCultist : EnemyFramework {
 				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
 			}
 		}
-		else{
-		//Hit nothing, show beam anyway
-		EnableLineRenderer(0.2f, origin, direction * 100, deathLaser);
+		else
+        {
+		    //Hit nothing, show beam anyway
+		    EnableLineRenderer(0.2f, origin, direction * 100, deathLaser);
 		}
 		deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
 	}
@@ -322,7 +327,6 @@ public class LaserCultist : EnemyFramework {
 		GetComponent<LineRenderer>().sortingLayerName = "BodyFront";
 		//GetComponent<LineRenderer>().sortingOrder = -1;
 		GetComponent<LineRenderer>().enabled = true;
-		
 	}
 	private void DisableLineRenderer()
 	{
