@@ -88,7 +88,7 @@ public class ArmCannonCultist : EnemyFramework {
 		//Calculate firing velocity
 		Vector2 velocity = Aim((Vector2)mouthOfGun.position, (Vector2)Player.transform.position + new Vector2(0,0.5f), 0.5f);
 		
-		float distance = Vector3.Distance(transform.position, Player.transform.position);
+		//float distance = Vector3.Distance(transform.position, Player.transform.position);
         GameObject projectile = Instantiate(Projectile, mouthOfGun.position, Quaternion.AngleAxis(45 + UnityEngine.Random.Range(40, 60), Vector3.forward));
 		projectile.GetComponent<Rigidbody2D>().velocity = velocity;
 		//EnemyBlast needs to have the gameObject of the enemy which spawned it assigned to 'creator' in script

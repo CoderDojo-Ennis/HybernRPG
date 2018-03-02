@@ -5,10 +5,10 @@ using UnityEngine;
 public class DarkHaze: MonoBehaviour {
 
     public CanvasGroup myCG;
-    private bool explosion = false;
+    //private bool explosion = false;
 
     public void Explode() {
-        explosion = true;
+        //explosion = true;
         myCG.alpha = 1;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossExplosion : MonoBehaviour {
 
-	private PlayerStats playerStats;
+	//private PlayerStats playerStats;
 	private CameraFollow cameraFollow;
 	private AudioManager audioMan;
 	
@@ -17,7 +17,7 @@ public class BossExplosion : MonoBehaviour {
 		cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
 		
 		//find playerStats script
-		playerStats = GameObject.Find("Player Physics Parent").GetComponent< PlayerStats >();
+		//playerStats = GameObject.Find("Player Physics Parent").GetComponent< PlayerStats >();
 		
 		//Shake the screen
 		StartCoroutine(cameraFollow.MyRoutine(1f, 0.3f, 0.3f));

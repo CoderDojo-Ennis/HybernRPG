@@ -5,7 +5,7 @@ using UnityEngine;
 public class LavaShark : MonoBehaviour {
     private float xScale = 1;
     public float swimSpeed = 1;
-    public Collider2D collider;
+    public Collider2D col;
     private Rigidbody2D rb;
     public SharkActions sharkAction;
     private Vector2 upRight = (Vector3.up + Vector3.right).normalized;
@@ -14,7 +14,7 @@ public class LavaShark : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         sharkAction = SharkActions.underLava;
-        collider = GetComponent<Collider2D>();
+        col = GetComponent<Collider2D>();
     }
     public enum SharkActions {
         underLava,
@@ -35,16 +35,16 @@ public class LavaShark : MonoBehaviour {
     void FixedUpdate () {
         switch (sharkAction) {
             case SharkActions.underLava:
-                collider.density = 4.9f;
+                col.density = 4.9f;
                 break;
 
             case SharkActions.swimmingLeft:
-                collider.density = 4f;
+                col.density = 4f;
                 xScale = 1;
                 rb.AddForce(Vector2.right * ((-swimSpeed - rb.velocity.x)), ForceMode2D.Impulse);
                 break;
             case SharkActions.swimmingRight:
-                collider.density = 4f;
+                col.density = 4f;
                 xScale = -1;
                 rb.AddForce(Vector2.right * ((swimSpeed - rb.velocity.x)), ForceMode2D.Impulse);
                 break;

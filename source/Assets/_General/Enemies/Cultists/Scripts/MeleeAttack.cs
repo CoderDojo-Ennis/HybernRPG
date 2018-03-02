@@ -12,7 +12,6 @@ public class MeleeAttack : MonoBehaviour {
 			GameObject player;
 			player = GameObject.Find("Player Physics Parent");
 			
-			PlayerStats playerStats;
 			player.GetComponent<PlayerStats>().TakeDamage(3);
 		}
 	}

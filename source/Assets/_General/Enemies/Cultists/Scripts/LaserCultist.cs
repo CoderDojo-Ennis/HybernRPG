@@ -86,7 +86,7 @@ public class LaserCultist : EnemyFramework {
 		laserManager = new LaserManager();
 		laserManager.gameObject = gameObject;
 		
-		Vector2 direction = new Vector2(Mathf.Cos(laserAngle), Mathf.Sin(laserAngle));
+		//Vector2 direction = new Vector2(Mathf.Cos(laserAngle), Mathf.Sin(laserAngle));
        
 	   //Create position to fire from
 		Vector2 origin;
@@ -198,8 +198,8 @@ public class LaserCultist : EnemyFramework {
 		
 		//Now pick the navpoint in possibleDestinations which is
 		//closest to the laser cultist
-		NavPoint closest;
-		closest = FindClosestDestination();
+		//NavPoint closest;
+		//closest = FindClosestDestination();
 	}
 	
 	bool CheckVision ( Vector3 position, Vector3 targetPosition )
@@ -360,7 +360,7 @@ public class LaserCultist : EnemyFramework {
 		
 		angle -= 90;
 		//angle *= Mathf.Deg2Rad;
-		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+		//Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
        
 	   //Create position to fire from
 		Vector2 origin;

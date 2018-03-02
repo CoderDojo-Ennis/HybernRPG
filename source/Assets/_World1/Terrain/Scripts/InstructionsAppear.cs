@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InstructionsAppear : MonoBehaviour {
 
-	Transform camera;
+	Transform cam;
 	bool showText;
 	
 	void Start ()
 	{
-			camera = GameObject.Find( "Main Camera").transform;
+			cam = GameObject.Find( "Main Camera").transform;
 			showText = false;
 			
 			
@@ -26,7 +26,7 @@ public class InstructionsAppear : MonoBehaviour {
 		if(showText)
 		{
 			Vector3 offset = new Vector3(1, 0.5f, 0);
-			transform.position = new Vector3(camera.position.x, camera.position.y, 0) + offset;
+			transform.position = new Vector3(cam.position.x, cam.position.y, 0) + offset;
 		}
 	}
 	IEnumerator AnimateText()

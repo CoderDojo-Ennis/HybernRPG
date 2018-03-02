@@ -147,7 +147,7 @@ public class EnemyAI : MonoBehaviour {
                     closestDist = dist;
                     bestMatch = targets[i]; //best match is the closest target that can be seen
                 }
-            }**/
+            }*/
 			///Trying out permanent agro system
 			if (agro)
             {

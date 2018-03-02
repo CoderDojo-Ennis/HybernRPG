@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChangeLimb : MonoBehaviour {
     AnimationControl animationControl;
-    private bool time;
     private GameObject child;
 
     public movement Movement;
@@ -38,7 +37,6 @@ public class ChangeLimb : MonoBehaviour {
 
     void Awake()
     {
-        time = true;
     }
 
     void Update ()
