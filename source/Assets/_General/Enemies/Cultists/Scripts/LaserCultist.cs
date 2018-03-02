@@ -264,7 +264,7 @@ public class LaserCultist : EnemyFramework {
 		
 		return closest;
 	}
-	private void Attack()
+	public override void Attack()
 	{
 		float angle;
 		angle = armRot.eulerAngles.z -90;
