@@ -7,14 +7,14 @@ public class ShroomFire : MonoBehaviour {
     public GameObject explosionPrefab;	
 	public Animator anim;
     public float visionRange;
-    public WhiteFlash whiteFlash;
-    public DarkHaze darkHaze;
+    //public WhiteFlash whiteFlash;
+    //public DarkHaze darkHaze;
     public SpriteRenderer sr;
     private float lerp = 0;
     public float explodeScale;
     void Start () {
-        whiteFlash = GameObject.Find("WhiteExplosionEffect").GetComponent<WhiteFlash>();
-        darkHaze = GameObject.Find("AfterExplosionEffect").GetComponent<DarkHaze>();
+        //whiteFlash = GameObject.Find("WhiteExplosionEffect").GetComponent<WhiteFlash>();
+        //darkHaze = GameObject.Find("AfterExplosionEffect").GetComponent<DarkHaze>();
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -112,10 +112,10 @@ public class ShroomFire : MonoBehaviour {
         
 		//Play sound effect
 		GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Nuclear Explosion");
-		
+
 		//Blow up the shroom
-		GameObject.Destroy(gameObject,0.01f);
-		Instantiate( explosionPrefab, transform.position, Quaternion.identity);
+		Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+		Destroy(gameObject,0.01f);
 	}
 	public IEnumerator Countdown ()
 	{
