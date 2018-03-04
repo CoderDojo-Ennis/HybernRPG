@@ -24,7 +24,7 @@ public class PelicanBehaviour : MonoBehaviour
     //Fight Management
     public bool ActionOngoing = false;
     public bool Defeated = false;
-    private PelicanFight fight;
+    //private PelicanFight fight;
     public GameObject player;
 
     //Health
@@ -64,7 +64,7 @@ public class PelicanBehaviour : MonoBehaviour
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
 
         //PelicanFight
-        fight = transform.GetComponent<PelicanFight>();
+        //fight = transform.GetComponent<PelicanFight>();
 
         //Player
         player = GameObject.Find("Player Physics Parent");
@@ -139,7 +139,7 @@ public class PelicanBehaviour : MonoBehaviour
     {
         ActionOngoing = true;
         Debug.Log("Call for help!");
-        int amount = Random.Range(1, 4);
+        //int amount = Random.Range(1, 4);
 
         ActionOngoing = false;
     }

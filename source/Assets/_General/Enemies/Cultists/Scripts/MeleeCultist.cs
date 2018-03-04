@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeCultist : EnemyFramework {
-    //Sets variables from EnemyFramework
+public class MeleeCultist : EnemyFramework
+{
+	//Sets variables from EnemyFramework
 	void OnEnable()
 	{
 		walkSpeed = 7;
@@ -13,6 +14,6 @@ public class MeleeCultist : EnemyFramework {
 	}
 
 	override public void Attack()
-    {
-    }
+	{
+	}
 }

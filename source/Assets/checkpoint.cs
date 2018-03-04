@@ -10,7 +10,6 @@ public class checkpoint : MonoBehaviour
         if (collider.gameObject.name == "Player Physics Parent")
         {
             GetComponent<SpriteRenderer>().sprite = sprite;
-
         }
     }
 

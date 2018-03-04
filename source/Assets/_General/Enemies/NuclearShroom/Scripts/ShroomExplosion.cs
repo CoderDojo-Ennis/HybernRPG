@@ -22,8 +22,8 @@ public class ShroomExplosion : MonoBehaviour
 		GameObject.Destroy ( gameObject, 4);
 		
 		this.Delay(0.2f, () => {
-                GetComponent< Collider2D >().enabled = false;
-            });
+            GetComponent< Collider2D >().enabled = false;
+        });
 		
 	}
 	
@@ -41,6 +41,7 @@ public class ShroomExplosion : MonoBehaviour
 			}
 		}
 		
+		
 		if( collider.gameObject.GetComponent<ShroomFire>() != null )
 		{
 			ShroomFire shroomFire;
@@ -49,7 +50,10 @@ public class ShroomExplosion : MonoBehaviour
 			float delay = Random.Range(0.2f, 1);
 			
 			this.Delay( delay, () => {
-                shroomFire.BlowUp ();
+				if (shroomFire != null)
+				{
+					shroomFire.BlowUp();
+				}
             });
 		}
 		

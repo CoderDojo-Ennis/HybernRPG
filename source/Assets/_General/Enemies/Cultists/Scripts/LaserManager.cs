@@ -39,7 +39,7 @@ public class LaserManager{
 	GameObject ExtendedRaycast(Vector2 origin, Vector2 direction)
 	{
 		RaycastHit2D raycastHit = Physics2D.Raycast(origin, direction);
-		Vector2 reflectedDirection = ReflectVector2D (direction, raycastHit.normal);
+		//Vector2 reflectedDirection = ReflectVector2D (direction, raycastHit.normal);
 		
 		if(!raycastHit)
 		{

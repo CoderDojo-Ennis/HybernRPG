@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
+/// <summary>
+/// Nav Point Inspector - Custom Editor
+/// </summary>
 [CustomEditor(typeof(NavPoint))]
 public class NavPointInspector: Editor
 {
@@ -49,6 +52,7 @@ public class NavPointInspector: Editor
                         List<NavNeighbor> neighborList = new List<NavNeighbor>(navPointGainingNeighbors.Neighbors);
                         neighborList.Add(new NavNeighbor { NeighborPoint = selectedNavPoint, TravelType = TravelTypes.Walk });
                         navPointGainingNeighbors.Neighbors = neighborList.ToArray();
+                        EditorUtility.SetDirty(navPointGainingNeighbors);
 
                         // Also add this one to the neighbor
                     }
@@ -57,6 +61,7 @@ public class NavPointInspector: Editor
                         // Remove this one only
                         navPointGainingNeighbors.Neighbors = navPointGainingNeighbors.Neighbors.Where(np => np.NeighborPoint != selectedNavPoint)
                             .ToArray();
+                        EditorUtility.SetDirty(navPointGainingNeighbors);
                     }
                 }
 
@@ -112,7 +117,7 @@ public class NavPointInspector: Editor
         } else
         {
             Handles.color = Color.red;
-            Handles.SphereCap(0, navPoint.transform.position, Quaternion.identity, 0.5f);
+            Handles.SphereHandleCap(0, navPoint.transform.position, Quaternion.identity, 0.5f, EventType.Repaint);
         }
 
         // Indicate the connected neighbors
@@ -121,7 +126,7 @@ public class NavPointInspector: Editor
             foreach (var neighbor in navPoint.Neighbors) {
                 if (neighbor.NeighborPoint != null)
                 {
-                    Handles.SphereCap(0, neighbor.NeighborPoint.transform.position, Quaternion.identity, 0.5f);
+                    Handles.SphereHandleCap(0, neighbor.NeighborPoint.transform.position, Quaternion.identity, 0.5f, EventType.Repaint);
                 }
             }
         }

@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour {
     public Thoughts Thought;
     public NavPoint LastNavPoint;
     public NavPoint TargetNavPoint;
+	public bool Navigate = true;
 
     private NavPoint[] AllNavPoints;
 	private bool agro;
@@ -83,9 +84,12 @@ public class EnemyAI : MonoBehaviour {
                 attack = true;
                 break;
         }
-        //Debug.Log(transform.hasChanged);
-        // Pass all parameters to the character control script.
-        Character.Move(xVelocity, crouch, jump, attack);
+		//Debug.Log(transform.hasChanged);
+		// Pass all parameters to the character control script.
+		if (Navigate)
+		{
+			Character.Move(xVelocity, crouch, jump, attack);
+		}
 
         // Todo - think after landing/*
         if (Thought == Thoughts.JumpLeft)
@@ -147,7 +151,7 @@ public class EnemyAI : MonoBehaviour {
                     closestDist = dist;
                     bestMatch = targets[i]; //best match is the closest target that can be seen
                 }
-            }**/
+            }*/
 			///Trying out permanent agro system
 			if (agro)
             {

@@ -23,7 +23,7 @@ public class PelicanFight : PelicanBehaviour
 
     public void Update()
     {
-        GameObject bestMatch = player;
+        //GameObject bestMatch = player;
         if (CurrentPhase == 1)
         {
             //Travel(player.transform.position);
@@ -37,7 +37,7 @@ public class PelicanFight : PelicanBehaviour
             {
                 // Whats the next action
                 var neighbor = path.Neighbors[0];
-                var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
+                //var neighborVector = neighbor.NeighborPoint.transform.position - this.transform.position;
                 Travel(neighbor.NeighborPoint.transform.position);
             }
         }

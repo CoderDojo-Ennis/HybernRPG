@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PickaxeAttack : MonoBehaviour {
 	
-	Pickaxes pickaxes;
+	//Pickaxes pickaxes;
 	
 	void OnEnable ()
 	{
-		pickaxes = transform.parent.gameObject.GetComponent<Pickaxes>();
+		//pickaxes = transform.parent.gameObject.GetComponent<Pickaxes>();
 	}
 	
 	void OnTriggerEnter2D ( Collider2D collider )

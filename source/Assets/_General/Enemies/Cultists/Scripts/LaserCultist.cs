@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserCultist : EnemyFramework {
-    
+public class LaserCultist : EnemyFramework
+{
 	//laser movement variables
 	public float laserAngle;
 	[Range(0.0001f, 1)]
@@ -23,9 +23,8 @@ public class LaserCultist : EnemyFramework {
 	public GameObject navPointContainer;
 	private NavPoint[] allNavPoints;
 	private List<NavPoint> possibleDestinations;
+	GameObject Player;
 
-	
-	
 	public enum LaserActions
     {
 		noBeam,
@@ -39,10 +38,20 @@ public class LaserCultist : EnemyFramework {
 	
 	void Start()
 	{
-	
+        // ToDo: Find a better way to identify this object.
+		//       As it is, adding another element into the heirarcy
+		//       could easily break this code.
 		arm = transform.GetChild(0).GetChild(1).GetChild(0);
-		
-		allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
+
+        if (navPointContainer == null)
+        {
+            Debug.LogWarning("LaserCultist script for " + this.name + " does not have the NavPointCointainer set");
+        }
+		else
+		{
+            allNavPoints = navPointContainer.GetComponentsInChildren<NavPoint>();
+        }
+
 		//FindNewDestination();
 		laserWidth = 0;
 		deathLaserWidth = 0;
@@ -53,6 +62,7 @@ public class LaserCultist : EnemyFramework {
 		
 		//EnemyFramework variables
 		attack = 2;
+		Player = GameObject.Find("Player Physics Parent");
 	}
 	void OnEnable()
 	{
@@ -71,14 +81,14 @@ public class LaserCultist : EnemyFramework {
 	{
 		//Find player
 		Vector2 displacement;
-		displacement = (GameObject.Find("Player Physics Parent").transform.position + new Vector3(0, 0.5f, 0)) - arm.position;
+		displacement = (Player.transform.position + new Vector3(0, 0.5f, 0)) - arm.position;
 		laserAngle = Mathf.Atan2 (displacement.y, displacement.x) * Mathf.Rad2Deg;
 		//laserAngle += 90;
 		
 		laserManager = new LaserManager();
 		laserManager.gameObject = gameObject;
 		
-		Vector2 direction = new Vector2(Mathf.Cos(laserAngle), Mathf.Sin(laserAngle));
+		//Vector2 direction = new Vector2(Mathf.Cos(laserAngle), Mathf.Sin(laserAngle));
        
 	   //Create position to fire from
 		Vector2 origin;
@@ -133,7 +143,7 @@ public class LaserCultist : EnemyFramework {
 				{
 					if( !playerHitAlready )
 					{
-						GameObject.Find( "Player Physics Parent" ).GetComponent<PlayerStats>().TakeDamage(attack);
+						Player.GetComponent<PlayerStats>().TakeDamage(attack);
 						playerHitAlready = true;
 					}
 				}
@@ -178,7 +188,7 @@ public class LaserCultist : EnemyFramework {
 			Vector3 targetPosition;
 			
 			position = navPoint.transform.position;
-			targetPosition = GameObject.Find( "Player Physics Parent" ).transform.position;
+			targetPosition = Player.transform.position;
 			
 			if( CheckVision( position, targetPosition ) )
 			{
@@ -190,38 +200,42 @@ public class LaserCultist : EnemyFramework {
 		
 		//Now pick the navpoint in possibleDestinations which is
 		//closest to the laser cultist
-		NavPoint closest;
-		closest = FindClosestDestination();
+		//NavPoint closest;
+		//closest = FindClosestDestination();
 	}
 	
 	bool CheckVision ( Vector3 position, Vector3 targetPosition )
 	{
 		//Position to fire raycast from is slightly above  position of navpoint
 		position += new Vector3(0, 0.6f, 0);
+
 		//Fire raycast
 		RaycastHit2D ray = Physics2D.Raycast(position, targetPosition - position);
-		 
-		 if (ray.collider == null)
-                return false;
-         else
+
+        if (ray.collider == null)
         {
-			if (ray.collider.gameObject.name == "Player Physics Parent")
-			{
-				//Debug.DrawRay(position, targetPosition - position);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		
+            return false;
+        }
+        else
+        {
+            if (ray.collider.gameObject.name == "Player Physics Parent")
+            {
+                //Debug.DrawRay(position, targetPosition - position);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 	}
 	
 	NavPoint FindClosestDestination ( )
 	{
-		if(possibleDestinations.Count == 0)
-		return null;
+        if (possibleDestinations.Count == 0)
+        {
+            return null;
+        }
 		
 		NavPoint closest;
 		Vector3 position;
@@ -252,7 +266,8 @@ public class LaserCultist : EnemyFramework {
 		
 		return closest;
 	}
-	private void Attack()
+
+	public override void Attack()
 	{
 		float angle;
 		angle = armRot.eulerAngles.z -90;
@@ -276,12 +291,14 @@ public class LaserCultist : EnemyFramework {
 				searchBeam.transform.gameObject.GetComponent<PlayerStats>().TakeDamage(attack);
 			}
 		}
-		else{
-		//Hit nothing, show beam anyway
-		EnableLineRenderer(0.2f, origin, direction * 100, deathLaser);
+		else
+        {
+		    //Hit nothing, show beam anyway
+		    EnableLineRenderer(0.2f, origin, direction * 100, deathLaser);
 		}
 		deathLaser.mainTextureOffset -= new Vector2(10 * Time.deltaTime, 0);
 	}
+
 	private bool SearchBeam(float angle)
 	{
 		//Returns false if player not hit
@@ -313,6 +330,7 @@ public class LaserCultist : EnemyFramework {
 		//EnableLineRenderer(0.05f, origin, direction * 100, laser);
 		return false;
 	}
+
 	private void EnableLineRenderer(float width, Vector2 origin, Vector2 end, Material material)
 	{
 		GetComponent<LineRenderer>().widthMultiplier = width;
@@ -322,12 +340,13 @@ public class LaserCultist : EnemyFramework {
 		GetComponent<LineRenderer>().sortingLayerName = "BodyFront";
 		//GetComponent<LineRenderer>().sortingOrder = -1;
 		GetComponent<LineRenderer>().enabled = true;
-		
 	}
+
 	private void DisableLineRenderer()
 	{
 		GetComponent<LineRenderer>().enabled = false;
 	}
+
 	private IEnumerator LaserOfDeath()
 	{
 		laserAction = LaserActions.searchBeamShrinking;
@@ -341,6 +360,7 @@ public class LaserCultist : EnemyFramework {
 		yield return new WaitForSeconds(0.5f);
 		laserAction = LaserActions.searchBeamGrowing;
 	}
+
 	void ShowLaser(float angle, float width, Material laser)
 	{
 		laserManager = new LaserManager();
@@ -348,7 +368,7 @@ public class LaserCultist : EnemyFramework {
 		
 		angle -= 90;
 		//angle *= Mathf.Deg2Rad;
-		Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+		//Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
        
 	   //Create position to fire from
 		Vector2 origin;

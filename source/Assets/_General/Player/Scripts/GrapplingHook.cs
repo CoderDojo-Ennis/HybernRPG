@@ -6,7 +6,6 @@ public class GrapplingHook : MonoBehaviour {
 
 	//Shoulder1 properties
 	private Quaternion rotation1;
-	private Vector3 localPosition1;
 	
 	//Forearm1 properties (acting as hook)
 	private Quaternion rotation1Sub;
@@ -30,7 +29,6 @@ public class GrapplingHook : MonoBehaviour {
 	void OnEnable()
 	{
 		rotation1 = transform.GetChild(0).transform.rotation;
-		localPosition1 = transform.GetChild(0).transform.localPosition;
 		
 		rotation1Sub = transform.GetChild(0).GetChild(0).transform.rotation;
 		position1Sub = transform.GetChild(0).GetChild(0).transform.position;
