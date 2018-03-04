@@ -167,5 +167,250 @@
                 }
             ]
         }
+    ],
+	"Jeremy": [
+        {
+            "id": 0,
+            "text": "Stop!",
+			"next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": 1
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "It's dangerous to continue this way.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "I was working around here a short time ago, when I discovered some weid mushrooms.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "I know what you're thinking, but these were no ordinary weird mushrooms.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "They had ... FACES!!!",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "In all my years mining, I've never seen anything like it.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "exit"
+                }
+            ]
+        },
+		{
+            "id": 6,
+            "text": "Hey - kid!",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "7"
+                }
+            ]
+        },
+		{
+            "id": 7,
+            "text": "I thought I told you not to go this way?",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "Why are you looking at me like that?",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "9"
+                }
+            ]
+        },
+		{
+            "id": 9,
+            "text": "It's like you think I teleported or something.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "10"
+                }
+            ]
+        },
+		{
+            "id": 10,
+            "text": "Anyway, turn back now.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "exit"
+                }
+            ]
+        },
+		{
+            "id": 11,
+            "text": "Well kid, I warned you.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "12"
+                }
+            ]
+        },
+		{
+            "id": 12,
+            "text": "These things detonated into a minature nuclear explosion if you get too close.",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "13"
+                }
+            ]
+        },
+		{
+            "id": 13,
+            "text": "I've been thinking of a name for mushrooms which turn into nuclear explosions ...",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "14"
+                }
+            ]
+        },
+		{
+            "id": 14,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "15"
+                }
+            ]
+        },
+		{
+            "id": 15,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "16"
+                }
+            ]
+        },
+		{
+            "id": 16,
+            "text": "I've got it!!!",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "17"
+                }
+            ]
+        },
+		{
+            "id": 17,
+            "text": "Nuclear Mushrooms!",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "18"
+                }
+            ]
+        },
+		{
+            "id": 18,
+            "text": "...",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "19"
+                }
+            ]
+        },
+		{
+            "id": 19,
+            "text": "Stop judging me ...",
+            "next": [
+                {
+                    "speaker": "Jeremy",
+                    "id": "exit"
+                }
+            ]
+        }
+
+    ],
+	"Liz": [
+        {
+            "id": 0,
+            "text": "Q: What's the tallest building in a city?",
+			"next": [
+                {
+                    "speaker": "Liz",
+                    "id": "1"
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "A: The library.",
+            "next": [
+                {
+                    "speaker": "Liz",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "Why?",
+            "next": [
+                {
+                    "speaker": "Liz",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "Because it has the most stories!",
+            "next": [
+                {
+                    "speaker": "Liz",
+                    "id": "exit"
+                }
+            ]
+        }
     ]
 }

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/_World1/Scenes/RisingLava.unity
     guid: def5a0130f25bea429a5e4aaa4c6d8bb
   - enabled: 1
+    path: Assets/_World1/Scenes/Shrooms!.unity
+    guid: 018fa6df4e3ce0643b804c4fc5dd94f0
+  - enabled: 1
     path: Assets/_World5/Scenes/SceneTransitionB.unity
     guid: 1f79f08a0c222b940801e9bfe4d45144
   - enabled: 1

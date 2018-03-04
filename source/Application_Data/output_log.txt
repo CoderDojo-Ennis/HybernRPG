@@ -1,239 +1,43 @@
 Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
-    Vendor:   Intel
-    VRAM:     848 MB
-    Driver:   9.17.10.4229
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) R5 Graphics (ID=0x98e4)
+    Vendor:   ATI
+    VRAM:     2296 MB
+    Driver:   21.19.414.256
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\LitJson.dll (this message is harmless)
-Loading C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.201 seconds
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\James_2\Documents\GitHub\Team Hybern\source\Application_Data\Managed\System.dll (this message is harmless)
-desktop: 1366x768 59Hz; virtual: 1366x768 at 0,0
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\LitJson.dll (this message is harmless)
+Loading D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.143 seconds
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Documents\GitHub\HybernRPG\source\Application_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 89.772835 ms
+UnloadTime: 2.350388 ms
 NullReferenceException: Object reference not set to an instance of an object
   at NewGame.Awake () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 21.256914 ms
+UnloadTime: 11.607969 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 436.
-Total: 21.426479 ms (FindLiveObjects: 0.093707 ms CreateObjectMapping: 0.088799 ms MarkObjects: 15.418926 ms  DeleteObjects: 5.822815 ms)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-(0.0, 1.0)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Total: 0.647356 ms (FindLiveObjects: 0.064975 ms CreateObjectMapping: 0.036933 ms MarkObjects: 0.415156 ms  DeleteObjects: 0.126872 ms)
 
 (0.0, 1.0)
  
@@ -296,4 +100,4 @@ Total: 21.426479 ms (FindLiveObjects: 0.093707 ms CreateObjectMapping: 0.088799 
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2444 -> priority: 1 
+  Thread -> id: 176c -> priority: 1 
