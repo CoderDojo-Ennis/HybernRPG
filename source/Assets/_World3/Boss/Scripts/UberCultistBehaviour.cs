@@ -84,10 +84,16 @@ public class UberCultistBehaviour : MonoBehaviour {
 	}
 	void AirStrike()
 	{
-		foreach(Transform child in missileDroppers.transform)
-		{
-			Instantiate(missile, child.transform.position, Quaternion.identity);
+
+		//foreach(Transform child in missileDroppers.transform)
+		//{
+		for (int i = 0; i < 11; i++) { 
+			int x = (i * 4)-26;
+			int y = 5*((i - 5) * (i - 5))+20;
+			Vector2 pos = new Vector2(x, y);
+			Instantiate(missile, pos, Quaternion.identity);
 		}
+		//}
 	}
 	public void TakeDamage(int damage)
 	{
