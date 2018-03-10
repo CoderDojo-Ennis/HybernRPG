@@ -40,6 +40,8 @@ public class WorldControl : MonoBehaviour
 	}
 	public void NewGame ()
 	{
+		CPIndex = -1;
+		sceneIndex = 0;
 		SaveLoad.DeleteSave ();
 		SwitchScene(1);
 	}
@@ -73,7 +75,11 @@ public class WorldControl : MonoBehaviour
 		
 		if ( currentIndex == sceneIndex )
 		{
-			GameObject.Find("Player Physics Parent").transform.position = GameObject.Find("" + CPIndex).transform.position;
+			GameObject CP = GameObject.Find(CPIndex.ToString());
+			if (CP != null)
+			{
+				GameObject.Find("Player Physics Parent").transform.position = CP.transform.position;
+			}
 			//Debug.Log("current index: " + currentIndex);
 			//Debug.Log("current sceneIndex: " + sceneIndex);
 			//Debug.Log("current CPIndex: " + CPIndex);
