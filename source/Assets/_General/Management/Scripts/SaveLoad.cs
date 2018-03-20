@@ -38,9 +38,11 @@ public static class SaveLoad
     //Load the Game
     public static void Load ()
     {
-        if (File.Exists(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile"))
+		GameObject error = GameObject.Find("Canvas").transform.GetChild(6).gameObject;
+		if (File.Exists(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile"))
         {
-            load = true;
+			error.SetActive(false);
+			load = true;
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/checkpoint.extremelyimportantsavefile", FileMode.Open);
             Game Current = (Game)bf.Deserialize(file);
@@ -51,10 +53,13 @@ public static class SaveLoad
 			
 			control.StoreIndex( Current.CPIndex );
 			control.StoreScene( Current.SceneIndex );
-			
 			control.SwitchScene( Current.SceneIndex );
         }
-    }
+		else
+		{
+			error.SetActive(true);
+		}
+	}
 	//Remove save file
 	public static void DeleteSave ()
 	{
