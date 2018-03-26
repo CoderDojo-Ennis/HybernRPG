@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class movement : MonoBehaviour {
+	AudioManager AudioMan;
+
 	public float walkSpeed = 2;
 	public float runSpeed = 3;
 	public float maxVelocity = 5;
@@ -41,6 +43,7 @@ public class movement : MonoBehaviour {
 	
 	void Start()
 	{
+		AudioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		rb	     = GetComponent<Rigidbody2D>();
 		xScale   =						   	 1;
 		isJumpPressed  = 				 false;
@@ -201,15 +204,15 @@ public class movement : MonoBehaviour {
 						rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
 						//rb.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
 						if(!isJumpPressed){
-							GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack");
+							AudioMan.Play("Jetpack");
 							jetpackFlames.Play();
 						}
 						
 				}
 				if(jetpackCounter == jetpackFrames+1)
 				{
-					GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
-					GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Jetpack Stopped");
+					AudioMan.Stop("Jetpack");
+					AudioMan.Play("Jetpack Stopped");
 					
 					jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 				}
@@ -219,7 +222,7 @@ public class movement : MonoBehaviour {
 		}
 		else
 		{
-			GameObject.Find("AudioManager").GetComponent<AudioManager>().Stop("Jetpack");
+			AudioMan.Stop("Jetpack");
 			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 		}
 		
