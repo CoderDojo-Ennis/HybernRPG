@@ -8,17 +8,17 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject missileDroppers;
 	public GameObject missile;
 	public GameObject worldControl;
+	public GameObject explosion;
 	public PlayerStats playerStats;
 
-    private int health = 50;
-	private int maxHealth = 50;
+    private int health = 75;
+	private int maxHealth = 75;
 	private Slider healthSlider;
     private AudioManager audioManager;
     private CircleCollider2D forceField;
 	private SpriteRenderer forceFieldSprite;
 	private GameObject player;
 	
-	public GameObject explosion;
 	
 	public enum State {
 		Axe,
@@ -27,6 +27,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		Charge,
 		Defeated
 	}
+	
 	void Start () {
 		healthSlider = GameObject.Find("BossHealth").GetComponent<Slider>();
 		state = State.Axe;
@@ -37,12 +38,18 @@ public class UberCultistBehaviour : MonoBehaviour {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		StartCoroutine(Control());
 	}
+	
 	void Update () {
 		if(state == State.Axe)
 		{
 			GetComponent<UberCultistAI>().enabled = true;
 			GetComponent<UberCultistController>().enabled = true;
-			if((player.transform.position - transform.position).magnitude < 3 && health < 25)
+			if(((player.transform.position - transform.position).magnitude < 4 && health < 50))
+			{
+				forceField.enabled = true;
+                forceFieldSprite.enabled = true;
+            }
+			if(((player.transform.position - transform.position).magnitude > 5 && health < 45))
 			{
 				forceField.enabled = true;
                 forceFieldSprite.enabled = true;
@@ -82,6 +89,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 			GetComponent<UberCultistController>().enabled = false;
 		}
 	}
+	
 	void AirStrike()
 	{
 
