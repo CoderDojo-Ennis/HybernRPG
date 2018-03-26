@@ -379,7 +379,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366175841168120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.660156, y: 0.9983836, z: 0}
+  m_LocalPosition: {x: 54.292217, y: 40.098015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706404265800418}
@@ -797,6 +797,9 @@ MonoBehaviour:
   attack: 0
   health: 0
   maxSenseDistance: 0
+  healthDropChance: 33
+  healthPickUp: {fileID: 1291714587779086, guid: c08cbc414b171ec40860bfe250227435,
+    type: 2}
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0

@@ -313,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200348308184840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.58, y: 0.11128244, z: 0}
+  m_LocalPosition: {x: 17.6, y: 1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4761245627735156}
@@ -802,6 +802,7 @@ MonoBehaviour:
   Thought: 0
   LastNavPoint: {fileID: 0}
   TargetNavPoint: {fileID: 0}
+  Navigate: 1
 --- !u!114 &114326811599739204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -813,9 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxSpeed: 3
-  m_JumpForce: 40
-  m_CrouchSpeed: 0.25
+  m_MaxSpeed: 2
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2
@@ -838,6 +837,9 @@ MonoBehaviour:
   attack: 0
   health: 0
   maxSenseDistance: 0
+  healthDropChance: 10
+  healthPickUp: {fileID: 1291714587779086, guid: c08cbc414b171ec40860bfe250227435,
+    type: 2}
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0
