@@ -245,11 +245,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114847817694987200, guid: 375e7f3e51f49854489e301abf2e97ee,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1322899801}
     - target: {fileID: 224527426119845204, guid: 375e7f3e51f49854489e301abf2e97ee,
         type: 2}
       propertyPath: m_AnchorMax.y
@@ -5838,12 +5833,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7721f7a4b4154b041aeac75bf2c92684, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1322899801 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114559913090230572, guid: 7721f7a4b4154b041aeac75bf2c92684,
-    type: 2}
-  m_PrefabInternal: {fileID: 1322899800}
-  m_Script: {fileID: 11500000, guid: bd2ed54b9990ad546a03fa8e2dc1da23, type: 3}
 --- !u!1001 &1345850958
 Prefab:
   m_ObjectHideFlags: 0

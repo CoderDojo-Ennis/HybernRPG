@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 222285145997646626}
   - component: {fileID: 114893725480138310}
   - component: {fileID: 114847817694987200}
+  - component: {fileID: 114128680659080916}
   m_Layer: 0
   m_Name: Close Button
   m_TagString: Untagged
@@ -1780,6 +1781,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114128680659080916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894896405619572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288386711c0be5b49bad6df9ef605ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeLimb: {fileID: 0}
 --- !u!114 &114147231542622654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3916,8 +3929,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: WheelControl
+      - m_Target: {fileID: 114128680659080916}
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

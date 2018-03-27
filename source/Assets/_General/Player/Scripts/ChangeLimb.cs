@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChangeLimb : MonoBehaviour {
     AnimationControl animationControl;
@@ -113,7 +111,7 @@ public class ChangeLimb : MonoBehaviour {
 		healthDisplay.SetActive(!healthDisplay.activeSelf);
         Movement.enabled = !Movement.enabled;
 		//Time Control
-		if( wheel.activeSelf)
+		if(wheel.activeSelf)
 			Time.timeScale = 0;
 		else
 			Time.timeScale = 1;
