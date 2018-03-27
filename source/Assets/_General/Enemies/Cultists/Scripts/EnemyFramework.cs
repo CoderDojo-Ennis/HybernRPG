@@ -9,9 +9,11 @@ public abstract class EnemyFramework : MonoBehaviour
     public int attack;             //Flat damage dealt
 	public int health;             //Maximum amount of damage an enemy can withstand
     public float maxSenseDistance;  //How far away the enemy can sense the player( square of distance)
-	
-	//Movement variables
-	public float runSpeed;
+    public int healthDropChance;   //Chance of healthpickup to drop on death (0-100)
+    public GameObject healthPickUp; 
+
+    //Movement variables
+    public float runSpeed;
 	public float walkSpeed;
 	public float jumpForce;
 	private bool canJump;
@@ -22,6 +24,7 @@ public abstract class EnemyFramework : MonoBehaviour
     private Component[] rigidbodys;
     private Component[] bcolliders;
     private Component[] ccolliders;
+	
 
     /**
 	Beginning of enemy movement functions
@@ -183,8 +186,14 @@ public abstract class EnemyFramework : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;   //Body flops
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GetComponent<CapsuleCollider2D>().enabled = false;
-        
-		
+
+        //Spawn health pick up
+        float i = Random.Range(0f, 100f);
+        if (i < healthDropChance) {
+            Instantiate(healthPickUp, transform.position + new Vector3(0,0.5f,0), Quaternion.identity);
+
+                }
+
         StartCoroutine(Destroy());
     }
 
