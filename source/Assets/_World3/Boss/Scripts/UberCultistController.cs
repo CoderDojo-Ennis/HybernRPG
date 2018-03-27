@@ -31,8 +31,8 @@ public class UberCultistController : MonoBehaviour {
 			//disable box colliders on arms
 				Transform arms = transform.GetChild(0).GetChild(1);
 				
-				arms.GetChild(0).GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
-				arms.GetChild(0).GetChild(1).GetComponent<BoxCollider2D>().isTrigger = false;
+				arms.GetComponent<BoxCollider2D>().enabled = false;
+				arms.GetComponent<BoxCollider2D>().isTrigger = false;
 		}
 
         private void FixedUpdate()
