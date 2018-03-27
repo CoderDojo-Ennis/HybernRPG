@@ -35,8 +35,27 @@ public class EnemyAI : MonoBehaviour {
 		
         Thought = Thoughts.Idle;
         Character = GetComponent<PlatformerCharacter2D>();
-        AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
-        LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
+		if (NavPointContainer == null)
+		{
+			Navigate = false;
+		}
+		else
+		{
+			bool i = false;
+			foreach(Transform t in NavPointContainer.transform)
+			{
+				i = true;
+			}
+			if (i == false)
+			{
+				Navigate = false;
+			}
+		}
+		if (Navigate)
+		{
+			AllNavPoints = NavPointContainer.GetComponentsInChildren<NavPoint>();
+			LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
+		}
         //Debug.Log(this.name + " starting near " + LastNavPoint.name);
 		agro = false;
 		

@@ -18,7 +18,7 @@ public class HealthPickUp : MonoBehaviour {
 	
 	void Update () {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         Material mat = renderer.material;
         float emission = Mathf.PingPong(Time.time, 1.1f);
