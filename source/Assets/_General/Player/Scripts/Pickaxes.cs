@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Pickaxes : MonoBehaviour {
 
+	public float attackSpeed;
+	public float attackRangeMultiplier;
+
+	private Vector3 StartingScale;
+
 	public bool pickaxesEnabled;
 	
 	private Quaternion rotation1;
 	private Quaternion rotation2;
 	
-	private Collider2D pickaxe1;
-	private Collider2D pickaxe2;
+	private BoxCollider2D pickaxe1;
+	private BoxCollider2D pickaxe2;
 	
 	private float offset;
 	private bool slicing;
@@ -24,8 +29,8 @@ public class Pickaxes : MonoBehaviour {
 		playerCollider = transform.parent.parent.GetComponent<Collider2D>();
 		
 		//Find pickaxe colliders
-		pickaxe1 = transform.GetChild(0).GetComponent<Collider2D>();
-		pickaxe2 = transform.GetChild(1).GetComponent<Collider2D>();
+		pickaxe1 = transform.GetChild(0).GetComponent<BoxCollider2D>();
+		pickaxe2 = transform.GetChild(1).GetComponent<BoxCollider2D>();
 		
 		//Ignore grappling hook collisions with player
 		Physics2D.IgnoreCollision(pickaxe1, playerCollider);
@@ -45,9 +50,14 @@ public class Pickaxes : MonoBehaviour {
 		pickaxesEnabled = false;
 		
 		playerStats = GameObject.Find("Player Physics Parent").GetComponent<PlayerStats>();
+		StartingScale = pickaxe1.size;
+		pickaxe1.size = new Vector3(attackRangeMultiplier * StartingScale.x, attackRangeMultiplier * StartingScale.y, StartingScale.z);
+		pickaxe2.size = new Vector3(attackRangeMultiplier * StartingScale.x, attackRangeMultiplier * StartingScale.y, StartingScale.z);
 	}
 	void OnDisable ()
 	{
+		pickaxe1.size = StartingScale;
+		pickaxe2.size = StartingScale;
 		pickaxe1.isTrigger = false;
 		pickaxe2.isTrigger = false;
 		
@@ -68,7 +78,8 @@ public class Pickaxes : MonoBehaviour {
 				GetComponent<Animator>().transform.GetChild(0).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
 				GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
 			}
-			if(Input.GetMouseButtonDown(0))
+			//if (Input.GetMouseButton(0))	//Hold to swing continuously
+			if (Input.GetMouseButtonDown(0))//Click to swing
 			{
 				slicing = true;
 				
@@ -77,7 +88,7 @@ public class Pickaxes : MonoBehaviour {
 			}
 			if(slicing)
 			{
-				offset -= 750 * Time.deltaTime;
+				offset -= 750 * Time.deltaTime * attackSpeed;
 				if(offset < -360){
 					offset = 0;
 					slicing = false;
