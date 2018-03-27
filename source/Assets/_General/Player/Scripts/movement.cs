@@ -114,13 +114,13 @@ public class movement : MonoBehaviour {
 		
 		Vector3 offset;
 		
-		offset = new Vector3(0.15f, -0.01f, 0);
-		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.1f);
-		Debug.DrawRay(transform.position + offset, Vector2.down * 0.1f);
+		offset = new Vector3(0.15f, 0.1f, 0);
+		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.2f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.2f);
 		
-		offset = new Vector3(-0.15f, -0.01f, 0);
-		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.1f);
-		Debug.DrawRay(transform.position + offset, Vector2.down * 0.1f);
+		offset = new Vector3(-0.15f, 0.1f, 0);
+		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.2f);
+		Debug.DrawRay(transform.position + offset, Vector2.down * 0.2f);
 		
 		canJump = groundHitRight || groundHitLeft;
 		
