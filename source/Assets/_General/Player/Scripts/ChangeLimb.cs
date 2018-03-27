@@ -35,10 +35,6 @@ public class ChangeLimb : MonoBehaviour {
 		playerStats = GetComponent< PlayerStats >();
     }
 
-    void Awake()
-    {
-    }
-
     void Update ()
 	{
 		if(!playerStats.paused)
@@ -85,7 +81,6 @@ public class ChangeLimb : MonoBehaviour {
 				SwitchTorso(1);
 			}*/
 			
-
 			//Part Wheel
 			if (Input.GetKeyDown(KeyCode.Mouse1))
 			{
@@ -116,10 +111,7 @@ public class ChangeLimb : MonoBehaviour {
     {
         wheel.SetActive(!wheel.activeSelf);
 		healthDisplay.SetActive(!healthDisplay.activeSelf);
-        
         Movement.enabled = !Movement.enabled;
-		
-		
 		//Time Control
 		if( wheel.activeSelf)
 			Time.timeScale = 0;
