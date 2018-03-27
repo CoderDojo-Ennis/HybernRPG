@@ -850,6 +850,11 @@ Prefab:
       propertyPath: orthographic size
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 212554063232940572, guid: 768feb696d1245247a6511245f3b5098,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -32768
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 768feb696d1245247a6511245f3b5098, type: 2}
   m_IsPrefabParent: 0

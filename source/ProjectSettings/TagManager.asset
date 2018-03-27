@@ -61,6 +61,15 @@ TagManager:
   - name: Water
     uniqueID: 3393972251
     locked: 0
+  - name: NPCBodyBack
+    uniqueID: 2688886201
+    locked: 0
+  - name: NPCBodyMiddle
+    uniqueID: 135969657
+    locked: 0
+  - name: NPCBodyFront
+    uniqueID: 973857993
+    locked: 0
   - name: BodyBack
     uniqueID: 4256866893
     locked: 0

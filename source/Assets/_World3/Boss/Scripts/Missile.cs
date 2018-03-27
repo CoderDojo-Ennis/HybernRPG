@@ -18,11 +18,15 @@ public class Missile : MonoBehaviour
 	}
 	void OnCollisionEnter2D()
 	{
+		audioMan.Play("Boom");
+		Instantiate(explosion, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}
+	/*
 	void OnDestroy()
 	{
 		audioMan.Play("Boom");
 		Instantiate(explosion, transform.position, Quaternion.identity);
 	}
+	*/
 }

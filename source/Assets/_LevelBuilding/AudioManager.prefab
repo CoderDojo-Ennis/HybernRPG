@@ -186,3 +186,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: Boom
+    clip: {fileID: 8300000, guid: a6ce3a8444e90d64e94e4e63fcb4f01d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0

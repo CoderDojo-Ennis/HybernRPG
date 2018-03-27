@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour {
     float y;
-    
+    float timer = 0;
     public void OnTriggerEnter2D(Collider2D coll) {
         if(coll.gameObject.name == "Player Physics Parent") {
             coll.gameObject.GetComponent<PlayerStats>().TakeDamage(-1);
@@ -17,6 +17,8 @@ public class HealthPickUp : MonoBehaviour {
     }
 	
 	void Update () {
+        timer += Time.deltaTime;
+        //Debug.Log(timer);
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         Material mat = renderer.material;
         float emission = Mathf.PingPong(Time.time, 1.1f);
@@ -26,5 +28,8 @@ public class HealthPickUp : MonoBehaviour {
 
         transform.position = new Vector3(transform.position.x, y + Mathf.PingPong(Time.time / 8, 0.2f), transform.position.z);
         //Vector3.Lerp(new Vector3(1f, 1f, 1f), new Vector3(explodeScale, 1f, explodeScale), lerp);
+		if(timer > 15f) {
+            Destroy(this.gameObject);
+        }
     }
 }
