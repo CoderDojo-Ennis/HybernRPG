@@ -11,8 +11,8 @@ public class UberCultistBehaviour : MonoBehaviour {
 	public GameObject explosion;
 	public PlayerStats playerStats;
 
-    private int health = 75;
-	private int maxHealth = 75;
+    private int health = 100;
+	private int maxHealth = 100;
 	private Slider healthSlider;
     private AudioManager audioManager;
     private CircleCollider2D forceField;
@@ -44,12 +44,12 @@ public class UberCultistBehaviour : MonoBehaviour {
 		{
 			GetComponent<UberCultistAI>().enabled = true;
 			GetComponent<UberCultistController>().enabled = true;
-			if(((player.transform.position - transform.position).magnitude < 4 && health < 50))
+			if((player.transform.position - transform.position).magnitude <= 5 && health <= 70)
 			{
 				forceField.enabled = true;
                 forceFieldSprite.enabled = true;
             }
-			if(((player.transform.position - transform.position).magnitude > 5 && health < 45))
+			if((player.transform.position - transform.position).magnitude >= 5 && health <= 75)
 			{
 				forceField.enabled = true;
                 forceFieldSprite.enabled = true;
@@ -92,24 +92,22 @@ public class UberCultistBehaviour : MonoBehaviour {
 	
 	void AirStrike()
 	{
-
-		//foreach(Transform child in missileDroppers.transform)
-		//{
-		for (int i = 0; i < 11; i++) { 
+		for (int i = 0; i < 11; i++)
+		{ 
 			int x = (i * 4)-26;
 			int y = 5*((i - 5) * (i - 5))+20;
 			Vector2 pos = new Vector2(x, y);
 			Instantiate(missile, pos, Quaternion.identity);
 		}
-		//}
 	}
+
 	public void TakeDamage(int damage)
 	{
 		health -= damage;
 		healthSlider.value = (float)health/maxHealth;
 		if(health <= 0)
 		{	
-			StartCoroutine( BlowUp () );
+			StartCoroutine(BlowUp());
 		}
 	}
 
@@ -153,7 +151,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 			
 			//Spawn explosion
 			GameObject clone = Instantiate(explosion, transform.position + offset, Quaternion.identity);
-			clone.transform.parent = this.transform;
+			clone.transform.parent = transform;
 			
 			//Wait
 			yield return new WaitForSeconds(0.5f);
@@ -162,6 +160,6 @@ public class UberCultistBehaviour : MonoBehaviour {
 		worldControl.GetComponent<WorldControl>().NextScene();
 		
 		//Get rid of Uber Cultist
-		Destroy(this.gameObject);
+		Destroy(gameObject);
 	}
 }

@@ -34,16 +34,11 @@ public class UberCultistAI : MonoBehaviour {
         LastNavPoint = NavPoint.FindClosestNavPoint(this.transform.position, AllNavPoints);
         //Debug.Log(this.name + " starting near " + LastNavPoint.name);
 		agro = false;
-		
     }
 
     private void Start()
     {	
         Think();
-    }
-
-    private void Update()
-    {
     }
 
     private void FixedUpdate()
@@ -53,9 +48,9 @@ public class UberCultistAI : MonoBehaviour {
         bool jump = false;
         bool attack = false;
         float xVelocity = 0;
-        float x = 1f;
+        float x = 4.25f;
 
-        switch (this.Thought)
+        switch (Thought)
         {
             case Thoughts.Idle:
                 xVelocity = 0;
@@ -75,7 +70,6 @@ public class UberCultistAI : MonoBehaviour {
                 jump = true;
                 break;
             case Thoughts.Attack:
-                xVelocity = 0;
                 attack = true;
                 break;
         }
@@ -227,7 +221,6 @@ public class UberCultistAI : MonoBehaviour {
         NavPoint from = LastNavPoint;
         NavPoint to = TargetNavPoint;
         NavPointPath BestPath = from.GetBestPath(to, this.AllNavPoints);
-		
 		
         return BestPath;
     }
