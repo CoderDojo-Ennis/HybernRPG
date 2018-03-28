@@ -192,3 +192,15 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: Impact
+    clip: {fileID: 8300000, guid: 83573f24c655ca54f8fb4858570a670f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0
+  - name: AxeSwing
+    clip: {fileID: 8300000, guid: f28f73132f073db4cb88c2d2b2e6f024, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 0

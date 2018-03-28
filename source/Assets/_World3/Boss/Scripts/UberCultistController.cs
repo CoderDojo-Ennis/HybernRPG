@@ -18,6 +18,8 @@ public class UberCultistController : MonoBehaviour {
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 		
 		public Transform jumpTarget;        //Target to jump to
+		
+		private AudioManager audioMan;      //audio manager
 
         private void Awake()
         {
@@ -25,6 +27,7 @@ public class UberCultistController : MonoBehaviour {
             m_GroundCheck = transform;
             m_Anim = transform.GetChild(0).GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+			audioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
 		private void OnDisable()
 		{
@@ -130,8 +133,11 @@ public class UberCultistController : MonoBehaviour {
             if(attack)
             {
                 m_Anim.SetBool("Attack", true);
-				//Enable box colliders on axe
 				
+				//Sound of swinging axe
+				//audioMan.Play("AxeSwing");
+
+				//Enable box colliders on axe
 				
 				transform.GetChild(0).GetChild(1).GetComponent<BoxCollider2D>().enabled = true;
 				transform.GetChild(0).GetChild(1).GetComponent<BoxCollider2D>().isTrigger = true;

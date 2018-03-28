@@ -190,7 +190,29 @@ AnimationClip:
       m_RotationOrder: 4
     path: thigh2-ubercultist
   m_ScaleCurves: []
-  m_FloatCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: pelvis-ubercultist
+    classID: 82
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -229,24 +251,31 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3747773035
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 82
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3747773035
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1094543399
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 4244047081
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -852,6 +881,28 @@ AnimationClip:
     path: thigh2-ubercultist
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: pelvis-ubercultist
+    classID: 82
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -860,7 +911,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: pelvis-ubercultist
+    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -870,7 +921,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: pelvis-ubercultist
+    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -880,7 +931,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: pelvis-ubercultist
+    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -890,7 +941,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
+    path: pelvis-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -900,7 +951,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
+    path: pelvis-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -910,7 +961,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: pelvis-ubercultist/waist-ubercultist/torso-uber cultist/shoulder1-ubercultist
+    path: pelvis-ubercultist
     classID: 4
     script: {fileID: 0}
   - curve:

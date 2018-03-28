@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour {
-
+	
+	private AudioManager audioMan;
+	void OnEnable()
+	{
+		audioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+	}
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if( collider.gameObject.name == "Player Physics Parent")
@@ -13,6 +18,9 @@ public class MeleeAttack : MonoBehaviour {
 			player = GameObject.Find("Player Physics Parent");
 			
 			player.GetComponent<PlayerStats>().TakeDamage(3);
+			
+			//Play sound of impact
+			audioMan.Play("Impact");
 		}
 	}
 }
