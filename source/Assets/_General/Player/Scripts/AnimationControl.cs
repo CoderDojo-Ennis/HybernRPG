@@ -11,24 +11,35 @@ public class AnimationControl : MonoBehaviour {
 	public int ArmLimbs;
 	public int TorsoLimbs;
     public int HeadLimbs;
-    /// is significantly incomplete
+	/// is significantly incomplete
 
-    //Arm Limbs
-    //0 - normal
-    ///1 - pickaxes
-    //2 - shield
-    //3 - grapplin hook
-    ///4 - wings
-    //7 - arm cannon
+	//Arm Limbs
+	//0 - normal
+	///1 - pickaxes
+	//2 - shield
+	//3 - grapplin hook
+	///4 - wings
+	//7 - arm cannon
 
-    //Torso Limbs
-    //0 - normal
-    //1 - heavy torso
-    ///2 - cactus || jetpack
-    
-    void Update ()
+	//Torso Limbs
+	//0 - normal
+	//1 - heavy torso
+	///2 - cactus || jetpack
+	private Animator Head;
+	private Animator Arms;
+	private Animator Torso;
+	private Animator Legs;
+
+	private void Start()
 	{
-		
+		Head = transform.Find("head").GetComponent<Animator>();
+		Arms = transform.Find("Arms").GetComponent<Animator>();
+		Torso = transform.Find("torso").GetComponent<Animator>();
+		Legs = transform.Find("Legs").GetComponent<Animator>();
+	}
+
+	void Update ()
+	{
 		Rigidbody2D rb;
 		rb = GameObject.Find("Player Physics Parent").GetComponent<Rigidbody2D>();
 		
@@ -79,36 +90,36 @@ public class AnimationControl : MonoBehaviour {
 		//Scale speed down slightly
 		speed /= 2;
 		
-        this.transform.Find("head").GetComponent<Animator>().SetBool("Walking", walking);
-		this.transform.Find("head").GetComponent<Animator>().SetFloat("Speed", speed);
-		this.transform.Find("head").GetComponent<Animator>().SetBool("InAir", inAir);
+        Head.SetBool("Walking", walking);
+		Head.SetFloat("Speed", speed);
+		Head.SetBool("InAir", inAir);
 		
-		this.transform.Find("Arms").GetComponent<Animator>().SetBool("Walking", walking);
-		this.transform.Find("Arms").GetComponent<Animator>().SetFloat("Speed", speed);
-		this.transform.Find("Arms").GetComponent<Animator>().SetBool("InAir", inAir);
-		this.transform.Find("Arms").GetComponent<Animator>().SetInteger("ArmLimbs", ArmLimbs);
+		Arms.SetBool("Walking", walking);
+		Arms.SetFloat("Speed", speed);
+		Arms.SetBool("InAir", inAir);
+		Arms.SetInteger("ArmLimbs", ArmLimbs);
 		
-		this.transform.Find("torso").GetComponent<Animator>().SetInteger("TorsoLimbs", TorsoLimbs);
+		Torso.SetInteger("TorsoLimbs", TorsoLimbs);
 		
-		this.transform.Find("Legs").GetComponent<Animator>().SetBool("Walking", walking);
-		this.transform.Find("Legs").GetComponent<Animator>().SetFloat("Speed", speed);
-		this.transform.Find("Legs").GetComponent<Animator>().SetBool("InAir", inAir);
+		Legs.SetBool("Walking", walking);
+		Legs.SetFloat("Speed", speed);
+		Legs.SetBool("InAir", inAir);
 	}
 
 	public void DisableAnimator()
 	{
 		//Turn of animator on child components
 		//Head
-		this.transform.Find("head").GetComponent<Animator>().enabled = false;
+		Head.enabled = false;
 		//Arms
-		this.transform.Find("Arms").GetComponent<Animator>().enabled = false;
+		Arms.enabled = false;
 		//Legs
-		this.transform.Find("Legs").GetComponent<Animator>().enabled = false;
+		Legs.enabled = false;
 		
 		//Disable scripts associated with limbs
 		//Arms
-		this.transform.Find("Arms").GetComponent<aiming>().enabled = false;
-		this.transform.Find("Arms").GetComponent<GrapplingHook>().enabled = false;
-		this.transform.Find("Arms").GetComponent<Pickaxes>().enabled = false;
+		Arms.GetComponent<aiming>().enabled = false;
+		Arms.GetComponent<GrapplingHook>().enabled = false;
+		Arms.GetComponent<Pickaxes>().enabled = false;
 	}
 }
