@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
 	public GameObject explosion;
+	public GameObject WarningPrefab;
 	private AudioManager audioMan;
+	private GameObject Warning;
+	public LayerMask layers;
+	public float DistanceToSpawnWarning;
 	void OnEnable()
 	{
 		Collider2D missile;
@@ -15,18 +20,35 @@ public class Missile : MonoBehaviour
 
 
 		Physics2D.IgnoreCollision(roof, missile, true);
+		StartCoroutine("SpawnWarning");
 	}
+
+	IEnumerator SpawnWarning()
+	{
+		yield return new WaitForSeconds(0.1f);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, DistanceToSpawnWarning, layers);
+		if (hit.collider != null)
+		{
+			Warning = Instantiate(WarningPrefab, hit.point, Quaternion.identity);
+		}
+		else
+		{
+			StartCoroutine("SpawnWarning");
+		}
+	}
+
 	void OnCollisionEnter2D()
 	{
 		audioMan.Play("Boom");
 		Instantiate(explosion, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}
-	/*
+	
 	void OnDestroy()
 	{
-		audioMan.Play("Boom");
-		Instantiate(explosion, transform.position, Quaternion.identity);
+		if (Warning != null)
+		{
+			Destroy(Warning);
+		}
 	}
-	*/
 }
