@@ -15,15 +15,10 @@ public class Execute : MonoBehaviour
 	
 	void Update()
 	{
-		if (Input.GetMouseButtonUp(0) && !fired && reader.shootConnor == true)
+		if (Input.GetMouseButtonUp(0) && !fired && reader.shootConnor)
 		{
             fired = true;
-            Murder();
-        }
+			Instantiate(ammo, transform.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.forward));    //Murder
+		}
 	}
-
-    void Murder()
-    {
-        Instantiate(ammo, this.transform.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.forward));
-    }
 }

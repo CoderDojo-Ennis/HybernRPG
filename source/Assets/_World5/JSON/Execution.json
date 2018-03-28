@@ -22,7 +22,7 @@
         },
 		{
             "id": 2,
-            "text": "After everything I did... Some fellow with a <color=red>dead dog</color> is better than me?!",
+            "text": "You are naught but an insolent simpleton!",
             "next": [
                 {
                     "speaker": "Connor",
@@ -32,7 +32,7 @@
         },
 		{
             "id": 3,
-            "text": "Heh.",
+            "text": "Yet you, somehow, foiled my entire plan. I have lost my life's work.",
             "next": [
                 {
                     "speaker": "Connor",
@@ -42,7 +42,7 @@
         },
 		{
             "id": 4,
-            "text": "What's the point now?",
+            "text": "Still, it was a pyrrhic victory, no? You'd be foolish to think you won this.",
             "next": [
                 {
                     "speaker": "Connor",
@@ -52,7 +52,7 @@
         },
 		{
             "id": 5,
-            "text": "Just get it over with.",
+            "text": "Your dog is dead. I bet you didn't even know his name since you are such a sorry excuse for an owner.",
             "next": [
                 {
                     "speaker": "Connor",
@@ -62,7 +62,67 @@
         },
 		{
             "id": 6,
-            "text": "You've won, I've lost everything and there's nothing left for me.",
+            "text": "We tortured your dog every available second. I look back on his cries now and laugh.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "7"
+                }
+            ]
+        },
+		{
+            "id": 7,
+            "text": "You failed in your quest. Your dog was <color=green>magical</color> but not <color=red>immortal</color>. You can thank me for finding that out.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "8"
+                }
+            ]
+        },
+		{
+            "id": 8,
+            "text": "So will you shoot me? I am unarmed. I am defenceless.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "9"
+                }
+            ]
+        },
+		{
+            "id": 9,
+            "text": "I hope you have some anger in you still to pull the trigger after your dog's painful, traumatic demise.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "10"
+                }
+            ]
+        },
+		{
+            "id": 10,
+            "text": "Either you can shoot me and avenge your dog or you can whimper and cry over him.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "11"
+                }
+            ]
+        },
+		{
+            "id": 11,
+            "text": "If it helps you shoot, I should remind you of something important.",
+            "next": [
+                {
+                    "speaker": "Connor",
+                    "id": "12"
+                }
+            ]
+        },
+		{
+            "id": 12,
+            "text": "I enjoyed killing him.",
             "next": [
                 {
                     "speaker": "Connor",

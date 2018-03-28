@@ -122,7 +122,7 @@
         },
 		{
             "id": 12,
-            "text": "It's strength, it becomes <b><i>my</i></b> strength",
+            "text": "His strength, it becomes <b><i>my</i></b> strength",
             "next": [
                 {
                     "speaker": "Connor",
@@ -166,7 +166,7 @@
             "next": [
                 {
                     "speaker": "Connor",
-                    "id": "4"
+                    "id": "exit"
                 }
             ]
         }
