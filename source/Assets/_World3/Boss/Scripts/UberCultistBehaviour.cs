@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class UberCultistBehaviour : MonoBehaviour {
 	
 	public State state;
-	public GameObject missileDroppers;
 	public GameObject missile;
 	public GameObject worldControl;
 	public GameObject explosion;
 	public PlayerStats playerStats;
+	public Transform MissileSpawnBoundaryLeft;
+	public Transform MissileSpawnBoundaryRight;
 
     private int health = 100;
 	private int maxHealth = 100;
@@ -92,12 +93,23 @@ public class UberCultistBehaviour : MonoBehaviour {
 	
 	void AirStrike()
 	{
+		//Static air strike
+		/*
 		for (int i = 0; i < 11; i++)
 		{ 
 			int x = (i * 4)-26;
 			int y = 5*((i - 5) * (i - 5))+20;
 			Vector2 pos = new Vector2(x, y);
 			Instantiate(missile, pos, Quaternion.identity);
+		}
+		*/
+		//Random air strike
+		int missileAmount = Random.Range(10, 20);
+		for (int i = 0; i < missileAmount; i++)
+		{
+			float x = Random.Range(MissileSpawnBoundaryLeft.position.x, MissileSpawnBoundaryRight.position.x);
+			float y = Random.Range(MissileSpawnBoundaryLeft.position.y, MissileSpawnBoundaryRight.position.y);
+			Instantiate(missile, new Vector2(x, y), Quaternion.identity);
 		}
 	}
 

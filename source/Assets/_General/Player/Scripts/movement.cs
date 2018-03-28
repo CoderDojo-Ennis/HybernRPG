@@ -32,7 +32,8 @@ public class movement : MonoBehaviour {
 	private Vector3 position;
 	
 	//Particle system for jetpack
-	private ParticleSystem jetpackFlames;
+	[HideInInspector]
+	public ParticleSystem jetpackFlames;
 	
 	//Why does a C programmer need glasses? Because he cant C#! hahahahaha
 	

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4278791749866176}
   - component: {fileID: 212882741896477312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: calf1-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4329222972501224}
   - component: {fileID: 212961685984207378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm2-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4303175404039352}
   - component: {fileID: 212998027775723038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shoulder1-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734148147271332}
   - component: {fileID: 212821015348857692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: thigh1-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4492941391405022}
   - component: {fileID: 212892694553368046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: thigh2-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4880349737146072}
   - component: {fileID: 212302260947129520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4460145796278786}
   - component: {fileID: 212465241666168758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: torso-uber cultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590396651040582}
   - component: {fileID: 212240876527210094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ForceField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4166578424372520}
   - component: {fileID: 212233951422962334}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pelvis-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4378212948821808}
   - component: {fileID: 212123793208047344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shoulder2-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 58703720541419058}
   - component: {fileID: 61858144423387800}
   - component: {fileID: 70213936802673854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "\xFCberCultist"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4091518626690732}
   - component: {fileID: 212614844597338168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: waist-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466578858674572}
   - component: {fileID: 212769491168005720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 95378287320240230}
   - component: {fileID: 61307825381143412}
   - component: {fileID: 114817027914048788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: axe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360450321808132}
   - component: {fileID: 212654291484652954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: forearm1-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257223047078632}
   - component: {fileID: 95138308230942928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UberCultistAnimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4553914205604798}
   - component: {fileID: 212696747315888200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: calf2-ubercultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 212231366323209162}
   - component: {fileID: 61833115215244612}
   - component: {fileID: 114556482684196498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "\xFCberCultistAxe"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,12 +769,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  missileDroppers: {fileID: 0}
   missile: {fileID: 1698630860763312, guid: 8997eac8926d11d44b6b5872ac983390, type: 2}
   worldControl: {fileID: 1651943243145918, guid: 1250a72a8a8447346911bbc904bbcffd,
     type: 2}
   explosion: {fileID: 1045708622574318, guid: 4464e6f3f86513a41910bd28eb5248bd, type: 2}
   playerStats: {fileID: 0}
+  MissileSpawnBoundaryLeft: {fileID: 0}
+  MissileSpawnBoundaryRight: {fileID: 0}
 --- !u!114 &114556024432606878
 MonoBehaviour:
   m_ObjectHideFlags: 1

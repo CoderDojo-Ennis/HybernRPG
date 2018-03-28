@@ -42,7 +42,8 @@ public class PlayerStats : MonoBehaviour
 
 	public void Die()
 	{
-		
+		//Stop jetpack flame effect
+		GetComponent<movement>().jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 		//Disable animators on child objects
 		this.transform.GetChild(0).GetComponent<AnimationControl>().DisableAnimator();
 		//Disable rigidBody
