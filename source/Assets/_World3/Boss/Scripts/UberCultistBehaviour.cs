@@ -45,12 +45,7 @@ public class UberCultistBehaviour : MonoBehaviour {
 		{
 			GetComponent<UberCultistAI>().enabled = true;
 			GetComponent<UberCultistController>().enabled = true;
-			if((player.transform.position - transform.position).magnitude <= 5 && health <= 70)
-			{
-				forceField.enabled = true;
-                forceFieldSprite.enabled = true;
-            }
-			if((player.transform.position - transform.position).magnitude >= 5 && health <= 75)
+			if ((player.transform.position - transform.position).magnitude >= 5 && health <= 75)
 			{
 				forceField.enabled = true;
                 forceFieldSprite.enabled = true;
@@ -135,11 +130,11 @@ public class UberCultistBehaviour : MonoBehaviour {
             if( state != State.Defeated )
 			audioManager.Play("Air Siren");
             
-			yield return new WaitForSeconds(5);
+			yield return new WaitForSeconds(1);
             if( state != State.Defeated )
 			state = State.AirStrike;
 			
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(5);
 			if( state != State.Defeated )
 			AirStrike();
 			
