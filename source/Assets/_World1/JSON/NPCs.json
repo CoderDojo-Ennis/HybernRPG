@@ -42,6 +42,26 @@
                     "id": "exit"
                 }
             ]
+        },
+		{
+            "id": 2,
+            "text": "I see you got one of those fancy <color=lime>shields</color>.",
+            "next": [
+                {
+                    "speaker": "Mary",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "You should try it out on that evil <color=red>Laser Cultist</color> up there.",
+            "next": [
+                {
+                    "speaker": "Mary",
+                    "id": "exit"
+                }
+            ]
         }
     ],
 	"Bob": [
@@ -191,7 +211,7 @@
         },
 		{
             "id": 2,
-            "text": "I was working around here a short time ago, when I discovered some weid mushrooms.",
+            "text": "I was working around here a short time ago, when I discovered some weird mushrooms.",
             "next": [
                 {
                     "speaker": "Jeremy",
@@ -291,7 +311,7 @@
         },
 		{
             "id": 12,
-            "text": "These things detonated into a minature nuclear explosion if you get too close.",
+            "text": "These things detonate into a miniature nuclear explosion if you get too close.",
             "next": [
                 {
                     "speaker": "Jeremy",
