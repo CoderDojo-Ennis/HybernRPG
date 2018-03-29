@@ -48,7 +48,7 @@ public class UberCultistAI : MonoBehaviour {
         bool jump = false;
         bool attack = false;
         float xVelocity = 0;
-        float x = 4.5f;
+        float x = 5f;
 
         switch (Thought)
         {
