@@ -72,7 +72,7 @@
         },
 		{
             "id": 7,
-            "text": "You failed in your quest. Your dog was <color=green>magical</color> but not <color=red>immortal</color>. You can thank me for finding that out.",
+            "text": "You failed in your quest. Your dog was <color=lime>magical</color> but not <color=red>immortal</color>. You can thank me for finding that out.",
             "next": [
                 {
                     "speaker": "Connor",
