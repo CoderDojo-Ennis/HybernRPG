@@ -790,7 +790,8 @@ Prefab:
       propertyPath: m_Name
       value: boat (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114784374062217284, guid: d2eaadc9f64a8344cbd33e4085a574b5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d2eaadc9f64a8344cbd33e4085a574b5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &176979975
