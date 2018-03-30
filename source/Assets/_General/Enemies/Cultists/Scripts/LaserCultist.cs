@@ -109,10 +109,8 @@ public class LaserCultist : EnemyFramework
 				laserWidth = 0.05f;
 				
 				raycastResult = laserManager.FireLaser ( origin, laserAngle, laserWidth, laser);
-				if( raycastResult != null){
-					if( raycastResult.name == "Player Physics Parent" )
-					StartCoroutine( LaserOfDeath() );
-				}
+				if (raycastResult.name == "Player Physics Parent")
+					StartCoroutine(LaserOfDeath());
 			break;
 			case LaserActions.searchBeamGrowing:
 				///SearchBeam quickly grows to its full size
