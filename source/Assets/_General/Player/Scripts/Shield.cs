@@ -36,7 +36,7 @@ public class Shield : MonoBehaviour {
 		{
 			///Find desired direction for arm
 			Vector3 mousePos;
-			mousePos= Input.mousePosition;
+			mousePos= ControllerManager.instance.SpoofedMousePosition;
 			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
 			
 			Vector3 pointTo;

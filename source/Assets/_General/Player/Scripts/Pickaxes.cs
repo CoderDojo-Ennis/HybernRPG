@@ -79,7 +79,7 @@ public class Pickaxes : MonoBehaviour {
 				GetComponent<Animator>().transform.GetChild(1).rotation = Quaternion.Euler(0, 0, PointShoulderToMouse(0) + offset);
 			}
 			//if (Input.GetMouseButton(0))	//Hold to swing continuously
-			if (Input.GetMouseButtonDown(0))//Click to swing
+			if (Input.GetButtonDown("Action"))//Click to swing
 			{
 				slicing = true;
 				
@@ -108,7 +108,8 @@ public class Pickaxes : MonoBehaviour {
 	}
 	float PointShoulderToMouse(int child)
 	{
-		return PointTowards(Camera.main.ScreenToWorldPoint (Input.mousePosition), child);
+		//return PointTowards(Camera.main.ScreenToWorldPoint (Input.mousePosition), child);
+		return PointTowards(Camera.main.ScreenToWorldPoint(ControllerManager.instance.SpoofedMousePosition), child);
 	}
 	float PointTowards(Vector3 target, int child)
 	{

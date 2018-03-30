@@ -54,7 +54,8 @@ public class aiming : MonoBehaviour {
 			}
 			
 			Vector3 mousePos;
-			mousePos= Input.mousePosition;
+			//mousePos= Input.mousePosition;
+			mousePos = ControllerManager.instance.SpoofedMousePosition;
 			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
 			
 			Vector3 pointTo;
@@ -94,7 +95,7 @@ public class aiming : MonoBehaviour {
 			transform.GetChild(1).GetChild(0).transform.rotation = rotation2;
 			
 			//Fire arm cannon if mouse clicked
-			if (Input.GetMouseButtonUp(0) && !recoil)
+			if (Input.GetButtonDown("Action") && !recoil)
 			{
 				Vector3 playerBlastPos1;
 				Vector3 playerBlastPos2;

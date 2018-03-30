@@ -13,10 +13,10 @@ public class movement : MonoBehaviour {
 	public float deathBelowYPos = -10;
 	public AnimationControl animationControl;
 	
-	public KeyCode leftKey;
-	public KeyCode rightKey;
-	public KeyCode jumpKey;
-	public KeyCode runKey;
+	//public KeyCode leftKey;
+	//public KeyCode rightKey;
+	//public KeyCode jumpKey;
+	//public KeyCode runKey;
 	
 	private int frames;
 	private Rigidbody2D rb;
@@ -76,42 +76,64 @@ public class movement : MonoBehaviour {
 			//Sets health to 0
 			playerStats.TakeDamage(health);
 		}
-		if(Input.GetKey(leftKey) && !playerStats.paused)
-		{
-			xScale = -1;
-			if(Input.GetKey(runKey))
+		//if (ControllerManager.instance.ControllerConnected == true)
+		//{
+			if (Input.GetAxis("Left Stick X") < 0)
 			{
-				if(rb.velocity.x > -runSpeed)
+				xScale = -1;
+				if (rb.velocity.x > -runSpeed)
 				{
-					rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Left Stick X")) * 10 * ((-runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
 				}
 			}
-			else
+			else if (Input.GetAxis("Left Stick X") > 0)
 			{
-				if(rb.velocity.x > -walkSpeed)
+				xScale = 1;
+				if (rb.velocity.x < runSpeed)
 				{
-					rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Left Stick X")) * 10 * ((runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
 				}
 			}
-		}
-		if(Input.GetKey(rightKey) && !playerStats.paused)
-		{
-			xScale = 1;
-			if(Input.GetKey(runKey))
+		//}
+		//else
+		//{
+			if (Input.GetAxis("Horizontal") < 0 && !playerStats.paused)
 			{
-				if(rb.velocity.x < runSpeed)
+				xScale = -1;
+				if (Input.GetButton("Run"))
 				{
-					rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+					if (rb.velocity.x > -runSpeed)
+					{
+						rb.AddForce(Vector2.right * ((-runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					}
+				}
+				else
+				{
+					if (rb.velocity.x > -walkSpeed)
+					{
+						rb.AddForce(Vector2.right * ((-walkSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					}
 				}
 			}
-			else
+			else if (Input.GetAxis("Horizontal") > 0 && !playerStats.paused)
 			{
-				if(rb.velocity.x < walkSpeed)
+				xScale = 1;
+				if (Input.GetButton("Run"))
 				{
-					rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x)/10), ForceMode2D.Impulse);
+					if (rb.velocity.x < runSpeed)
+					{
+						rb.AddForce(Vector2.right * ((runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					}
+				}
+				else
+				{
+					if (rb.velocity.x < walkSpeed)
+					{
+						rb.AddForce(Vector2.right * ((walkSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					}
 				}
 			}
-		}
+		//}
 		
 		Vector3 offset;
 		
@@ -131,7 +153,7 @@ public class movement : MonoBehaviour {
 		
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		
-		if(Input.GetKey(jumpKey) && !playerStats.paused)
+		if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 		{
 			if(counter > 0)
 			{
@@ -152,7 +174,7 @@ public class movement : MonoBehaviour {
 		//Condition for beginning to use jetpack
 		if(jetpack)
 		{
-			if(Input.GetKey(jumpKey) && !playerStats.paused)
+			if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 			{
 				if(jetpackCounter > 0){
 					jetpackCounter++;
@@ -181,7 +203,7 @@ public class movement : MonoBehaviour {
 		}
 		
 		//Jumping controls
-		if(Input.GetKey(jumpKey) && !playerStats.paused)
+		if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 		{		
 			if(counter <= frames && counter > 0)
 			{
@@ -227,7 +249,7 @@ public class movement : MonoBehaviour {
 			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 		}
 		
-		isJumpPressed = Input.GetKey(jumpKey);
+		isJumpPressed = Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0;
 		inWaterLastFrame = inWater;
 		
 		Debug.DrawLine(new Vector3(rb.position.x,rb.position.y, 0), position, Color.green, 4, false);

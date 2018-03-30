@@ -61,7 +61,8 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(Input.GetMouseButtonDown(0) && !playerStats.paused && Time.timeScale == 1){
+		if(Input.GetButtonDown("Action") && !playerStats.paused && Time.timeScale == 1)
+		{
 				//Mouse pressed
 				CreateHook ();
 				DisconnectWithSpring();
@@ -71,9 +72,10 @@ public class GrapplingHook : MonoBehaviour {
 				
 				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("HookChain");
 		}
-		else{
-		
-			if(Input.GetMouseButton(0) && !playerStats.paused && Time.timeScale == 1){
+		else
+		{
+			if(Input.GetButton("Action") && !playerStats.paused && Time.timeScale == 1)
+			{
 				if(hook != null) //Check to see if hook has been destroyed
 				{
 					//Mouse held down
@@ -170,7 +172,7 @@ public class GrapplingHook : MonoBehaviour {
 			playerPhysics = transform.parent.parent.gameObject;
 		
 			Vector3 direction;
-			direction = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			direction = Camera.main.ScreenToWorldPoint (ControllerManager.instance.SpoofedMousePosition);
 			direction -= transform.GetChild(0).transform.position;
 			
 			float angle = Mathf.Atan2(direction.y, direction.x);
@@ -197,7 +199,7 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void PointShoulderToMouse()
 	{
-		PointShoulderTo(Camera.main.ScreenToWorldPoint (Input.mousePosition));
+		PointShoulderTo(Camera.main.ScreenToWorldPoint (ControllerManager.instance.SpoofedMousePosition));
 	}
 	void PointShoulderTo(Vector3 target)
 	{
