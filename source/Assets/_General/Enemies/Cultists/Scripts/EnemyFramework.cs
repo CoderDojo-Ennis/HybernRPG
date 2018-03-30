@@ -163,6 +163,7 @@ public abstract class EnemyFramework : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.velocity = new Vector2(Random.Range(-3, 5), Random.Range(-3, 5));
+			rb.mass = 0.07f;
         }
 
         //CircleColliders
@@ -189,10 +190,10 @@ public abstract class EnemyFramework : MonoBehaviour
 
         //Spawn health pick up
         float i = Random.Range(0f, 100f);
-        if (i < healthDropChance) {
+        if (i < healthDropChance)
+		{
             Instantiate(healthPickUp, transform.position + new Vector3(0,0.5f,0), Quaternion.identity);
-
-                }
+        }
 
         StartCoroutine(Destroy());
     }
