@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class ControllerManager : MonoBehaviour
 				ControllerJustConnected();
 			}
 			SpoofedMousePosition = Camera.main.WorldToScreenPoint(Player.transform.position + new Vector3(0, 0.5f) + new Vector3(Input.GetAxis("Right Stick X"), Input.GetAxis("Right Stick Y") * -1) * 10);
-			transform.position = Camera.main.ScreenToWorldPoint(SpoofedMousePosition);
+			//transform.position = Camera.main.ScreenToWorldPoint(SpoofedMousePosition);
 		}
 		else
 		{

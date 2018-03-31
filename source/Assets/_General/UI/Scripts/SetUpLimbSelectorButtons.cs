@@ -21,7 +21,7 @@ public class SetUpLimbSelectorButtons : MonoBehaviour {
 		}
 	}
 
-	void ButtonClicked (string limb) {
+  	void ButtonClicked (string limb) {
 		switch(limb)
 		{
 			case "Normal Arms":

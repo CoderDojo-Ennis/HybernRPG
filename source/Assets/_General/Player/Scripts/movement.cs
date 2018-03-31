@@ -76,27 +76,27 @@ public class movement : MonoBehaviour {
 			//Sets health to 0
 			playerStats.TakeDamage(health);
 		}
-		//if (ControllerManager.instance.ControllerConnected == true)
-		//{
-			if (Input.GetAxis("Left Stick X") < 0)
+		if (ControllerManager.instance.ControllerConnected == true)
+		{
+			if (Input.GetAxis("Horizontal") < 0 && !playerStats.paused)
 			{
 				xScale = -1;
 				if (rb.velocity.x > -runSpeed)
 				{
-					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Left Stick X")) * 10 * ((-runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Horizontal")) * 10 * ((-runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
 				}
 			}
-			else if (Input.GetAxis("Left Stick X") > 0)
+			else if (Input.GetAxis("Horizontal") > 0 && !playerStats.paused)
 			{
 				xScale = 1;
 				if (rb.velocity.x < runSpeed)
 				{
-					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Left Stick X")) * 10 * ((runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
+					rb.AddForce(Vector2.right * Mathf.Abs(Input.GetAxis("Horizontal")) * 10 * ((runSpeed - rb.velocity.x) / 10), ForceMode2D.Impulse);
 				}
 			}
-		//}
-		//else
-		//{
+		}
+		else
+		{
 			if (Input.GetAxis("Horizontal") < 0 && !playerStats.paused)
 			{
 				xScale = -1;
@@ -133,7 +133,7 @@ public class movement : MonoBehaviour {
 					}
 				}
 			}
-		//}
+		}
 		
 		Vector3 offset;
 		

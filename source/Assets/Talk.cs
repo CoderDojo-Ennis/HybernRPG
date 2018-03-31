@@ -22,7 +22,7 @@ public class Talk : MonoBehaviour
         {
             readyToSpeak.SetActive(true);
 			readyToSpeak.transform.position = transform.position + new Vector3(-0.3f, 0.75f);
-            if (Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("NpcTalk"))
             {
                 dialogue.BeginDialogue(worldNumber, fileName, speaker, id);
             }

@@ -25,6 +25,7 @@ public class GrapplingHook : MonoBehaviour {
 	
 	public bool retract;
 	public bool cancel;
+	bool stickDownLast;
 	
 	void OnEnable()
 	{
@@ -61,7 +62,21 @@ public class GrapplingHook : MonoBehaviour {
 	}
 	void LateUpdate()
 	{
-		if(Input.GetButtonDown("Action") && !playerStats.paused && Time.timeScale == 1)
+		bool firedWithTrigger = false;
+		if (Input.GetAxisRaw("Triggers") < 0)
+		{
+			if (!stickDownLast)
+			{
+				firedWithTrigger = true;
+			}
+			stickDownLast = true;
+		}
+		else
+		{
+			stickDownLast = false;
+		}
+
+		if ((Input.GetButtonDown("Action") || firedWithTrigger) && !playerStats.paused && Time.timeScale == 1)
 		{
 				//Mouse pressed
 				CreateHook ();
@@ -74,7 +89,7 @@ public class GrapplingHook : MonoBehaviour {
 		}
 		else
 		{
-			if(Input.GetButton("Action") && !playerStats.paused && Time.timeScale == 1)
+			if((Input.GetButton("Action") || Input.GetAxisRaw("Triggers") < 0) && !playerStats.paused && Time.timeScale == 1)
 			{
 				if(hook != null) //Check to see if hook has been destroyed
 				{

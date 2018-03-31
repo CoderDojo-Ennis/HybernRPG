@@ -21,7 +21,9 @@ public class Pickaxes : MonoBehaviour {
 	private bool slicing;
 	
 	private PlayerStats playerStats;
-	
+
+	bool stickDownLast;
+
 	void OnEnable()
 	{
 		//Find player's collider
@@ -86,7 +88,22 @@ public class Pickaxes : MonoBehaviour {
 				if( offset == 0 )
 				GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Slash");
 			}
-			if(slicing)
+			if (Input.GetAxisRaw("Triggers") < 0)
+			{
+				if (!stickDownLast)
+				{
+					slicing = true;
+
+					if (offset == 0)
+						GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Slash");
+				}
+				stickDownLast = true;
+			}
+			else
+			{
+				stickDownLast = false;
+			}
+			if (slicing)
 			{
 				offset -= 750 * Time.deltaTime * attackSpeed;
 				if(offset < -360){

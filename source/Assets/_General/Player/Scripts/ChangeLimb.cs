@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI; 
 
 public class ChangeLimb : MonoBehaviour {
     AnimationControl animationControl;
     private GameObject child;
+	private GameObject CurrentHovered;
 
     public movement Movement;
     public GameObject wheel;
@@ -80,9 +83,41 @@ public class ChangeLimb : MonoBehaviour {
 			}*/
 			
 			//Part Wheel
-			if (Input.GetKeyDown(KeyCode.Mouse1))
+			if (Input.GetButtonDown("OpenPartWheel"))
 			{
 				WheelControl();
+			}
+			if (Input.GetButtonUp("OpenPartWheel"))
+			{
+				WheelControl();
+			}
+			var pointer = new PointerEventData(EventSystem.current);
+			if (wheel.activeSelf && ControllerManager.instance.ControllerConnected)
+			{
+				Transform closest = transform;
+				float closestDistance = 1000000;
+				foreach(Transform t in wheel.transform.Find("Background"))
+				{
+					if (t.gameObject.activeInHierarchy)
+					{
+						ControllerManager.instance.transform.position = Camera.main.ScreenToWorldPoint(t.position);
+						float dist = Vector3.Distance(Camera.main.ScreenToWorldPoint(t.position), Camera.main.ScreenToWorldPoint(ControllerManager.instance.SpoofedMousePosition));
+						if (dist < closestDistance)
+						{
+							closestDistance = dist;
+							closest = t;
+						}
+					}
+				}
+				if (closest.gameObject != CurrentHovered)
+				{
+					if (CurrentHovered != null)
+					{
+						ExecuteEvents.Execute(CurrentHovered, pointer, ExecuteEvents.pointerExitHandler);
+					}
+					CurrentHovered = closest.gameObject;
+					ExecuteEvents.Execute(CurrentHovered, pointer, ExecuteEvents.pointerEnterHandler);
+				}
 			}
 		}
     }
@@ -105,15 +140,50 @@ public class ChangeLimb : MonoBehaviour {
         child.GetComponent<SpriteControl>().SetSprites(animationControl.ArmLimbs, animationControl.TorsoLimbs, animationControl.HeadLimbs);
     }
 
-    public void WheelControl()
-    {
-        wheel.SetActive(!wheel.activeSelf);
+	public void WheelControl()
+	{
+		wheel.SetActive(!wheel.activeSelf);
 		healthDisplay.SetActive(!healthDisplay.activeSelf);
-        Movement.enabled = !Movement.enabled;
+		Movement.enabled = !Movement.enabled;
 		//Time Control
-		if(wheel.activeSelf)
+		if (wheel.activeSelf)
+		{
 			Time.timeScale = 0;
+		}
 		else
+		{
 			Time.timeScale = 1;
+			Text text = wheel.transform.GetChild(0).GetComponentInChildren<Text>();
+			switch (text.text) //Kindof a hack, but whatever
+			{
+				case "Normal Arms":
+					SwitchArms(0);
+					break;
+				case "Pickaxe":
+					SwitchArms(1);
+					break;
+				case "Shield":
+					SwitchArms(2);
+					break;
+				case "Grappling Hook":
+					SwitchArms(3);
+					break;
+				case "Arm Cannon":
+					SwitchArms(7);
+					break;
+				case "Normal Torso":
+					SwitchTorso(0);
+					break;
+				case "Heavy Torso":
+					SwitchTorso(1);
+					break;
+				case "Jetpack":
+					SwitchTorso(2);
+					break;
+				case "Cactus":
+					SwitchTorso(3);
+					break;
+			}
+		}
     }
 }
