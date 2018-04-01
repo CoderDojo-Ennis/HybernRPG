@@ -9,7 +9,7 @@ public class ControllerManager : MonoBehaviour
 	public bool ControllerConnected = false;
 	public Vector3 SpoofedMousePosition;
 	private GameObject Player;
-	void Start ()
+	void Awake ()
 	{
 		Player = GameObject.Find("Player Physics Parent");
 		if (instance != null)

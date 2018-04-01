@@ -12,7 +12,8 @@ public class movement : MonoBehaviour {
 	public bool inWater;
 	public float deathBelowYPos = -10;
 	public AnimationControl animationControl;
-	
+	public GameObject ControllerManagerPrefab;
+
 	//public KeyCode leftKey;
 	//public KeyCode rightKey;
 	//public KeyCode jumpKey;
@@ -44,6 +45,7 @@ public class movement : MonoBehaviour {
 	
 	void Start()
 	{
+		Instantiate(ControllerManagerPrefab);
 		AudioMan = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		rb	     = GetComponent<Rigidbody2D>();
 		xScale   =						   	 1;
