@@ -10,6 +10,6 @@ public class Close : MonoBehaviour
 	
 	public void CloseMenu ()
 	{
-		changeLimb.WheelControl();
+		changeLimb.WheelControl(false);
 	}
 }

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -98,7 +100,9 @@ public class PlayerStats : MonoBehaviour
 		//Die() only called when health == 0, and we only want to call Die() once
 		health = -1;
 		menu.SetActive(true);
-        
+		EventSystem eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+		eventSystem.SetSelectedGameObject(menu.transform.Find("Restart").gameObject/*.GetComponent<Button>().Select();*/);
+
 	}
 
 	private void SubtractDamage(int damage)

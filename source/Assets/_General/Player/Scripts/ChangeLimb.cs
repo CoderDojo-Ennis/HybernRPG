@@ -85,11 +85,11 @@ public class ChangeLimb : MonoBehaviour {
 			//Part Wheel
 			if (Input.GetButtonDown("OpenPartWheel"))
 			{
-				WheelControl();
+				WheelControl(true);
 			}
 			if (Input.GetButtonUp("OpenPartWheel"))
 			{
-				WheelControl();
+				WheelControl(false);
 			}
 			var pointer = new PointerEventData(EventSystem.current);
 			if (wheel.activeSelf && ControllerManager.instance.ControllerConnected)
@@ -140,13 +140,16 @@ public class ChangeLimb : MonoBehaviour {
         child.GetComponent<SpriteControl>().SetSprites(animationControl.ArmLimbs, animationControl.TorsoLimbs, animationControl.HeadLimbs);
     }
 
-	public void WheelControl()
+	public void WheelControl(bool open)
 	{
-		wheel.SetActive(!wheel.activeSelf);
-		healthDisplay.SetActive(!healthDisplay.activeSelf);
-		Movement.enabled = !Movement.enabled;
+		//wheel.SetActive(!wheel.activeSelf);
+		//healthDisplay.SetActive(!healthDisplay.activeSelf);
+		//Movement.enabled = !Movement.enabled;
+		wheel.SetActive(open);
+		healthDisplay.SetActive(!open);
+		Movement.enabled = !open;
 		//Time Control
-		if (wheel.activeSelf)
+		if (open)
 		{
 			Time.timeScale = 0;
 		}

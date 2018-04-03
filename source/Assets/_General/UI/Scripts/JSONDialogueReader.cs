@@ -43,6 +43,7 @@ public class JSONDialogueReader : MonoBehaviour
 
     void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
     {
+		ContinueButton.Select();
         talking = true;
         if (id == "exit")
 		{
