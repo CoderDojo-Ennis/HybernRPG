@@ -13,21 +13,26 @@ public class movement : MonoBehaviour {
 	public float deathBelowYPos = -10;
 	public AnimationControl animationControl;
 	public GameObject ControllerManagerPrefab;
+	public float jetpackSeconds;
 
 	//public KeyCode leftKey;
 	//public KeyCode rightKey;
 	//public KeyCode jumpKey;
 	//public KeyCode runKey;
-	
-	private int frames;
+
+	private float jetpackSecondsRemaining;
+	//private int frames;
 	private Rigidbody2D rb;
 	private float xScale;
-	private int counter = 0;
+	//private int counter = 0;
 	private bool isJumpPressed;
 	private bool canJump;
-	private int jetpackFrames;
-	public int jetpackCounter;
+	//private int jetpackFrames;
+	//public int jetpackCounter;
 	private bool inWaterLastFrame;
+	private bool jumpTimer = true;
+	private bool releasedButtonAfterJump = false;
+	private bool jetpacking = false;
 	PlayerStats playerStats;
 	
 	private Vector3 position;
@@ -50,9 +55,9 @@ public class movement : MonoBehaviour {
 		rb	     = GetComponent<Rigidbody2D>();
 		xScale   =						   	 1;
 		isJumpPressed  = 				 false;
-		jetpackFrames  =                    30;
-		counter        =                     0;
-		jetpackCounter =                     0;
+		//jetpackFrames  =                    30;
+		//counter        =                     0;
+		//jetpackCounter =                     0;
 		inWaterLastFrame =               false;
 		playerStats = GetComponent<PlayerStats>();
 		jetpackFlames = GetComponentInChildren<ParticleSystem>();
@@ -62,13 +67,8 @@ public class movement : MonoBehaviour {
 			Physics2D.IgnoreCollision(GameObject.Find("triangle").GetComponent<Collider2D>(), GetComponent<Collider2D>());
 		}
 	}
-	void Update()
-	{
-		//flips character depending on xScale
-		transform.localScale = new Vector3(xScale, 1,1);
-	}
 	//Test for ground below player (to replenish jumps).
-	void FixedUpdate()
+	void Update()
 	{
 		//If player is below certain height, they die
 		if(rb.position.y < deathBelowYPos)
@@ -151,11 +151,55 @@ public class movement : MonoBehaviour {
 		
 		animationControl.inAir = !canJump;
 		
-		
-		
+		//Start of jumping + jetpack recode
+		if (canJump)
+		{
+			jetpackSecondsRemaining = jetpackSeconds;
+		}
+		if ((Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
+		{
+			if (jumpTimer && canJump)
+			{
+				releasedButtonAfterJump = false;
+				rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+				jumpTimer = false;
+				StartCoroutine("JumpTimer");
+			}
+			if (jetpack && jetpackSecondsRemaining > 0 && !canJump && releasedButtonAfterJump)
+			{
+				if (jetpacking == false)
+				{
+					AudioMan.Play("Jetpack");
+					jetpackFlames.Play();
+					jetpacking = true;
+				}
+				//rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
+				jetpackSecondsRemaining -= Time.deltaTime;
+			}
+		}
+		if (jetpacking && !(Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0))
+		{
+			jetpacking = false;
+			AudioMan.Stop("Jetpack");
+			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+		}
+		if (jetpackSecondsRemaining <= 0 && jetpackSecondsRemaining > -10f)
+		{
+			jetpacking = false;
+			AudioMan.Stop("Jetpack");
+			AudioMan.Play("Jetpack Stopped");
+			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
+			jetpackSecondsRemaining = -100f;
+		}
+		if (!canJump && !(Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !releasedButtonAfterJump)
+		{
+			releasedButtonAfterJump = true;
+		}
+		Debug.Log(jetpackSecondsRemaining);
+		/*
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		
-		if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
+		if((Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 		{
 			if(counter > 0)
 			{
@@ -176,7 +220,7 @@ public class movement : MonoBehaviour {
 		//Condition for beginning to use jetpack
 		if(jetpack)
 		{
-			if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
+			if((Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 			{
 				if(jetpackCounter > 0){
 					jetpackCounter++;
@@ -205,7 +249,7 @@ public class movement : MonoBehaviour {
 		}
 		
 		//Jumping controls
-		if((Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
+		if((Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !playerStats.paused)
 		{		
 			if(counter <= frames && counter > 0)
 			{
@@ -251,18 +295,35 @@ public class movement : MonoBehaviour {
 			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 		}
 		
-		isJumpPressed = Input.GetButton("Submit") || Input.GetAxis("Vertical") > 0;
+		isJumpPressed = Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0;
+		*/
 		inWaterLastFrame = inWater;
 		
 		Debug.DrawLine(new Vector3(rb.position.x,rb.position.y, 0), position, Color.green, 4, false);
 		position = rb.position;
-		
+
 		//If player is going too fast, limit velocity
 		/*if(rb.velocity.sqrMagnitude > maxVelocity * maxVelocity)
 		{
 			rb.velocity.Normalize();
 			rb.velocity *= maxVelocity;
 		}*/
+		//Flip character
+		transform.localScale = new Vector3(xScale, 1, 1);
+	}
+
+	private void FixedUpdate()
+	{
+		if (jetpacking)
+		{
+			rb.AddForce(Vector2.up * 20f, ForceMode2D.Force);
+		}
+	}
+
+	IEnumerator JumpTimer()
+	{
+		yield return new WaitForSeconds(0.1f);
+		jumpTimer = true;
 	}
 	
 }

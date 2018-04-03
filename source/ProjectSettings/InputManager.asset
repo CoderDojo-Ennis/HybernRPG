@@ -87,10 +87,10 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: This is also jump
+    descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: space
+    positiveButton: enter
     altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
@@ -269,6 +269,38 @@ InputManager:
     positiveButton: n
     altNegativeButton: 
     altPositiveButton: joystick button 4
+    gravity: 0
+    dead: 0.01
+    sensitivity: 0.1
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Jump
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: space
+    altNegativeButton: 
+    altPositiveButton: joystick button 0
+    gravity: 0
+    dead: 0.01
+    sensitivity: 0.1
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Jump
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: w
+    altNegativeButton: 
+    altPositiveButton: up
     gravity: 0
     dead: 0.01
     sensitivity: 0.1
