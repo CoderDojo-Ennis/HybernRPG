@@ -2,7 +2,7 @@
 
 public class TextTrigger : MonoBehaviour {
 
-	private JSONDialogueReader dialouge;
+	private JSONDialogueReader dialogue;
 	public int worldNumber;
 	public string fileName;
 	public string speaker;
@@ -10,11 +10,11 @@ public class TextTrigger : MonoBehaviour {
 	
 	void OnEnable()
 	{
-		dialouge = GameObject.Find("TextBoxCanvas").GetComponent<JSONDialogueReader>();
+		dialogue = GameObject.Find("TextBoxCanvas").GetComponent<JSONDialogueReader>();
 	}
 	public void OnTriggerEnter2D()
 	{
-		dialouge.BeginDialogue (worldNumber, fileName, speaker, id);
+		dialogue.BeginDialogue (worldNumber, fileName, speaker, id);
         Destroy(this.GetComponent<TextTrigger>());
 	}
 }

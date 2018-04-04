@@ -195,7 +195,6 @@ public class movement : MonoBehaviour {
 		{
 			releasedButtonAfterJump = true;
 		}
-		Debug.Log(jetpackSecondsRemaining);
 		/*
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );
 		

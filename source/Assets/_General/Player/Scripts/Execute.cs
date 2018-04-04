@@ -15,7 +15,7 @@ public class Execute : MonoBehaviour
 	
 	void Update()
 	{
-		if (Input.GetButtonDown("Action") && !fired && reader.shootConnor)
+		if ((Input.GetButtonDown("Action") || Input.GetButtonDown("Submit") || Input.GetAxis("Triggers") < 0) && !fired && reader.shootConnor)
 		{
             fired = true;
 			Instantiate(ammo, transform.position + new Vector3(0.5f, 0f, 0f), Quaternion.AngleAxis(90, Vector3.forward));    //Murder

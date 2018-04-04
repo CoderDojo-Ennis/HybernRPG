@@ -41,13 +41,20 @@ public class JSONDialogueReader : MonoBehaviour
         return null;
     }
 
-    void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
+	IEnumerator startShootConnor()
+	{
+		yield return new WaitForEndOfFrame();
+		shootConnor = true;
+	}
+
+	void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
     {
 		ContinueButton.Select();
         talking = true;
         if (id == "exit")
 		{
-            shootConnor = true;
+			StartCoroutine("startShootConnor");
+            //shootConnor = true;
             talking = false;
 			//Show health display again
 			if (healthDisplay != null)
