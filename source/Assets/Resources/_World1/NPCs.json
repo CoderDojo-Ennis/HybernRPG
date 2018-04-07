@@ -456,7 +456,7 @@
         },
 		{
             "id": 2,
-            "text": "Alas, my cultist lords plan'eth to ambush thee, and kill thee!",
+            "text": "Alas, my cultist lords planeth to <i>ambush</i> thee, and <i>kill</i> thee!",
             "next": [
                 {
                     "speaker": "Helga",
@@ -466,7 +466,7 @@
         },
 		{
             "id": 3,
-            "text": "Thou would'st be unwise to go any further.",
+            "text": "Thou would'st be <i>unwise</i> to go any further.",
             "next": [
                 {
                     "speaker": "Helga",

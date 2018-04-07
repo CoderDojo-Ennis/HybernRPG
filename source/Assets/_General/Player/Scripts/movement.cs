@@ -139,11 +139,11 @@ public class movement : MonoBehaviour {
 		
 		Vector3 offset;
 		
-		offset = new Vector3(0.15f, 0.1f, 0);
+		offset = new Vector3(0.12f, 0.08f, 0);
 		RaycastHit2D groundHitRight = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.2f);
 		Debug.DrawRay(transform.position + offset, Vector2.down * 0.2f);
 		
-		offset = new Vector3(-0.15f, 0.1f, 0);
+		offset = new Vector3(-0.12f, 0.08f, 0);
 		RaycastHit2D groundHitLeft = Physics2D.Raycast(transform.position + offset, Vector2.down, 0.2f);
 		Debug.DrawRay(transform.position + offset, Vector2.down * 0.2f);
 		
@@ -191,7 +191,7 @@ public class movement : MonoBehaviour {
 			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 			jetpackSecondsRemaining = -100f;
 		}
-		if (!canJump && !(Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0) && !releasedButtonAfterJump)
+		if (/*!canJump && */!(Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0))
 		{
 			releasedButtonAfterJump = true;
 		}
