@@ -127,8 +127,8 @@ public class JSONDialogueReader : MonoBehaviour
 	{
 		Pause();
 		
-		textData = File.ReadAllText(Application.dataPath + "/_World" + worldNumber + "/JSON/" + fileName + ".json");
-        dialogueData = JsonMapper.ToObject(textData);
+		TextAsset textData = Resources.Load<TextAsset>("_World" + worldNumber + "/" + fileName);
+        dialogueData = JsonMapper.ToObject(textData.ToString());
         
 		DisplayDialogue (speaker, id);
 		
