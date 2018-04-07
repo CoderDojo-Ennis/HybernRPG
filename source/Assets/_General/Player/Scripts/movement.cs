@@ -61,6 +61,7 @@ public class movement : MonoBehaviour {
 		inWaterLastFrame =               false;
 		playerStats = GetComponent<PlayerStats>();
 		jetpackFlames = GetComponentInChildren<ParticleSystem>();
+		jetpackSecondsRemaining = jetpackSeconds;
 		//Special code for Joey's level
 		if( GameObject.Find("triangle") != null )
 		{
@@ -191,9 +192,19 @@ public class movement : MonoBehaviour {
 			jetpackFlames.Stop(false, ParticleSystemStopBehavior.StopEmitting);
 			jetpackSecondsRemaining = -100f;
 		}
-		if (/*!canJump && */!(Input.GetButton("Jump") || Input.GetAxis("Vertical") > 0))
+		if (ControllerManager.instance.ControllerConnected)
 		{
-			releasedButtonAfterJump = true;
+			if (Input.GetButtonUp("Jump") || !(Input.GetAxis("Vertical") > 0))
+			{
+				releasedButtonAfterJump = true;
+			}
+		}
+		else
+		{
+			if (Input.GetButtonUp("Jump"))
+			{
+				releasedButtonAfterJump = true;
+			}
 		}
 		/*
 		frames = Mathf.Abs( (int)((20/walkSpeed) * rb.velocity.x) );

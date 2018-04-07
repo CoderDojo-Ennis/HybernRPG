@@ -446,7 +446,7 @@
         },
         {
             "id": 1,
-            "text": "If I were thee, I would not continue in thy current path.",
+            "text": "If I were thee, I would not continue on thy current path.",
             "next": [
                 {
                     "speaker": "Helga",
@@ -476,7 +476,7 @@
         },
 		{
             "id": 4,
-            "text": "If thou must go on, jump'st down the into deep cave, just before they await.",
+            "text": "If thou must go on, jump'st down the into deep cave, just before they attack.",
             "next": [
                 {
                     "speaker": "Helga",
