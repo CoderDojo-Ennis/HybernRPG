@@ -49,7 +49,6 @@ public class JSONDialogueReader : MonoBehaviour
 
 	void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
     {
-		ContinueButton.Select();
         talking = true;
         if (id == "exit")
 		{
@@ -77,7 +76,7 @@ public class JSONDialogueReader : MonoBehaviour
         //display text
 		StopAllCoroutines();
 		StartCoroutine("PrintText");
-		
+		ContinueButton.Select();
         SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
 
@@ -143,13 +142,17 @@ public class JSONDialogueReader : MonoBehaviour
 	void Pause()
 	{
 		if( playerStats )
+		{
 			playerStats.paused = true;
+		}
 	}
 
 	void UnPause()
 	{
 		if( playerStats )
-		playerStats.paused = false;
+		{
+			playerStats.paused = false;
+		}
 	}
 
 	IEnumerator PrintText ()
