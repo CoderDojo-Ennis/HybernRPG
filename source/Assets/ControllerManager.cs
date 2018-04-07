@@ -86,7 +86,10 @@ public class ControllerManager : MonoBehaviour
 		if (timer > 0) { timer -= Time.deltaTime; } else { timer = 0; }
 		if (Input.GetButtonDown("Submit"))
 		{
-			EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+			if (EventSystem.current.currentSelectedGameObject != null)
+			{
+				EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+			}
 		}
 	}
 
