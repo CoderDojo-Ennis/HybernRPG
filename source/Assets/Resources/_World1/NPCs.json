@@ -432,5 +432,67 @@
                 }
             ]
         }
+    ],
+	"Helga": [
+        {
+            "id": 0,
+            "text": "Hail, traveller!",
+			"next": [
+                {
+                    "speaker": "Helga",
+                    "id": "1"
+                }
+			]
+        },
+        {
+            "id": 1,
+            "text": "If I were thee, I would not continue in thy current path.",
+            "next": [
+                {
+                    "speaker": "Helga",
+                    "id": "2"
+                }
+            ]
+        },
+		{
+            "id": 2,
+            "text": "Alas, my cultist lords plan'eth to ambush thee, and kill thee!",
+            "next": [
+                {
+                    "speaker": "Helga",
+                    "id": "3"
+                }
+            ]
+        },
+		{
+            "id": 3,
+            "text": "Thou would'st be unwise to go any further.",
+            "next": [
+                {
+                    "speaker": "Helga",
+                    "id": "4"
+                }
+            ]
+        },
+		{
+            "id": 4,
+            "text": "If thou must go on, jump'st down the into deep cave, just before they await.",
+            "next": [
+                {
+                    "speaker": "Helga",
+                    "id": "5"
+                }
+            ]
+        },
+		{
+            "id": 5,
+            "text": "Take care strange traveller!",
+            "next": [
+                {
+                    "speaker": "Helga",
+                    "id": "exit"
+                }
+            ]
+        }
     ]
 }
