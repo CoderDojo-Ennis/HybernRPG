@@ -4,14 +4,13 @@ public class BoatScript : MonoBehaviour
 {
 	Rigidbody2D rigid;
 	BoxCollider2D box;
-	Vector2 maxSpeed;
+	public Vector2 maxSpeed;
 	float speed = 0.01f;
 
 	void Start ()
 	{
 		box = gameObject.GetComponent<BoxCollider2D>();
 		rigid = gameObject.GetComponent<Rigidbody2D>();
-		maxSpeed = new Vector2(1, 0);
 	}
 
 	void Update()
