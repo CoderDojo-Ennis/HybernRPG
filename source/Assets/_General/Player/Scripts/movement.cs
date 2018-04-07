@@ -61,6 +61,7 @@ public class movement : MonoBehaviour {
 		inWaterLastFrame =               false;
 		playerStats = GetComponent<PlayerStats>();
 		jetpackFlames = GetComponentInChildren<ParticleSystem>();
+		jetpackSecondsRemaining = jetpackSeconds;
 		//Special code for Joey's level
 		if( GameObject.Find("triangle") != null )
 		{
