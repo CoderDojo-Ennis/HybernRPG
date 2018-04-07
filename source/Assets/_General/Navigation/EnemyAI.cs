@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -62,8 +63,12 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Start()
-    {	
+    {
+        //if (GameObject.FindWithTag("") != null) {
+            Physics2D.IgnoreCollision(GameObject.Find("playerDirector").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        //}
         Think();
+
     }
 
     private void Update()

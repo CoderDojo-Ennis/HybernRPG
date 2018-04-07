@@ -129,7 +129,7 @@ namespace UnityStandardAssets._2D
 				//Tell the animator about this fact
 				m_Anim.SetBool("OnGround", m_Grounded);
             } 
-            if(attack)
+            if(attack && m_Grounded)
             {
                 m_Anim.SetBool("Attack", true);
 				//Enable box colliders on arms

@@ -15,6 +15,7 @@ TagManager:
   - NPC
   - Reflect Lasers
   - Unhookable
+  - playerOnly
   layers:
   - Default
   - TransparentFX
