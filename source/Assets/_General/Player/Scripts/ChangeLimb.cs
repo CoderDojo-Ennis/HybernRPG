@@ -32,6 +32,7 @@ public class ChangeLimb : MonoBehaviour {
 		child = transform.GetChild(0).gameObject;
         animationControl = child.GetComponent<AnimationControl>();
         wheel = GameObject.Find("UI").transform.GetChild(0).gameObject;
+		wheel.SetActive(false);
 		healthDisplay = GameObject.Find("UI").transform.GetChild(1).gameObject;
 		playerStats = GetComponent< PlayerStats >();
     }
