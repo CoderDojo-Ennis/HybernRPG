@@ -63,9 +63,9 @@ public class movement : MonoBehaviour {
 		jetpackFlames = GetComponentInChildren<ParticleSystem>();
 		jetpackSecondsRemaining = jetpackSeconds;
 		//Special code for Joey's level
-		if( GameObject.Find("triangle") != null )
+		if (GameObject.Find("cultistDirector") != null)
 		{
-			Physics2D.IgnoreCollision(GameObject.Find("triangle").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+			Physics2D.IgnoreCollision(GameObject.Find("cultistDirector").GetComponent<Collider2D>(), GetComponent<Collider2D>());
 		}
 	}
 	//Test for ground below player (to replenish jumps).

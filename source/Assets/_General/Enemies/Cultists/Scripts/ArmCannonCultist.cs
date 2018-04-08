@@ -36,7 +36,11 @@ public class ArmCannonCultist : EnemyFramework {
 		//Set arm rotation;
 		armQuartern = Quaternion.identity;
 	}
-
+	void start() {
+        if (GameObject.FindWithTag("") != null) {
+            Physics2D.IgnoreCollision(GameObject.Find("playerDirector").GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+    }
     override public void Attack()
     {
     }

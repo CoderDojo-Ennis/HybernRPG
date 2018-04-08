@@ -803,7 +803,11 @@ MonoBehaviour:
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0
-  sounds: []
+  sounds:
+  - Manly Grunt 1
+  - Manly Grunt 2
+  - DeathSound1
+  - DeathSound2
   Player: {fileID: 0}
   Projectile: {fileID: 1177010944394006, guid: 89cd3bf44caac0d44bdf4d1368bc7c8c, type: 2}
 --- !u!212 &212114202609294484

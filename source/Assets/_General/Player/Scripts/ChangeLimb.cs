@@ -32,6 +32,7 @@ public class ChangeLimb : MonoBehaviour {
 		child = transform.GetChild(0).gameObject;
         animationControl = child.GetComponent<AnimationControl>();
         wheel = GameObject.Find("UI").transform.GetChild(0).gameObject;
+		wheel.SetActive(false);
 		healthDisplay = GameObject.Find("UI").transform.GetChild(1).gameObject;
 		playerStats = GetComponent< PlayerStats >();
     }
@@ -156,7 +157,7 @@ public class ChangeLimb : MonoBehaviour {
 		else
 		{
 			Time.timeScale = 1;
-			Text text = wheel.transform.GetChild(0).GetComponentInChildren<Text>();
+			Text text = wheel.transform.Find("Text Panel").GetComponentInChildren<Text>();
 			switch (text.text) //Kindof a hack, but whatever
 			{
 				case "Normal Arms":
