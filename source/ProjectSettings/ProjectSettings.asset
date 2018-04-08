@@ -652,11 +652,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: 2DRoguelike
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Hybern
+  metroCertificateIssuer: Hybern
+  metroCertificateNotAfter: 801b35c9aae9d401
   metroApplicationDescription: 2DRoguelike
   wsaImages: {}
   metroTileShortName: 
@@ -716,6 +716,7 @@ PlayerSettings:
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
+  XboxOneXTitleMemory: 8
   xboxOneScriptCompiler: 0
   vrEditorSettings:
     daydream:
