@@ -827,7 +827,9 @@ MonoBehaviour:
   runSpeed: 0
   walkSpeed: 0
   jumpForce: 0
-  sounds: []
+  sounds:
+  - DeathSound1
+  - DeathSound2
   laserAngle: 90
   armSpeed: 0.2
   laser: {fileID: 2100000, guid: 254767a7f33f3ab47b027d07619c9ef5, type: 2}

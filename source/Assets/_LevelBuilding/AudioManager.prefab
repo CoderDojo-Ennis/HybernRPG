@@ -204,3 +204,15 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     useAudioMixer: 0
+  - name: DeathSound1
+    clip: {fileID: 8300000, guid: 20ae480437f504b469a610bf57c83b67, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
+  - name: DeathSound2
+    clip: {fileID: 8300000, guid: 97642ec812ab206418bc9a5e24dbebd2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    useAudioMixer: 1
