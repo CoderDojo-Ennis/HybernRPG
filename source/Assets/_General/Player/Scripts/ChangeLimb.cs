@@ -156,7 +156,7 @@ public class ChangeLimb : MonoBehaviour {
 		else
 		{
 			Time.timeScale = 1;
-			Text text = wheel.transform.GetChild(0).GetComponentInChildren<Text>();
+			Text text = wheel.transform.Find("Text Panel").GetComponentInChildren<Text>();
 			switch (text.text) //Kindof a hack, but whatever
 			{
 				case "Normal Arms":

@@ -64,9 +64,9 @@ public class EnemyAI : MonoBehaviour {
 
     private void Start()
     {
-        //if (GameObject.FindWithTag("") != null) {
+        if (GameObject.Find("playerDirector") != null) {
             Physics2D.IgnoreCollision(GameObject.Find("playerDirector").GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        //}
+        }
         Think();
 
     }
