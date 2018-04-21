@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 86987684}
   - component: {fileID: 86987683}
   - component: {fileID: 86987682}
+  - component: {fileID: 86987685}
   m_Layer: 0
   m_Name: WandS instructions
   m_TagString: Untagged
@@ -479,6 +480,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86987685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86987681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8921ef07b05396469892c069574834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300000, guid: 489a8a89f4be94346ad1e3e934e01ec9, type: 3}
+  gamepadImage: {fileID: 21300000, guid: 1e8f36ccc6a04644982a1076ac8e8b60, type: 3}
 --- !u!1001 &97574243
 Prefab:
   m_ObjectHideFlags: 0
@@ -536,6 +550,7 @@ GameObject:
   - component: {fileID: 100360403}
   - component: {fileID: 100360404}
   - component: {fileID: 100360405}
+  - component: {fileID: 100360406}
   m_Layer: 0
   m_Name: AandD instructions
   m_TagString: Untagged
@@ -636,6 +651,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.34, y: 4.03}
   m_EdgeRadius: 0
+--- !u!114 &100360406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 100360401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8921ef07b05396469892c069574834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300000, guid: e8192befcdc03514e88d190baa426ba9, type: 3}
+  gamepadImage: {fileID: 21300000, guid: 0a403c7c5887ebc4397eae61318fd082, type: 3}
 --- !u!4 &101898308 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4604535435013344, guid: 085c0f3875e55334f814d2e2680863bf,
