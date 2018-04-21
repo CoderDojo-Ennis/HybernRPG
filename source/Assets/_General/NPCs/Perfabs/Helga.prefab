@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224815845663836768}
   - component: {fileID: 212248400190192600}
+  - component: {fileID: 114897224254050036}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -765,6 +766,19 @@ MonoBehaviour:
   fileName: NPCs
   speaker: Major Miner
   id: 0
+--- !u!114 &114897224254050036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005673876394786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8921ef07b05396469892c069574834b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300000, guid: 397590ff98966194091bc2243e1d7562, type: 3}
+  gamepadImage: {fileID: 21300000, guid: c4ef718fc9ab5314fae706b54d267e9a, type: 3}
 --- !u!212 &212054210145039882
 SpriteRenderer:
   m_ObjectHideFlags: 1
