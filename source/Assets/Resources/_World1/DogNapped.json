@@ -22,7 +22,7 @@
         },
 		{
             "id": 2,
-            "text": "Left hand click with those <color=lime>pickaxe arms</color> to attack.",
+            "text": "To attack with your pickaxe arms, <color=lime>left hand click</color> or press <color=lime>right trigger.</color>",
 			"next": [
                 {
                     "speaker": "Cultist",
@@ -78,7 +78,7 @@
 			"next": [
                 {
                     "speaker": "Cultist",
-                    "id": "5"
+                    "id": "exit"
                 }
 			]
         },

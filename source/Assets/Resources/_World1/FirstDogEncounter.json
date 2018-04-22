@@ -82,7 +82,7 @@
         },
 		{
             "id": 8,
-            "text": "Right hand click to <color=lime>swap your arms to pickaxes.</color>",
+            "text": "To swap your arms to pickaxes, <color=lime>right hand click</color> or press the <color=lime>right bumper</color> on your gamepad.",
             "next": [
                 {
                     "speaker": "Dog",
