@@ -1,28 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.IO;
 using LitJson;
+using System.Diagnostics;
 
 public class JSONDialogueReader : MonoBehaviour
 {
-    private string textData;
+	private string NextSpeaker;
+	private string NextID;
+	private string textData;
     private JsonData dialogueData;
 	private GameObject healthDisplay;
-    public string DisplaySpeaker;
-    public string DisplayID;
-    private string NextSpeaker;
-    private string NextID;
 	private PlayerStats playerStats;
+	private Stopwatch stopwatch;
+	private int pause = 100;            //Mininum time between different dialogues in milliseconds
 
-    public Button ContinueButton;
+	public string DisplaySpeaker;
+	public string DisplayID;
+	public Button ContinueButton;
     public GameObject DialogueTextUI;
     public GameObject SpeakerTextUI;
     public bool talking;
     public bool shootConnor;
 
-    void Start() 
+	void Start() 
     {
+		stopwatch = new Stopwatch();
         shootConnor = false;
         if (GameObject.Find("Player Physics Parent"))
 		{
@@ -30,7 +33,7 @@ public class JSONDialogueReader : MonoBehaviour
 		}
 		ContinueButton.GetComponent<Button>().onClick.AddListener(ContinueButtonFunction);
 	}
-
+	
 	string GetText (string speaker, string id) //Searches dialogue.json for text.
     {
         for (int i = 0; i < dialogueData[speaker].Count; i++)
@@ -41,7 +44,7 @@ public class JSONDialogueReader : MonoBehaviour
         return null;
     }
 
-	IEnumerator startShootConnor()
+	IEnumerator StartShootConnor()
 	{
 		yield return new WaitForEndOfFrame();
 		shootConnor = true;
@@ -49,10 +52,12 @@ public class JSONDialogueReader : MonoBehaviour
 
 	void DisplayDialogue (string speaker, string id) //Uses GetText to find the text needed and displays it.
     {
+		stopwatch.Reset();
+		stopwatch.Start();
         talking = true;
         if (id == "exit")
 		{
-			StartCoroutine("startShootConnor");
+			StartCoroutine("StartShootConnor");
             //shootConnor = true;
             talking = false;
 			//Show health display again
@@ -77,7 +82,7 @@ public class JSONDialogueReader : MonoBehaviour
 		StopAllCoroutines();
 		StartCoroutine("PrintText");
 		ContinueButton.Select();
-        SpeakerTextUI.GetComponent<Text>().text = speaker;
+		SpeakerTextUI.GetComponent<Text>().text = speaker;
     }
 
     string GetNextID(string speaker, string id) //Searches dialogue.json for the next piece of text in a conversation
@@ -112,11 +117,11 @@ public class JSONDialogueReader : MonoBehaviour
 
     public void ContinueButtonFunction ()
     {
-        if (GetNextID(DisplaySpeaker, DisplayID) != "FAIL" && GetNextSpeaker(DisplaySpeaker, DisplayID) != "FAIL")
+        if (GetNextID(DisplaySpeaker, DisplayID) != "FAIL" && GetNextSpeaker(DisplaySpeaker, DisplayID) != "FAIL" && stopwatch.ElapsedMilliseconds >= pause)
         {
 			DisplayDialogue (GetNextSpeaker(DisplaySpeaker, DisplayID), GetNextID(DisplaySpeaker, DisplayID));
         }
-        else
+        else if (stopwatch.ElapsedMilliseconds >= pause)
         {
             DialogueTextUI.SetActive(false);
         }
