@@ -50,7 +50,7 @@ public class ControllerManager : MonoBehaviour
 				ControllerJustDisconnected();
 			}
 		}
-/* 
+ 
 		if (timer == 0)
 		{
 			currentAxis = new AxisEventData(EventSystem.current);
@@ -81,12 +81,12 @@ public class ControllerManager : MonoBehaviour
 				timer = timeBetweenInputs;
 			}
 		}
-*/
+
 		//timer counting down
-		if (timer > 0) { timer -= Time.deltaTime; } else { timer = 0; }
+		if (timer > 0) { timer -= Time.unscaledDeltaTime; } else { timer = 0; }
 		if (Input.GetButtonDown("Submit"))
 		{
-			if (EventSystem.current.currentSelectedGameObject != null)
+			if (EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.activeInHierarchy)
 			{
 				EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
 			}
