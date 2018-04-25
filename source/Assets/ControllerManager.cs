@@ -37,7 +37,7 @@ public class ControllerManager : MonoBehaviour
 			}
 			if (Player != null)
 			{
-				SpoofedMousePosition = Camera.main.WorldToScreenPoint(Player.transform.position + new Vector3(0, 0.5f) + new Vector3(Input.GetAxis("Right Stick X"), Input.GetAxis("Right Stick Y") * -1) * 10);
+				SpoofedMousePosition = Camera.main.WorldToScreenPoint(Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, Camera.main.nearClipPlane)) + new Vector3(0, 0.5f) + new Vector3(Input.GetAxis("Right Stick X"), Input.GetAxis("Right Stick Y") * -1) * 10);
 			}
 			//transform.position = Camera.main.ScreenToWorldPoint(SpoofedMousePosition);
 		}
