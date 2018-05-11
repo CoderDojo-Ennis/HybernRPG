@@ -41,7 +41,7 @@ public class ShroomExplosion : MonoBehaviour
 		{
 			if (!playerStats.shielded)
 			{
-				playerStats.TakeDamage ( playerStats.health );
+				playerStats.TakeDamage ( PlayerStats.health );
 			}
 			if (playerStats.shielded)
 			{

@@ -23,7 +23,7 @@ public class Lava : MonoBehaviour {
 		if(collider.gameObject.name == "Player Physics Parent")
 		{
 			PlayerStats playerStats = collider.gameObject.GetComponent<PlayerStats>();
-			playerStats.TakeDamage( playerStats.health );
+			playerStats.TakeDamage( PlayerStats.health );
 		}
 		if( collider.gameObject.GetComponent<EnemyFramework>() )
 		{
