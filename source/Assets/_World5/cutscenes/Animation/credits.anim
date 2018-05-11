@@ -82,25 +82,19 @@ AnimationClip:
         time: 24.966667
         value: {x: 0.77, y: -3.51, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: -0.79060626, z: 0}
+        outSlope: {x: 0, y: -1.1539578, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 83.46667
-        value: {x: 0.77, y: -49.799934, z: 0}
-        inSlope: {x: 0, y: -0.002699063, z: 0}
-        outSlope: {x: 0, y: -0.002699063, z: 0}
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 83.51667
-        value: {x: 0.77, y: -49.8, z: 0}
+        time: 73.183334
+        value: {x: 0.77, y: -59.15, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 90.066666
-        value: {x: 0.77, y: -49.8, z: 0}
+        time: 78.03333
+        value: {x: 0.77, y: -59.15, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: -0.05146309, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -118,7 +112,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 21.816668
+        time: 22
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -150,7 +144,7 @@ AnimationClip:
       attribute: 4
       script: {fileID: 0}
       typeID: 4
-      customType: 14
+      customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 907064781
@@ -165,7 +159,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 90.066666
+    m_StopTime: 78.03333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -214,18 +208,6 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - serializedVersion: 2
-        time: 83.46667
-        value: 0.77
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 90.066666
-        value: 0.77
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -264,20 +246,20 @@ AnimationClip:
         time: 24.966667
         value: -3.51
         inSlope: 0
-        outSlope: -0.79060626
+        outSlope: -1.1539578
         tangentMode: 65
       - serializedVersion: 2
-        time: 83.51667
-        value: -49.8
+        time: 73.183334
+        value: -59.15
         inSlope: 0
         outSlope: 0
-        tangentMode: 1
+        tangentMode: 65
       - serializedVersion: 2
-        time: 90.066666
-        value: -49.8
+        time: 78.03333
+        value: -59.15
         inSlope: 0
-        outSlope: 0
-        tangentMode: 1
+        outSlope: -0.05146309
+        tangentMode: 65
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -314,18 +296,6 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 24.966667
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 83.46667
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 90.066666
         value: 0
         inSlope: 0
         outSlope: 0
@@ -455,7 +425,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 21.816668
+        time: 22
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -502,7 +472,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 82.833336
+  - time: 75.2
     functionName: SwitchScene
     data: 
     objectReferenceParameter: {fileID: 0}
