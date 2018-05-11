@@ -167,7 +167,7 @@ public class EnemyAI : MonoBehaviour {
         GameObject bestMatch = null;
         for (int i = 0; i < targets.Length; i++)
         {
-            /**if (Character.CheckVision(targets[i]))
+            /*if (Character.CheckVision(targets[i]))
             {
                 float dist = (transform.position - targets[i].transform.position).sqrMagnitude;
                 if (dist < closestDist)
