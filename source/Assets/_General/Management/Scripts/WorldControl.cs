@@ -19,6 +19,7 @@ public class WorldControl : MonoBehaviour
 		Invoke("InitiateSwithcSceneLoading", 1.2f);
     }
 
+	/*
 	private void Update()
 	{
 		if(Input.GetButtonDown("SecretNextScene"))
@@ -26,6 +27,7 @@ public class WorldControl : MonoBehaviour
 			NextScene(); //IMPORTANT - DISABLE THIS IN PRODUCTION BUILDS
 		}
 	}
+	*/
 
 	public void NextScene ()
 	{
