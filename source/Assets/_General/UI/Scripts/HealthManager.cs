@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
 	public GameObject orbPrefab;
-	private Vector2 StartOffset = new Vector2(20, 20);
+	private Vector2 StartOffset = new Vector2(10, 10);
 	public Sprite bigOrb;
 	public Sprite smallOrb;
 	private List<GameObject> orbs;
@@ -43,13 +43,13 @@ public class HealthManager : MonoBehaviour
 				orbs[orbs.Count- 1].GetComponent<Image>().sprite = bigOrb;
 			}
 			//Make the remaining ones
-			Vector2 offset = new Vector2(33, 0);
+			Vector2 offset = new Vector2(5, 0);
 			for(int counter = orbs.Count; counter < desiredOrbsAmount; counter++)
 			{
 				//Vector2 StartingPos = new Vector2(-(Screen.width / 2) + StartOffset.x, -(Screen.height / 2) + StartOffset.y);
 				GameObject orb = GameObject.Instantiate(orbPrefab, StartOffset + offset * counter, Quaternion.identity, transform);
-				orb.GetComponent<RectTransform>().position = StartOffset + (offset * counter);
-				
+				RectTransform rt = orb.GetComponent<RectTransform>();
+				rt.anchoredPosition = new Vector2(rt.rect.width / 2,rt.rect.height / 2) + StartOffset + ((offset + new Vector2(rt.rect.width, 0)) * counter);
 				orbs.Add(orb);
 			}
 			//Decide if last orb should be a big orb or a small orb
