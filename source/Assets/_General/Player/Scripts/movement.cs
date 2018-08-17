@@ -74,7 +74,7 @@ public class movement : MonoBehaviour {
 		//If player is below certain height, they die
 		if(rb.position.y < deathBelowYPos)
 		{
-			int health = playerStats.health; 
+			int health = PlayerStats.health; 
 			
 			//Sets health to 0
 			playerStats.TakeDamage(health);

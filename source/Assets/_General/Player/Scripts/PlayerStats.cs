@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-	public int health;
+    public static int health;
 	public bool paused;
 	public bool shielded;
 	public bool invunerable;
@@ -14,7 +14,9 @@ public class PlayerStats : MonoBehaviour
 
 	public void Start()
 	{
-		health = 8;
+        if (health <= 8) {
+            health = 8;
+        }
 		cameraFollow = GameObject.Find("Main Camera").GetComponent<CameraFollow>();
 		menu = GameObject.Find("UI").transform.Find("Canvas").gameObject;
 		healthCanvas = GameObject.Find("UI").transform.Find("HealthDisplay").gameObject;
